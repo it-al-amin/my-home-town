@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://our-netrokona.vercel.app/</loc><priority>1.0</priority></url>
+  <url><loc>https://our-netrokona.vercel.app/about</loc><priority>0.8</priority></url>
+  <url><loc>https://our-netrokona.vercel.app/upazilas</loc><priority>0.9</priority></url>
+  <url><loc>https://our-netrokona.vercel.app/places</loc><priority>0.9</priority></url>
+  <url><loc>https://our-netrokona.vercel.app/map</loc><priority>0.8</priority></url>
+  <url><loc>https://our-netrokona.vercel.app/education</loc><priority>0.8</priority></url>
+  <url><loc>https://our-netrokona.vercel.app/health</loc><priority>0.8</priority></url>
+  <url><loc>https://our-netrokona.vercel.app/services</loc><priority>0.8</priority></url>
+  <url><loc>https://our-netrokona.vercel.app/fisheries</loc><priority>0.7</priority></url>
+  <url><loc>https://our-netrokona.vercel.app/agriculture</loc><priority>0.7</priority></url>
+  <url><loc>https://our-netrokona.vercel.app/livestock</loc><priority>0.7</priority></url>
+  <url><loc>https://our-netrokona.vercel.app/politics</loc><priority>0.8</priority></url>
+  <url><loc>https://our-netrokona.vercel.app/people</loc><priority>0.8</priority></url>
+  <url><loc>https://our-netrokona.vercel.app/culture</loc><priority>0.8</priority></url>
+  <url><loc>https://our-netrokona.vercel.app/history</loc><priority>0.8</priority></url>
+  <url><loc>https://our-netrokona.vercel.app/directory</loc><priority>0.8</priority></url>
+  <url><loc>https://our-netrokona.vercel.app/transport</loc><priority>0.8</priority></url>
+  <url><loc>https://our-netrokona.vercel.app/emergency</loc><priority>0.9</priority></url>
+  <url><loc>https://our-netrokona.vercel.app/news</loc><priority>0.7</priority></url>
+  <url><loc>https://our-netrokona.vercel.app/sources</loc><priority>0.6</priority></url>
+</urlset>
