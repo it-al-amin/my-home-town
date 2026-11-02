@@ -3,22 +3,29 @@ import { Link, useNavigate } from 'react-router-dom';
 import { 
   Search, Compass, MapPin, Building2, School, HeartPulse, 
   Fish, Wheat, Sparkles, PhoneCall, ArrowRight, ShieldCheck, 
-  Map as MapIcon, Landmark, BookOpen, Clock, ChevronRight
+  Map as MapIcon, Landmark, BookOpen, Clock, ChevronRight, 
+  Bed, Utensils, Train, Bus, ExternalLink
 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { DISTRICT_DATA } from '../data/district';
 import { UPAZILAS_DATA } from '../data/upazilas';
 import { PLACES_DATA } from '../data/places';
-import { SERVICES_DATA } from '../data/services';
 import { PEOPLE_DATA } from '../data/people';
 import { NEWS_DATA } from '../data/news';
 import { PlaceCard } from '../components/cards/PlaceCard';
 import { UpazilaCard } from '../components/cards/UpazilaCard';
-import { ServiceCard } from '../components/cards/ServiceCard';
 import { PersonCard } from '../components/cards/PersonCard';
 import { NewsCard } from '../components/cards/NewsCard';
 import { SectionHeader } from '../components/common/SectionHeader';
-import { LeafletDistrictMap } from '../components/map/LeafletDistrictMap';
+import { DistrictDashboardStrip } from '../components/home/DistrictDashboardStrip';
+import { DistrictMapShowcase } from '../components/home/DistrictMapShowcase';
+import { ServiceSectorsGrid } from '../components/home/ServiceSectorsGrid';
+import { DistrictAdminCard } from '../components/home/DistrictAdminCard';
+import { FamousFoodSection } from '../components/home/FamousFoodSection';
+import { HotelsSection } from '../components/home/HotelsSection';
+import { TravelGuideSection } from '../components/home/TravelGuideSection';
+import { EducationShowcase } from '../components/home/EducationShowcase';
+import { BusinessAgroShowcase } from '../components/home/BusinessAgroShowcase';
 
 export const HomePage: React.FC = () => {
   const { language, t } = useLanguage();
@@ -34,237 +41,185 @@ export const HomePage: React.FC = () => {
 
   const featuredPlaces = PLACES_DATA.filter((p) => p.featured).slice(0, 4);
   const featuredUpazilas = UPAZILAS_DATA.slice(0, 6);
-  const featuredServices = SERVICES_DATA.slice(0, 3);
   const featuredPeople = PEOPLE_DATA.slice(0, 4);
   const latestNews = NEWS_DATA.slice(0, 3);
 
-  const explorationCards = [
-    {
-      title: language === 'bn' ? '১০টি উপজেলা' : '10 Upazilas',
-      desc: language === 'bn' ? 'সকল উপজেলার প্রশাসনিক ও ভৌগোলিক তথ্য' : 'Administrative, demographic & regional data',
-      icon: MapPin,
-      href: '/upazilas',
-      color: 'from-emerald-500 to-teal-700',
-    },
-    {
-      title: language === 'bn' ? 'দর্শনীয় স্থান' : 'Tourist Places',
-      desc: language === 'bn' ? 'সাদামাটির পাহাড়, সোমেশ্বরী নদী ও ডিংগাপোতা হাওর' : 'Ceramic hills, Someshwari river & haors',
-      icon: Compass,
-      href: '/places',
-      color: 'from-blue-500 to-indigo-700',
-    },
-    {
-      title: language === 'bn' ? 'ইন্টারেক্টিভ ম্যাপ' : 'Interactive Map',
-      desc: language === 'bn' ? 'উপজেলা, পর্যটন ও হাসপাতালের ভৌগোলিক অবস্থান' : 'Explore locations, borders & routes on map',
-      icon: MapIcon,
-      href: '/map',
-      color: 'from-cyan-500 to-blue-700',
-    },
-    {
-      title: language === 'bn' ? 'নাগরিক সেবা' : 'Citizen Services',
-      desc: language === 'bn' ? 'ই-নামজারি, জন্মনিবন্ধন, পাসপোর্ট ও ভূমিসেবা' : 'E-Mutation, NID, Passports & Civil services',
-      icon: Building2,
-      href: '/services',
-      color: 'from-violet-500 to-purple-700',
-    },
-    {
-      title: language === 'bn' ? 'স্বাস্থ্য ও হাসপাতাল' : 'Health & Hospitals',
-      desc: language === 'bn' ? '২৫০ শয্যা সদর হাসপাতাল ও উপজেলা স্বাস্থ্য কমপ্লেক্স' : '250-bed Sadar Hospital & all health complexes',
-      icon: HeartPulse,
-      href: '/health',
-      color: 'from-rose-500 to-red-700',
-    },
-    {
-      title: language === 'bn' ? 'শিক্ষা প্রতিষ্ঠান' : 'Schools & Colleges',
-      desc: language === 'bn' ? 'বিশ্ববিদ্যালয়, মেডিকেল কলেজ ও ঐতিহ্যবাহী বিদ্যালয়' : 'University, Medical College & century-old schools',
-      icon: School,
-      href: '/education',
-      color: 'from-amber-500 to-orange-700',
-    },
-    {
-      title: language === 'bn' ? 'হাওর ও মৎস্য সম্পদ' : 'Fisheries & Haor',
-      desc: language === 'bn' ? 'মিঠাপানির মাছের ভাণ্ডার ও মোহনগঞ্জ মোকাম' : 'Freshwater fisheries & Mohanaganj fish mokams',
-      icon: Fish,
-      href: '/fisheries',
-      color: 'from-sky-500 to-teal-700',
-    },
-    {
-      title: language === 'bn' ? 'ইতিহাস ও সংস্কৃতি' : 'History & Folklore',
-      desc: language === 'bn' ? 'মৈমনসিংহ গীতিকা, বাউল গান ও মুক্তিযুদ্ধের গৌরব' : 'Maimansingha Gitika, Baul songs & 1971 glory',
-      icon: Landmark,
-      href: '/history',
-      color: 'from-stone-600 to-slate-800',
-    },
-  ];
-
   return (
-    <div className="space-y-16 lg:space-y-24 pb-16">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-emerald-950 via-slate-900 to-teal-950 text-white overflow-hidden py-16 sm:py-24 lg:py-28">
-        {/* Subtle decorative background patterns */}
-        <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#34d399_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl pointer-events-none" />
+    <div className="space-y-12 lg:space-y-16 pb-16">
+      {/* 1. Amar Gaibandha-Style Hero Section with Scenic Background Image & Poetic Title */}
+      <section className="relative min-h-[580px] lg:min-h-[640px] flex flex-col justify-between text-white overflow-hidden bg-slate-950">
+        {/* Full-bleed scenic photographic background (Birishiri Turquoise Ceramic Lake & Someshwari River) */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 scale-105"
+          style={{
+            backgroundImage: `linear-gradient(to right, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.65) 55%, rgba(15, 23, 42, 0.78) 100%), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=85')`,
+          }}
+        />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
-            {/* National & Division Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 backdrop-blur-sm">
-              <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
-              <span>{language === 'bn' ? 'ময়মনসিংহ বিভাগ | বাংলাদেশ' : 'Mymensingh Division | Bangladesh'}</span>
+        {/* Ambient Overlay for crystal clear readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-black/30 pointer-events-none" />
+
+        {/* Main Hero Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24 pb-12 w-full">
+          <div className="max-w-3xl space-y-5">
+            {/* Red accent line with district and division */}
+            <div className="flex items-center gap-2.5">
+              <span className="w-8 h-[2px] bg-red-500 inline-block" />
+              <span className="text-xs sm:text-sm font-bold tracking-wider text-amber-300 uppercase">
+                {language === 'bn' ? 'নেত্রকোণা জেলা • ময়মনসিংহ বিভাগ' : 'Netrokona District • Mymensingh Division'}
+              </span>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-              {language === 'bn' ? 'আমাদের নেত্রকোণা' : 'Our Netrokona'}
+            {/* Poetic Large Headline (Matches Amar Gaibandha style) */}
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[1.12]">
+              {language === 'bn' ? (
+                <>
+                  গারো পাহাড় আর হাওরের<br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-200 to-cyan-300">
+                    নীল জলে গড়া জনপদ
+                  </span>
+                </>
+              ) : (
+                <>
+                  The Land Forged Between<br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-200 to-cyan-300">
+                    Hills & Haor Waters
+                  </span>
+                </>
+              )}
             </h1>
 
-            {/* Subtitle / Motto */}
-            <p className="text-xl sm:text-2xl font-medium text-emerald-200">
-              {language === 'bn' ? DISTRICT_DATA.motto.bn : DISTRICT_DATA.motto.en}
-            </p>
-
-            <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            {/* Subtitle */}
+            <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-2xl leading-relaxed">
               {language === 'bn'
-                ? 'মেঘালয় পাহাড়ের পাদদেশ থেকে শুরু করে দিগন্তজোড়া ডিংগাপোতা হাওর—১০টি উপজেলার পর্যটন, নাগরিক সেবা, শিক্ষা, স্বাস্থ্য, কৃষি ও শতাব্দীর লোকসংস্কৃতির সম্পূর্ণ ডিজিটাল তথ্য পোর্টাল।'
-                : 'From the foot of Meghalaya hills to boundless Dingapota Haor—explore comprehensive digital records across all 10 upazilas, public services, institutions, and rich heritage.'}
+                ? 'উপজেলা, ইউনিয়ন, গ্রাম, পর্যটন, শিক্ষা, ব্যবসা, ঐতিহ্যবাহী খাবার ও যাতায়াতের তথ্য এক জায়গায়।'
+                : 'Upazilas, unions, villages, tourism, schooling, business, traditional cuisine and travel directory.'}
             </p>
 
-            {/* Fast Global Search Box */}
-            <form onSubmit={handleSearchSubmit} className="pt-2 max-w-2xl mx-auto">
-              <div className="relative flex items-center shadow-2xl rounded-2xl overflow-hidden border border-emerald-500/40 bg-white/10 backdrop-blur-md focus-within:bg-white focus-within:text-slate-900 focus-within:border-emerald-500 transition-all duration-200">
-                <Search className="w-5 h-5 ml-4 text-emerald-300 shrink-0 pointer-events-none" />
+            {/* Cream-colored Search Box with Coral Action Button */}
+            <form onSubmit={handleSearchSubmit} className="pt-2 max-w-2xl">
+              <div className="relative flex items-center shadow-2xl rounded-2xl overflow-hidden bg-[#faf6ea] border border-amber-200/80 focus-within:ring-3 focus-within:ring-amber-500/30 transition-all duration-200">
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder={language === 'bn' ? 'উপজেলা, পর্যটন স্থান, হাসপাতাল, সেবা বা শিক্ষা প্রতিষ্ঠান খুঁজুন...' : 'Search upazilas, tourist spots, hospitals, services...'}
-                  className="w-full py-4 pl-3 pr-28 sm:pr-32 text-sm sm:text-base text-white focus:text-slate-900 bg-transparent placeholder-slate-300 focus:placeholder-slate-400 focus:outline-hidden"
+                  placeholder={language === 'bn' ? 'দর্শনীয় স্থান, স্কুল, কলেজ, বালিশ মিষ্টি বা উপজেলা খুঁজুন...' : 'Search tourist spots, schools, colleges, food, or upazilas...'}
+                  className="w-full py-4 pl-4 pr-32 text-sm sm:text-base text-slate-900 bg-transparent placeholder-slate-500 font-medium focus:outline-hidden"
                 />
                 <button
                   type="submit"
-                  className="absolute right-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-600 hover:bg-emerald-500 text-white transition-colors cursor-pointer"
+                  className="absolute right-1.5 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#ea580c] hover:bg-orange-600 text-white transition-colors cursor-pointer flex items-center gap-1.5 shadow-md"
                 >
-                  {language === 'bn' ? 'অনুসন্ধান' : 'Search'}
+                  <Search className="w-4 h-4" />
+                  <span>{language === 'bn' ? 'খুঁজুন' : 'Search'}</span>
                 </button>
               </div>
-              <div className="flex items-center justify-center gap-2 mt-2.5 text-xs text-slate-400 flex-wrap">
-                <span>{language === 'bn' ? 'জনপ্রিয় অনুসন্ধান:' : 'Popular searches:'}</span>
-                <button type="button" onClick={() => navigate('/places/birishiri-ceramic-hill')} className="hover:text-emerald-300 underline">বিরিশিরি</button>
+
+              {/* Quick Keyword Buttons */}
+              <div className="flex items-center gap-2 mt-2.5 text-xs text-slate-300 flex-wrap">
+                <span>{language === 'bn' ? 'জনপ্রিয়:' : 'Popular:'}</span>
+                <button type="button" onClick={() => navigate('/places/birishiri-ceramic-hill')} className="hover:text-amber-300 underline cursor-pointer">বিরিশিরি সাদামাটি</button>
                 <span>•</span>
-                <button type="button" onClick={() => navigate('/upazilas/durgapur')} className="hover:text-emerald-300 underline">দুর্গাপুর</button>
+                <button type="button" onClick={() => navigate('/places/dingapota-haor')} className="hover:text-amber-300 underline cursor-pointer">ডিংগাপোতা হাওর</button>
                 <span>•</span>
-                <button type="button" onClick={() => navigate('/places/dingapota-haor')} className="hover:text-emerald-300 underline">ডিংগাপোতা হাওর</button>
+                <a href="#food" className="hover:text-amber-300 underline cursor-pointer">বালিশ মিষ্টি</a>
                 <span>•</span>
-                <button type="button" onClick={() => navigate('/health')} className="hover:text-emerald-300 underline">সদর হাসপাতাল</button>
+                <a href="#hotels" className="hover:text-amber-300 underline cursor-pointer">বিরিশিরি হোটেল</a>
                 <span>•</span>
-                <button type="button" onClick={() => navigate('/services')} className="hover:text-emerald-300 underline">ই-নামজারি</button>
+                <a href="#education" className="hover:text-amber-300 underline cursor-pointer">মেডিকেল ও বিশ্ববিদ্যালয়</a>
+                <span>•</span>
+                <a href="#travel" className="hover:text-amber-300 underline cursor-pointer">কীভাবে যাবেন</a>
               </div>
             </form>
 
-            {/* Quick Action Buttons */}
-            <div className="pt-4 flex flex-wrap items-center justify-center gap-3 text-sm font-bold">
-              <Link
-                to="/upazilas"
-                className="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white shadow-md hover:shadow-emerald-900/40 transition-all flex items-center gap-2"
-              >
-                <MapPin className="w-4 h-4" />
-                <span>{language === 'bn' ? '১০টি উপজেলা দেখুন' : 'Explore Upazilas'}</span>
-              </Link>
+            {/* Action Buttons Below Search (Matches Amar Gaibandha style) */}
+            <div className="pt-3 flex flex-wrap items-center gap-3">
               <Link
                 to="/places"
-                className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-sm transition-all flex items-center gap-2"
+                className="px-5 py-3 rounded-xl border border-white/40 hover:border-white text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm text-sm font-bold transition-all flex items-center gap-2"
+              >
+                <span>{language === 'bn' ? 'দর্শনীয় স্থান ও হোটেল দেখুন →' : 'Explore Places & Hotels →'}</span>
+              </Link>
+              <Link
+                to="/upazilas"
+                className="px-5 py-3 rounded-xl bg-slate-900/80 hover:bg-slate-900 text-slate-200 border border-slate-700 text-sm font-semibold transition-all flex items-center gap-2"
               >
                 <Compass className="w-4 h-4 text-emerald-400" />
-                <span>{language === 'bn' ? 'দর্শনীয় পর্যটন স্থান' : 'Tourist Places'}</span>
+                <span>{language === 'bn' ? '১০টি উপজেলা ও মানচিত্র' : '10 Upazilas & Map'}</span>
               </Link>
-              <Link
-                to="/services"
-                className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-sm transition-all flex items-center gap-2"
-              >
-                <Building2 className="w-4 h-4 text-cyan-400" />
-                <span>{language === 'bn' ? 'নাগরিক সেবা' : 'Gov Services'}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar: Photo Credit & Quick Category Navigation Strip */}
+        <div className="relative z-10 w-full border-t border-white/10 bg-black/40 backdrop-blur-md py-3 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+            {/* Quick Navigation Pills with External Style Arrows */}
+            <div className="flex items-center gap-2 sm:gap-4 overflow-x-auto w-full sm:w-auto py-1">
+              <Link to="/places" className="flex items-center gap-1 text-slate-200 hover:text-amber-300 transition-colors font-medium shrink-0">
+                <span>🏔️ {language === 'bn' ? 'দর্শনীয় স্থান ও হ্রদ' : 'Tourist Spots'}</span>
+                <span className="text-[10px]">↗</span>
               </Link>
-              <Link
-                to="/emergency"
-                className="px-5 py-3 rounded-xl bg-rose-600/80 hover:bg-rose-600 text-white shadow-md transition-all flex items-center gap-2"
-              >
-                <PhoneCall className="w-4 h-4" />
-                <span>{language === 'bn' ? 'জরুরি সেবা' : 'Emergency'}</span>
+              <span className="text-white/20">|</span>
+              <a href="#food" className="flex items-center gap-1 text-slate-200 hover:text-amber-300 transition-colors font-medium shrink-0">
+                <span>🍮 {language === 'bn' ? 'বালিশ মিষ্টি ও খাবার' : 'Famous Food'}</span>
+                <span className="text-[10px]">↗</span>
+              </a>
+              <span className="text-white/20">|</span>
+              <a href="#hotels" className="flex items-center gap-1 text-slate-200 hover:text-amber-300 transition-colors font-medium shrink-0">
+                <span>🏨 {language === 'bn' ? 'হোটেল ও রিসোর্ট' : 'Hotels & Resorts'}</span>
+                <span className="text-[10px]">↗</span>
+              </a>
+              <span className="text-white/20">|</span>
+              <a href="#education" className="flex items-center gap-1 text-slate-200 hover:text-amber-300 transition-colors font-medium shrink-0">
+                <span>🎓 {language === 'bn' ? 'শিক্ষা ও স্কুল' : 'Schools & Colleges'}</span>
+                <span className="text-[10px]">↗</span>
+              </a>
+              <span className="text-white/20">|</span>
+              <a href="#business" className="flex items-center gap-1 text-slate-200 hover:text-amber-300 transition-colors font-medium shrink-0">
+                <span>🌾 {language === 'bn' ? 'ব্যবসা ও কৃষি' : 'Business & Agro'}</span>
+                <span className="text-[10px]">↗</span>
+              </a>
+              <span className="text-white/20">|</span>
+              <a href="#travel" className="flex items-center gap-1 text-slate-200 hover:text-amber-300 transition-colors font-medium shrink-0">
+                <span>🚌 {language === 'bn' ? 'যাতায়াত গাইড' : 'How to Go'}</span>
+                <span className="text-[10px]">↗</span>
+              </a>
+              <span className="text-white/20">|</span>
+              <Link to="/map" className="flex items-center gap-1 text-slate-200 hover:text-amber-300 transition-colors font-medium shrink-0">
+                <span>🗺️ {language === 'bn' ? 'ভেক্টর মানচিত্র' : 'Vector Map'}</span>
+                <span className="text-[10px]">↗</span>
               </Link>
+            </div>
+
+            {/* Image Attribution */}
+            <div className="text-[11px] text-slate-400 shrink-0 self-end sm:self-auto">
+              {language === 'bn' ? 'ছবি: বিরিশিরি সাদামাটি হ্রদ ও সোমেশ্বরী নদী • উইকিমিডিয়া' : 'Photo: Birishiri Lake & Someshwari • Wikimedia Commons'}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Quick Statistics Strip */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 sm:-mt-16 relative z-10">
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-200/80 p-6 lg:p-8">
-          <div className="text-center mb-6">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">
-              {t('quickStatsTitle')}
-            </span>
-          </div>
+      {/* 2. Official Administrative Dashboard Strip */}
+      <DistrictDashboardStrip />
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 sm:gap-6 text-center divide-x-0 sm:divide-x divide-slate-100">
-            {DISTRICT_DATA.quickStats.map((stat, idx) => (
-              <div key={idx} className="space-y-1 p-2">
-                <div className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
-                  {language === 'bn' ? stat.valueBn : stat.value}
-                </div>
-                <div className="text-xs text-slate-500 font-medium">
-                  {language === 'bn' ? stat.label.bn : stat.label.en}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 3. District Map Showcase (with 10 Seamless Upazilas & 86 Unions Explorer) */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <DistrictMapShowcase />
+      </div>
 
-      {/* Explore Netrokona Category Hub */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          badge={language === 'bn' ? 'ডিজিটাল পোর্টাল' : 'Digital Hub'}
-          title={language === 'bn' ? 'নেত্রকোণা অন্বেষণ করুন' : 'Explore Netrokona Portal'}
-          subtitle={language === 'bn' ? 'প্রয়োজনীয় সেবা, ভ্রমণ, শিক্ষা, স্বাস্থ্য ও সাংস্কৃতিক সম্পদ সহজে খুঁজে নিন।' : 'Quick access to administrative info, tourism, public services, and heritage.'}
-        />
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {explorationCards.map((card, idx) => (
-            <Link
-              key={idx}
-              to={card.href}
-              className="group bg-white rounded-2xl p-5 border border-slate-200/90 hover:border-emerald-500/50 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
-            >
-              <div>
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${card.color} flex items-center justify-center text-white mb-4 shadow-sm group-hover:scale-110 transition-transform duration-300`}>
-                  <card.icon className="w-6 h-6" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors mb-1.5 flex items-center justify-between">
-                  <span>{card.title}</span>
-                  <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all" />
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-                  {card.desc}
-                </p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Featured Tourist Places */}
+      {/* 4. Top Tourist Destinations & Nature Highlights */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
           <SectionHeader
-            badge={language === 'bn' ? 'প্রাকৃতিক ও ঐতিহাসিক আকর্ষণ' : 'Tourism Highlights'}
-            title={language === 'bn' ? 'শীর্ষ দর্শনীয় স্থান' : 'Featured Tourist Places'}
-            subtitle={language === 'bn' ? 'বিরিশিরির নীল পানির হ্রদ থেকে শুরু করে সুবিশাল ডিংগাপোতা হাওর পর্যন্ত।' : 'From turquoise ceramic lake to boundless haor waters.'}
+            badge={language === 'bn' ? 'প্রাকৃতিক সৌন্দর্য ও পরিবেশ' : 'Natural Beauty & Tourism'}
+            title={language === 'bn' ? 'নেত্রকোণার শীর্ষ দর্শনীয় পর্যটন স্থান' : 'Top Tourist Attractions in Netrokona'}
+            subtitle={language === 'bn' ? 'বিজয়পুরের নীল পানির হ্রদ, স্বচ্ছ সোমেশ্বরী নদী, প্রাচীন রোয়াইলবাড়ি দুর্গ ও সুবিশাল ডিংগাপোতা হাওর।' : 'Explore ceramic lakes, pristine mountain rivers, medieval citadel, and boundless haor expanses.'}
             className="mb-0"
           />
           <Link
             to="/places"
-            className="inline-flex items-center gap-1.5 font-bold text-sm text-emerald-700 hover:text-emerald-800 shrink-0 self-start sm:self-auto"
+            className="inline-flex items-center gap-1.5 font-bold text-sm text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 shrink-0 self-start sm:self-auto"
           >
             <span>{language === 'bn' ? 'সকল দর্শনীয় স্থান দেখুন' : 'View all places'}</span>
             <ArrowRight className="w-4 h-4" />
@@ -278,28 +233,32 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Interactive Map Preview Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
-          <SectionHeader
-            badge={language === 'bn' ? 'ভৌগোলিক অবস্থান' : 'Geographic Map'}
-            title={language === 'bn' ? 'মানচিত্রে নেত্রকোণা' : 'Explore on District Map'}
-            subtitle={language === 'bn' ? '১০টি উপজেলা, পর্যটন কেন্দ্র ও জরুরি হাসপাতালের অবস্থান ইন্টারেক্টিভ মানচিত্রে দেখুন।' : 'Navigate upazila centers, tourist spots, and emergency facilities.'}
-            className="mb-0"
-          />
-          <Link
-            to="/map"
-            className="inline-flex items-center gap-1.5 font-bold text-sm text-emerald-700 hover:text-emerald-800 shrink-0 self-start sm:self-auto"
-          >
-            <span>{language === 'bn' ? 'পূর্ণাঙ্গ মানচিত্র খুলুন' : 'Open Fullscreen Map'}</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
+      {/* 5. Famous Food, Balish Mishti & Traditional Delicacies (#food anchor) */}
+      <div id="food" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
+        <FamousFoodSection />
+      </div>
 
-        <LeafletDistrictMap height="480px" />
-      </section>
+      {/* 6. Hotels, Rest Houses & Resorts (#hotels anchor) */}
+      <div id="hotels" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
+        <HotelsSection />
+      </div>
 
-      {/* 10 Upazilas Section */}
+      {/* 7. How to Go Travel Guide from Dhaka & Mymensingh (#travel anchor) */}
+      <div id="travel" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
+        <TravelGuideSection />
+      </div>
+
+      {/* 8. Education & Schooling Showcase (#education anchor) */}
+      <div id="education" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
+        <EducationShowcase />
+      </div>
+
+      {/* 9. Commercial Trade Hubs, Agriculture & Haor Economy (#business anchor) */}
+      <div id="business" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
+        <BusinessAgroShowcase />
+      </div>
+
+      {/* 10. Upazilas Grid Overview */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
           <SectionHeader
@@ -310,7 +269,7 @@ export const HomePage: React.FC = () => {
           />
           <Link
             to="/upazilas"
-            className="inline-flex items-center gap-1.5 font-bold text-sm text-emerald-700 hover:text-emerald-800 shrink-0 self-start sm:self-auto"
+            className="inline-flex items-center gap-1.5 font-bold text-sm text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 shrink-0 self-start sm:self-auto"
           >
             <span>{language === 'bn' ? 'সকল ১০টি উপজেলা দেখুন' : 'View all 10 upazilas'}</span>
             <ArrowRight className="w-4 h-4" />
@@ -324,34 +283,7 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Citizen Services Preview */}
-      <section className="bg-slate-100 py-16 border-y border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
-            <SectionHeader
-              badge={language === 'bn' ? 'নাগরিক সেবা ও তথ্য' : 'Citizen Charter'}
-              title={language === 'bn' ? 'গুরুত্বপূর্ণ সরকারি নাগরিক সেবা' : 'Key Official Citizen Services'}
-              subtitle={language === 'bn' ? 'ভূমি মিউটেশন, জন্ম নিবন্ধন, ই-পাসপোর্টসহ সরকারি পোর্টালে সরাসরি সেবা গ্রহণ করুন।' : 'Direct access to verified official government portals and guidelines.'}
-              className="mb-0"
-            />
-            <Link
-              to="/services"
-              className="inline-flex items-center gap-1.5 font-bold text-sm text-emerald-700 hover:text-emerald-800 shrink-0 self-start sm:self-auto"
-            >
-              <span>{language === 'bn' ? 'সকল নাগরিক সেবা' : 'View all services'}</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredServices.map((service) => (
-              <ServiceCard key={service.id} service={service} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Notable Personalities Preview */}
+      {/* 11. Notable Personalities */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
           <SectionHeader
@@ -362,7 +294,7 @@ export const HomePage: React.FC = () => {
           />
           <Link
             to="/people"
-            className="inline-flex items-center gap-1.5 font-bold text-sm text-emerald-700 hover:text-emerald-800 shrink-0 self-start sm:self-auto"
+            className="inline-flex items-center gap-1.5 font-bold text-sm text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 shrink-0 self-start sm:self-auto"
           >
             <span>{language === 'bn' ? 'সকল ব্যক্তিত্বের তালিকা' : 'View all personalities'}</span>
             <ArrowRight className="w-4 h-4" />
@@ -376,58 +308,30 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Latest District Updates & Notices */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
-          <SectionHeader
-            badge={language === 'bn' ? 'সরকারি নোটিশ ও আবহাওয়া' : 'Notices & Updates'}
-            title={language === 'bn' ? 'সর্বশেষ জেলা তথ্য ও নোটিশ' : 'Latest District Notices & News'}
-            subtitle={language === 'bn' ? 'হাওর বন্যা পূর্বাভাস, কৃষি পরামর্শ এবং পরিবেশ ও শিক্ষা বিষয়ক সর্বশেষ তথ্য।' : 'Haor hydrology updates, agricultural alerts, and official bulletins.'}
-            className="mb-0"
-          />
-          <Link
-            to="/news"
-            className="inline-flex items-center gap-1.5 font-bold text-sm text-emerald-700 hover:text-emerald-800 shrink-0 self-start sm:self-auto"
-          >
-            <span>{language === 'bn' ? 'সকল নোটিশ ও সংবাদ' : 'View all updates'}</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {latestNews.map((news) => (
-            <NewsCard key={news.id} news={news} />
-          ))}
-        </div>
-      </section>
-
-      {/* Emergency Callout Banner */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-red-900 via-rose-900 to-slate-900 rounded-3xl p-8 lg:p-10 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-2 text-center md:text-left">
-            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-red-200 bg-red-800/60 px-3 py-1 rounded-full uppercase tracking-wider">
-              <PhoneCall className="w-3.5 h-3.5" />
-              <span>{language === 'bn' ? '২৪ ঘণ্টা জরুরি সেবা' : '24/7 Emergency Support'}</span>
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-              {language === 'bn' ? 'জরুরি প্রয়োজনে পুলিশ, ফায়ার সার্ভিস বা অ্যাম্বুলেন্স খুঁজছেন?' : 'Need urgent police, fire service, or ambulance assistance?'}
-            </h3>
-            <p className="text-sm text-red-100 max-w-xl">
-              {language === 'bn'
-                ? 'জাতীয় জরুরি সেবা ৯৯৯ ছাড়াও জেলার সকল থানা, ফায়ার স্টেশন এবং সদর হাসপাতালের যাচাইকৃত জরুরি নম্বরসমূহ এক ক্লিকে পান।'
-                : 'Access 24/7 National Emergency 999 as well as direct verified duty numbers for district police stations, fire stations, and Sadar hospital.'}
-            </p>
+      {/* 12. Public Services & Citizen Charter (Subtle & Secondary, placed cleanly at bottom) */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+        <div className="bg-slate-100 dark:bg-slate-900/60 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-4">
+            <div>
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+                {language === 'bn' ? 'নাগরিক সেবা ও তথ্যবাতায়ন' : 'Citizen Charter & Links'}
+              </span>
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 mt-1">
+                {language === 'bn' ? 'প্রয়োজনীয় সরকারি সেবা ও জেলা নেতৃত্ব' : 'Public Services & District Leadership'}
+              </h3>
+            </div>
+            <Link
+              to="/services"
+              className="text-xs font-bold text-emerald-700 dark:text-emerald-400 hover:underline flex items-center gap-1"
+            >
+              <span>{language === 'bn' ? 'সকল নাগরিক সেবা ও লিংক →' : 'All Citizen Services →'}</span>
+            </Link>
           </div>
 
-          <Link
-            to="/emergency"
-            className="px-6 py-3.5 rounded-xl bg-white hover:bg-red-50 text-red-900 font-extrabold text-sm sm:text-base shadow-lg transition-all shrink-0 flex items-center gap-2"
-          >
-            <span>{language === 'bn' ? 'জরুরি নম্বর তালিকা দেখুন' : 'View Emergency Directory'}</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+          <ServiceSectorsGrid />
+          <DistrictAdminCard />
         </div>
-      </section>
+      </div>
     </div>
   );
 };

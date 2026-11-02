@@ -328,7 +328,7 @@ export const UPAZILAS_DATA: Upazila[] = [
     riversBn: ['কংস', 'ধলাই'],
     majorMarkets: ['Shyamganj Bazar', 'Purbadhala Bazar', 'Jaria Bazar', 'Hogla Bazar'],
     majorMarketsBn: ['শ্যামগঞ্জ বাজার', 'পূর্বধলা বাজার', 'জারিয়া বাজার', 'হোগলা বাজার'],
-    unionsList: ['Agia', 'Baghber', 'Bishkakuni', 'Dhalamulgaon', 'Ghagra', 'Gohalakanda', 'Hogla', 'Jaria', 'Narayanhar', 'Purbadhala', ' বৈরাটি'],
+    unionsList: ['Agia', 'Baghber', 'Bishkakuni', 'Dhalamulgaon', 'Ghagra', 'Gohalakanda', 'Hogla', 'Jaria', 'Narayanhar', 'Purbadhala', 'Bairati'],
     unionsListBn: ['আগিয়া', 'বাঘবেড়', 'বিশকাকুনী', 'ধলামূলগাঁও', 'ঘাগড়া', 'গোহালাকান্দা', 'হোগলা', 'জারিয়া', 'নারায়নহর', 'পূর্বধলা', 'বৈরাটি'],
     emergencyContacts: {
       police: '01320-103525',

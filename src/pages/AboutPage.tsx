@@ -83,7 +83,7 @@ export const AboutPage: React.FC = () => {
         </div>
 
         {/* Quick Facts Sidebar */}
-        <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs space-y-4">
+        <div id="stats" className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs space-y-4 scroll-mt-28">
           <h3 className="text-base font-bold text-slate-900 border-b border-slate-100 pb-3 flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-emerald-600" />
             <span>{language === 'bn' ? 'প্রশাসনিক সারসংক্ষেপ' : 'Administrative Summary'}</span>
@@ -127,7 +127,7 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* Administrative Hierarchy Flow */}
-      <section className="bg-emerald-50/60 rounded-3xl p-8 border border-emerald-100">
+      <section id="dc-office" className="bg-emerald-50/60 rounded-3xl p-8 border border-emerald-100 scroll-mt-28">
         <SectionHeader
           badge={language === 'bn' ? 'প্রশাসনিক ধাপ' : 'Governance Structure'}
           title={language === 'bn' ? 'প্রশাসনিক বিন্যাস (জেলা থেকে গ্রাম)' : 'Administrative Hierarchy'}

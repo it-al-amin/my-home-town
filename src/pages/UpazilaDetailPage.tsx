@@ -8,11 +8,12 @@ import { useLanguage } from '../context/LanguageContext';
 import { UPAZILAS_DATA } from '../data/upazilas';
 import { PLACES_DATA } from '../data/places';
 import { HEALTH_DATA } from '../data/health';
+import { UNIONS_DATA } from '../data/unions';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { MapLink } from '../components/common/MapLink';
 import { SourceBadge } from '../components/common/SourceBadge';
 import { SectionHeader } from '../components/common/SectionHeader';
-import { LeafletDistrictMap } from '../components/map/LeafletDistrictMap';
+import { UpazilaUnionMap } from '../components/map/UpazilaUnionMap';
 import { PlaceCard } from '../components/cards/PlaceCard';
 
 export const UpazilaDetailPage: React.FC = () => {
@@ -46,6 +47,7 @@ export const UpazilaDetailPage: React.FC = () => {
   const area = language === 'bn' ? `${upazila.areaKm2} বর্গ কিমি` : `${upazila.areaKm2} sq km`;
   const population = language === 'bn' ? `${upazila.population.toLocaleString('bn-BD')} জন` : `${upazila.population.toLocaleString()} people`;
   const unions = language === 'bn' ? upazila.unionsListBn : upazila.unionsList;
+  const upazilaUnions = UNIONS_DATA[upazila.id] || [];
   const rivers = language === 'bn' ? upazila.riversBn : upazila.rivers;
   const markets = language === 'bn' ? upazila.majorMarketsBn : upazila.majorMarkets;
 
@@ -105,41 +107,41 @@ export const UpazilaDetailPage: React.FC = () => {
 
       {/* Statistics Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
+        <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs">
           <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
             {language === 'bn' ? 'মোট আয়তন' : 'Total Area'}
           </span>
-          <div className="text-xl sm:text-2xl font-black text-slate-900">{area}</div>
+          <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">{area}</div>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
+        <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs">
           <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
             {language === 'bn' ? 'জনসংখ্যা (২০২২)' : 'Population (2022)'}
           </span>
-          <div className="text-xl sm:text-2xl font-black text-slate-900">{population}</div>
+          <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">{population}</div>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
+        <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs">
           <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
             {language === 'bn' ? 'ইউনিয়ন পরিষদ' : 'Unions Count'}
           </span>
-          <div className="text-xl sm:text-2xl font-black text-slate-900">
+          <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
             {language === 'bn' ? `${upazila.unionsCount}টি ইউনিয়ন` : `${upazila.unionsCount} Unions`}
           </div>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
+        <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs">
           <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
             {language === 'bn' ? 'গ্রাম সংখ্যা' : 'Villages Count'}
           </span>
-          <div className="text-xl sm:text-2xl font-black text-slate-900">
+          <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
             {language === 'bn' ? `${upazila.villagesCount}টি গ্রাম` : `${upazila.villagesCount} Villages`}
           </div>
         </div>
       </div>
 
       {/* Unions & Administrative Structure */}
-      <section className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-6">
+      <section className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-xs space-y-6">
         <SectionHeader
           badge={language === 'bn' ? 'ইউনিয়ন পরিষদ' : 'Unions'}
           title={language === 'bn' ? `${title}-র অন্তর্ভুক্ত সকল ইউনিয়ন` : `Unions under ${title}`}
@@ -150,7 +152,7 @@ export const UpazilaDetailPage: React.FC = () => {
           {unions.map((unionName, idx) => (
             <div
               key={idx}
-              className="p-3 bg-slate-50 hover:bg-emerald-50/70 border border-slate-200/90 hover:border-emerald-300 rounded-xl transition-colors flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-800"
+              className="p-3 bg-slate-50 dark:bg-slate-800/60 hover:bg-emerald-50/70 dark:hover:bg-slate-800 border border-slate-200/90 dark:border-slate-700/80 hover:border-emerald-300 rounded-xl transition-colors flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200"
             >
               <div className="w-6 h-6 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-xs font-bold shrink-0">
                 {idx + 1}
@@ -166,6 +168,10 @@ export const UpazilaDetailPage: React.FC = () => {
             : '* Detailed village-level data is being progressively catalogued from official public administration gazettes.'}
         </p>
       </section>
+        {/* Union & Places Map */}
+        <div className="my-8 w-full">
+          <UpazilaUnionMap upazila={upazila} height="500px" />
+        </div>
 
       {/* Rivers & Markets */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -263,15 +269,19 @@ export const UpazilaDetailPage: React.FC = () => {
         </section>
       )}
 
-      {/* Embedded Map Focused on this Upazila */}
+      {/* Embedded Map Focused on this Upazila with Union Mapping */}
       <section className="space-y-4">
         <SectionHeader
-          badge={language === 'bn' ? 'মানচিত্র' : 'Map Location'}
-          title={language === 'bn' ? `মানচিত্রে ${title} উপজেলা` : `${title} on District Map`}
-          subtitle={language === 'bn' ? 'ভৌগোলিক সীমানা ও পার্শ্ববর্তী উপজেলাসমূহ।' : 'Geographical position relative to bordering areas.'}
+          badge={language === 'bn' ? 'ইউনিয়ন ও ভৌগোলিক মানচিত্র' : 'Union & Location Map'}
+          title={language === 'bn' ? `মানচিত্রে ${title} উপজেলা ও সকল ইউনিয়ন` : `${title} Upazila & Unions Map`}
+          subtitle={language === 'bn' ? 'উপজেলা সদর, সকল ইউনিয়ন পরিষদ ও দর্শনীয় স্থানের সুনির্দিষ্ট জিপিএস অবস্থান।' : 'Interactive map plotting all union parishad centers, tourist spots, and healthcare.'}
         />
-        <LeafletDistrictMap selectedUpazilaId={upazila.id} height="420px" />
+        <UpazilaUnionMap upazila={upazila} height="500px" />
       </section>
+        {/* Union & Places Map */}
+        <div className="my-8 w-full">
+          <UpazilaUnionMap upazila={upazila} height="500px" />
+        </div>
 
       {/* Data Verification Footer */}
       <div className="pt-4 border-t border-slate-200 flex items-center justify-between flex-wrap gap-2 text-xs">

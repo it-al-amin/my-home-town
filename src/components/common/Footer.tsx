@@ -4,6 +4,8 @@ import { ArrowUp, MapPin, ExternalLink, ShieldCheck, Heart } from 'lucide-react'
 import { useLanguage } from '../../context/LanguageContext';
 import { UPAZILAS_DATA } from '../../data/upazilas';
 
+import { AmarNetrokonaLogo } from './AmarNetrokonaLogo';
+
 export const Footer: React.FC = () => {
   const { language, t } = useLanguage();
 
@@ -37,19 +39,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
           {/* Col 1: District Brand & Overview */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white font-bold text-lg shadow-sm">
-                নে
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white">
-                  {language === 'bn' ? 'আমাদের নেত্রকোণা' : 'Our Netrokona'}
-                </h3>
-                <p className="text-xs text-slate-400">
-                  {language === 'bn' ? 'ডিজিটাল তথ্য ও নাগরিক সেবা পোর্টাল' : 'Digital District Information Portal'}
-                </p>
-              </div>
-            </div>
+            <AmarNetrokonaLogo />
 
             <p className="text-sm text-slate-400 leading-relaxed max-w-md">
               {language === 'bn'

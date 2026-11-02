@@ -74,6 +74,7 @@ export interface TouristPlace extends VerificationInfo {
   travelTipsBn: string;
   image: string;
   imageCredit: string;
+  galleryImages?: string[];
   featured?: boolean;
 }
 
@@ -226,6 +227,22 @@ export interface NewsNotice extends VerificationInfo {
   sourceUrl: string;
   upazilaId?: string;
   urgent?: boolean;
+  status?: 'pending' | 'approved' | 'rejected';
+  authorName?: string;
+  authorContact?: string;
+  imageUrl?: string;
+  submittedAt?: string;
+  content?: string;
+  contentBn?: string;
+}
+
+export interface SectionImagesConfig {
+  heroBanner: string;
+  foodBanner?: string;
+  travelBanner?: string;
+  educationBanner?: string;
+  businessBanner?: string;
+  [key: string]: string | undefined;
 }
 
 export interface TransportRoute extends VerificationInfo {
@@ -259,6 +276,63 @@ export interface MarketBazar extends VerificationInfo {
   location: string;
   locationBn: string;
 }
+
+export interface Hotel extends VerificationInfo {
+  id: string;
+  name: string;
+  nameBn: string;
+  upazilaId: string;
+  type: 'resort' | 'rest_house' | 'hotel' | 'guest_house';
+  typeLabel: BilingualText;
+  location: string;
+  locationBn: string;
+  coordinates?: Coordinates;
+  phone: string;
+  alternatePhone?: string;
+  priceRange: string;
+  priceRangeBn: string;
+  features: string[];
+  featuresBn: string[];
+  bookingAdvice: string;
+  bookingAdviceBn: string;
+  image?: string;
+}
+
+export interface FamousFood extends VerificationInfo {
+  id: string;
+  name: string;
+  nameBn: string;
+  upazilaId?: string;
+  category: 'sweet' | 'traditional' | 'fish' | 'haor_delicacy' | 'beverage';
+  categoryLabel: BilingualText;
+  history: string;
+  historyBn: string;
+  description: string;
+  descriptionBn: string;
+  speciality: string;
+  specialityBn: string;
+  approxPrice: string;
+  approxPriceBn: string;
+  whereToFind: string;
+  whereToFindBn: string;
+  image?: string;
+}
+
+export interface UnionInfo {
+  id: string;
+  name: string;
+  nameBn?: string;
+  upazilaId?: string;
+  coordinates: Coordinates;
+  villagesCount?: number;
+  unionsCouncilOffice?: string;
+  unionsCouncilOfficeBn?: string;
+  keySpots?: string[];
+  keySpotsBn?: string[];
+  /** true when coordinates are an estimated placement, not surveyed GPS */
+  approximate?: boolean;
+}
+
 
 export interface DistrictOverview {
   name: string;
