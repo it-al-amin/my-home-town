@@ -78,7 +78,7 @@ export interface TouristPlace extends VerificationInfo {
   featured?: boolean;
 }
 
-export type InstitutionCategory = 'university' | 'college' | 'school' | 'madrasa' | 'technical';
+export type InstitutionCategory = 'university' | 'college' | 'school' | 'primary' | 'madrasa' | 'technical';
 
 export interface EducationInstitution extends VerificationInfo {
   id: string;
