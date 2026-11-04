@@ -15,6 +15,7 @@ import { MapLink } from '../components/common/MapLink';
 import { SourceBadge } from '../components/common/SourceBadge';
 import { PlaceCard } from '../components/cards/PlaceCard';
 import { SubmitPostModal } from '../components/common/SubmitPostModal';
+import { PLACE_HISTORY } from '../data/placeHistory';
 
 export const PlaceDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -47,6 +48,9 @@ export const PlaceDetailPage: React.FC = () => {
 
   const title = language === 'bn' ? place.nameBn : place.name;
   const description = language === 'bn' ? place.descriptionBn : place.description;
+  const history = PLACE_HISTORY[place.id]?.[language] ?? (language === 'bn'
+    ? 'এই স্থানের ইতিহাসের তথ্য সংকলনাধীন।'
+    : 'Historical context for this place is being compiled.');
   const whyVisit = language === 'bn' ? place.whyVisitBn : place.whyVisit;
   const bestTime = language === 'bn' ? place.bestTimeToVisitBn : place.bestTimeToVisit;
   const travelTips = language === 'bn' ? place.travelTipsBn : place.travelTips;
@@ -137,6 +141,24 @@ export const PlaceDetailPage: React.FC = () => {
             </div>
 
             <SourceBadge source={place.source} sourceUrl={place.sourceUrl} lastVerified={place.lastVerified} />
+          </div>
+
+          {/* Historical context always precedes the visitor description. */}
+          <div className="rounded-2xl border border-amber-200 bg-amber-50/80 dark:border-amber-900/50 dark:bg-amber-950/20 p-5 sm:p-6 space-y-3">
+            <div className="flex items-center gap-2 text-amber-900 dark:text-amber-300">
+              <Calendar className="w-5 h-5" />
+              <h2 className="text-xl font-bold">
+                {language === 'bn' ? 'এই স্থানের ইতিহাস' : 'History of this place'}
+              </h2>
+            </div>
+            <p className="text-sm sm:text-base leading-relaxed text-amber-950/80 dark:text-amber-100/80">
+              {history}
+            </p>
+            <p className="text-[11px] font-semibold text-amber-800/80 dark:text-amber-300/80">
+              {language === 'bn'
+                ? 'ঐতিহাসিক তথ্য: প্রকাশিত সরকারি/বিশ্বকোষীয় সূত্র ও স্থানীয় ঐতিহ্য মিলিয়ে সংকলিত; অনিশ্চিত অংশ আলাদাভাবে উল্লেখ করা হয়েছে।'
+                : 'Historical note: compiled from published official/encyclopedic references and local tradition; uncertain details are labelled.'}
+            </p>
           </div>
 
           {/* Detailed Description */}

@@ -4,6 +4,7 @@ import { MapPin, ArrowRight, Eye, Sparkles } from 'lucide-react';
 import type { TouristPlace } from '../../types';
 import { useLanguage } from '../../context/LanguageContext';
 import { MapLink } from '../common/MapLink';
+import { PLACE_HISTORY } from '../../data/placeHistory';
 
 interface PlaceCardProps {
   place: TouristPlace;
@@ -15,6 +16,7 @@ export const PlaceCard: React.FC<PlaceCardProps> = ({ place }) => {
 
   const title = language === 'bn' ? place.nameBn : place.name;
   const description = language === 'bn' ? place.descriptionBn : place.description;
+  const history = PLACE_HISTORY[place.id]?.[language] ?? '';
   const locationText = language === 'bn' ? place.locationBn : place.location;
   const categoryLabel = language === 'bn' ? place.categoryLabel.bn : place.categoryLabel.en;
 
@@ -64,9 +66,17 @@ export const PlaceCard: React.FC<PlaceCardProps> = ({ place }) => {
               {title}
             </Link>
           </h3>
-          <p className="text-slate-600 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4">
-            {description}
-          </p>
+          <div className="space-y-2 mb-4">
+            <p className="text-[11px] font-bold uppercase tracking-wide text-amber-700">
+              {language === 'bn' ? 'ইতিহাস' : 'History'}
+            </p>
+            <p className="text-slate-600 text-xs sm:text-sm line-clamp-3 leading-relaxed">
+              {history}
+            </p>
+            <p className="text-slate-500 text-xs line-clamp-2 leading-relaxed">
+              {description}
+            </p>
+          </div>
         </div>
 
         {/* Action Buttons */}

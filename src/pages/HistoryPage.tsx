@@ -62,6 +62,14 @@ export const HistoryPage: React.FC = () => {
             <AlertCircle className="w-4 h-4 mt-0.5 shrink-0" />
             <span>{bn ? HISTORY_SOURCE_NOTE.bn : HISTORY_SOURCE_NOTE.en}</span>
           </div>
+          <div className="flex flex-wrap gap-2 text-[11px] font-semibold">
+            <span className="rounded-full bg-emerald-50 px-3 py-1 text-emerald-800 border border-emerald-200">
+              {bn ? 'প্রকাশিত সূত্র-ভিত্তিক তথ্য' : 'Published-source facts'}
+            </span>
+            <span className="rounded-full bg-amber-50 px-3 py-1 text-amber-800 border border-amber-200">
+              {bn ? 'লোকশ্রুতি/মতভেদ আলাদাভাবে চিহ্নিত' : 'Tradition/disputed details labelled'}
+            </span>
+          </div>
         </div>
         <dl className="bg-emerald-50 rounded-3xl p-6 border border-emerald-200 grid grid-cols-2 gap-4 content-start">
           {keyFacts.map(([k, v]) => (

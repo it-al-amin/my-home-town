@@ -5,6 +5,7 @@ import { PLACES_DATA } from '../data/places';
 import { UPAZILAS_DATA } from '../data/upazilas';
 import { PlaceCard } from '../components/cards/PlaceCard';
 import { Breadcrumb } from '../components/common/Breadcrumb';
+import { PLACE_HISTORY } from '../data/placeHistory';
 
 export const PlacesPage: React.FC = () => {
   const { language, t } = useLanguage();
@@ -29,7 +30,9 @@ export const PlacesPage: React.FC = () => {
       place.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
       place.locationBn.includes(searchTerm) ||
       place.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      place.descriptionBn.includes(searchTerm);
+      place.descriptionBn.includes(searchTerm) ||
+      PLACE_HISTORY[place.id]?.en.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      PLACE_HISTORY[place.id]?.bn.includes(searchTerm);
 
     const matchesCategory = selectedCategory === 'all' || place.category === selectedCategory;
     const matchesUpazila = selectedUpazila === 'all' || place.upazilaId === selectedUpazila;
