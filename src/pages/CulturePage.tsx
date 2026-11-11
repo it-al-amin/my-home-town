@@ -38,31 +38,31 @@ export const CulturePage: React.FC = () => {
         {CULTURE_DATA.map((item) => (
           <div
             key={item.id}
-            className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between space-y-4"
+            className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between space-y-4"
           >
             <div className="space-y-3">
-              <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 inline-block">
+              <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 inline-block">
                 {language === 'bn' ? item.categoryLabel.bn : item.categoryLabel.en}
               </span>
 
-              <h3 className="text-2xl font-bold text-slate-900 leading-snug">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100 leading-snug">
                 {language === 'bn' ? item.titleBn : item.title}
               </h3>
 
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 {language === 'bn' ? item.descriptionBn : item.description}
               </p>
 
               {/* Highlights */}
               <div className="pt-2 space-y-1.5">
-                <div className="text-xs font-bold text-slate-700">
+                <div className="text-xs font-bold text-slate-700 dark:text-slate-200">
                   {language === 'bn' ? 'অনন্য বৈশিষ্ট্যসমূহ:' : 'Key Characteristics:'}
                 </div>
                 <div className="flex flex-wrap gap-1.5">
                   {(language === 'bn' ? item.highlightsBn : item.highlights).map((h, i) => (
                     <span
                       key={i}
-                      className="text-xs font-semibold bg-slate-50 text-slate-700 border border-slate-200 px-2.5 py-1 rounded-lg"
+                      className="text-xs font-semibold bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 px-2.5 py-1 rounded-lg"
                     >
                       {h}
                     </span>
@@ -71,7 +71,7 @@ export const CulturePage: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-3 border-t border-slate-100 text-xs text-slate-400">
+            <div className="pt-3 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-400">
               <strong>{language === 'bn' ? 'সংরক্ষণ উৎস:' : 'Heritage Source:'}</strong> {item.source}
             </div>
           </div>

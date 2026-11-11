@@ -25,10 +25,10 @@ export const UpazilaDetailPage: React.FC = () => {
   if (!upazila) {
     return (
       <div className="max-w-7xl mx-auto px-4 py-20 text-center">
-        <h2 className="text-2xl font-bold text-slate-800">
+        <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100">
           {language === 'bn' ? 'উপজেলা পাওয়া যায়নি' : 'Upazila Not Found'}
         </h2>
-        <p className="text-slate-500 mt-2 mb-6">
+        <p className="text-slate-500 dark:text-slate-400 mt-2 mb-6">
           {language === 'bn' ? 'অনুরোধকৃত উপজেলার তথ্য আমাদের ডেটাবেজে নেই।' : 'The requested upazila does not exist in our database.'}
         </p>
         <Link
@@ -176,14 +176,14 @@ export const UpazilaDetailPage: React.FC = () => {
       {/* Rivers & Markets */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Rivers */}
-        <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs space-y-3">
-          <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-xs space-y-3">
+          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
             <Waves className="w-5 h-5 text-emerald-600" />
             <span>{language === 'bn' ? 'প্রবাহিত নদ-নদী ও জলরাশি' : 'Rivers & Waterbodies'}</span>
           </h3>
           <div className="flex flex-wrap gap-2 pt-1">
             {rivers.map((r, i) => (
-              <span key={i} className="px-3 py-1.5 bg-cyan-50 border border-cyan-200 text-cyan-900 rounded-xl text-xs sm:text-sm font-semibold">
+              <span key={i} className="px-3 py-1.5 bg-cyan-50 dark:bg-cyan-900/30 border border-cyan-200 dark:border-cyan-800 text-cyan-900 dark:text-cyan-300 rounded-xl text-xs sm:text-sm font-semibold">
                 {r}
               </span>
             ))}
@@ -191,14 +191,14 @@ export const UpazilaDetailPage: React.FC = () => {
         </div>
 
         {/* Markets */}
-        <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs space-y-3">
-          <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-xs space-y-3">
+          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
             <ShoppingBag className="w-5 h-5 text-emerald-600" />
             <span>{language === 'bn' ? 'ঐতিহ্যবাহী প্রধান হাট ও বাজার' : 'Major Markets & Bazars'}</span>
           </h3>
           <div className="flex flex-wrap gap-2 pt-1">
             {markets.map((m, i) => (
-              <span key={i} className="px-3 py-1.5 bg-amber-50 border border-amber-200 text-amber-900 rounded-xl text-xs sm:text-sm font-semibold">
+              <span key={i} className="px-3 py-1.5 bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 text-amber-900 dark:text-amber-300 rounded-xl text-xs sm:text-sm font-semibold">
                 {m}
               </span>
             ))}
@@ -208,43 +208,43 @@ export const UpazilaDetailPage: React.FC = () => {
 
       {/* Emergency Contacts for Upazila */}
       {upazila.emergencyContacts && (
-        <section className="bg-rose-50/70 rounded-3xl p-6 sm:p-8 border border-rose-200 space-y-4">
+        <section className="bg-rose-50/70 dark:bg-rose-900/30 rounded-3xl p-6 sm:p-8 border border-rose-200 dark:border-rose-800 space-y-4">
           <div className="flex items-center gap-2">
             <ShieldAlert className="w-5 h-5 text-rose-600" />
-            <h3 className="text-xl font-bold text-slate-900">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
               {language === 'bn' ? `${title} উপজেলা জরুরি যোগাযোগ নম্বরসমূহ` : `${title} Emergency & Duty Contacts`}
             </h3>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs sm:text-sm">
             {upazila.emergencyContacts.police && (
-              <div className="bg-white p-4 rounded-xl border border-rose-200 shadow-xs">
-                <span className="text-slate-500 block text-xs font-semibold">{language === 'bn' ? 'থানা ডিউটি অফিসার' : 'Police Thana'}</span>
-                <a href={`tel:${upazila.emergencyContacts.police}`} className="text-base font-bold text-rose-700 hover:underline">
+              <div className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-rose-200 dark:border-rose-800 shadow-xs">
+                <span className="text-slate-500 dark:text-slate-400 block text-xs font-semibold">{language === 'bn' ? 'থানা ডিউটি অফিসার' : 'Police Thana'}</span>
+                <a href={`tel:${upazila.emergencyContacts.police}`} className="text-base font-bold text-rose-700 dark:text-rose-300 hover:underline">
                   {upazila.emergencyContacts.police}
                 </a>
               </div>
             )}
             {upazila.emergencyContacts.fireService && (
-              <div className="bg-white p-4 rounded-xl border border-rose-200 shadow-xs">
-                <span className="text-slate-500 block text-xs font-semibold">{language === 'bn' ? 'ফায়ার সার্ভিস স্টেশন' : 'Fire Service'}</span>
-                <a href={`tel:${upazila.emergencyContacts.fireService}`} className="text-base font-bold text-rose-700 hover:underline">
+              <div className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-rose-200 dark:border-rose-800 shadow-xs">
+                <span className="text-slate-500 dark:text-slate-400 block text-xs font-semibold">{language === 'bn' ? 'ফায়ার সার্ভিস স্টেশন' : 'Fire Service'}</span>
+                <a href={`tel:${upazila.emergencyContacts.fireService}`} className="text-base font-bold text-rose-700 dark:text-rose-300 hover:underline">
                   {upazila.emergencyContacts.fireService}
                 </a>
               </div>
             )}
             {upazila.emergencyContacts.healthComplex && (
-              <div className="bg-white p-4 rounded-xl border border-rose-200 shadow-xs">
-                <span className="text-slate-500 block text-xs font-semibold">{language === 'bn' ? 'উপজেলা স্বাস্থ্য কমপ্লেক্স' : 'Health Complex'}</span>
-                <a href={`tel:${upazila.emergencyContacts.healthComplex}`} className="text-base font-bold text-rose-700 hover:underline">
+              <div className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-rose-200 dark:border-rose-800 shadow-xs">
+                <span className="text-slate-500 dark:text-slate-400 block text-xs font-semibold">{language === 'bn' ? 'উপজেলা স্বাস্থ্য কমপ্লেক্স' : 'Health Complex'}</span>
+                <a href={`tel:${upazila.emergencyContacts.healthComplex}`} className="text-base font-bold text-rose-700 dark:text-rose-300 hover:underline">
                   {upazila.emergencyContacts.healthComplex}
                 </a>
               </div>
             )}
             {upazila.emergencyContacts.uno && (
-              <div className="bg-white p-4 rounded-xl border border-rose-200 shadow-xs">
-                <span className="text-slate-500 block text-xs font-semibold">{language === 'bn' ? 'উপজেলা নির্বাহী অফিসার (ইউএনও)' : 'UNO Office'}</span>
-                <a href={`tel:${upazila.emergencyContacts.uno}`} className="text-base font-bold text-rose-700 hover:underline">
+              <div className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-rose-200 dark:border-rose-800 shadow-xs">
+                <span className="text-slate-500 dark:text-slate-400 block text-xs font-semibold">{language === 'bn' ? 'উপজেলা নির্বাহী অফিসার (ইউএনও)' : 'UNO Office'}</span>
+                <a href={`tel:${upazila.emergencyContacts.uno}`} className="text-base font-bold text-rose-700 dark:text-rose-300 hover:underline">
                   {upazila.emergencyContacts.uno}
                 </a>
               </div>
@@ -284,13 +284,13 @@ export const UpazilaDetailPage: React.FC = () => {
         </div>
 
       {/* Data Verification Footer */}
-      <div className="pt-4 border-t border-slate-200 flex items-center justify-between flex-wrap gap-2 text-xs">
+      <div className="pt-4 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between flex-wrap gap-2 text-xs">
         <SourceBadge
           source={upazila.source}
           sourceUrl={upazila.sourceUrl}
           lastVerified={upazila.lastVerified}
         />
-        <Link to="/upazilas" className="text-emerald-700 font-bold hover:underline">
+        <Link to="/upazilas" className="text-emerald-700 dark:text-emerald-300 font-bold hover:underline">
           {language === 'bn' ? '← সকল উপজেলায় ফিরে যান' : '← Back to all upazilas'}
         </Link>
       </div>

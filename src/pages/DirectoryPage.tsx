@@ -231,7 +231,7 @@ export const DirectoryPage: React.FC = () => {
       </div>
 
       {/* Search Input and Filters Bar */}
-      <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs space-y-4">
+      <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs space-y-4">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {/* Main Search Input */}
           <div className="relative sm:col-span-2">
@@ -244,7 +244,7 @@ export const DirectoryPage: React.FC = () => {
                 setSearchParams(e.target.value ? { q: e.target.value } : {});
               }}
               placeholder={language === 'bn' ? 'উদাহরণ: দুর্গাপুর, বিরিশিরি, হাসপাতাল, পাসপোর্ট, নির্মলেন্দু গুণ...' : 'e.g. Durgapur, Birishiri, Hospital, Passport, Nirmalendu Goon...'}
-              className="w-full pl-10 pr-4 py-3 text-sm sm:text-base bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-hidden focus:border-emerald-500 transition-colors"
+              className="w-full pl-10 pr-4 py-3 text-sm sm:text-base bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:bg-white focus:outline-hidden focus:border-emerald-500 transition-colors"
             />
           </div>
 
@@ -253,7 +253,7 @@ export const DirectoryPage: React.FC = () => {
             <select
               value={selectedUpazila}
               onChange={(e) => setSelectedUpazila(e.target.value)}
-              className="w-full py-3 px-3 text-xs sm:text-sm font-semibold bg-slate-50 border border-slate-200 rounded-xl text-slate-700 focus:outline-hidden focus:border-emerald-500"
+              className="w-full py-3 px-3 text-xs sm:text-sm font-semibold bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-700 dark:text-slate-200 focus:outline-hidden focus:border-emerald-500"
             >
               <option value="all">{language === 'bn' ? 'সকল উপজেলা (১০টি)' : 'All Upazilas (10)'}</option>
               {UPAZILAS_DATA.map((u) => (
@@ -266,7 +266,7 @@ export const DirectoryPage: React.FC = () => {
         </div>
 
         {/* Category Chips */}
-        <div className="flex items-center gap-1.5 flex-wrap pt-2 border-t border-slate-100 text-xs">
+        <div className="flex items-center gap-1.5 flex-wrap pt-2 border-t border-slate-100 dark:border-slate-800 text-xs">
           {categories.map((c) => (
             <button
               key={c.id}
@@ -275,7 +275,7 @@ export const DirectoryPage: React.FC = () => {
               className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                 selectedCategory === c.id
                   ? 'bg-emerald-600 text-white shadow-xs'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
               }`}
             >
               {c.label}
@@ -285,7 +285,7 @@ export const DirectoryPage: React.FC = () => {
       </div>
 
       {/* Results Header Count */}
-      <div className="flex items-center justify-between text-xs sm:text-sm text-slate-500 font-medium">
+      <div className="flex items-center justify-between text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">
         <span>
           {language === 'bn'
             ? `মোট ${filteredResults.length}টি ফলাফল পাওয়া গেছে`
@@ -298,7 +298,7 @@ export const DirectoryPage: React.FC = () => {
               setSearchQuery('');
               setSearchParams({});
             }}
-            className="text-emerald-700 hover:underline font-semibold"
+            className="text-emerald-700 dark:text-emerald-300 hover:underline font-semibold"
           >
             {language === 'bn' ? 'অনুসন্ধান মুছুন' : 'Clear search'}
           </button>
@@ -317,28 +317,28 @@ export const DirectoryPage: React.FC = () => {
             <Link
               key={item.id}
               to={item.url}
-              className="group bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-emerald-500/50 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between space-y-3"
+              className="group bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200/90 dark:border-slate-700/90 hover:border-emerald-500/50 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between space-y-3"
             >
               <div className="space-y-2">
                 <div className="flex items-center justify-between gap-2">
-                  <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 text-slate-700 group-hover:bg-emerald-50 group-hover:text-emerald-800 transition-colors">
+                  <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 group-hover:bg-emerald-50 group-hover:text-emerald-800 transition-colors">
                     {badgeText}
                   </span>
-                  <div className="w-8 h-8 rounded-lg bg-slate-50 text-slate-500 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-slate-50 dark:bg-slate-900 text-slate-500 dark:text-slate-400 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center transition-colors">
                     <Icon className="w-4 h-4" />
                   </div>
                 </div>
 
-                <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors leading-snug">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-700 transition-colors leading-snug">
                   {title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-slate-600 line-clamp-2 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 line-clamp-2 leading-relaxed">
                   {desc}
                 </p>
               </div>
 
-              <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-emerald-700">
+              <div className="pt-2 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-bold text-emerald-700 dark:text-emerald-300">
                 <span>{language === 'bn' ? 'বিস্তারিত দেখুন' : 'View Details'}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>
@@ -348,12 +348,12 @@ export const DirectoryPage: React.FC = () => {
       </div>
 
       {filteredResults.length === 0 && (
-        <div className="text-center py-20 bg-white rounded-3xl border border-slate-200">
+        <div className="text-center py-20 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700">
           <Search className="w-12 h-12 text-slate-300 mx-auto mb-3" />
-          <h3 className="text-lg font-bold text-slate-800">
+          <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100">
             {language === 'bn' ? 'কোনো ফলাফল পাওয়া যায়নি' : 'No Results Found'}
           </h3>
-          <p className="text-sm text-slate-500 mt-1 max-w-md mx-auto">
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1 max-w-md mx-auto">
             {language === 'bn'
               ? `"${searchQuery}" এর সাথে সম্পর্কিত কোনো তথ্য খুঁজে পাওয়া যায়নি। বানান সংশোধন বা ফিল্টার রিসেট করে চেষ্টা করুন।`
               : `No matches found for "${searchQuery}". Please check your search query or reset filters.`}

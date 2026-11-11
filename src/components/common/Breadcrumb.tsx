@@ -18,12 +18,12 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = '' })
   const { language } = useLanguage();
 
   return (
-    <nav aria-label="Breadcrumb" className={`py-3 text-xs sm:text-sm text-slate-500 ${className}`}>
+    <nav aria-label="Breadcrumb" className={`py-3 text-xs sm:text-sm text-slate-500 dark:text-slate-400 ${className}`}>
       <ol className="flex flex-wrap items-center gap-1.5 sm:gap-2">
         <li className="inline-flex items-center">
           <Link
             to="/"
-            className="inline-flex items-center gap-1 text-slate-500 hover:text-emerald-700 transition-colors"
+            className="inline-flex items-center gap-1 text-slate-500 dark:text-slate-400 hover:text-emerald-700 transition-colors"
           >
             <Home className="w-3.5 h-3.5" />
             <span>{language === 'bn' ? 'হোম' : 'Home'}</span>
@@ -38,13 +38,13 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = '' })
             <li key={index} className="inline-flex items-center gap-1.5 sm:gap-2">
               <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
               {isLast || !item.href ? (
-                <span className="font-semibold text-slate-800 line-clamp-1" aria-current="page">
+                <span className="font-semibold text-slate-800 dark:text-slate-100 line-clamp-1" aria-current="page">
                   {label}
                 </span>
               ) : (
                 <Link
                   to={item.href}
-                  className="text-slate-500 hover:text-emerald-700 transition-colors line-clamp-1"
+                  className="text-slate-500 dark:text-slate-400 hover:text-emerald-700 transition-colors line-clamp-1"
                 >
                   {label}
                 </Link>

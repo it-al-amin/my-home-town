@@ -18,7 +18,7 @@ export const UpazilaHistoryPage: React.FC = () => {
   if (!upazila) {
     return (
       <div className="max-w-7xl mx-auto px-4 py-20 text-center space-y-4">
-        <h2 className="text-2xl font-bold text-slate-800">{bn ? 'উপজেলা পাওয়া যায়নি' : 'Upazila Not Found'}</h2>
+        <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100">{bn ? 'উপজেলা পাওয়া যায়নি' : 'Upazila Not Found'}</h2>
         <Link to="/history" className="inline-block px-5 py-2.5 bg-emerald-600 text-white rounded-xl font-bold text-sm">
           {bn ? 'ইতিহাস পাতায় ফিরুন' : 'Back to History'}
         </Link>
@@ -53,38 +53,38 @@ export const UpazilaHistoryPage: React.FC = () => {
       </header>
 
       <section className="grid lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 space-y-4">
-          <h2 className="text-xl font-bold text-slate-900">{bn ? 'ঐতিহাসিক পটভূমি' : 'Historical Background'}</h2>
-          {note && <p className="text-slate-700 leading-relaxed">{bn ? note.bn : note.en}</p>}
-          <p className="text-slate-600 leading-relaxed">{bn ? upazila.descriptionBn : upazila.description}</p>
+        <div className="lg:col-span-2 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 space-y-4">
+          <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">{bn ? 'ঐতিহাসিক পটভূমি' : 'Historical Background'}</h2>
+          {note && <p className="text-slate-700 dark:text-slate-200 leading-relaxed">{bn ? note.bn : note.en}</p>}
+          <p className="text-slate-600 dark:text-slate-300 leading-relaxed">{bn ? upazila.descriptionBn : upazila.description}</p>
           <SourceBadge source={upazila.source} sourceUrl={upazila.sourceUrl} lastVerified={upazila.lastVerified} />
         </div>
-        <aside className="bg-emerald-50 rounded-3xl p-6 border border-emerald-200 space-y-4 text-sm">
+        <aside className="bg-emerald-50 dark:bg-emerald-900/30 rounded-3xl p-6 border border-emerald-200 dark:border-emerald-800 space-y-4 text-sm">
           <div>
-            <h3 className="font-bold text-emerald-900 flex items-center gap-1.5"><Waves className="w-4 h-4" />{bn ? 'নদী' : 'Rivers'}</h3>
-            <p className="text-slate-700">{(bn ? upazila.riversBn : upazila.rivers).join(', ')}</p>
+            <h3 className="font-bold text-emerald-900 dark:text-emerald-300 flex items-center gap-1.5"><Waves className="w-4 h-4" />{bn ? 'নদী' : 'Rivers'}</h3>
+            <p className="text-slate-700 dark:text-slate-200">{(bn ? upazila.riversBn : upazila.rivers).join(', ')}</p>
           </div>
           <div>
-            <h3 className="font-bold text-emerald-900 flex items-center gap-1.5"><ShoppingBag className="w-4 h-4" />{bn ? 'প্রধান বাজার' : 'Major markets'}</h3>
-            <p className="text-slate-700">{(bn ? upazila.majorMarketsBn : upazila.majorMarkets).join(', ')}</p>
+            <h3 className="font-bold text-emerald-900 dark:text-emerald-300 flex items-center gap-1.5"><ShoppingBag className="w-4 h-4" />{bn ? 'প্রধান বাজার' : 'Major markets'}</h3>
+            <p className="text-slate-700 dark:text-slate-200">{(bn ? upazila.majorMarketsBn : upazila.majorMarkets).join(', ')}</p>
           </div>
-          <Link to={`/upazilas/${upazila.slug}`} className="inline-flex items-center gap-1.5 font-semibold text-emerald-700 hover:underline">
+          <Link to={`/upazilas/${upazila.slug}`} className="inline-flex items-center gap-1.5 font-semibold text-emerald-700 dark:text-emerald-300 hover:underline">
             <MapPin className="w-4 h-4" />{bn ? 'উপজেলার পূর্ণ তথ্য' : 'Full upazila profile'}
           </Link>
         </aside>
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-xl font-bold text-slate-900">{bn ? `ইউনিয়ন মানচিত্র (${fmt(unions.length)}টি)` : `Union Map (${unions.length})`}</h2>
-        <p className="text-xs text-slate-500">
+        <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">{bn ? `ইউনিয়ন মানচিত্র (${fmt(unions.length)}টি)` : `Union Map (${unions.length})`}</h2>
+        <p className="text-xs text-slate-500 dark:text-slate-400">
           {bn ? 'দ্রষ্টব্য: ইউনিয়নের অবস্থান আনুমানিক, জিপিএস জরিপভিত্তিক নয়।' : 'Note: union positions are approximate placements, not surveyed GPS points.'}
         </p>
         <UpazilaUnionMap upazila={upazila} height="500px" />
       </section>
 
       <nav className="flex justify-between gap-4 text-sm font-semibold">
-        {prev ? <Link to={`/history/${prev.slug}`} className="inline-flex items-center gap-1.5 text-emerald-700 hover:underline"><ArrowLeft className="w-4 h-4" />{bn ? prev.nameBn : prev.name}</Link> : <span />}
-        {next ? <Link to={`/history/${next.slug}`} className="text-emerald-700 hover:underline">{bn ? next.nameBn : next.name} →</Link> : <span />}
+        {prev ? <Link to={`/history/${prev.slug}`} className="inline-flex items-center gap-1.5 text-emerald-700 dark:text-emerald-300 hover:underline"><ArrowLeft className="w-4 h-4" />{bn ? prev.nameBn : prev.name}</Link> : <span />}
+        {next ? <Link to={`/history/${next.slug}`} className="text-emerald-700 dark:text-emerald-300 hover:underline">{bn ? next.nameBn : next.name} →</Link> : <span />}
       </nav>
     </div>
   );

@@ -47,15 +47,15 @@ export const MapExplorerPage: React.FC = () => {
       </div>
 
       {/* Map Mode Selector Tabs */}
-      <div className="flex items-center justify-between border-b border-slate-200 pb-3 flex-wrap gap-3">
-        <div className="flex items-center gap-2 p-1 bg-slate-100 rounded-xl">
+      <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-700 pb-3 flex-wrap gap-3">
+        <div className="flex items-center gap-2 p-1 bg-slate-100 dark:bg-slate-800 rounded-xl">
           <button
             type="button"
             onClick={() => setActiveTab('vector')}
             className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all cursor-pointer ${
               activeTab === 'vector'
-                ? 'bg-white text-emerald-800 shadow-sm'
-                : 'text-slate-600 hover:text-slate-900'
+                ? 'bg-white dark:bg-slate-900 text-emerald-800 dark:text-emerald-300 shadow-sm'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900'
             }`}
           >
             <Layers className="w-4 h-4 text-emerald-600" />
@@ -67,8 +67,8 @@ export const MapExplorerPage: React.FC = () => {
             onClick={() => setActiveTab('gis')}
             className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all cursor-pointer ${
               activeTab === 'gis'
-                ? 'bg-white text-emerald-800 shadow-sm'
-                : 'text-slate-600 hover:text-slate-900'
+                ? 'bg-white dark:bg-slate-900 text-emerald-800 dark:text-emerald-300 shadow-sm'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900'
             }`}
           >
             <Globe className="w-4 h-4 text-blue-600" />
@@ -80,8 +80,8 @@ export const MapExplorerPage: React.FC = () => {
             onClick={() => setActiveTab('stats')}
             className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all cursor-pointer ${
               activeTab === 'stats'
-                ? 'bg-white text-emerald-800 shadow-sm'
-                : 'text-slate-600 hover:text-slate-900'
+                ? 'bg-white dark:bg-slate-900 text-emerald-800 dark:text-emerald-300 shadow-sm'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900'
             }`}
           >
             <BarChart3 className="w-4 h-4 text-purple-600" />
@@ -89,7 +89,7 @@ export const MapExplorerPage: React.FC = () => {
           </button>
         </div>
 
-        <div className="text-xs text-slate-500 font-medium">
+        <div className="text-xs text-slate-500 dark:text-slate-400 font-medium">
           {language === 'bn' ? '১০টি উপজেলা • ৮৬টি ইউনিয়ন • ৫টি সংসদীয় আসন' : '10 Upazilas • 86 Unions • 5 Seats'}
         </div>
       </div>
@@ -240,22 +240,22 @@ export const MapExplorerPage: React.FC = () => {
           </div>
 
           {/* Quick Explanation of Borders */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs">
-            <div className="p-3 bg-emerald-50 rounded-xl border border-emerald-100">
-              <strong className="text-emerald-900 block font-bold mb-1">↑ উত্তর সীমানা (North)</strong>
-              <p className="text-emerald-800">ভারতের মেঘালয় রাজ্যের গারো পাহাড় (দুর্গাপুর ও কলমাকান্দা সংলগ্ন)</p>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-2xs">
+            <div className="p-3 bg-emerald-50 dark:bg-emerald-900/30 rounded-xl border border-emerald-100 dark:border-emerald-800">
+              <strong className="text-emerald-900 dark:text-emerald-300 block font-bold mb-1">↑ উত্তর সীমানা (North)</strong>
+              <p className="text-emerald-800 dark:text-emerald-300">ভারতের মেঘালয় রাজ্যের গারো পাহাড় (দুর্গাপুর ও কলমাকান্দা সংলগ্ন)</p>
             </div>
-            <div className="p-3 bg-blue-50 rounded-xl border border-blue-100">
-              <strong className="text-blue-900 block font-bold mb-1">→ পূর্ব সীমানা (East)</strong>
-              <p className="text-blue-800">সুনামগঞ্জ জেলা (বিশাল হাওরাঞ্চল, বাউলাই ও সুরমা অববাহিকা)</p>
+            <div className="p-3 bg-blue-50 dark:bg-blue-900/30 rounded-xl border border-blue-100 dark:border-blue-800">
+              <strong className="text-blue-900 dark:text-blue-300 block font-bold mb-1">→ পূর্ব সীমানা (East)</strong>
+              <p className="text-blue-800 dark:text-blue-300">সুনামগঞ্জ জেলা (বিশাল হাওরাঞ্চল, বাউলাই ও সুরমা অববাহিকা)</p>
             </div>
-            <div className="p-3 bg-amber-50 rounded-xl border border-amber-100">
-              <strong className="text-amber-900 block font-bold mb-1">↓ দক্ষিণ সীমানা (South)</strong>
-              <p className="text-amber-800">কিশোরগঞ্জ জেলা (তাড়াইল, ইটনা ও হাওরবেষ্টিত নিম্নভূমি)</p>
+            <div className="p-3 bg-amber-50 dark:bg-amber-900/30 rounded-xl border border-amber-100 dark:border-amber-800">
+              <strong className="text-amber-900 dark:text-amber-300 block font-bold mb-1">↓ দক্ষিণ সীমানা (South)</strong>
+              <p className="text-amber-800 dark:text-amber-300">কিশোরগঞ্জ জেলা (তাড়াইল, ইটনা ও হাওরবেষ্টিত নিম্নভূমি)</p>
             </div>
-            <div className="p-3 bg-teal-50 rounded-xl border border-teal-100">
-              <strong className="text-teal-900 block font-bold mb-1">← পশ্চিম সীমানা (West)</strong>
-              <p className="text-teal-800">ময়মনসিংহ জেলা (ধোবাউড়া, গৌরীপুর ও ঈশ্বরগঞ্জ উপজেলা)</p>
+            <div className="p-3 bg-teal-50 dark:bg-teal-900/30 rounded-xl border border-teal-100 dark:border-teal-800">
+              <strong className="text-teal-900 dark:text-teal-300 block font-bold mb-1">← পশ্চিম সীমানা (West)</strong>
+              <p className="text-teal-800 dark:text-teal-300">ময়মনসিংহ জেলা (ধোবাউড়া, গৌরীপুর ও ঈশ্বরগঞ্জ উপজেলা)</p>
             </div>
           </div>
         </div>
@@ -265,7 +265,7 @@ export const MapExplorerPage: React.FC = () => {
       {activeTab === 'gis' && (
         <div className="space-y-4">
           <LeafletDistrictMap height="680px" />
-          <div className="flex items-center gap-2 text-xs text-slate-500 bg-white p-3.5 rounded-xl border border-slate-200">
+          <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900 p-3.5 rounded-xl border border-slate-200 dark:border-slate-700">
             <Info className="w-4 h-4 text-emerald-600 shrink-0" />
             <span>
               {language === 'bn'
@@ -278,21 +278,21 @@ export const MapExplorerPage: React.FC = () => {
 
       {/* Tab 3: Comparative Upazila Demographic Matrix (BBS 2022 Census) */}
       {activeTab === 'stats' && (
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-          <div className="p-5 border-b border-slate-200 bg-slate-50 flex items-center justify-between flex-wrap gap-2">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden">
+          <div className="p-5 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 flex items-center justify-between flex-wrap gap-2">
             <div>
-              <h3 className="text-lg font-bold text-slate-900">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                 {language === 'bn' ? '১০টি উপজেলার পরিসংখ্যান ও প্রশাসনিক তুলনা' : 'All 10 Upazilas Demographic Comparison'}
               </h3>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-slate-500 dark:text-slate-400">
                 {language === 'bn' ? 'বাংলাদেশ পরিসংখ্যান ব্যুরো (BBS) ২০২২ জনশুমারি অনুযায়ী।' : 'Source: Bangladesh Bureau of Statistics (BBS) 2022 Census & District Administration.'}
               </p>
             </div>
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full text-xs text-left text-slate-700 divide-y divide-slate-200">
-              <thead className="bg-slate-100 text-slate-700 font-bold uppercase text-[11px]">
+            <table className="w-full text-xs text-left text-slate-700 dark:text-slate-200 divide-y divide-slate-200 dark:divide-slate-700">
+              <thead className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-bold uppercase text-[11px]">
                 <tr>
                   <th className="py-3 px-4">{language === 'bn' ? 'উপজেলার নাম' : 'Upazila'}</th>
                   <th className="py-3 px-4">{language === 'bn' ? 'সদর দপ্তর' : 'HQ'}</th>
@@ -303,25 +303,25 @@ export const MapExplorerPage: React.FC = () => {
                   <th className="py-3 px-4 text-center">{language === 'bn' ? 'অ্যাকশন' : 'Action'}</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
+              <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
                 {UPAZILAS_DATA.map((upazila) => (
-                  <tr key={upazila.id} className="hover:bg-slate-50/80 transition-colors">
-                    <td className="py-3 px-4 font-bold text-slate-900">
+                  <tr key={upazila.id} className="hover:bg-slate-50/80 dark:hover:bg-slate-800/80 transition-colors">
+                    <td className="py-3 px-4 font-bold text-slate-900 dark:text-slate-100">
                       <Link to={`/upazilas/${upazila.slug}`} className="hover:text-emerald-700 transition-colors">
                         {language === 'bn' ? upazila.nameBn : upazila.name}
                       </Link>
                     </td>
-                    <td className="py-3 px-4 text-slate-600">
+                    <td className="py-3 px-4 text-slate-600 dark:text-slate-300">
                       {language === 'bn' ? upazila.headquartersBn : upazila.headquarters}
                     </td>
                     <td className="py-3 px-4 text-right font-mono font-medium">
                       {upazila.areaKm2}
                     </td>
-                    <td className="py-3 px-4 text-right font-mono font-bold text-slate-900">
+                    <td className="py-3 px-4 text-right font-mono font-bold text-slate-900 dark:text-slate-100">
                       {language === 'bn' ? upazila.population.toLocaleString('bn-BD') : upazila.population.toLocaleString()}
                     </td>
                     <td className="py-3 px-4 text-center">
-                      <span className="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 font-bold">
+                      <span className="px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 font-bold">
                         {upazila.unionsCount}
                       </span>
                     </td>
@@ -331,7 +331,7 @@ export const MapExplorerPage: React.FC = () => {
                     <td className="py-3 px-4 text-center">
                       <Link
                         to={`/upazilas/${upazila.slug}`}
-                        className="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition-colors"
+                        className="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-100 transition-colors"
                       >
                         {language === 'bn' ? 'বিস্তারিত' : 'View'}
                       </Link>

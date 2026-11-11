@@ -66,7 +66,7 @@ export const PlacesPage: React.FC = () => {
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-xs space-y-4">
+      <div className="bg-white dark:bg-slate-900 p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs space-y-4">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {/* Search Input */}
           <div className="relative sm:col-span-1">
@@ -76,7 +76,7 @@ export const PlacesPage: React.FC = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder={language === 'bn' ? 'স্থানের নাম বা বিবরণ খুঁজুন...' : 'Search places by name...'}
-              className="w-full pl-9 pr-4 py-2 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-hidden focus:border-blue-500 transition-colors"
+              className="w-full pl-9 pr-4 py-2 text-sm bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:bg-white focus:outline-hidden focus:border-blue-500 transition-colors"
             />
           </div>
 
@@ -85,7 +85,7 @@ export const PlacesPage: React.FC = () => {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="w-full text-xs sm:text-sm font-semibold bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-700 focus:outline-hidden focus:border-blue-500"
+              className="w-full text-xs sm:text-sm font-semibold bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-slate-700 dark:text-slate-200 focus:outline-hidden focus:border-blue-500"
             >
               {categories.map((c) => (
                 <option key={c.id} value={c.id}>{c.label}</option>
@@ -98,7 +98,7 @@ export const PlacesPage: React.FC = () => {
             <select
               value={selectedUpazila}
               onChange={(e) => setSelectedUpazila(e.target.value)}
-              className="w-full text-xs sm:text-sm font-semibold bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-700 focus:outline-hidden focus:border-blue-500"
+              className="w-full text-xs sm:text-sm font-semibold bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-slate-700 dark:text-slate-200 focus:outline-hidden focus:border-blue-500"
             >
               <option value="all">{language === 'bn' ? 'সকল উপজেলা (১০টি)' : 'All Upazilas (10)'}</option>
               {UPAZILAS_DATA.map((u) => (
@@ -111,7 +111,7 @@ export const PlacesPage: React.FC = () => {
         </div>
 
         {/* Quick Category Chips for quick click */}
-        <div className="flex items-center gap-1.5 flex-wrap pt-1 border-t border-slate-100 text-xs">
+        <div className="flex items-center gap-1.5 flex-wrap pt-1 border-t border-slate-100 dark:border-slate-800 text-xs">
           <span className="text-slate-400 font-semibold mr-1 flex items-center gap-1">
             <Filter className="w-3.5 h-3.5" />
             <span>{language === 'bn' ? 'ক্যাটেগরি:' : 'Filter:'}</span>
@@ -124,7 +124,7 @@ export const PlacesPage: React.FC = () => {
               className={`px-3 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                 selectedCategory === c.id
                   ? 'bg-blue-600 text-white shadow-xs'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
               }`}
             >
               {c.label}
@@ -141,12 +141,12 @@ export const PlacesPage: React.FC = () => {
       </div>
 
       {filteredPlaces.length === 0 && (
-        <div className="text-center py-16 bg-white rounded-2xl border border-slate-200">
+        <div className="text-center py-16 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700">
           <Compass className="w-12 h-12 text-slate-300 mx-auto mb-3" />
-          <h3 className="text-lg font-bold text-slate-800">
+          <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100">
             {language === 'bn' ? 'কোনো দর্শনীয় স্থান পাওয়া যায়নি' : 'No Places Found'}
           </h3>
-          <p className="text-sm text-slate-500 mt-1">
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
             {language === 'bn' ? 'ফিল্টার পরিবর্তন করে আবার চেষ্টা করুন।' : 'Try resetting your category or search filter.'}
           </p>
           <button

@@ -106,7 +106,7 @@ export const HomePage: React.FC = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder={language === 'bn' ? 'দর্শনীয় স্থান, স্কুল, কলেজ, বালিশ মিষ্টি বা উপজেলা খুঁজুন...' : 'Search tourist spots, schools, colleges, food, or upazilas...'}
-                  className="w-full py-4 pl-4 pr-32 text-sm sm:text-base text-slate-900 bg-transparent placeholder-slate-500 font-medium focus:outline-hidden"
+                  className="w-full py-4 pl-4 pr-32 text-sm sm:text-base text-slate-900 dark:text-slate-100 bg-transparent placeholder-slate-500 font-medium focus:outline-hidden"
                 />
                 <button
                   type="submit"
@@ -319,7 +319,7 @@ export const HomePage: React.FC = () => {
         <div className="bg-slate-100 dark:bg-slate-900/60 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-4">
             <div>
-              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+              <span className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                 {language === 'bn' ? 'নাগরিক সেবা ও তথ্যবাতায়ন' : 'Citizen Charter & Links'}
               </span>
               <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 mt-1">

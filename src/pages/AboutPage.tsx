@@ -58,7 +58,7 @@ export const AboutPage: React.FC = () => {
             subtitle={language === 'bn' ? 'পাহাড় ও হাওরের অপূর্ব সঙ্গমস্থল' : 'The confluence of Himalayan foothills and deep haor wetlands'}
           />
 
-          <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed space-y-4 text-sm sm:text-base">
+          <div className="prose prose-slate max-w-none text-slate-700 dark:text-slate-200 leading-relaxed space-y-4 text-sm sm:text-base">
             <p>
               {language === 'bn'
                 ? 'নেত্রকোণা জেলা বাংলাদেশের উত্তর-পূর্বাঞ্চলে অবস্থিত এক অনন্য ভৌগোলিক ভূখণ্ড। এর উত্তরে ভারতের মেঘালয় রাজ্যের মনোরম গারো পাহাড়, দক্ষিণে কিশোরগঞ্জ জেলা, পূর্বে সুনামগঞ্জ জেলার সুবিশাল হাওরাঞ্চল এবং পশ্চিমে ঐতিহ্যবাহী ময়মনসিংহ জেলা।'
@@ -74,7 +74,7 @@ export const AboutPage: React.FC = () => {
           {/* Border Details Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
             {DISTRICT_DATA.borderDistricts.map((b, idx) => (
-              <div key={idx} className="p-3.5 bg-slate-50 rounded-xl border border-slate-200 text-xs sm:text-sm font-medium text-slate-800 flex items-center gap-2">
+              <div key={idx} className="p-3.5 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 text-xs sm:text-sm font-medium text-slate-800 dark:text-slate-100 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-600 shrink-0"></span>
                 <span>{language === 'bn' ? b.bn : b.en}</span>
               </div>
@@ -83,51 +83,51 @@ export const AboutPage: React.FC = () => {
         </div>
 
         {/* Quick Facts Sidebar */}
-        <div id="stats" className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs space-y-4 scroll-mt-28">
-          <h3 className="text-base font-bold text-slate-900 border-b border-slate-100 pb-3 flex items-center gap-2">
+        <div id="stats" className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-xs space-y-4 scroll-mt-28">
+          <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 border-b border-slate-100 dark:border-slate-800 pb-3 flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-emerald-600" />
             <span>{language === 'bn' ? 'প্রশাসনিক সারসংক্ষেপ' : 'Administrative Summary'}</span>
           </h3>
 
           <div className="space-y-3 text-xs sm:text-sm">
-            <div className="flex justify-between py-1.5 border-b border-slate-100">
-              <span className="text-slate-500">{language === 'bn' ? 'জেলা প্রতিষ্ঠা' : 'Established'}</span>
-              <strong className="text-slate-800">{DISTRICT_DATA.established} (১৭ জানুয়ারি)</strong>
+            <div className="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800">
+              <span className="text-slate-500 dark:text-slate-400">{language === 'bn' ? 'জেলা প্রতিষ্ঠা' : 'Established'}</span>
+              <strong className="text-slate-800 dark:text-slate-100">{DISTRICT_DATA.established} (১৭ জানুয়ারি)</strong>
             </div>
-            <div className="flex justify-between py-1.5 border-b border-slate-100">
-              <span className="text-slate-500">{language === 'bn' ? 'মোট আয়তন' : 'Total Area'}</span>
-              <strong className="text-slate-800">{DISTRICT_DATA.areaKm2} sq km</strong>
+            <div className="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800">
+              <span className="text-slate-500 dark:text-slate-400">{language === 'bn' ? 'মোট আয়তন' : 'Total Area'}</span>
+              <strong className="text-slate-800 dark:text-slate-100">{DISTRICT_DATA.areaKm2} sq km</strong>
             </div>
-            <div className="flex justify-between py-1.5 border-b border-slate-100">
-              <span className="text-slate-500">{language === 'bn' ? 'জনসংখ্যা (২০২২)' : 'Population (2022)'}</span>
-              <strong className="text-slate-800">{DISTRICT_DATA.population.toLocaleString()}</strong>
+            <div className="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800">
+              <span className="text-slate-500 dark:text-slate-400">{language === 'bn' ? 'জনসংখ্যা (২০২২)' : 'Population (2022)'}</span>
+              <strong className="text-slate-800 dark:text-slate-100">{DISTRICT_DATA.population.toLocaleString()}</strong>
             </div>
-            <div className="flex justify-between py-1.5 border-b border-slate-100">
-              <span className="text-slate-500">{language === 'bn' ? 'জনঘনত্ব' : 'Density'}</span>
-              <strong className="text-slate-800">{DISTRICT_DATA.populationDensity} / sq km</strong>
+            <div className="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800">
+              <span className="text-slate-500 dark:text-slate-400">{language === 'bn' ? 'জনঘনত্ব' : 'Density'}</span>
+              <strong className="text-slate-800 dark:text-slate-100">{DISTRICT_DATA.populationDensity} / sq km</strong>
             </div>
-            <div className="flex justify-between py-1.5 border-b border-slate-100">
-              <span className="text-slate-500">{language === 'bn' ? 'উপজেলা' : 'Upazilas'}</span>
-              <strong className="text-slate-800">{DISTRICT_DATA.upazilasCount}টি</strong>
+            <div className="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800">
+              <span className="text-slate-500 dark:text-slate-400">{language === 'bn' ? 'উপজেলা' : 'Upazilas'}</span>
+              <strong className="text-slate-800 dark:text-slate-100">{DISTRICT_DATA.upazilasCount}টি</strong>
             </div>
-            <div className="flex justify-between py-1.5 border-b border-slate-100">
-              <span className="text-slate-500">{language === 'bn' ? 'ইউনিয়ন' : 'Unions'}</span>
-              <strong className="text-slate-800">{DISTRICT_DATA.unionsCount}টি</strong>
+            <div className="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800">
+              <span className="text-slate-500 dark:text-slate-400">{language === 'bn' ? 'ইউনিয়ন' : 'Unions'}</span>
+              <strong className="text-slate-800 dark:text-slate-100">{DISTRICT_DATA.unionsCount}টি</strong>
             </div>
-            <div className="flex justify-between py-1.5 border-b border-slate-100">
-              <span className="text-slate-500">{language === 'bn' ? 'সংসদীয় আসন' : 'Parliament Seats'}</span>
-              <strong className="text-slate-800">{DISTRICT_DATA.parliamentSeatsCount}টি (১৫৭ - ১৬১)</strong>
+            <div className="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800">
+              <span className="text-slate-500 dark:text-slate-400">{language === 'bn' ? 'সংসদীয় আসন' : 'Parliament Seats'}</span>
+              <strong className="text-slate-800 dark:text-slate-100">{DISTRICT_DATA.parliamentSeatsCount}টি (১৫৭ - ১৬১)</strong>
             </div>
             <div className="flex justify-between py-1.5">
-              <span className="text-slate-500">{language === 'bn' ? 'পোস্ট কোড' : 'Postal Code'}</span>
-              <strong className="text-slate-800">{DISTRICT_DATA.postalCode}</strong>
+              <span className="text-slate-500 dark:text-slate-400">{language === 'bn' ? 'পোস্ট কোড' : 'Postal Code'}</span>
+              <strong className="text-slate-800 dark:text-slate-100">{DISTRICT_DATA.postalCode}</strong>
             </div>
           </div>
         </div>
       </section>
 
       {/* Administrative Hierarchy Flow */}
-      <section id="dc-office" className="bg-emerald-50/60 rounded-3xl p-8 border border-emerald-100 scroll-mt-28">
+      <section id="dc-office" className="bg-emerald-50/60 dark:bg-emerald-900/30 rounded-3xl p-8 border border-emerald-100 dark:border-emerald-800 scroll-mt-28">
         <SectionHeader
           badge={language === 'bn' ? 'প্রশাসনিক ধাপ' : 'Governance Structure'}
           title={language === 'bn' ? 'প্রশাসনিক বিন্যাস (জেলা থেকে গ্রাম)' : 'Administrative Hierarchy'}
@@ -135,36 +135,36 @@ export const AboutPage: React.FC = () => {
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
-          <div className="bg-white p-5 rounded-2xl shadow-xs border border-emerald-200/80">
+          <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-xs border border-emerald-200/80">
             <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold mx-auto mb-2 text-sm">
               ১
             </div>
-            <h4 className="font-bold text-slate-900 text-base mb-1">{language === 'bn' ? 'নেত্রকোণা জেলা' : 'District Level'}</h4>
-            <p className="text-xs text-slate-500">{language === 'bn' ? 'জেলা প্রশাসক (ডিসি) ও জেলা পরিষদ' : 'DC Office & Zila Parishad'}</p>
+            <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base mb-1">{language === 'bn' ? 'নেত্রকোণা জেলা' : 'District Level'}</h4>
+            <p className="text-xs text-slate-500 dark:text-slate-400">{language === 'bn' ? 'জেলা প্রশাসক (ডিসি) ও জেলা পরিষদ' : 'DC Office & Zila Parishad'}</p>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl shadow-xs border border-emerald-200/80">
+          <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-xs border border-emerald-200/80">
             <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold mx-auto mb-2 text-sm">
               ২
             </div>
-            <h4 className="font-bold text-slate-900 text-base mb-1">{language === 'bn' ? '১০টি উপজেলা' : '10 Upazilas'}</h4>
-            <p className="text-xs text-slate-500">{language === 'bn' ? 'ইউএনও ও উপজেলা পরিষদ' : 'UNO & Upazila Parishad'}</p>
+            <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base mb-1">{language === 'bn' ? '১০টি উপজেলা' : '10 Upazilas'}</h4>
+            <p className="text-xs text-slate-500 dark:text-slate-400">{language === 'bn' ? 'ইউএনও ও উপজেলা পরিষদ' : 'UNO & Upazila Parishad'}</p>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl shadow-xs border border-emerald-200/80">
+          <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-xs border border-emerald-200/80">
             <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold mx-auto mb-2 text-sm">
               ৩
             </div>
-            <h4 className="font-bold text-slate-900 text-base mb-1">{language === 'bn' ? '৮৬টি ইউনিয়ন ও ৫ পৌরসভা' : '86 Unions & 5 Municipalities'}</h4>
-            <p className="text-xs text-slate-500">{language === 'bn' ? 'ইউনিয়ন পরিষদ ও মেয়র' : 'Union Parishad & Pourashava'}</p>
+            <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base mb-1">{language === 'bn' ? '৮৬টি ইউনিয়ন ও ৫ পৌরসভা' : '86 Unions & 5 Municipalities'}</h4>
+            <p className="text-xs text-slate-500 dark:text-slate-400">{language === 'bn' ? 'ইউনিয়ন পরিষদ ও মেয়র' : 'Union Parishad & Pourashava'}</p>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl shadow-xs border border-emerald-200/80">
+          <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-xs border border-emerald-200/80">
             <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold mx-auto mb-2 text-sm">
               ৪
             </div>
-            <h4 className="font-bold text-slate-900 text-base mb-1">{language === 'bn' ? '২,২৮৪টি গ্রাম' : '2,284 Villages'}</h4>
-            <p className="text-xs text-slate-500">{language === 'bn' ? 'তৃণমূল জনপদ ও পাড়া' : 'Grassroot communities'}</p>
+            <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base mb-1">{language === 'bn' ? '২,২৮৪টি গ্রাম' : '2,284 Villages'}</h4>
+            <p className="text-xs text-slate-500 dark:text-slate-400">{language === 'bn' ? 'তৃণমূল জনপদ ও পাড়া' : 'Grassroot communities'}</p>
           </div>
         </div>
       </section>
@@ -178,36 +178,36 @@ export const AboutPage: React.FC = () => {
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs space-y-2">
-            <h4 className="font-bold text-slate-900 text-base flex items-center gap-2 text-emerald-700">
+          <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs space-y-2">
+            <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base flex items-center gap-2 text-emerald-700 dark:text-emerald-300">
               <Waves className="w-4 h-4" />
               <span>{language === 'bn' ? 'সোমেশ্বরী নদী' : 'Someshwari River'}</span>
             </h4>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
               {language === 'bn'
                 ? 'ভারতের মেঘালয় থেকে দুর্গাপুরে প্রবেশ করা খরস্রোতা নদী। এর স্ফটিকস্বচ্ছ পানি, নুড়িপাথর এবং সুসং পাহাড়ের মনোরম দৃশ্য দেশের অন্যতম পর্যটন আকর্ষণ।'
                 : 'Entering Bangladesh through Durgapur from Meghalaya, the crystal river is famous for sandbars, pebbles, and breathtaking mountain vistas.'}
             </p>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs space-y-2">
-            <h4 className="font-bold text-slate-900 text-base flex items-center gap-2 text-emerald-700">
+          <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs space-y-2">
+            <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base flex items-center gap-2 text-emerald-700 dark:text-emerald-300">
               <Waves className="w-4 h-4" />
               <span>{language === 'bn' ? 'কংস ও মগড়া নদী' : 'Kangsha & Mogra Rivers'}</span>
             </h4>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
               {language === 'bn'
                 ? 'কংস নদী পূর্বধলা ও সদরের বুক চিরে প্রবাহিত। আর মগড়া নদী নেত্রকোণা জেলা শহরের মধ্য দিয়ে বয়ে গেছে, যা শহরের প্রাণ হিসেবে পরিচিত।'
                 : 'The Kangsha meanders across Purbadhala and Sadar, while the Mogra gracefully flows through the heart of Netrokona urban town.'}
             </p>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs space-y-2">
-            <h4 className="font-bold text-slate-900 text-base flex items-center gap-2 text-emerald-700">
+          <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs space-y-2">
+            <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base flex items-center gap-2 text-emerald-700 dark:text-emerald-300">
               <Waves className="w-4 h-4" />
               <span>{language === 'bn' ? 'ডিংগাপোতা ও হাওর অববাহিকা' : 'Dingapota Haor Basin'}</span>
             </h4>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
               {language === 'bn'
                 ? 'মোহনগঞ্জ ও খালিয়াজুরীর সুবিশাল হাওর। বর্ষাকালে অন্তহীন জলরাশির সাগর এবং শীতকালে দেশের অন্যতম শীর্ষ বোরো ধান ও মিষ্টিপানির মাছের ভাণ্ডার।'
                 : 'Expansive wetland haor turning into an inland water sea during monsoons, and a vital national food and fish granary during dry winter.'}

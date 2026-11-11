@@ -113,7 +113,7 @@ export const DistrictMapShowcase: React.FC = () => {
           <div className="flex flex-wrap items-center gap-3 pt-2">
             <Link
               to="/map"
-              className="px-6 py-3.5 rounded-xl text-sm font-bold bg-[#faf6ea] text-slate-900 hover:bg-white shadow-xl hover:shadow-amber-500/10 transition-all flex items-center gap-2.5 group"
+              className="px-6 py-3.5 rounded-xl text-sm font-bold bg-[#faf6ea] text-slate-900 dark:text-slate-100 hover:bg-white dark:hover:bg-slate-800 shadow-xl hover:shadow-amber-500/10 transition-all flex items-center gap-2.5 group"
             >
               <span>{language === 'bn' ? 'ইন্টারেক্টিভ মানচিত্রে দেখুন' : 'Explore Interactive Map'}</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

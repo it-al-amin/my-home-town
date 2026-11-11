@@ -76,16 +76,16 @@ export const EducationPage: React.FC = () => {
       <section className="space-y-4">
         <div className="flex items-end justify-between gap-4">
           <div>
-            <h2 className="text-xl font-extrabold text-slate-900">
+            <h2 className="text-xl font-extrabold text-slate-900 dark:text-slate-100">
               {language === 'bn' ? 'সরকারি রেজিস্ট্রি ও পূর্ণ তালিকা' : 'Official registries and complete lists'}
             </h2>
-            <p className="text-sm text-slate-500 mt-1">
+            <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
               {language === 'bn'
                 ? 'নিচের সরকারি পোর্টালগুলোতে উপজেলা নির্বাচন করে সর্বশেষ প্রতিষ্ঠান তালিকা যাচাই করুন।'
                 : 'Use the official portals below to verify the latest institution list by upazila.'}
             </p>
           </div>
-          <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500">
+          <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 dark:text-slate-400">
             <Database className="w-4 h-4" />
             {language === 'bn' ? '১০ উপজেলা কভারেজ' : '10 upazilas covered'}
           </span>
@@ -97,27 +97,27 @@ export const EducationPage: React.FC = () => {
               href={registry.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white rounded-2xl border border-slate-200 p-4 hover:border-emerald-400 hover:shadow-md transition-all"
+              className="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700 p-4 hover:border-emerald-400 hover:shadow-md transition-all"
             >
               <div className="flex items-start justify-between gap-3">
-                <span className="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-100 rounded-full px-2.5 py-1">
+                <span className="text-xs font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-100 dark:border-emerald-800 rounded-full px-2.5 py-1">
                   {registry.authority[language]}
                 </span>
                 <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-emerald-600" />
               </div>
-              <h3 className="font-bold text-slate-900 mt-3">{registry.label[language]}</h3>
-              <p className="text-xs leading-relaxed text-slate-500 mt-1">{registry.description[language]}</p>
+              <h3 className="font-bold text-slate-900 dark:text-slate-100 mt-3">{registry.label[language]}</h3>
+              <p className="text-xs leading-relaxed text-slate-500 dark:text-slate-400 mt-1">{registry.description[language]}</p>
             </a>
           ))}
         </div>
       </section>
 
-      <section className="bg-slate-50 rounded-2xl border border-slate-200 p-4 sm:p-5">
+      <section className="bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700 p-4 sm:p-5">
         <div className="flex items-center justify-between gap-3 mb-3">
-          <h2 className="font-extrabold text-slate-900">
+          <h2 className="font-extrabold text-slate-900 dark:text-slate-100">
             {language === 'bn' ? 'উপজেলা-ভিত্তিক ক্যাটালগ কভারেজ' : 'Upazila-wise catalogue coverage'}
           </h2>
-          <span className="text-[11px] text-slate-500">
+          <span className="text-[11px] text-slate-500 dark:text-slate-400">
             {language === 'bn' ? 'ক্যাটালগে যাচাইকৃত রেকর্ড' : 'Verified catalogue records'}
           </span>
         </div>
@@ -129,14 +129,14 @@ export const EducationPage: React.FC = () => {
               onClick={() => setSelectedUpazila(upazila.id)}
               className={`text-left rounded-xl border px-3 py-2 transition-colors ${
                 selectedUpazila === upazila.id
-                  ? 'bg-amber-50 border-amber-400'
-                  : 'bg-white border-slate-200 hover:border-amber-300'
+                  ? 'bg-amber-50 dark:bg-amber-900/30 border-amber-400'
+                  : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:border-amber-300'
               }`}
             >
-              <span className="block text-xs font-semibold text-slate-700 truncate">
+              <span className="block text-xs font-semibold text-slate-700 dark:text-slate-200 truncate">
                 {language === 'bn' ? upazila.nameBn : upazila.name}
               </span>
-              <span className="block text-[11px] text-slate-500 mt-1">
+              <span className="block text-[11px] text-slate-500 dark:text-slate-400 mt-1">
                 {upazila.count} {language === 'bn' ? 'টি রেকর্ড' : upazila.count === 1 ? 'record' : 'records'}
               </span>
             </button>
@@ -145,7 +145,7 @@ export const EducationPage: React.FC = () => {
       </section>
 
       {/* Filter and Search Controls */}
-      <div className="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-xs space-y-3">
+      <div className="bg-white dark:bg-slate-900 p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs space-y-3">
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-3">
           {/* Search */}
           <div className="relative sm:col-span-2">
@@ -155,11 +155,11 @@ export const EducationPage: React.FC = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder={language === 'bn' ? 'প্রতিষ্ঠানের নাম বা EIIN দিয়ে খুঁজুন...' : 'Search by name or EIIN...'}
-              className="w-full pl-9 pr-4 py-2 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-hidden focus:border-amber-500 transition-colors"
+              className="w-full pl-9 pr-4 py-2 text-sm bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:bg-white focus:outline-hidden focus:border-amber-500 transition-colors"
             />
           </div>
 
-          <div className="flex items-center justify-between text-sm text-slate-500">
+          <div className="flex items-center justify-between text-sm text-slate-500 dark:text-slate-400">
             <span>
               {language === 'bn'
                 ? `এই পেজে যাচাইকৃতভাবে তালিকাভুক্ত ${filteredInstitutions.length}টি প্রতিষ্ঠান`
@@ -175,7 +175,7 @@ export const EducationPage: React.FC = () => {
             <select
               value={selectedUpazila}
               onChange={(e) => setSelectedUpazila(e.target.value)}
-              className="w-full text-xs sm:text-sm font-semibold bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-700 focus:outline-hidden focus:border-amber-500"
+              className="w-full text-xs sm:text-sm font-semibold bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-slate-700 dark:text-slate-200 focus:outline-hidden focus:border-amber-500"
             >
               <option value="all">{language === 'bn' ? 'সকল উপজেলা' : 'All Upazilas'}</option>
               {UPAZILAS_DATA.map((u) => (
@@ -191,7 +191,7 @@ export const EducationPage: React.FC = () => {
             <select
               value={selectedType}
               onChange={(e) => setSelectedType(e.target.value)}
-              className="w-full text-xs sm:text-sm font-semibold bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-700 focus:outline-hidden focus:border-amber-500"
+              className="w-full text-xs sm:text-sm font-semibold bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-slate-700 dark:text-slate-200 focus:outline-hidden focus:border-amber-500"
             >
               <option value="all">{language === 'bn' ? 'সকল ধরন (সরকারি/বেসরকারি)' : 'All Types'}</option>
               <option value="government">{language === 'bn' ? 'সরকারি প্রতিষ্ঠান' : 'Government'}</option>
@@ -201,7 +201,7 @@ export const EducationPage: React.FC = () => {
         </div>
 
         {/* Category Chips */}
-        <div className="flex items-center gap-1.5 flex-wrap pt-2 border-t border-slate-100 text-xs">
+        <div className="flex items-center gap-1.5 flex-wrap pt-2 border-t border-slate-100 dark:border-slate-800 text-xs">
           {categories.map((c) => (
             <button
               key={c.id}
@@ -210,7 +210,7 @@ export const EducationPage: React.FC = () => {
               className={`px-3 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                 selectedCategory === c.id
                   ? 'bg-amber-600 text-white shadow-xs'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
               }`}
             >
               {c.label}
@@ -227,12 +227,12 @@ export const EducationPage: React.FC = () => {
       </div>
 
       {filteredInstitutions.length === 0 && (
-        <div className="text-center py-16 bg-white rounded-2xl border border-slate-200">
+        <div className="text-center py-16 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700">
           <School className="w-12 h-12 text-slate-300 mx-auto mb-3" />
-          <h3 className="text-lg font-bold text-slate-800">
+          <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100">
             {language === 'bn' ? 'কোনো শিক্ষা প্রতিষ্ঠান পাওয়া যায়নি' : 'No Institution Found'}
           </h3>
-          <p className="text-sm text-slate-500 mt-1">
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
             {language === 'bn' ? 'অনুসন্ধান বা ফিল্টার রিসেট করে আবার চেষ্টা করুন।' : 'Try resetting your search filters.'}
           </p>
         </div>

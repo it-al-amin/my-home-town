@@ -34,7 +34,7 @@ export const SourcesPage: React.FC = () => {
       </div>
 
       {/* Core Verification Principles */}
-      <section className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-6">
+      <section className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-xs space-y-6">
         <SectionHeader
           badge={language === 'bn' ? 'মূল নীতিমালা' : 'Editorial Guidelines'}
           title={language === 'bn' ? 'আমাদের তথ্য যাচাইকরণ নীতি' : 'Our Verification Standards'}
@@ -42,36 +42,36 @@ export const SourcesPage: React.FC = () => {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-5 bg-emerald-50/70 rounded-2xl border border-emerald-100 space-y-2">
-            <div className="flex items-center gap-2 text-emerald-900 font-bold text-sm sm:text-base">
+          <div className="p-5 bg-emerald-50/70 dark:bg-emerald-900/30 rounded-2xl border border-emerald-100 dark:border-emerald-800 space-y-2">
+            <div className="flex items-center gap-2 text-emerald-900 dark:text-emerald-300 font-bold text-sm sm:text-base">
               <CheckCircle2 className="w-5 h-5 text-emerald-600" />
               <span>{language === 'bn' ? '১. শতভাগ নির্ভরযোগ্যতা' : '1. Official Records Only'}</span>
             </div>
-            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
               {language === 'bn'
                 ? 'উপজেলার আয়তন, জনসংখ্যা ও ইউনিয়নের সংখ্যা বাংলাদেশ পরিসংখ্যান ব্যুরো (BBS) ২০২২ জনশুমারি এবং জেলা প্রশাসনের রেকর্ড অনুযায়ী নিশ্চিত করা হয়েছে।'
                 : 'Area metrics, census numbers, and administrative boundaries are calibrated with official BBS 2022 Census gazettes.'}
             </p>
           </div>
 
-          <div className="p-5 bg-blue-50/70 rounded-2xl border border-blue-100 space-y-2">
-            <div className="flex items-center gap-2 text-blue-900 font-bold text-sm sm:text-base">
+          <div className="p-5 bg-blue-50/70 dark:bg-blue-900/30 rounded-2xl border border-blue-100 dark:border-blue-800 space-y-2">
+            <div className="flex items-center gap-2 text-blue-900 dark:text-blue-300 font-bold text-sm sm:text-base">
               <ShieldCheck className="w-5 h-5 text-blue-600" />
               <span>{language === 'bn' ? '২. রাজনৈতিক নিরপেক্ষতা' : '2. Political Neutrality'}</span>
             </div>
-            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
               {language === 'bn'
                 ? 'সংসদীয় আসন ও প্রতিনিধিত্বের ক্ষেত্রে কোনো রাজনৈতিক পক্ষপাত ব্যতিরেকে জাতীয় সংসদ সচিবালয়ের অফিসিয়াল রেকর্ড ও ২০২৪ সালের ৬ আগস্টের সংসদ বিলুপ্তির সাংবিধানিক ঘোষণা অনুসরণ করা হয়েছে।'
                 : 'Parliamentary representation is documented factually with zero partisan bias, strictly citing the official gazette dissolution of the 12th parliament.'}
             </p>
           </div>
 
-          <div className="p-5 bg-amber-50/70 rounded-2xl border border-amber-100 space-y-2">
-            <div className="flex items-center gap-2 text-amber-900 font-bold text-sm sm:text-base">
+          <div className="p-5 bg-amber-50/70 dark:bg-amber-900/30 rounded-2xl border border-amber-100 dark:border-amber-800 space-y-2">
+            <div className="flex items-center gap-2 text-amber-900 dark:text-amber-300 font-bold text-sm sm:text-base">
               <AlertCircle className="w-5 h-5 text-amber-600" />
               <span>{language === 'bn' ? '৩. সরাসরি সরকারি লিঙ্ক' : '3. Direct Portal Access'}</span>
             </div>
-            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
               {language === 'bn'
                 ? 'নাগরিক সেবাসমূহ আমাদের ওয়েবসাইটে দাবি না করে সরাসরি মূল সরকারি পোর্টালে (যেমন—mutation.land.gov.bd, bdris.gov.bd) লিঙ্ক করা হয়েছে।'
                 : 'All citizen services link directly to their authoritative Bangladesh Government portals rather than simulating internal processing.'}
@@ -92,29 +92,29 @@ export const SourcesPage: React.FC = () => {
           {SOURCES_DATA.map((src, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between space-y-3"
+              className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between space-y-3"
             >
               <div className="space-y-2">
                 <div className="flex items-center justify-between gap-2">
-                  <span className="text-xs font-mono font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-100">
+                  <span className="text-xs font-mono font-bold text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-900/30 px-2 py-0.5 rounded-md border border-emerald-100 dark:border-emerald-800">
                     {src.domain}
                   </span>
                   <a
                     href={src.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-slate-500 hover:text-emerald-700 font-medium inline-flex items-center gap-1"
+                    className="text-xs text-slate-500 dark:text-slate-400 hover:text-emerald-700 font-medium inline-flex items-center gap-1"
                   >
                     <span>{language === 'bn' ? 'ওয়েবসাইটে যান' : 'Visit Portal'}</span>
                     <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>
 
-                <h3 className="text-lg font-bold text-slate-900">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                   {language === 'bn' ? src.nameBn : src.name}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                   {language === 'bn' ? src.descriptionBn : src.description}
                 </p>
 
@@ -122,7 +122,7 @@ export const SourcesPage: React.FC = () => {
                   {src.dataCategories.map((c, i) => (
                     <span
                       key={i}
-                      className="text-[11px] font-medium bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md"
+                      className="text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 px-2 py-0.5 rounded-md"
                     >
                       {c}
                     </span>

@@ -280,14 +280,14 @@ export const SubmitPostModal: React.FC<SubmitPostModalProps> = ({
                     <button
                       type="button"
                       onClick={() => setImageMode('upload')}
-                      className={`px-2 py-0.5 rounded-md cursor-pointer ${imageMode === 'upload' ? 'bg-emerald-600 text-white' : 'text-slate-500'}`}
+                      className={`px-2 py-0.5 rounded-md cursor-pointer ${imageMode === 'upload' ? 'bg-emerald-600 text-white' : 'text-slate-500 dark:text-slate-400'}`}
                     >
                       ডিভাইস থেকে
                     </button>
                     <button
                       type="button"
                       onClick={() => setImageMode('url')}
-                      className={`px-2 py-0.5 rounded-md cursor-pointer ${imageMode === 'url' ? 'bg-emerald-600 text-white' : 'text-slate-500'}`}
+                      className={`px-2 py-0.5 rounded-md cursor-pointer ${imageMode === 'url' ? 'bg-emerald-600 text-white' : 'text-slate-500 dark:text-slate-400'}`}
                     >
                       ইমেজ লিংক
                     </button>

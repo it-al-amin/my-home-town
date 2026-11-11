@@ -41,17 +41,17 @@ export const LivestockPage: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {LIVESTOCK_DATA.activities.map((act) => (
-            <div key={act.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 text-amber-800 flex items-center justify-center">
+            <div key={act.id} className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-300 flex items-center justify-center">
                 <Bird className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                 {language === 'bn' ? act.nameBn : act.name}
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 {language === 'bn' ? act.descriptionBn : act.description}
               </p>
-              <div className="pt-2 text-xs font-semibold text-slate-500">
+              <div className="pt-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
                 📍 {language === 'bn' ? `প্রধান এলাকা: ${act.keyAreasBn}` : `Key areas: ${act.keyAreas}`}
               </div>
             </div>
@@ -60,7 +60,7 @@ export const LivestockPage: React.FC = () => {
       </section>
 
       {/* Veterinary Hospitals & Services */}
-      <section className="bg-amber-50/60 rounded-3xl p-6 sm:p-8 border border-amber-200 space-y-6">
+      <section className="bg-amber-50/60 dark:bg-amber-900/30 rounded-3xl p-6 sm:p-8 border border-amber-200 dark:border-amber-800 space-y-6">
         <SectionHeader
           badge={language === 'bn' ? 'পশু চিকিৎসা' : 'Veterinary Care'}
           title={language === 'bn' ? 'সরকারি প্রাণিসম্পদ হাসপাতাল ও টিকাদান সেবা' : 'Government Veterinary Services'}
@@ -69,25 +69,25 @@ export const LivestockPage: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {LIVESTOCK_DATA.services.map((srv, idx) => (
-            <div key={idx} className="bg-white p-6 rounded-2xl border border-amber-200 shadow-xs space-y-3 flex flex-col justify-between">
+            <div key={idx} className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-amber-200 dark:border-amber-800 shadow-xs space-y-3 flex flex-col justify-between">
               <div className="space-y-2">
-                <h4 className="text-lg font-bold text-slate-900">
+                <h4 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                   {language === 'bn' ? srv.titleBn : srv.title}
                 </h4>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                   {language === 'bn' ? srv.descriptionBn : srv.description}
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-                <span className="text-slate-500 font-medium">
+              <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+                <span className="text-slate-500 dark:text-slate-400 font-medium">
                   {srv.authority}
                 </span>
                 <a
                   href={srv.portalUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-bold text-amber-800 hover:text-amber-950 inline-flex items-center gap-1"
+                  className="font-bold text-amber-800 dark:text-amber-300 hover:text-amber-950 inline-flex items-center gap-1"
                 >
                   <span>{language === 'bn' ? 'ডিএলএস পোর্টাল' : 'DLS Portal'}</span>
                   <ExternalLink className="w-3.5 h-3.5" />

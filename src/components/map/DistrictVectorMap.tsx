@@ -243,12 +243,12 @@ export const DistrictVectorMap: React.FC<DistrictVectorMapProps> = ({
       <div className="w-full flex items-center justify-between gap-2 mb-3 px-2 flex-wrap">
         <div className="flex items-center gap-1.5 text-xs">
           <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-md font-medium ${
-            isDark ? 'bg-slate-800 text-slate-300 border border-slate-700' : 'bg-slate-100 text-slate-700 border border-slate-200'
+            isDark ? 'bg-slate-800 text-slate-300 border border-slate-700' : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700'
           }`}>
             <Layers className="w-3.5 h-3.5 text-teal-400" />
             <span>{language === 'bn' ? '১০টি উপজেলা ভেক্টর মানচিত্র' : '10 Upazilas Vector Map'}</span>
           </span>
-          <span className={`text-[11px] ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+          <span className={`text-[11px] ${isDark ? 'text-slate-400' : 'text-slate-500 dark:text-slate-400'}`}>
             ({language === 'bn' ? 'ক্লিক করে তথ্য দেখুন' : 'Click region for details'})
           </span>
         </div>
@@ -259,8 +259,8 @@ export const DistrictVectorMap: React.FC<DistrictVectorMapProps> = ({
             type="button"
             className={`px-2.5 py-1 text-xs rounded-md font-medium transition-colors flex items-center gap-1 ${
               labelsVisible
-                ? isDark ? 'bg-teal-500/20 text-teal-300 border border-teal-500/40' : 'bg-teal-100 text-teal-800 border border-teal-300'
-                : isDark ? 'bg-slate-800 text-slate-400 border border-slate-700' : 'bg-slate-100 text-slate-600 border border-slate-200'
+                ? isDark ? 'bg-teal-500/20 text-teal-300 border border-teal-500/40' : 'bg-teal-100 dark:bg-teal-900/40 text-teal-800 dark:text-teal-300 border border-teal-300'
+                : isDark ? 'bg-slate-800 text-slate-400 border border-slate-700' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700'
             }`}
             title={language === 'bn' ? 'উপজেলার নাম প্রদর্শন চালু/বন্ধ' : 'Toggle Labels'}
           >
@@ -276,7 +276,7 @@ export const DistrictVectorMap: React.FC<DistrictVectorMapProps> = ({
             }}
             type="button"
             className={`p-1.5 rounded-md text-xs transition-colors ${
-              isDark ? 'bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700' : 'bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200'
+              isDark ? 'bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700' : 'bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700'
             }`}
             title={language === 'bn' ? 'রিসেট করুন' : 'Reset Selection'}
           >
@@ -287,7 +287,7 @@ export const DistrictVectorMap: React.FC<DistrictVectorMapProps> = ({
             onClick={handleDownloadSvg}
             type="button"
             className={`p-1.5 rounded-md text-xs transition-colors ${
-              isDark ? 'bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700' : 'bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200'
+              isDark ? 'bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700' : 'bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700'
             }`}
             title={language === 'bn' ? 'এসভিজি মানচিত্র ডাউনলোড করুন' : 'Download SVG Map'}
           >
@@ -480,7 +480,7 @@ export const DistrictVectorMap: React.FC<DistrictVectorMapProps> = ({
         {hoveredId && (
           <div
             className={`absolute top-4 right-4 pointer-events-none z-30 px-3.5 py-2 rounded-xl backdrop-blur-md shadow-xl border animate-in fade-in zoom-in-95 duration-150 ${
-              isDark ? 'bg-slate-900/90 border-slate-700 text-white' : 'bg-white/95 border-slate-200 text-slate-900'
+              isDark ? 'bg-slate-900/90 border-slate-700 text-white' : 'bg-white/95 dark:bg-slate-900/95 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100'
             }`}
           >
             <div className="flex items-center gap-2">
@@ -509,10 +509,10 @@ export const DistrictVectorMap: React.FC<DistrictVectorMapProps> = ({
               onMouseLeave={() => interactive && setHoveredId(null)}
               className={`px-2.5 py-1 rounded-full text-xs font-medium transition-all flex items-center gap-1.5 border ${
                 isSelected
-                  ? 'bg-white text-slate-900 shadow-md border-white scale-105 font-bold'
+                  ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-md border-white scale-105 font-bold'
                   : isDark
                   ? 'bg-slate-900/80 text-slate-300 border-slate-800 hover:border-slate-700 hover:bg-slate-800'
-                  : 'bg-white/90 text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50'
+                  : 'bg-white/90 dark:bg-slate-900/90 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-700 hover:border-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800'
               }`}
             >
               <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: item.color }} />
@@ -528,7 +528,7 @@ export const DistrictVectorMap: React.FC<DistrictVectorMapProps> = ({
           className={`w-full mt-4 p-4 sm:p-5 rounded-2xl border backdrop-blur-md transition-all ${
             isDark
               ? 'bg-slate-900/90 border-slate-800 text-white shadow-xl'
-              : 'bg-white border-slate-200 text-slate-900 shadow-lg'
+              : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 shadow-lg'
           }`}
         >
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-700/50">
@@ -545,7 +545,7 @@ export const DistrictVectorMap: React.FC<DistrictVectorMapProps> = ({
                     {language === 'bn' ? activeUpazila.nameBn : activeUpazila.name}
                   </h4>
                   <span className={`text-[11px] px-2 py-0.5 rounded-full font-semibold ${
-                    isDark ? 'bg-slate-800 text-teal-400 border border-slate-700' : 'bg-teal-50 text-teal-700 border border-teal-200'
+                    isDark ? 'bg-slate-800 text-teal-400 border border-slate-700' : 'bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800'
                   }`}>
                     {language === 'bn' ? 'উপজেলা' : 'Upazila'}
                   </span>
@@ -571,7 +571,7 @@ export const DistrictVectorMap: React.FC<DistrictVectorMapProps> = ({
                 className={`p-1.5 rounded-lg text-xs transition-colors border ${
                   isDark
                     ? 'bg-slate-800 hover:bg-slate-700 text-slate-300 border-slate-700'
-                    : 'bg-slate-100 hover:bg-slate-200 text-slate-700 border-slate-300'
+                    : 'bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border-slate-300 dark:border-slate-600'
                 }`}
                 title="Google Maps"
               >
@@ -582,25 +582,25 @@ export const DistrictVectorMap: React.FC<DistrictVectorMapProps> = ({
 
           {/* Quick Stat Pill Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-3 pt-1">
-            <div className={`p-2.5 rounded-xl border ${isDark ? 'bg-slate-800/60 border-slate-700/60' : 'bg-slate-50 border-slate-100'}`}>
+            <div className={`p-2.5 rounded-xl border ${isDark ? 'bg-slate-800/60 border-slate-700/60' : 'bg-slate-50 dark:bg-slate-900 border-slate-100 dark:border-slate-800'}`}>
               <div className="text-[11px] text-slate-400">{language === 'bn' ? 'মোট জনসংখ্যা' : 'Population'}</div>
               <div className="text-sm font-bold text-white mt-0.5">
                 {language === 'bn' ? `${activeUpazila.population.toLocaleString('bn-BD')} জন` : activeUpazila.population.toLocaleString()}
               </div>
             </div>
-            <div className={`p-2.5 rounded-xl border ${isDark ? 'bg-slate-800/60 border-slate-700/60' : 'bg-slate-50 border-slate-100'}`}>
+            <div className={`p-2.5 rounded-xl border ${isDark ? 'bg-slate-800/60 border-slate-700/60' : 'bg-slate-50 dark:bg-slate-900 border-slate-100 dark:border-slate-800'}`}>
               <div className="text-[11px] text-slate-400">{language === 'bn' ? 'মোট আয়তন' : 'Total Area'}</div>
               <div className="text-sm font-bold text-white mt-0.5">
                 {language === 'bn' ? `${activeUpazila.areaKm2} বর্গ কিমি` : `${activeUpazila.areaKm2} km²`}
               </div>
             </div>
-            <div className={`p-2.5 rounded-xl border ${isDark ? 'bg-slate-800/60 border-slate-700/60' : 'bg-slate-50 border-slate-100'}`}>
+            <div className={`p-2.5 rounded-xl border ${isDark ? 'bg-slate-800/60 border-slate-700/60' : 'bg-slate-50 dark:bg-slate-900 border-slate-100 dark:border-slate-800'}`}>
               <div className="text-[11px] text-slate-400">{language === 'bn' ? 'ইউনিয়ন সংখ্যা' : 'Unions'}</div>
               <div className="text-sm font-bold text-white mt-0.5">
                 {language === 'bn' ? `${activeUpazila.unionsCount}টি` : activeUpazila.unionsCount}
               </div>
             </div>
-            <div className={`p-2.5 rounded-xl border ${isDark ? 'bg-slate-800/60 border-slate-700/60' : 'bg-slate-50 border-slate-100'}`}>
+            <div className={`p-2.5 rounded-xl border ${isDark ? 'bg-slate-800/60 border-slate-700/60' : 'bg-slate-50 dark:bg-slate-900 border-slate-100 dark:border-slate-800'}`}>
               <div className="text-[11px] text-slate-400">{language === 'bn' ? 'গ্রাম সংখ্যা' : 'Villages'}</div>
               <div className="text-sm font-bold text-white mt-0.5">
                 {language === 'bn' ? `${activeUpazila.villagesCount}টি` : activeUpazila.villagesCount}
@@ -617,7 +617,7 @@ export const DistrictVectorMap: React.FC<DistrictVectorMapProps> = ({
               <div className="flex items-center gap-1.5 flex-wrap">
                 {(language === 'bn' ? activeUpazila.highlightsBn : activeUpazila.highlights).slice(0, 3).map((hl, i) => (
                   <span key={i} className={`px-2 py-0.5 rounded-md text-[11px] font-medium ${
-                    isDark ? 'bg-slate-800 text-slate-300' : 'bg-slate-100 text-slate-700'
+                    isDark ? 'bg-slate-800 text-slate-300' : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200'
                   }`}>
                     • {hl}
                   </span>
@@ -651,7 +651,7 @@ export const DistrictVectorMap: React.FC<DistrictVectorMapProps> = ({
                     className={`p-2 rounded-xl text-left border transition-all flex flex-col justify-between group ${
                       isDark
                         ? 'bg-slate-800/80 hover:bg-slate-800 border-slate-700/80 hover:border-teal-500/50 text-slate-200'
-                        : 'bg-slate-50 hover:bg-white border-slate-200 hover:border-teal-500 text-slate-800'
+                        : 'bg-slate-50 dark:bg-slate-900 hover:bg-white dark:hover:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-teal-500 text-slate-800 dark:text-slate-100'
                     }`}
                   >
                     <div className="flex items-center justify-between">

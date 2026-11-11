@@ -33,7 +33,7 @@ export const PlaceDetailPage: React.FC = () => {
         <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-200">
           {language === 'bn' ? 'দর্শনীয় স্থান পাওয়া যায়নি' : 'Place Not Found'}
         </h2>
-        <p className="text-slate-500 mt-2 mb-6">
+        <p className="text-slate-500 dark:text-slate-400 mt-2 mb-6">
           {language === 'bn' ? 'অনুরোধকৃত দর্শনীয় স্থানটি আমাদের তালিকায় নেই।' : 'The requested tourist place does not exist.'}
         </p>
         <Link
@@ -213,7 +213,7 @@ export const PlaceDetailPage: React.FC = () => {
                   <ImageIcon className="w-5 h-5 text-emerald-600" />
                   <span>{language === 'bn' ? 'এই দর্শনীয় স্থানের ছবি ও ফটো গ্যালারি' : 'Photo Gallery & Visited Spot Views'}</span>
                 </h3>
-                <p className="text-xs text-slate-500">
+                <p className="text-xs text-slate-500 dark:text-slate-400">
                   {language === 'bn'
                     ? 'দর্শনার্থীদের ক্যামেরায় বন্দি সৌন্দর্য। ছবিতে ক্লিক করে বড় করে দেখুন।'
                     : 'Moments captured by visitors. Click any image to view in full resolution.'}

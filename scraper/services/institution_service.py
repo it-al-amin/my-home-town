@@ -25,6 +25,7 @@ from .storage_service import read_json, write_json_atomic
 
 ROOT = Path(__file__).resolve().parent.parent
 BOUNDARY_FILE = ROOT / "config" / "upazila_boundaries.json"
+PHOTO_OVERRIDES = ROOT / "config" / "institution_photos.json"
 OUT_FILE = ROOT.parent / "src" / "data" / "aggregated" / "institutions" / "institutions.json"
 UA = "NetrokonaPortalBot/1.0 (community info aggregator)"
 OVERPASS = ["https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter"]
@@ -240,6 +241,43 @@ def commons_photo(rec: dict, session: requests.Session) -> Optional[dict]:
     return None
 
 
+def website_photo(rec: dict, session: requests.Session) -> Optional[dict]:
+    """The institution's OWN declared link-preview image (og:image), if its robots.txt allows us.
+    Hotlinked with attribution and a link back; never downloaded or re-hosted."""
+    import urllib.robotparser
+    from urllib.parse import urljoin, urlsplit
+    from bs4 import BeautifulSoup
+    site = rec.get("website")
+    if not site or not site.startswith("http"):
+        return None
+    try:
+        base = "%s://%s" % (urlsplit(site).scheme, urlsplit(site).netloc)
+        rp = urllib.robotparser.RobotFileParser()
+        rr = session.get(base + "/robots.txt", timeout=20)
+        if rr.status_code == 200 and "<html" not in rr.text[:200].lower():
+            rp.parse(rr.text.splitlines())
+            if not rp.can_fetch(UA, site):
+                return None
+        time.sleep(1.5)
+        r = session.get(site, timeout=20)
+        if r.status_code != 200:
+            return None
+        tag = BeautifulSoup(r.text, "lxml").find("meta", attrs={"property": "og:image"})
+        img = urljoin(site, tag["content"]) if tag and tag.get("content") else None
+    except requests.RequestException:
+        return None
+    if not img:
+        return None
+    return {"url": img, "pageUrl": site, "credit": urlsplit(site).netloc, "license": "Official website image",
+            "source": "Institution website"}
+
+
+def load_photo_overrides() -> dict:
+    """config/institution_photos.json: {"osm-node-123": {"url", "pageUrl", "credit", "license", "source"}}
+    for photos you have the right to use (your own, with permission, or openly licensed)."""
+    return read_json(PHOTO_OVERRIDES, {})
+
+
 def build_directory(dry_run: bool = False, with_photos: bool = True, refresh_boundaries: bool = False) -> dict:
     boundaries = load_boundaries(refresh_boundaries)
     data = overpass(Q_INSTITUTIONS)
@@ -248,8 +286,9 @@ def build_directory(dry_run: bool = False, with_photos: bool = True, refresh_bou
     if with_photos:
         s = requests.Session()
         s.headers["User-Agent"] = UA
+        overrides = load_photo_overrides()
         for r in recs:
-            r["photo"] = commons_photo(r, s)
+            r["photo"] = overrides.get(r["id"]) or commons_photo(r, s) or website_photo(r, s)
     result = {"generatedAt": now_iso(), "source": "OpenStreetMap contributors (ODbL), partial coverage",
               "institutions": recs}
     if not dry_run:

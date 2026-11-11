@@ -54,7 +54,7 @@ export const MapLink: React.FC<MapLinkProps> = ({
         href={mapsUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100 transition-colors ${className}`}
+        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-100 transition-colors ${className}`}
         title={defaultLabel}
       >
         <MapPin className="w-3.5 h-3.5" />
@@ -68,7 +68,7 @@ export const MapLink: React.FC<MapLinkProps> = ({
       href={mapsUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 shadow-xs hover:shadow-sm transition-all duration-200 group ${className}`}
+      className={`inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold bg-emerald-50 dark:bg-emerald-900/30 hover:bg-emerald-100 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 shadow-xs hover:shadow-sm transition-all duration-200 group ${className}`}
       title={defaultLabel}
     >
       <MapPin className="w-4 h-4 text-emerald-600 group-hover:scale-110 transition-transform" />

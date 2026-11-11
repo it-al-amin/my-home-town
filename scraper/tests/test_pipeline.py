@@ -224,3 +224,22 @@ def test_scraper_never_duplicates_approved(env):
     store.add_pending([a])
     ReviewService(store).approve([a.id])
     assert Deduplicator(store.all_articles()).reason(mk()) == "same URL"
+
+
+# ---- institution directory -------------------------------------------------
+def test_photo_title_matching_rejects_lookalikes():
+    from services.institution_service import titles_match as m
+    assert not m("College Building", "Broome Community College manufacturing learning building.jpg")
+    assert not m("Netrokona Govt. College", "File:Netrokona Govt. Mohila College (9).jpg")  # different college
+    assert not m("School of Excellence", "File:African School of Excellence, Tsakane.JPG")  # not Netrokona
+    assert m("Paboi Govt. Primary School", "File:Paboi Govt. Primary School, Paboi, Netrakona.jpg")
+
+
+def test_upazila_assignment_and_category():
+    from shapely.geometry import box
+    from services.institution_service import assign_upazila, categorize
+    b = {"kendua": box(90.0, 24.0, 90.5, 24.5)}
+    assert assign_upazila(90.2, 24.2, b) == "kendua"
+    assert assign_upazila(95.0, 30.0, b) is None
+    assert categorize({"amenity": "school", "name": "Al Hera Madrasa"}) == "madrasa"
+    assert categorize({"amenity": "school", "name": "পূর্বধলা সরকারি প্রাথমিক বিদ্যালয়"}) == "primary"

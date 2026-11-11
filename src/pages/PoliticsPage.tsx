@@ -34,17 +34,17 @@ export const PoliticsPage: React.FC = () => {
       </div>
 
       {/* Neutral Constitutional Status Callout */}
-      <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 space-y-2">
-        <div className="flex items-center gap-2 text-amber-900 font-bold text-sm sm:text-base">
+      <div className="bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 rounded-2xl p-6 space-y-2">
+        <div className="flex items-center gap-2 text-amber-900 dark:text-amber-300 font-bold text-sm sm:text-base">
           <Info className="w-5 h-5 text-amber-600 shrink-0" />
           <span>{language === 'bn' ? 'সাংবিধানিক ও প্রাতিষ্ঠানিক বর্তমান অবস্থা (গেজেট নোট)' : 'Constitutional & Gazette Status Note'}</span>
         </div>
-        <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+        <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
           {language === 'bn'
             ? '২০২৪ সালের ৬ আগস্ট মহামান্য রাষ্ট্রপতির সাংবিধানিক আদেশক্রমে দ্বাদশ জাতীয় সংসদ বিলুপ্ত ঘোষণা করা হয়। বর্তমানে নির্বাচন কমিশন ও অন্তর্বর্তীকালীন সরকার কর্তৃক পরবর্তী জাতীয় সংসদ নির্বাচন অনুষ্ঠিত হওয়ার পূর্ব পর্যন্ত সকল সংসদীয় আসন বিধিমোতাবেক শূন্য রয়েছে। নিরপেক্ষ তথ্য নীতি অনুসারে কোনো সাবেক ব্যক্তিকে বর্তমান প্রতিনিধি হিসেবে উল্লেখ করা হয়নি।'
             : 'Pursuant to the constitutional proclamation by the President on August 6, 2024, the 12th National Parliament was dissolved. All parliamentary seats are currently officially vacant under the Interim Government administration pending general elections. In strict accordance with public record authenticity, no previous MP is portrayed as a sitting member.'}
         </p>
-        <div className="pt-2 text-xs text-amber-800 font-semibold flex items-center gap-2">
+        <div className="pt-2 text-xs text-amber-800 dark:text-amber-300 font-semibold flex items-center gap-2">
           <span>{language === 'bn' ? 'সর্বশেষ যাচাই: ১ মার্চ ২০২৬' : 'Last verified: March 1, 2026'}</span>
           <span>•</span>
           <a
@@ -64,11 +64,11 @@ export const PoliticsPage: React.FC = () => {
         {PARLIAMENTARY_SEATS_DATA.map((seat) => (
           <div
             key={seat.seatNumber}
-            className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between space-y-4"
+            className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between space-y-4"
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between gap-2">
-                <span className="text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                <span className="text-xs font-bold text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-800 px-2.5 py-0.5 rounded-full">
                   {seat.constituencyCode}
                 </span>
                 <span className="text-xs font-mono font-semibold text-slate-400">
@@ -76,18 +76,18 @@ export const PoliticsPage: React.FC = () => {
                 </span>
               </div>
 
-              <h3 className="text-xl font-bold text-slate-900">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
                 {language === 'bn' ? seat.nameBn : seat.name}
               </h3>
 
               {/* Covered Upazilas */}
               <div className="space-y-1 pt-1">
-                <span className="text-xs font-bold text-slate-500 block">
+                <span className="text-xs font-bold text-slate-500 dark:text-slate-400 block">
                   {language === 'bn' ? 'অন্তর্ভুক্ত উপজেলাসমূহ:' : 'Constituent Upazilas:'}
                 </span>
                 <div className="flex flex-wrap gap-1.5">
                   {(language === 'bn' ? seat.upazilasCoveredBn : seat.upazilasCovered).map((u, i) => (
-                    <span key={i} className="text-xs font-semibold bg-slate-100 text-slate-800 px-2.5 py-1 rounded-lg">
+                    <span key={i} className="text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 px-2.5 py-1 rounded-lg">
                       {u}
                     </span>
                   ))}
@@ -95,8 +95,8 @@ export const PoliticsPage: React.FC = () => {
               </div>
 
               {/* Current Status Note */}
-              <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 text-xs text-slate-600 space-y-1">
-                <div className="font-bold text-slate-800">
+              <div className="p-3 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-300 space-y-1">
+                <div className="font-bold text-slate-800 dark:text-slate-100">
                   {language === 'bn' ? 'বর্তমান প্রাতিষ্ঠানিক অবস্থা:' : 'Institutional Status:'}
                 </div>
                 <p className="line-clamp-3">
@@ -105,13 +105,13 @@ export const PoliticsPage: React.FC = () => {
               </div>
 
               {/* Historical Context */}
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 {language === 'bn' ? seat.historicalNoteBn : seat.historicalNote}
               </p>
             </div>
 
             {/* Source Footer */}
-            <div className="pt-3 border-t border-slate-100 space-y-2">
+            <div className="pt-3 border-t border-slate-100 dark:border-slate-800 space-y-2">
               <SourceBadge
                 source={seat.source}
                 sourceUrl={seat.sourceUrl}

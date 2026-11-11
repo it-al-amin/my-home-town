@@ -24,7 +24,7 @@ export const PlaceCard: React.FC<PlaceCardProps> = ({ place }) => {
   const fallbackSvg = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400"><rect width="600" height="400" fill="%23047857"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="28" fill="%23ffffff">${encodeURIComponent(place.nameBn)}</text></svg>`;
 
   return (
-    <div className="group bg-white rounded-2xl overflow-hidden border border-slate-200/90 hover:border-emerald-500/50 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+    <div className="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200/90 dark:border-slate-700/90 hover:border-emerald-500/50 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col h-full">
       {/* Image Container with zoom effect */}
       <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-slate-800">
         <img
@@ -38,7 +38,7 @@ export const PlaceCard: React.FC<PlaceCardProps> = ({ place }) => {
 
         {/* Top Badges */}
         <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2 pointer-events-none">
-          <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-white/95 text-slate-800 backdrop-blur-md shadow-xs">
+          <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-white/95 dark:bg-slate-900/95 text-slate-800 dark:text-slate-100 backdrop-blur-md shadow-xs">
             {categoryLabel}
           </span>
           {place.featured && (
@@ -61,29 +61,29 @@ export const PlaceCard: React.FC<PlaceCardProps> = ({ place }) => {
       {/* Card Content */}
       <div className="p-5 flex-1 flex flex-col justify-between">
         <div>
-          <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors line-clamp-1 mb-2">
+          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-700 transition-colors line-clamp-1 mb-2">
             <Link to={`/places/${place.id}`}>
               {title}
             </Link>
           </h3>
           <div className="space-y-2 mb-4">
-            <p className="text-[11px] font-bold uppercase tracking-wide text-amber-700">
+            <p className="text-[11px] font-bold uppercase tracking-wide text-amber-700 dark:text-amber-300">
               {language === 'bn' ? 'ইতিহাস' : 'History'}
             </p>
-            <p className="text-slate-600 text-xs sm:text-sm line-clamp-3 leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm line-clamp-3 leading-relaxed">
               {history}
             </p>
-            <p className="text-slate-500 text-xs line-clamp-2 leading-relaxed">
+            <p className="text-slate-500 dark:text-slate-400 text-xs line-clamp-2 leading-relaxed">
               {description}
             </p>
           </div>
         </div>
 
         {/* Action Buttons */}
-        <div className="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+        <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
           <Link
             to={`/places/${place.id}`}
-            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-emerald-700 hover:text-emerald-800 group-hover:translate-x-0.5 transition-all"
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-emerald-700 dark:text-emerald-300 hover:text-emerald-800 group-hover:translate-x-0.5 transition-all"
           >
             <span>{language === 'bn' ? 'বিস্তারিত দেখুন' : 'Explore Spot'}</span>
             <ArrowRight className="w-4 h-4" />

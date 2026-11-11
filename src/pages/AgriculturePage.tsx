@@ -34,16 +34,16 @@ export const AgriculturePage: React.FC = () => {
       </div>
 
       {/* Krishi Call Center Banner */}
-      <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-800 rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <div className="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-xl shrink-0">
             <PhoneCall className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="text-base font-bold text-slate-900">
+            <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">
               {language === 'bn' ? 'জাতীয় কৃষি কল সেন্টার — ১৬১২৩' : 'National Krishi Call Center — 16123'}
             </h3>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
               {language === 'bn' ? 'ফসলের রোগবালাই, সার-কীটনাশক এবং আধুনিক চাষাবাদের জন্য সরাসরি কৃষি কর্মকর্তার সাথে কথা বলুন।' : 'Free expert agricultural consultation on crop diseases, fertilizers, and pest management.'}
             </p>
           </div>
@@ -67,27 +67,27 @@ export const AgriculturePage: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {AGRICULTURE_DATA.crops.map((crop) => (
-            <div key={crop.id} className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs space-y-3">
+            <div key={crop.id} className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-xs space-y-3">
               <div className="flex items-center justify-between gap-2">
-                <h3 className="text-xl font-bold text-slate-900">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
                   {language === 'bn' ? crop.nameBn : crop.name}
                 </h3>
-                <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-50 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
                   {language === 'bn' ? crop.seasonBn : crop.season}
                 </span>
               </div>
 
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 {language === 'bn' ? crop.descriptionBn : crop.description}
               </p>
 
               <div className="pt-2">
-                <span className="text-xs font-bold text-slate-500 block mb-1">
+                <span className="text-xs font-bold text-slate-500 dark:text-slate-400 block mb-1">
                   {language === 'bn' ? 'প্রধান উৎপাদনকারী উপজেলাসমূহ:' : 'Prominent Producing Upazilas:'}
                 </span>
                 <div className="flex flex-wrap gap-1.5">
                   {(language === 'bn' ? crop.prominentUpazilasBn : crop.prominentUpazilas).map((u, i) => (
-                    <span key={i} className="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md">
+                    <span key={i} className="text-[11px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 px-2 py-0.5 rounded-md">
                       {u}
                     </span>
                   ))}
@@ -99,7 +99,7 @@ export const AgriculturePage: React.FC = () => {
       </section>
 
       {/* Extension Support Services */}
-      <section className="bg-slate-100 rounded-3xl p-6 sm:p-8 border border-slate-200 space-y-4">
+      <section className="bg-slate-100 dark:bg-slate-800 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 space-y-4">
         <SectionHeader
           badge={language === 'bn' ? 'কৃষি সম্প্রসারণ' : 'Farmer Support'}
           title={language === 'bn' ? 'সরকারি কৃষি সেবা ও ভর্তুকি' : 'Government Agricultural Subsidies'}
@@ -108,25 +108,25 @@ export const AgriculturePage: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {AGRICULTURE_DATA.services.map((s, idx) => (
-            <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs space-y-3 flex flex-col justify-between">
+            <div key={idx} className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs space-y-3 flex flex-col justify-between">
               <div className="space-y-1">
-                <h4 className="text-base font-bold text-slate-900">
+                <h4 className="text-base font-bold text-slate-900 dark:text-slate-100">
                   {language === 'bn' ? s.titleBn : s.title}
                 </h4>
-                <div className="text-xs text-slate-500">
+                <div className="text-xs text-slate-500 dark:text-slate-400">
                   📍 {language === 'bn' ? s.officeBn : s.office}
                 </div>
               </div>
 
-              <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-                <span className="font-semibold text-emerald-700">
+              <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+                <span className="font-semibold text-emerald-700 dark:text-emerald-300">
                   📞 {s.phone}
                 </span>
                 <a
                   href={s.portalUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-bold text-emerald-700 hover:text-emerald-900 inline-flex items-center gap-1"
+                  className="font-bold text-emerald-700 dark:text-emerald-300 hover:text-emerald-900 inline-flex items-center gap-1"
                 >
                   <span>{language === 'bn' ? 'ডিএই পোর্টাল' : 'DAE Portal'}</span>
                   <ExternalLink className="w-3.5 h-3.5" />

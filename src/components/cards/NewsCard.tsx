@@ -15,13 +15,13 @@ export const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
   const categoryLabel = language === 'bn' ? news.categoryLabel.bn : news.categoryLabel.en;
 
   return (
-    <article className="bg-white rounded-2xl p-5 border border-slate-200/90 hover:border-emerald-500/50 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-full">
+    <article className="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200/90 dark:border-slate-700/90 hover:border-emerald-500/50 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-full">
       <div>
         <div className="flex items-center justify-between gap-2 mb-2.5">
-          <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+          <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-50 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
             {categoryLabel}
           </span>
-          <div className="flex items-center gap-1 text-xs text-slate-500 font-medium">
+          <div className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400 font-medium">
             <Calendar className="w-3.5 h-3.5 text-slate-400" />
             <span>{news.date}</span>
           </div>
@@ -34,17 +34,17 @@ export const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
           </div>
         )}
 
-        <h3 className="text-lg font-bold text-slate-900 mb-2 leading-snug">
+        <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2 leading-snug">
           {title}
         </h3>
 
-        <p className="text-slate-600 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4">
+        <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4">
           {summary}
         </p>
       </div>
 
-      <div className="pt-3 border-t border-slate-100 flex items-center justify-between gap-2 flex-wrap text-xs">
-        <span className="text-slate-500">
+      <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2 flex-wrap text-xs">
+        <span className="text-slate-500 dark:text-slate-400">
           <strong>{language === 'bn' ? 'উৎস:' : 'Source:'}</strong> {news.source}
         </span>
 
@@ -52,7 +52,7 @@ export const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
           href={news.sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 font-bold text-emerald-700 hover:text-emerald-800 hover:underline"
+          className="inline-flex items-center gap-1 font-bold text-emerald-700 dark:text-emerald-300 hover:text-emerald-800 hover:underline"
         >
           <span>{language === 'bn' ? 'মূল উৎস দেখুন' : 'Read original'}</span>
           <ArrowUpRight className="w-3.5 h-3.5" />

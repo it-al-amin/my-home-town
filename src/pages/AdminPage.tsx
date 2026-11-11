@@ -404,13 +404,13 @@ export const AdminPage: React.FC = () => {
                         <span>{language === 'bn' ? 'প্রতিবেদক:' : 'Author:'} {item.authorName || 'নামহীন নাগরিক'}</span>
                       </div>
                       {item.authorContact && (
-                        <div className="flex items-center gap-1.5 text-slate-500">
+                        <div className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
                           <Phone className="w-3.5 h-3.5" />
                           <span>{item.authorContact}</span>
                         </div>
                       )}
                       {item.upazilaId && (
-                        <div className="flex items-center gap-1.5 text-slate-500">
+                        <div className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
                           <MapPin className="w-3.5 h-3.5" />
                           <span>{language === 'bn' ? 'উপজেলা:' : 'Upazila:'} {item.upazilaId}</span>
                         </div>
@@ -481,7 +481,7 @@ export const AdminPage: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
                   {/* Current Cover Photo */}
                   <div className="md:col-span-1 space-y-2">
-                    <span className="text-xs font-bold text-slate-500 block">
+                    <span className="text-xs font-bold text-slate-500 dark:text-slate-400 block">
                       {language === 'bn' ? 'বর্তমান প্রধান কভার ছবি:' : 'Current Main Cover:'}
                     </span>
                     <div className="rounded-2xl overflow-hidden h-48 bg-slate-950 border border-slate-200 dark:border-slate-800 relative group">
@@ -508,7 +508,7 @@ export const AdminPage: React.FC = () => {
                           type="button"
                           onClick={() => setPlaceImageMode('upload')}
                           className={`px-2.5 py-1 rounded-lg cursor-pointer ${
-                            placeImageMode === 'upload' ? 'bg-emerald-700 text-white' : 'text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700'
+                            placeImageMode === 'upload' ? 'bg-emerald-700 text-white' : 'text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
                           }`}
                         >
                           ডিভাইস থেকে
@@ -517,7 +517,7 @@ export const AdminPage: React.FC = () => {
                           type="button"
                           onClick={() => setPlaceImageMode('url')}
                           className={`px-2.5 py-1 rounded-lg cursor-pointer ${
-                            placeImageMode === 'url' ? 'bg-emerald-700 text-white' : 'text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700'
+                            placeImageMode === 'url' ? 'bg-emerald-700 text-white' : 'text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
                           }`}
                         >
                           ইমেজ লিংক
@@ -602,7 +602,7 @@ export const AdminPage: React.FC = () => {
                     <h3 className="text-sm font-black text-slate-800 dark:text-slate-200 flex items-center gap-2">
                       <Layers className="w-4 h-4 text-emerald-600" />
                       <span>{language === 'bn' ? 'এই স্থানের দর্শনার্থীদের ছবি ও গ্যালারি' : 'Visited Spot Photo Gallery'}</span>
-                      <span className="text-xs font-semibold px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600">
+                      <span className="text-xs font-semibold px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
                         {currentPlace.galleryImages?.length || 0} টি ছবি
                       </span>
                     </h3>
@@ -667,7 +667,7 @@ export const AdminPage: React.FC = () => {
               <h2 className="text-xl font-black text-slate-900 dark:text-white mt-1">
                 {language === 'bn' ? 'বিভিন্ন সেকশনের ছবি ও ব্যানার আপলোড' : 'Upload Images for Website Sections'}
               </h2>
-              <p className="text-xs text-slate-500 mt-1">
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
                 {language === 'bn'
                   ? 'হোমপেজের মূল হিরো ব্যানার, খাবার সেকশন, ভ্রমণ গাইড ও অন্যান্য সেকশনের ছবি পরিবর্তন করুন।'
                   : 'Customize background images across major homepage sections.'}
@@ -675,7 +675,7 @@ export const AdminPage: React.FC = () => {
             </div>
 
             {sectionSuccessMsg && (
-              <div className="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border border-emerald-200 text-xs font-bold flex items-center gap-2">
+              <div className="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 text-xs font-bold flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                 <span>{sectionSuccessMsg}</span>
               </div>
@@ -725,7 +725,7 @@ export const AdminPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={resetSectionImages}
-                    className="text-[11px] font-bold text-slate-500 hover:text-red-600 flex items-center gap-1 cursor-pointer"
+                    className="text-[11px] font-bold text-slate-500 dark:text-slate-400 hover:text-red-600 flex items-center gap-1 cursor-pointer"
                   >
                     <RefreshCw className="w-3 h-3" />
                     <span>{language === 'bn' ? 'ডিফল্ট ব্যানারে ফিরুন' : 'Reset Banners'}</span>
@@ -815,7 +815,7 @@ export const AdminPage: React.FC = () => {
             </div>
 
             {directSuccessMsg && (
-              <div className="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border border-emerald-200 text-xs font-bold flex items-center gap-2">
+              <div className="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 text-xs font-bold flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                 <span>{directSuccessMsg}</span>
               </div>
@@ -913,7 +913,7 @@ export const AdminPage: React.FC = () => {
           <div className="space-y-4">
             <h3 className="text-base font-black text-slate-900 dark:text-white flex items-center justify-between">
               <span>{language === 'bn' ? 'সকল বিদ্যমান নোটিশ ও পোস্ট' : 'All Existing Posts'}</span>
-              <span className="text-xs font-normal text-slate-500">{news.length} টি মোট</span>
+              <span className="text-xs font-normal text-slate-500 dark:text-slate-400">{news.length} টি মোট</span>
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -927,10 +927,10 @@ export const AdminPage: React.FC = () => {
                       <span
                         className={`px-2 py-0.5 rounded-md text-[10px] font-black uppercase ${
                           n.status === 'pending'
-                            ? 'bg-amber-100 text-amber-800'
+                            ? 'bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300'
                             : n.status === 'rejected'
-                            ? 'bg-red-100 text-red-800'
-                            : 'bg-emerald-100 text-emerald-800'
+                            ? 'bg-red-100 dark:bg-red-900/40 text-red-800 dark:text-red-300'
+                            : 'bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300'
                         }`}
                       >
                         {n.status === 'pending' ? 'অপেক্ষমাণ' : n.status === 'rejected' ? 'বাতিলকৃত' : 'অনুমোদিত'}
@@ -942,7 +942,7 @@ export const AdminPage: React.FC = () => {
                       {n.titleBn || n.title}
                     </h4>
 
-                    <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">
                       {n.summaryBn || n.summary}
                     </p>
                   </div>
@@ -973,7 +973,7 @@ export const AdminPage: React.FC = () => {
             <h2 className="text-xl font-black text-slate-900 dark:text-white">
               {language === 'bn' ? 'ডেটাবেজ ও স্টোরেজ রিসেট' : 'Storage & Reset Options'}
             </h2>
-            <p className="text-xs text-slate-500 mt-1">
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
               {language === 'bn'
                 ? 'আপনার সমস্ত সংরক্ষিত তথ্য ব্রাউজারের লোকাল স্টোরেজে সুরক্ষিত আছে। চাইলে যেকোনো সময় ডিফল্ট অবস্থায় ফিরিয়ে নেওয়া যাবে।'
                 : 'All dynamic place photos, submitted news, and section banners are persisted locally in browser storage.'}

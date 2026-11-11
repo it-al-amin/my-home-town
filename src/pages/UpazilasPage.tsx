@@ -52,7 +52,7 @@ export const UpazilasPage: React.FC = () => {
       </div>
 
       {/* Search & Sort Controls */}
-      <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="relative w-full sm:w-80">
           <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
           <input
@@ -60,19 +60,19 @@ export const UpazilasPage: React.FC = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder={language === 'bn' ? 'উপজেলার নাম দিয়ে খুঁজুন...' : 'Search upazilas by name...'}
-            className="w-full pl-9 pr-4 py-2 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-hidden focus:border-emerald-500 transition-colors"
+            className="w-full pl-9 pr-4 py-2 text-sm bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:bg-white focus:outline-hidden focus:border-emerald-500 transition-colors"
           />
         </div>
 
         <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
-          <span className="text-xs text-slate-500 font-semibold flex items-center gap-1">
+          <span className="text-xs text-slate-500 dark:text-slate-400 font-semibold flex items-center gap-1">
             <SlidersHorizontal className="w-3.5 h-3.5" />
             <span>{language === 'bn' ? 'সাজান:' : 'Sort by:'}</span>
           </span>
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as any)}
-            className="text-xs font-semibold bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-700 focus:outline-hidden focus:border-emerald-500"
+            className="text-xs font-semibold bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-slate-700 dark:text-slate-200 focus:outline-hidden focus:border-emerald-500"
           >
             <option value="name">{language === 'bn' ? 'নাম অনুযায়ী' : 'By Name'}</option>
             <option value="population">{language === 'bn' ? 'সর্বোচ্চ জনসংখ্যা' : 'By Population'}</option>
@@ -89,12 +89,12 @@ export const UpazilasPage: React.FC = () => {
       </div>
 
       {filteredUpazilas.length === 0 && (
-        <div className="text-center py-16 bg-white rounded-2xl border border-slate-200">
+        <div className="text-center py-16 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700">
           <MapPin className="w-12 h-12 text-slate-300 mx-auto mb-3" />
-          <h3 className="text-lg font-bold text-slate-800">
+          <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100">
             {language === 'bn' ? 'কোনো উপজেলা পাওয়া যায়নি' : 'No Upazila Found'}
           </h3>
-          <p className="text-sm text-slate-500 mt-1">
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
             {language === 'bn' ? 'বানান চেক করে আবার চেষ্টা করুন।' : 'Try checking spelling or reset search terms.'}
           </p>
         </div>

@@ -59,7 +59,7 @@ export const PeoplePage: React.FC = () => {
       </div>
 
       {/* Filter and Search */}
-      <div className="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-xs space-y-3">
+      <div className="bg-white dark:bg-slate-900 p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs space-y-3">
         <div className="relative">
           <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
           <input
@@ -67,12 +67,12 @@ export const PeoplePage: React.FC = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder={language === 'bn' ? 'ব্যক্তিত্বের নাম বা কীর্তি দিয়ে খুঁজুন...' : 'Search by name, contributions...'}
-            className="w-full pl-9 pr-4 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-hidden focus:border-amber-500 transition-colors"
+            className="w-full pl-9 pr-4 py-2.5 text-sm bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:bg-white focus:outline-hidden focus:border-amber-500 transition-colors"
           />
         </div>
 
         {/* Category Chips */}
-        <div className="flex items-center gap-1.5 flex-wrap pt-2 border-t border-slate-100 text-xs">
+        <div className="flex items-center gap-1.5 flex-wrap pt-2 border-t border-slate-100 dark:border-slate-800 text-xs">
           {categories.map((c) => (
             <button
               key={c.id}
@@ -81,7 +81,7 @@ export const PeoplePage: React.FC = () => {
               className={`px-3 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                 selectedCategory === c.id
                   ? 'bg-slate-900 text-white shadow-xs'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
               }`}
             >
               {c.label}

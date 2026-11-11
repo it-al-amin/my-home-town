@@ -225,7 +225,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="mt-12 pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
           <p className="flex items-center gap-1">
             <span>© {new Date().getFullYear()} আমাদের নেত্রকোণা (Our Netrokona Portal).</span>
             <span className="hidden sm:inline">Made with</span>

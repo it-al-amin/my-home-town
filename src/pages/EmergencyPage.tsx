@@ -37,9 +37,9 @@ export const EmergencyPage: React.FC = () => {
       </div>
 
       {/* Critical Legal Warning Callout */}
-      <div className="bg-amber-50 border border-amber-300 rounded-2xl p-5 flex items-start gap-3">
+      <div className="bg-amber-50 dark:bg-amber-900/30 border border-amber-300 rounded-2xl p-5 flex items-start gap-3">
         <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-        <div className="text-xs sm:text-sm text-amber-900 space-y-1">
+        <div className="text-xs sm:text-sm text-amber-900 dark:text-amber-300 space-y-1">
           <div className="font-bold">
             {language === 'bn' ? 'জরুরি সেবা ব্যবহারে সতর্কতা:' : 'Important Public Notice:'}
           </div>
@@ -63,23 +63,23 @@ export const EmergencyPage: React.FC = () => {
           {EMERGENCY_DATA.filter((e) => e.category === 'national' || e.category === 'hospital').map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:shadow-xl transition-all flex flex-col justify-between space-y-4"
+              className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-xs hover:shadow-xl transition-all flex flex-col justify-between space-y-4"
             >
               <div className="space-y-2">
-                <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-50 text-red-800 border border-red-200 inline-block">
+                <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-50 dark:bg-red-900/30 text-red-800 dark:text-red-300 border border-red-200 dark:border-red-800 inline-block">
                   {language === 'bn' ? item.categoryLabel.bn : item.categoryLabel.en}
                 </span>
 
-                <h3 className="text-lg font-bold text-slate-900 leading-snug">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 leading-snug">
                   {language === 'bn' ? item.titleBn : item.title}
                 </h3>
 
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                   {language === 'bn' ? item.noteBn : item.note}
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-slate-100">
+              <div className="pt-3 border-t border-slate-100 dark:border-slate-800">
                 <a
                   href={`tel:${item.number}`}
                   className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-black text-xl bg-red-600 hover:bg-red-700 text-white shadow-md hover:shadow-red-200 transition-all"
@@ -108,30 +108,30 @@ export const EmergencyPage: React.FC = () => {
           {EMERGENCY_DATA.filter((e) => e.category !== 'national' && e.category !== 'hospital').map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between space-y-3"
+              className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between space-y-3"
             >
               <div className="space-y-2">
                 <div className="flex items-center justify-between gap-2">
-                  <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 text-slate-700">
+                  <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200">
                     {language === 'bn' ? item.categoryLabel.bn : item.categoryLabel.en}
                   </span>
-                  <span className="text-xs font-semibold text-emerald-700">
+                  <span className="text-xs font-semibold text-emerald-700 dark:text-emerald-300">
                     {item.availableHours}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-slate-900 leading-snug">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 leading-snug">
                   {language === 'bn' ? item.titleBn : item.title}
                 </h3>
 
                 {item.address && (
-                  <div className="text-xs text-slate-500">
+                  <div className="text-xs text-slate-500 dark:text-slate-400">
                     📍 {language === 'bn' ? item.addressBn : item.address}
                   </div>
                 )}
               </div>
 
-              <div className="pt-3 border-t border-slate-100 space-y-2">
+              <div className="pt-3 border-t border-slate-100 dark:border-slate-800 space-y-2">
                 <a
                   href={`tel:${item.number}`}
                   className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl font-bold text-sm bg-slate-900 hover:bg-slate-800 text-white transition-all"
@@ -147,17 +147,17 @@ export const EmergencyPage: React.FC = () => {
       </section>
 
       {/* Upazila Emergency Quick Table */}
-      <section className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-4">
-        <h3 className="text-xl font-bold text-slate-900">
+      <section className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-xs space-y-4">
+        <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
           {language === 'bn' ? '১০টি উপজেলার জরুরি যোগাযোগ তালিকা' : '10 Upazilas Emergency Quick Directory'}
         </h3>
-        <p className="text-xs sm:text-sm text-slate-500">
+        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
           {language === 'bn' ? 'থানা পুলিশ, ফায়ার স্টেশন, স্বাস্থ্য কমপ্লেক্স এবং উপজেলা নির্বাহী কর্মকর্তা (ইউএনও)-র ডিউটি নম্বর।' : 'Thana police, fire station, health complex, and UNO duty lines across all upazilas.'}
         </p>
 
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs sm:text-sm">
-            <thead className="bg-slate-50 text-slate-700 font-bold border-b border-slate-200">
+            <thead className="bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-200 font-bold border-b border-slate-200 dark:border-slate-700">
               <tr>
                 <th className="py-3 px-4">{language === 'bn' ? 'উপজেলা' : 'Upazila'}</th>
                 <th className="py-3 px-4">{language === 'bn' ? 'থানা পুলিশ' : 'Police Thana'}</th>
@@ -166,38 +166,38 @@ export const EmergencyPage: React.FC = () => {
                 <th className="py-3 px-4">{language === 'bn' ? 'ইউএনও অফিস' : 'UNO Office'}</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 text-slate-600">
+            <tbody className="divide-y divide-slate-100 dark:divide-slate-800 text-slate-600 dark:text-slate-300">
               {UPAZILAS_DATA.map((u) => (
-                <tr key={u.id} className="hover:bg-slate-50/80 transition-colors">
-                  <td className="py-3 px-4 font-bold text-slate-900">
-                    <Link to={`/upazilas/${u.slug}`} className="text-emerald-700 hover:underline">
+                <tr key={u.id} className="hover:bg-slate-50/80 dark:hover:bg-slate-800/80 transition-colors">
+                  <td className="py-3 px-4 font-bold text-slate-900 dark:text-slate-100">
+                    <Link to={`/upazilas/${u.slug}`} className="text-emerald-700 dark:text-emerald-300 hover:underline">
                       {language === 'bn' ? u.nameBn : u.name}
                     </Link>
                   </td>
                   <td className="py-3 px-4">
                     {u.emergencyContacts?.police ? (
-                      <a href={`tel:${u.emergencyContacts.police}`} className="text-emerald-700 font-semibold hover:underline">
+                      <a href={`tel:${u.emergencyContacts.police}`} className="text-emerald-700 dark:text-emerald-300 font-semibold hover:underline">
                         {u.emergencyContacts.police}
                       </a>
                     ) : '—'}
                   </td>
                   <td className="py-3 px-4">
                     {u.emergencyContacts?.fireService ? (
-                      <a href={`tel:${u.emergencyContacts.fireService}`} className="text-emerald-700 font-semibold hover:underline">
+                      <a href={`tel:${u.emergencyContacts.fireService}`} className="text-emerald-700 dark:text-emerald-300 font-semibold hover:underline">
                         {u.emergencyContacts.fireService}
                       </a>
                     ) : '—'}
                   </td>
                   <td className="py-3 px-4">
                     {u.emergencyContacts?.healthComplex ? (
-                      <a href={`tel:${u.emergencyContacts.healthComplex}`} className="text-emerald-700 font-semibold hover:underline">
+                      <a href={`tel:${u.emergencyContacts.healthComplex}`} className="text-emerald-700 dark:text-emerald-300 font-semibold hover:underline">
                         {u.emergencyContacts.healthComplex}
                       </a>
                     ) : '—'}
                   </td>
                   <td className="py-3 px-4">
                     {u.emergencyContacts?.uno ? (
-                      <a href={`tel:${u.emergencyContacts.uno}`} className="text-emerald-700 font-semibold hover:underline">
+                      <a href={`tel:${u.emergencyContacts.uno}`} className="text-emerald-700 dark:text-emerald-300 font-semibold hover:underline">
                         {u.emergencyContacts.uno}
                       </a>
                     ) : '—'}

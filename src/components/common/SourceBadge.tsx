@@ -21,7 +21,7 @@ export const SourceBadge: React.FC<SourceBadgeProps> = ({
 
   if (needsVerification) {
     return (
-      <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-amber-50 text-amber-800 border border-amber-200 ${className}`}>
+      <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-amber-50 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800 ${className}`}>
         <AlertCircle className="w-3.5 h-3.5 text-amber-600 shrink-0" />
         <span>{language === 'bn' ? 'তথ্য যাচাইকরণ প্রয়োজন' : 'Information needs verification'}</span>
       </div>
@@ -33,8 +33,8 @@ export const SourceBadge: React.FC<SourceBadgeProps> = ({
   }
 
   return (
-    <div className={`inline-flex flex-wrap items-center gap-2 text-xs text-slate-500 bg-slate-100/80 px-2.5 py-1 rounded-md border border-slate-200 ${className}`}>
-      <span className="inline-flex items-center gap-1 text-emerald-700 font-medium">
+    <div className={`inline-flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400 bg-slate-100/80 dark:bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-700 ${className}`}>
+      <span className="inline-flex items-center gap-1 text-emerald-700 dark:text-emerald-300 font-medium">
         <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
         <span>{language === 'bn' ? 'যাচাইকৃত উৎস:' : 'Source:'}</span>
       </span>
@@ -45,18 +45,18 @@ export const SourceBadge: React.FC<SourceBadgeProps> = ({
             href={sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-emerald-700 hover:text-emerald-900 underline decoration-emerald-300 font-medium inline-flex items-center gap-1"
+            className="text-emerald-700 dark:text-emerald-300 hover:text-emerald-900 underline decoration-emerald-300 font-medium inline-flex items-center gap-1"
           >
             <span>{source}</span>
             <ExternalLink className="w-2.5 h-2.5 opacity-60" />
           </a>
         ) : (
-          <span className="text-slate-700 font-medium">{source}</span>
+          <span className="text-slate-700 dark:text-slate-200 font-medium">{source}</span>
         )
       )}
 
       {lastVerified && (
-        <span className="text-slate-400 pl-1 border-l border-slate-300">
+        <span className="text-slate-400 pl-1 border-l border-slate-300 dark:border-slate-600">
           {language === 'bn' ? `যাচাই: ${lastVerified}` : `Verified: ${lastVerified}`}
         </span>
       )}

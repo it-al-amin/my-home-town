@@ -226,7 +226,7 @@ export const UpazilaUnionMap: React.FC<UpazilaUnionMapProps> = ({
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
               activeFilter === 'all'
                 ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-xs'
-                : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'
+                : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
             }`}
           >
             {language === 'bn' ? 'সকল মার্কার' : 'All Markers'}

@@ -290,7 +290,7 @@ export const Header: React.FC = () => {
                       <Link
                         to="/services"
                         onClick={() => setActiveDropdown(null)}
-                        className="block px-3 py-1.5 text-[11px] text-slate-500 hover:text-slate-800 dark:hover:text-slate-300"
+                        className="block px-3 py-1.5 text-[11px] text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-300"
                       >
                         {language === 'bn' ? 'নাগরিক সেবা ও তথ্য বাতায়ন' : 'Public Services'}
                       </Link>

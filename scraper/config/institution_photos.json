@@ -1,0 +1,3 @@
+{
+  "_comment": "Add photos you have the right to use. Key = institution id from src/data/aggregated/institutions/institutions.json. Fields: url, pageUrl, credit, license, source."
+}

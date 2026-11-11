@@ -24,7 +24,7 @@ export const ThemeToggle: React.FC<{ className?: string }> = ({ className = '' }
       {isDark ? (
         <Sun className="w-4 h-4 text-amber-400 animate-in spin-in-90 duration-300" />
       ) : (
-        <Moon className="w-4 h-4 text-slate-700 animate-in spin-in-90 duration-300" />
+        <Moon className="w-4 h-4 text-slate-700 dark:text-slate-200 animate-in spin-in-90 duration-300" />
       )}
     </button>
   );

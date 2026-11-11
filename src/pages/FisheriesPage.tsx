@@ -41,14 +41,14 @@ export const FisheriesPage: React.FC = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {FISHERIES_DATA.keySpecies.map((fish, idx) => (
-            <div key={idx} className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs space-y-2">
-              <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-cyan-50 text-cyan-800 border border-cyan-200 inline-block">
+            <div key={idx} className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs space-y-2">
+              <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-cyan-50 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800 inline-block">
                 {fish.type}
               </span>
-              <h3 className="text-lg font-bold text-slate-900">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                 {language === 'bn' ? fish.nameBn : fish.name}
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 {fish.description}
               </p>
             </div>
@@ -66,17 +66,17 @@ export const FisheriesPage: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {FISHERIES_DATA.majorFishMarkets.map((market, idx) => (
-            <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-teal-50 border border-teal-200 text-teal-700 flex items-center justify-center">
+            <div key={idx} className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-900/30 border border-teal-200 dark:border-teal-800 text-teal-700 dark:text-teal-300 flex items-center justify-center">
                 <ShoppingBag className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                 {language === 'bn' ? market.nameBn : market.name}
               </h3>
-              <div className="text-xs text-slate-500 font-semibold">
+              <div className="text-xs text-slate-500 dark:text-slate-400 font-semibold">
                 📍 {language === 'bn' ? market.locationBn : market.location}
               </div>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 {language === 'bn' ? market.featuresBn : market.features}
               </p>
             </div>
@@ -85,7 +85,7 @@ export const FisheriesPage: React.FC = () => {
       </section>
 
       {/* Government Fisheries Programs */}
-      <section className="bg-cyan-50/60 rounded-3xl p-6 sm:p-8 border border-cyan-200 space-y-6">
+      <section className="bg-cyan-50/60 dark:bg-cyan-900/30 rounded-3xl p-6 sm:p-8 border border-cyan-200 dark:border-cyan-800 space-y-6">
         <SectionHeader
           badge={language === 'bn' ? 'সরকারি প্রণোদনা' : 'Government Programs'}
           title={language === 'bn' ? 'মৎস্য অধিদপ্তরের কর্মসূচি ও জেলে সহায়তা' : 'Fisheries Department Initiatives'}
@@ -94,25 +94,25 @@ export const FisheriesPage: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {FISHERIES_DATA.governmentSchemes.map((scheme, idx) => (
-            <div key={idx} className="bg-white p-6 rounded-2xl border border-cyan-200 shadow-xs space-y-3 flex flex-col justify-between">
+            <div key={idx} className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-cyan-200 dark:border-cyan-800 shadow-xs space-y-3 flex flex-col justify-between">
               <div className="space-y-2">
-                <h4 className="text-lg font-bold text-slate-900">
+                <h4 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                   {language === 'bn' ? scheme.titleBn : scheme.title}
                 </h4>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                   {language === 'bn' ? scheme.descriptionBn : scheme.description}
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-                <span className="text-slate-500 font-medium">
+              <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+                <span className="text-slate-500 dark:text-slate-400 font-medium">
                   {scheme.authority}
                 </span>
                 <a
                   href={scheme.portalUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 font-bold text-cyan-700 hover:text-cyan-900"
+                  className="inline-flex items-center gap-1 font-bold text-cyan-700 dark:text-cyan-300 hover:text-cyan-900"
                 >
                   <span>{language === 'bn' ? 'অফিসিয়াল পোর্টাল' : 'Portal'}</span>
                   <ExternalLink className="w-3.5 h-3.5" />

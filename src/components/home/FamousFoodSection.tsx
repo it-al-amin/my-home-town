@@ -11,17 +11,17 @@ export const FamousFoodSection: React.FC = () => {
   const selectedFood = FAMOUS_FOODS_DATA.find((f) => f.id === selectedFoodId) || FAMOUS_FOODS_DATA[0];
 
   return (
-    <section className="bg-amber-50/60 rounded-3xl p-6 sm:p-10 border border-amber-200/70 shadow-xs space-y-8">
+    <section className="bg-amber-50/60 dark:bg-amber-900/30 rounded-3xl p-6 sm:p-10 border border-amber-200/70 shadow-xs space-y-8">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-amber-200/60 pb-5">
         <div>
-          <span className="text-xs font-bold text-amber-800 uppercase tracking-wider bg-amber-100 px-3 py-1 rounded-md border border-amber-300">
+          <span className="text-xs font-bold text-amber-800 dark:text-amber-300 uppercase tracking-wider bg-amber-100 dark:bg-amber-900/40 px-3 py-1 rounded-md border border-amber-300">
             {language === 'bn' ? 'স্বাদ ও রসনা বিলাস' : 'Culinary Heritage'}
           </span>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-2">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight mt-2">
             {language === 'bn' ? 'নেত্রকোণার বিখ্যাত খাবার ও মিষ্টি' : 'Famous Food & Traditional Delicacies'}
           </h2>
-          <p className="text-sm text-slate-600 mt-1 max-w-2xl leading-relaxed">
+          <p className="text-sm text-slate-600 dark:text-slate-300 mt-1 max-w-2xl leading-relaxed">
             {language === 'bn'
               ? 'গয়ানাথের শতবর্ষী বালিশ মিষ্টি থেকে শুরু করে গারো পাহাড়ের খাঁটি পাহাড়ি মধু এবং হাওরের তাজা মিঠাপানির মাছ।'
               : 'From century-old pillow sweet (Balish Mishti) to hill country kalai ruti and freshwater haor delicacies.'}
@@ -30,7 +30,7 @@ export const FamousFoodSection: React.FC = () => {
 
         <Link
           to="/culture"
-          className="inline-flex items-center gap-1.5 font-bold text-sm text-amber-900 hover:text-amber-700 shrink-0"
+          className="inline-flex items-center gap-1.5 font-bold text-sm text-amber-900 dark:text-amber-300 hover:text-amber-700 shrink-0"
         >
           <span>{language === 'bn' ? 'সকল লোকসংস্কৃতি ও খাবার' : 'Explore Culture & Food'}</span>
           <ArrowRight className="w-4 h-4" />
@@ -50,8 +50,8 @@ export const FamousFoodSection: React.FC = () => {
                 onClick={() => setSelectedFoodId(food.id)}
                 className={`w-full text-left p-4 rounded-2xl border transition-all cursor-pointer flex items-center justify-between gap-3 ${
                   isSelected
-                    ? 'bg-white border-amber-500 shadow-md ring-2 ring-amber-400/20 translate-x-1'
-                    : 'bg-white/80 border-amber-200/80 hover:bg-white hover:border-amber-300 text-slate-700'
+                    ? 'bg-white dark:bg-slate-900 border-amber-500 shadow-md ring-2 ring-amber-400/20 translate-x-1'
+                    : 'bg-white/80 dark:bg-slate-900/80 border-amber-200/80 hover:bg-white dark:hover:bg-slate-800 hover:border-amber-300 text-slate-700 dark:text-slate-200'
                 }`}
               >
                 <div className="flex items-center gap-3">
@@ -59,17 +59,17 @@ export const FamousFoodSection: React.FC = () => {
                     <img src={food.image} alt={food.name} className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-sm sm:text-base text-slate-900 line-clamp-1">
+                    <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-slate-100 line-clamp-1">
                       {language === 'bn' ? food.nameBn : food.name}
                     </h4>
-                    <span className="text-xs font-semibold text-amber-800">
+                    <span className="text-xs font-semibold text-amber-800 dark:text-amber-300">
                       {language === 'bn' ? food.categoryLabel.bn : food.categoryLabel.en}
                     </span>
                   </div>
                 </div>
 
                 <div className="text-right shrink-0">
-                  <span className="text-xs font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200 block">
+                  <span className="text-xs font-bold text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-900/30 px-2 py-0.5 rounded-md border border-emerald-200 dark:border-emerald-800 block">
                     {language === 'bn' ? food.approxPriceBn : food.approxPrice}
                   </span>
                 </div>
@@ -79,7 +79,7 @@ export const FamousFoodSection: React.FC = () => {
         </div>
 
         {/* Right Column: Detailed Spotlight Card */}
-        <div className="lg:col-span-7 bg-white rounded-2xl border border-amber-200 p-6 sm:p-8 shadow-sm flex flex-col justify-between">
+        <div className="lg:col-span-7 bg-white dark:bg-slate-900 rounded-2xl border border-amber-200 dark:border-amber-800 p-6 sm:p-8 shadow-sm flex flex-col justify-between">
           <div className="space-y-4">
             <div className="relative aspect-video rounded-xl overflow-hidden shadow-sm">
               <img
@@ -93,23 +93,23 @@ export const FamousFoodSection: React.FC = () => {
             </div>
 
             <div>
-              <h3 className="text-xl sm:text-2xl font-black text-slate-900">
+              <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-slate-100">
                 {language === 'bn' ? selectedFood.nameBn : selectedFood.name}
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
                 {language === 'bn' ? selectedFood.descriptionBn : selectedFood.description}
               </p>
             </div>
 
-            <div className="bg-amber-50/80 p-4 rounded-xl border border-amber-100 space-y-2 text-xs">
-              <div className="flex items-start gap-2 text-amber-900">
+            <div className="bg-amber-50/80 dark:bg-amber-900/30 p-4 rounded-xl border border-amber-100 dark:border-amber-800 space-y-2 text-xs">
+              <div className="flex items-start gap-2 text-amber-900 dark:text-amber-300">
                 <Sparkles className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                 <div>
                   <strong className="font-bold">{language === 'bn' ? 'ঐতিহাসিক পটভূমি:' : 'History:'} </strong>
                   <span>{language === 'bn' ? selectedFood.historyBn : selectedFood.history}</span>
                 </div>
               </div>
-              <div className="flex items-start gap-2 text-slate-700 pt-1 border-t border-amber-200/50">
+              <div className="flex items-start gap-2 text-slate-700 dark:text-slate-200 pt-1 border-t border-amber-200/50">
                 <MapPin className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
                   <strong className="font-bold">{language === 'bn' ? 'কোথায় পাবেন:' : 'Where to Find:'} </strong>
@@ -119,9 +119,9 @@ export const FamousFoodSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="pt-4 mt-2 flex items-center justify-between border-t border-slate-100 text-xs">
-            <span className="font-bold text-slate-500">
-              {language === 'bn' ? 'আনুমানিক মূল্য:' : 'Price:'} <strong className="text-slate-900 font-mono text-sm">{language === 'bn' ? selectedFood.approxPriceBn : selectedFood.approxPrice}</strong>
+          <div className="pt-4 mt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 text-xs">
+            <span className="font-bold text-slate-500 dark:text-slate-400">
+              {language === 'bn' ? 'আনুমানিক মূল্য:' : 'Price:'} <strong className="text-slate-900 dark:text-slate-100 font-mono text-sm">{language === 'bn' ? selectedFood.approxPriceBn : selectedFood.approxPrice}</strong>
             </span>
             <Link
               to="/culture"
