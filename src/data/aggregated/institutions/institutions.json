@@ -1,0 +1,2034 @@
+{
+  "generatedAt": "2026-11-11T09:35:26+00:00",
+  "source": "OpenStreetMap contributors (ODbL), partial coverage",
+  "institutions": [
+    {
+      "id": "osm-node-5889960546",
+      "name": "Atpara College",
+      "nameBn": "Atpara College",
+      "category": "college",
+      "upazilaId": "atpara",
+      "coordinates": {
+        "lat": 24.806418,
+        "lng": 90.861617
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/5889960546",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-3559112809",
+      "name": "Jobayda Rahman Mohila College",
+      "nameBn": "Jobayda Rahman Mohila College",
+      "category": "college",
+      "upazilaId": "atpara",
+      "coordinates": {
+        "lat": 24.722829,
+        "lng": 90.947374
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/3559112809",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-5883976437",
+      "name": "Telegati Degree College",
+      "nameBn": "Telegati Degree College",
+      "category": "college",
+      "upazilaId": "atpara",
+      "coordinates": {
+        "lat": 24.762082,
+        "lng": 90.864048
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/5883976437",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6863794049",
+      "name": "Alhaj Mojaffor Ahmed Alim Madrasa",
+      "nameBn": "Alhaj Mojaffor Ahmed Alim Madrasa",
+      "category": "madrasa",
+      "upazilaId": "atpara",
+      "coordinates": {
+        "lat": 24.717402,
+        "lng": 90.957317
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6863794049",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-3559112807",
+      "name": "Barivadera Govt Primary School",
+      "nameBn": "Barivadera Govt Primary School",
+      "category": "primary",
+      "upazilaId": "atpara",
+      "coordinates": {
+        "lat": 24.724113,
+        "lng": 90.946506
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/3559112807",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6863852380",
+      "name": "Fachika Mahim Smaranika Primary School",
+      "nameBn": "Fachika Mahim Smaranika Primary School",
+      "category": "primary",
+      "upazilaId": "atpara",
+      "coordinates": {
+        "lat": 24.723504,
+        "lng": 90.95811
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6863852380",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6590686290",
+      "name": "গাভুর কাছ সরকারী প্রাথমিক বিদ্যালয়",
+      "nameBn": "গাভুর কাছ সরকারী প্রাথমিক বিদ্যালয়",
+      "category": "primary",
+      "upazilaId": "atpara",
+      "coordinates": {
+        "lat": 24.807567,
+        "lng": 90.875273
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6590686290",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6585540987",
+      "name": "বানিয়াজান মডেল সরকারী প্রাথমিক বিদ্যালয়",
+      "nameBn": "বানিয়াজান মডেল সরকারী প্রাথমিক বিদ্যালয়",
+      "category": "primary",
+      "upazilaId": "atpara",
+      "coordinates": {
+        "lat": 24.813069,
+        "lng": 90.859208
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6585540987",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6583648044",
+      "name": "বাড়ীভাদেরা সরকারী প্রাথমিক বিদ্যালয়",
+      "nameBn": "বাড়ীভাদেরা সরকারী প্রাথমিক বিদ্যালয়",
+      "category": "primary",
+      "upazilaId": "atpara",
+      "coordinates": {
+        "lat": 24.724177,
+        "lng": 90.946801
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6583648044",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-5889960580",
+      "name": "Baniajan CT Pilot High School",
+      "nameBn": "Baniajan CT Pilot High School",
+      "category": "school",
+      "upazilaId": "atpara",
+      "coordinates": {
+        "lat": 24.812971,
+        "lng": 90.858654
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/5889960580",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6872596520",
+      "name": "Bausha High School",
+      "nameBn": "বাউশা উচ্চ বিদ্যালয়",
+      "category": "school",
+      "upazilaId": "atpara",
+      "coordinates": {
+        "lat": 24.764802,
+        "lng": 90.962329
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6872596520",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-5896938348",
+      "name": "Barhatta College",
+      "nameBn": "Barhatta College",
+      "category": "college",
+      "upazilaId": "barhatta",
+      "coordinates": {
+        "lat": 24.89438,
+        "lng": 90.87744
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/5896938348",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-5896898593",
+      "name": "Barhatta Pilot Girls High School",
+      "nameBn": "Barhatta Pilot Girls High School",
+      "category": "school",
+      "upazilaId": "barhatta",
+      "coordinates": {
+        "lat": 24.899514,
+        "lng": 90.882278
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/5896898593",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-3701795420",
+      "name": "33 South Volranipur Government GOBT Primary School",
+      "nameBn": "33 South Volranipur Government GOBT Primary School",
+      "category": "primary",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.115237,
+        "lng": 90.664586
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/3701795420",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-3702053365",
+      "name": "Birisiri Model Government Primary School",
+      "nameBn": "Birisiri Model Government Primary School",
+      "category": "primary",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.108679,
+        "lng": 90.674389
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/3702053365",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-356335279",
+      "name": "Durgapur Government Primary School",
+      "nameBn": "Durgapur Government Primary School",
+      "category": "primary",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.126467,
+        "lng": 90.676332
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/356335279",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-3701732786",
+      "name": "West Dorshal Primary School",
+      "nameBn": "West Dorshal Primary School",
+      "category": "primary",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.116246,
+        "lng": 90.69337
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/3701732786",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-356335315",
+      "name": "Adorsha Bidda Nuketon",
+      "nameBn": "Adorsha Bidda Nuketon",
+      "category": "school",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.128279,
+        "lng": 90.676367
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/356335315",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-356075263",
+      "name": "Advanced Model School",
+      "nameBn": "Advanced Model School",
+      "category": "school",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.122923,
+        "lng": 90.677597
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/356075263",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-355856486",
+      "name": "Al Jamatul Madania Jamiul Ulum",
+      "nameBn": "Al Jamatul Madania Jamiul Ulum",
+      "category": "school",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.11943,
+        "lng": 90.676468
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/355856486",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-366173408",
+      "name": "Anondo",
+      "nameBn": "Anondo",
+      "category": "school",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.133977,
+        "lng": 90.679357
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/366173408",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-3701732784",
+      "name": "Ballikandi School",
+      "nameBn": "Ballikandi School",
+      "category": "school",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.119671,
+        "lng": 90.688607
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/3701732784",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-356332285",
+      "name": "Bidda Niketon School",
+      "nameBn": "Bidda Niketon School",
+      "category": "school",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.128366,
+        "lng": 90.675672
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/356332285",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-353057735",
+      "name": "Birisiri Mission Girls High School",
+      "nameBn": "Birisiri Mission Girls High School",
+      "category": "school",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.108942,
+        "lng": 90.674002
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/353057735",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-3701852972",
+      "name": "Birzisizi P.C. Nall Memorial High School",
+      "nameBn": "Birzisizi P.C. Nall Memorial High School",
+      "category": "school",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.1111,
+        "lng": 90.67234
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/3701852972",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-356335399",
+      "name": "De child School",
+      "nameBn": "De child School",
+      "category": "school",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.12684,
+        "lng": 90.678235
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/356335399",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-3701732785",
+      "name": "Dorshal Anado School",
+      "nameBn": "Dorshal Anado School",
+      "category": "school",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.11835,
+        "lng": 90.694756
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/3701732785",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-356076651",
+      "name": "Fatima Mahila Madrassa",
+      "nameBn": "Fatima Mahila Madrassa",
+      "category": "school",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.120896,
+        "lng": 90.676908
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/356076651",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-356066075",
+      "name": "Green Heaven International School",
+      "nameBn": "Green Heaven International School",
+      "category": "school",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.125102,
+        "lng": 90.674307
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/356066075",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-356335305",
+      "name": "Joynal Uobyda model",
+      "nameBn": "Joynal Uobyda model",
+      "category": "school",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.126195,
+        "lng": 90.674056
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/356335305",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-3701721797",
+      "name": "Madrassa School",
+      "nameBn": "Madrassa School",
+      "category": "school",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.128248,
+        "lng": 90.681618
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/3701721797",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-355769488",
+      "name": "Moharaja Kumud Chandra Memorial Government Pilot High School",
+      "nameBn": "Moharaja Kumud Chandra Memorial Government Pilot High School",
+      "category": "school",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.123128,
+        "lng": 90.681812
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/355769488",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-355771327",
+      "name": "North Balikaudi Ananda School",
+      "nameBn": "North Balikaudi Ananda School",
+      "category": "school",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.121963,
+        "lng": 90.685414
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/355771327",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-355856535",
+      "name": "Nutum Kuni Kindergarden",
+      "nameBn": "Nutum Kuni Kindergarden",
+      "category": "school",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.118868,
+        "lng": 90.677559
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/355856535",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-10760551157",
+      "name": "Saint Xavier's School",
+      "nameBn": "সেন্ট জেভিয়ার্স স্কুল",
+      "category": "school",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.105902,
+        "lng": 90.671268
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/10760551157",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-356335284",
+      "name": "Suson Collage",
+      "nameBn": "Suson Collage",
+      "category": "school",
+      "upazilaId": "durgapur",
+      "coordinates": {
+        "lat": 25.127412,
+        "lng": 90.677034
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/356335284",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-549577508",
+      "name": "Mukti pre cadet school",
+      "nameBn": "Mukti pre cadet school",
+      "category": "school",
+      "upazilaId": "kalmakanda",
+      "coordinates": {
+        "lat": 25.077657,
+        "lng": 90.89089
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/549577508",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-11019835974",
+      "name": "Kendua Degree College",
+      "nameBn": "কেন্দুয়া ডিগ্রী কলেজ",
+      "category": "college",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.667879,
+        "lng": 90.84201
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/11019835974",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-11021525710",
+      "name": "Parvin Shiraj Mohila College",
+      "nameBn": "পারভিন সিরাজ মহিলা কলেজ",
+      "category": "college",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.661434,
+        "lng": 90.852811
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/11021525710",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-12019961658",
+      "name": "Abdul Mannan Akondo Jhilu Jilu Mastar Hafizia Madrasa",
+      "nameBn": "আব্দুল মান্নান আকন্দ ঝিলু ঝিলু মাস্টর হাফিজিয়া মাদ্রাসা",
+      "category": "madrasa",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.686773,
+        "lng": 90.858861
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/12019961658",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-11021665433",
+      "name": "Baitus Sunnah Islamia Madrasa o Atimkhna",
+      "nameBn": "বাইতুস সুন্নাহ ইসলামিয়া মাদ্রাসা ও এতিমখানা",
+      "category": "madrasa",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.655978,
+        "lng": 90.828182
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/11021665433",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-11034945903",
+      "name": "Chowmuria Madrasa",
+      "nameBn": "চৌমুরিয়া মাদ্রাসা",
+      "category": "madrasa",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.664236,
+        "lng": 90.866216
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/11034945903",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-11019638114",
+      "name": "Dhopagati Nurani Hafizia Madrasa",
+      "nameBn": "ধোপাগাঁতি নূরানী হাফিজিয়া মাদ্রাসা",
+      "category": "madrasa",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.656649,
+        "lng": 90.865468
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/11019638114",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-11020898792",
+      "name": "Digdair Madrasa",
+      "nameBn": "দিগদাইর মাদ্রাসা",
+      "category": "madrasa",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.664513,
+        "lng": 90.844833
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/11020898792",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-12012834832",
+      "name": "Israfil Mallik Baitus Sunnah Hafijia Ibtedia Madrasa",
+      "nameBn": "ইসরাফিল মল্লিক বাইতুস সুন্নাহ হাফিজিয়া ইবতেদায়ী মাদরাসা",
+      "category": "madrasa",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.658825,
+        "lng": 90.862147
+      },
+      "website": null,
+      "phone": "01711475313",
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/12012834832",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-12019961657",
+      "name": "Sufiya Begum Kowmi Mohila Madrasa",
+      "nameBn": "সুফিয়া বেগম কওমী মহিলা মাদ্রাসা",
+      "category": "madrasa",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.686846,
+        "lng": 90.859018
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/12019961657",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-11019648038",
+      "name": "Baniyagati Sorkari Prathomik Biddaloy",
+      "nameBn": "বানিয়াগাতি সরকারি প্রাথমিক বিদ্যালয়",
+      "category": "primary",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.650848,
+        "lng": 90.883953
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/11019648038",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-11020800537",
+      "name": "Chandragati Government Primary School",
+      "nameBn": "চন্দ্রগাতি সরকারি প্রাথমিক বিদ্যালয়",
+      "category": "primary",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.661283,
+        "lng": 90.854958
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/11020800537",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-11020830450",
+      "name": "Dhopagati Government Primary School",
+      "nameBn": "ধোপাগাতি সরকারি প্রাথমিক বিদ্যালয়",
+      "category": "primary",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.656828,
+        "lng": 90.863196
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/11020830450",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-11020996190",
+      "name": "Digdair Government Primary School",
+      "nameBn": "দিগদাইর সরকারি প্রাথমিক বিদ্যালয়",
+      "category": "primary",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.66811,
+        "lng": 90.850474
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/11020996190",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-11024165024",
+      "name": "Kendua Model Government Primary School",
+      "nameBn": "কেন্দুয়া মডেল সরকারি প্রাথমিক বিদ্যালয়",
+      "category": "primary",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.661801,
+        "lng": 90.840345
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/11024165024",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-5707263154",
+      "name": "উত্তর কেন্দুয়া ক্লাস্টার মডেল সরকারি প্রাথমিক বিদ্যালয়",
+      "nameBn": "উত্তর কেন্দুয়া ক্লাস্টার মডেল সরকারি প্রাথমিক বিদ্যালয়",
+      "category": "primary",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.66725,
+        "lng": 90.843139
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/5707263154",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-11028336237",
+      "name": "(Ayesha Salam Bhuiyan Academi) ASB School",
+      "nameBn": "(আয়েশা সালাম ভূইয়া একাডেমি) এএসবি স্কুল",
+      "category": "school",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.66267,
+        "lng": 90.844746
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/11028336237",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-11028118858",
+      "name": "Adarsha Shishu Bitan",
+      "nameBn": "আদর্শ শিশু বিতান",
+      "category": "school",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.6618,
+        "lng": 90.846407
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/11028118858",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-11019625886",
+      "name": "Chanmia Islami Kindergarten",
+      "nameBn": "চানমিয়া ইসলামি কিন্ডারগার্টেন",
+      "category": "school",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.655312,
+        "lng": 90.874813
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/11019625886",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-11020887212",
+      "name": "Hossen o Sufia Academi School and College",
+      "nameBn": "হোসেন ও সুফিয়া একাডেমি স্কুল এন্ড কলেজ",
+      "category": "school",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.642793,
+        "lng": 90.887753
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/11020887212",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-5741983896",
+      "name": "Kendu Joyhari Spry Government High School",
+      "nameBn": "কেন্দুয়া জয়হরি স্প্রাই সরকারি উচ্চ বিদ্যালয়",
+      "category": "school",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.662342,
+        "lng": 90.841813
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/5741983896",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-5922370875",
+      "name": "Sandikona School and College",
+      "nameBn": "Sandikona School and College",
+      "category": "school",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.66348,
+        "lng": 90.766905
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/5922370875",
+      "isVerified": false
+    },
+    {
+      "id": "osm-relation-8617100",
+      "name": "সাবেরুন্নেসা বালিকা উচ্চ বিদ্যালয়",
+      "nameBn": "সাবেরুন্নেসা বালিকা উচ্চ বিদ্যালয়",
+      "category": "school",
+      "upazilaId": "kendua",
+      "coordinates": {
+        "lat": 24.662548,
+        "lng": 90.839336
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/relation/8617100",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6883088952",
+      "name": "Nur-Pur Govt. Primary School",
+      "nameBn": "Nur-Pur Govt. Primary School",
+      "category": "primary",
+      "upazilaId": "khaliajuri",
+      "coordinates": {
+        "lat": 24.725889,
+        "lng": 91.044941
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6883088952",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6869909850",
+      "name": "College Building",
+      "nameBn": "College Building",
+      "category": "college",
+      "upazilaId": "madan",
+      "coordinates": {
+        "lat": 24.710902,
+        "lng": 90.969694
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Broome_Community_College_manufacturing_learning_building.jpg/960px-Broome_Community_College_manufacturing_learning_building.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Broome_Community_College_manufacturing_learning_building.jpg",
+        "credit": "J. Passepartout",
+        "license": "CC BY-SA 4.0",
+        "source": "Wikimedia Commons"
+      },
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6869909850",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6863639817",
+      "name": "Degree Building",
+      "nameBn": "Degree Building",
+      "category": "college",
+      "upazilaId": "madan",
+      "coordinates": {
+        "lat": 24.714996,
+        "lng": 90.961228
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Degree_of_Honor_Protective_Association_Building.jpg/960px-Degree_of_Honor_Protective_Association_Building.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Degree_of_Honor_Protective_Association_Building.jpg",
+        "credit": "McGhiever",
+        "license": "CC BY 4.0",
+        "source": "Wikimedia Commons"
+      },
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6863639817",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-3559114198",
+      "name": "Govt Abdul Aziz Khan Degree College",
+      "nameBn": "আব্দুল আজিজ খান সরকারি ডিগ্রী কলেজ",
+      "category": "college",
+      "upazilaId": "madan",
+      "coordinates": {
+        "lat": 24.714775,
+        "lng": 90.960961
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/3559114198",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6863729487",
+      "name": "Hon’s Building",
+      "nameBn": "Hon’s Building",
+      "category": "college",
+      "upazilaId": "madan",
+      "coordinates": {
+        "lat": 24.714637,
+        "lng": 90.960833
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Doors_Open_Milwaukee_2023_27_%28Federal_Building--courtroom_of_U.S._District_Judge_Hon._Brett_H._Ludwig%29.jpg/960px-Doors_Open_Milwaukee_2023_27_%28Federal_Building--courtroom_of_U.S._District_Judge_Hon._Brett_H._Ludwig%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Doors_Open_Milwaukee_2023_27_(Federal_Building--courtroom_of_U.S._District_Judge_Hon._Brett_H._Ludwig).jpg",
+        "credit": "Michael Barera",
+        "license": "CC BY-SA 4.0",
+        "source": "Wikimedia Commons"
+      },
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6863729487",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6865453182",
+      "name": "Hon’s Building",
+      "nameBn": "Hon’s Building",
+      "category": "college",
+      "upazilaId": "madan",
+      "coordinates": {
+        "lat": 24.71466,
+        "lng": 90.960759
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Doors_Open_Milwaukee_2023_27_%28Federal_Building--courtroom_of_U.S._District_Judge_Hon._Brett_H._Ludwig%29.jpg/960px-Doors_Open_Milwaukee_2023_27_%28Federal_Building--courtroom_of_U.S._District_Judge_Hon._Brett_H._Ludwig%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Doors_Open_Milwaukee_2023_27_(Federal_Building--courtroom_of_U.S._District_Judge_Hon._Brett_H._Ludwig).jpg",
+        "credit": "Michael Barera",
+        "license": "CC BY-SA 4.0",
+        "source": "Wikimedia Commons"
+      },
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6865453182",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6884048452",
+      "name": "Changau  Shahapur Govt. Primary School-2",
+      "nameBn": "চানগাঁও শাহাপুর সরকারি প্রাথমিক বিদ্যায়-২",
+      "category": "primary",
+      "upazilaId": "madan",
+      "coordinates": {
+        "lat": 24.719433,
+        "lng": 90.92606
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6884048452",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-3559114400",
+      "name": "Jahangir Pur Model Primary School",
+      "nameBn": "জাহাঙ্গীরপুর মডেল প্রাথমিক বিদ্যালয়",
+      "category": "primary",
+      "upazilaId": "madan",
+      "coordinates": {
+        "lat": 24.714568,
+        "lng": 90.95189
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/3559114400",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6863699268",
+      "name": "Madan Adarsha Govt. Primary School",
+      "nameBn": "Madan Adarsha Govt. Primary School",
+      "category": "primary",
+      "upazilaId": "madan",
+      "coordinates": {
+        "lat": 24.714764,
+        "lng": 90.960344
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6863699268",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6878845259",
+      "name": "Banshory Meherunessa High School",
+      "nameBn": "বাঁশরী মেহেরুন্নেছা উচ্চ বিদ্যালয়",
+      "category": "school",
+      "upazilaId": "madan",
+      "coordinates": {
+        "lat": 24.69001,
+        "lng": 90.914424
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6878845259",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6884089119",
+      "name": "Cham high school",
+      "nameBn": "চাহাম উচ্চ বিদ্যালয়",
+      "category": "school",
+      "upazilaId": "madan",
+      "coordinates": {
+        "lat": 24.718693,
+        "lng": 90.926429
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6884089119",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6863743819",
+      "name": "Daffodil Kindergarten School",
+      "nameBn": "Daffodil Kindergarten School",
+      "category": "school",
+      "upazilaId": "madan",
+      "coordinates": {
+        "lat": 24.716151,
+        "lng": 90.959581
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6863743819",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-734562876",
+      "name": "Gobindasree High School",
+      "nameBn": "Gobindasree High School",
+      "category": "school",
+      "upazilaId": "madan",
+      "coordinates": {
+        "lat": 24.718528,
+        "lng": 91.029561
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/734562876",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-3559114599",
+      "name": "Jahangir Pur T Amin Pilot High School",
+      "nameBn": "জাহাঙ্গীরপুর টি আমিন পাইলট উচ্চ বিদ্যালয়",
+      "category": "school",
+      "upazilaId": "madan",
+      "coordinates": {
+        "lat": 24.715029,
+        "lng": 90.951699
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/3559114599",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6869410852",
+      "name": "Learning Point Kinder Garten School",
+      "nameBn": "Learning Point Kinder Garten School",
+      "category": "school",
+      "upazilaId": "madan",
+      "coordinates": {
+        "lat": 24.716259,
+        "lng": 90.945464
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6869410852",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6869478873",
+      "name": "Madan Adarsha Public High School",
+      "nameBn": "মদন আদর্শ পাবলিক উচ্চ বিদ্যালয়",
+      "category": "school",
+      "upazilaId": "madan",
+      "coordinates": {
+        "lat": 24.716174,
+        "lng": 90.9606
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6869478873",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-3559112810",
+      "name": "Madan Adorsho Public High School",
+      "nameBn": "মদন আদর্শ পাব্লিক উচ্চ বিদ্যালয়",
+      "category": "school",
+      "upazilaId": "madan",
+      "coordinates": {
+        "lat": 24.716009,
+        "lng": 90.960342
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/3559112810",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6868957394",
+      "name": "Madan Shohid Smaranika Pilot Girls High School",
+      "nameBn": "Madan Shohid Smaranika Pilot Girls High School",
+      "category": "school",
+      "upazilaId": "madan",
+      "coordinates": {
+        "lat": 24.717242,
+        "lng": 90.944345
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6868957394",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6865444081",
+      "name": "Regenious Kindergarten School",
+      "nameBn": "Regenious Kindergarten School",
+      "category": "school",
+      "upazilaId": "madan",
+      "coordinates": {
+        "lat": 24.718168,
+        "lng": 90.945787
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6865444081",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6877464995",
+      "name": "School of Excellence",
+      "nameBn": "স্কুল অব এক্সিলেন্স",
+      "category": "school",
+      "upazilaId": "madan",
+      "coordinates": {
+        "lat": 24.716073,
+        "lng": 90.947255
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/African_School_of_Excellence%2C_Tsakane%2C_Gauteng_school_grounds.JPG/960px-African_School_of_Excellence%2C_Tsakane%2C_Gauteng_school_grounds.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:African_School_of_Excellence,_Tsakane,_Gauteng_school_grounds.JPG",
+        "credit": "Islahaddow",
+        "license": "CC BY-SA 4.0",
+        "source": "Wikimedia Commons"
+      },
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6877464995",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6863706017",
+      "name": "The Star Kindergarten School",
+      "nameBn": "The Star Kindergarten School",
+      "category": "school",
+      "upazilaId": "madan",
+      "coordinates": {
+        "lat": 24.716998,
+        "lng": 90.959811
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6863706017",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6885619987",
+      "name": "আদর্শ কারিগরি স্কুল এন্ড কলেজ",
+      "nameBn": "আদর্শ কারিগরি স্কুল এন্ড কলেজ",
+      "category": "technical",
+      "upazilaId": "madan",
+      "coordinates": {
+        "lat": 24.709826,
+        "lng": 90.948586
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6885619987",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-2409431653",
+      "name": "Mohangonj Women's College",
+      "nameBn": "Mohangonj Women's College",
+      "category": "college",
+      "upazilaId": "mohanganj",
+      "coordinates": {
+        "lat": 24.873157,
+        "lng": 90.979938
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/2409431653",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-437025666",
+      "name": "Doulatpur Model Govt. Primary School",
+      "nameBn": "Doulatpur Model Govt. Primary School",
+      "category": "primary",
+      "upazilaId": "mohanganj",
+      "coordinates": {
+        "lat": 24.875187,
+        "lng": 90.979511
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/437025666",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-232596798",
+      "name": "Mohangonj Pilot Girls School",
+      "nameBn": "Mohangonj Pilot Girls School",
+      "category": "school",
+      "upazilaId": "mohanganj",
+      "coordinates": {
+        "lat": 24.875194,
+        "lng": 90.979964
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/232596798",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-1490287720",
+      "name": "Institute of Livestock Science and Technology",
+      "nameBn": "Institute of Livestock Science and Technology",
+      "category": "college",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.897675,
+        "lng": 90.739023
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Fisheries_And_Livestock_Advisor_Inaugurates_Livestock_Science_And_Technology_Institute_Tilagarh_Sylhet_2024-12-28_%28PID-0004311%29.jpg/960px-Fisheries_And_Livestock_Advisor_Inaugurates_Livestock_Science_And_Technology_Institute_Tilagarh_Sylhet_2024-12-28_%28PID-0004311%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Fisheries_And_Livestock_Advisor_Inaugurates_Livestock_Science_And_Technology_Institute_Tilagarh_Sylhet_2024-12-28_(PID-0004311).jpg",
+        "credit": "Press Information Department",
+        "license": "Public domain",
+        "source": "Wikimedia Commons"
+      },
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/1490287720",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6906525746",
+      "name": "Mymensingh",
+      "nameBn": "Mymensingh",
+      "category": "college",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.886328,
+        "lng": 90.718021
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6906525746",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-3559007772",
+      "name": "Netrakona Polytecnic and Textile Institute",
+      "nameBn": "Netrakona Polytecnic and Textile Institute",
+      "category": "college",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.871521,
+        "lng": 90.72987
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/3559007772",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-5739433181",
+      "name": "Netrokona Government Women College",
+      "nameBn": "Netrokona Government Women College",
+      "category": "college",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.875971,
+        "lng": 90.730844
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/5739433181",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-1490290835",
+      "name": "Netrokona Medical College",
+      "nameBn": "Netrokona Medical College",
+      "category": "college",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.872067,
+        "lng": 90.732551
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/1490290835",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-5765646953",
+      "name": "Shah Sultan Rh Degree College",
+      "nameBn": "Shah Sultan Rh Degree College",
+      "category": "college",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.799351,
+        "lng": 90.749111
+      },
+      "website": null,
+      "phone": "01720941385",
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/5765646953",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-3558487509",
+      "name": "Rowsonara Mohiuddin Chowdhuri Hafijia Madrasa",
+      "nameBn": "Rowsonara Mohiuddin Chowdhuri Hafijia Madrasa",
+      "category": "madrasa",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.869817,
+        "lng": 90.736284
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/3558487509",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-1490461951",
+      "name": "Chuchua Govt. Primary School",
+      "nameBn": "Chuchua Govt. Primary School",
+      "category": "primary",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.938551,
+        "lng": 90.715738
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/1490461951",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-3561588998",
+      "name": "Anjuman Adorsho Govt High School",
+      "nameBn": "Anjuman Adorsho Govt High School",
+      "category": "school",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.877429,
+        "lng": 90.730901
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/3561588998",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-5786837775",
+      "name": "Chandranath High School",
+      "nameBn": "Chandranath High School",
+      "category": "school",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.881639,
+        "lng": 90.737728
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/5786837775",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-5795609347",
+      "name": "Dotto High School",
+      "nameBn": "Dotto High School",
+      "category": "school",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.880548,
+        "lng": 90.732139
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/5795609347",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-1490461950",
+      "name": "Maradighi Golam Hossen High School",
+      "nameBn": "Maradighi Golam Hossen High School",
+      "category": "school",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.938679,
+        "lng": 90.716262
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/1490461950",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-1490461953",
+      "name": "Medhashiri Kindergatend",
+      "nameBn": "Medhashiri Kindergatend",
+      "category": "school",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.940003,
+        "lng": 90.714077
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/1490461953",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-2410020276",
+      "name": "Mokter Hossain High School",
+      "nameBn": "Mokter Hossain High School",
+      "category": "school",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.87013,
+        "lng": 90.683885
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/2410020276",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-3561656523",
+      "name": "Netrokona Govt Girl's High School",
+      "nameBn": "Netrokona Govt Girl's High School",
+      "category": "school",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.880454,
+        "lng": 90.731653
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/3561656523",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-5765647533",
+      "name": "Shah Sultan High School",
+      "nameBn": "Shah Sultan High School",
+      "category": "school",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.804855,
+        "lng": 90.750664
+      },
+      "website": null,
+      "phone": "01714789738",
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/5765647533",
+      "isVerified": false
+    },
+    {
+      "id": "osm-relation-8464943",
+      "name": "Thakurakona Rahim Uddin High School ঠাকুরাকোণা রহিম উদ্দিন উচ্চ বিদ্যালয়",
+      "nameBn": "Thakurakona Rahim Uddin High School ঠাকুরাকোণা রহিম উদ্দিন উচ্চ বিদ্যালয়",
+      "category": "school",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.908479,
+        "lng": 90.822047
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/relation/8464943",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-3561589006",
+      "name": "Unmesh Adorsho High School",
+      "nameBn": "Unmesh Adorsho High School",
+      "category": "school",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.877785,
+        "lng": 90.73163
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/3561589006",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-337535514",
+      "name": "Unmesh Adorsho High School",
+      "nameBn": "Unmesh Adorsho High School",
+      "category": "school",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.877767,
+        "lng": 90.731634
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/337535514",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-3558445436",
+      "name": "Netrokona Nursing Institute",
+      "nameBn": "Netrokona Nursing Institute",
+      "category": "technical",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.871384,
+        "lng": 90.732886
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/3558445436",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-5739434998",
+      "name": "Netrokona Technical College",
+      "nameBn": "Netrokona Technical College",
+      "category": "technical",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.887792,
+        "lng": 90.718309
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/5739434998",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-3558487508",
+      "name": "Resource Medical Assistant Training School",
+      "nameBn": "Resource Medical Assistant Training School",
+      "category": "technical",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.870257,
+        "lng": 90.736243
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/3558487508",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-6877518714",
+      "name": "Netrakona lady hostle 1",
+      "nameBn": "Netrakona lady hostle 1",
+      "category": "university",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.888144,
+        "lng": 90.720125
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/6877518714",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-5739435060",
+      "name": "Netrokona Govt. College",
+      "nameBn": "Netrokona Govt. College",
+      "category": "university",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.887372,
+        "lng": 90.721741
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Netrokona_Govt._Mohila_College_%289%29.jpg/960px-Netrokona_Govt._Mohila_College_%289%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Netrokona_Govt._Mohila_College_(9).jpg",
+        "credit": "Anup Sadi",
+        "license": "CC BY-SA 4.0",
+        "source": "Wikimedia Commons"
+      },
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/5739435060",
+      "isVerified": false
+    },
+    {
+      "id": "osm-way-1478602540",
+      "name": "Netrokona University",
+      "nameBn": "নেত্রকোণা বিশ্ববিদ্যালয়",
+      "category": "university",
+      "upazilaId": "netrokona-sadar",
+      "coordinates": {
+        "lat": 24.895344,
+        "lng": 90.759075
+      },
+      "website": "https://neu.ac.bd/",
+      "phone": null,
+      "wikidata": "Q29015031",
+      "photo": null,
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/way/1478602540",
+      "isVerified": false
+    },
+    {
+      "id": "osm-node-10763313061",
+      "name": "Jalshuka Kumudganj High School",
+      "nameBn": "জলশুকা কুমুদগঞ্জ উচ্চ বিদ্যালয়",
+      "category": "school",
+      "upazilaId": "purbadhala",
+      "coordinates": {
+        "lat": 24.844686,
+        "lng": 90.574832
+      },
+      "website": null,
+      "phone": null,
+      "wikidata": null,
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Sheikh_Bashiruddin%2C_Trade_Advisor%2C_at_Jalshuka_Kumudganj_High_School_referendum_center%2C_Purba_Dhala_Upazila%2C_Netrokona_District%2C_2026-01-19.jpg/960px-Sheikh_Bashiruddin%2C_Trade_Advisor%2C_at_Jalshuka_Kumudganj_High_School_referendum_center%2C_Purba_Dhala_Upazila%2C_Netrokona_District%2C_2026-01-19.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Sheikh_Bashiruddin,_Trade_Advisor,_at_Jalshuka_Kumudganj_High_School_referendum_center,_Purba_Dhala_Upazila,_Netrokona_District,_2026-01-19.jpg",
+        "credit": "Press Information Department",
+        "license": "Public domain",
+        "source": "Wikimedia Commons"
+      },
+      "sourceName": "OpenStreetMap contributors (ODbL)",
+      "sourceUrl": "https://www.openstreetmap.org/node/10763313061",
+      "isVerified": false
+    }
+  ]
+}

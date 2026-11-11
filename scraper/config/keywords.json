@@ -1,0 +1,104 @@
+{
+  "_comment": "Configurable keyword database used by relevance_service and normalization_service. Edit freely; no code change needed.",
+  "relevance": {
+    "threshold": 50,
+    "local_source_base_score": 60
+  },
+  "district": {
+    "bn": ["নেত্রকোনা", "নেত্রকোণা", "নেত্রকোনা জেলা", "নেত্রকোণা জেলা"],
+    "en": ["Netrokona", "Netrakona", "Netrokona district", "Netrakona district"]
+  },
+  "upazilas": [
+    {"id": "netrokona-sadar", "name": "Netrokona Sadar", "bn": ["নেত্রকোনা সদর", "নেত্রকোণা সদর"], "en": ["Netrokona Sadar", "Netrakona Sadar"], "ambiguous": false},
+    {"id": "durgapur", "name": "Durgapur", "bn": ["দুর্গাপুর"], "en": ["Durgapur"], "ambiguous": true},
+    {"id": "kalmakanda", "name": "Kalmakanda", "bn": ["কলমাকান্দা"], "en": ["Kalmakanda"], "ambiguous": false},
+    {"id": "purbadhala", "name": "Purbadhala", "bn": ["পূর্বধলা"], "en": ["Purbadhala"], "ambiguous": false},
+    {"id": "kendua", "name": "Kendua", "bn": ["কেন্দুয়া"], "en": ["Kendua"], "ambiguous": false},
+    {"id": "barhatta", "name": "Barhatta", "bn": ["বারহাট্টা"], "en": ["Barhatta"], "ambiguous": false},
+    {"id": "atpara", "name": "Atpara", "bn": ["আটপাড়া"], "en": ["Atpara"], "ambiguous": false},
+    {"id": "madan", "name": "Madan", "bn": ["মদন"], "en": ["Madan"], "ambiguous": true},
+    {"id": "mohanganj", "name": "Mohanganj", "bn": ["মোহনগঞ্জ"], "en": ["Mohanganj"], "ambiguous": false},
+    {"id": "khaliajuri", "name": "Khaliajuri", "bn": ["খালিয়াজুরী", "খালিয়াজুড়ি"], "en": ["Khaliajuri"], "ambiguous": false}
+  ],
+  "landmarks": {
+    "_comment": "Weak/supporting evidence only. A landmark match never makes an article relevant on its own unless it is unambiguous and in the title.",
+    "institutions": [
+      "শেখ হাসিনা বিশ্ববিদ্যালয়", "Sheikh Hasina University",
+      "নেত্রকোণা মেডিকেল কলেজ", "Netrokona Medical College",
+      "নেত্রকোনা সদর হাসপাতাল", "Netrokona Sadar Hospital", "নেত্রকোণা সদর হাসপাতাল",
+      "জেলা পরিষদ, নেত্রকোণা", "Netrokona Zila Parishad",
+      "নেত্রকোণা সরকারি কলেজ", "Netrokona Government College",
+      "নেত্রকোণা পুলিশ", "Netrokona Police"
+    ],
+    "historical_places": [
+      "বিজয়পুর", "সাদামাটি", "Bijoypur", "Birishiri", "বিরিশিরি", "রাণীখং", "Rani Khong", "Ranikhong",
+      "সুসং দুর্গাপুর", "Susang Durgapur", "শহীদ সিরাজুন্নেসা", "ওয়াইজঘাট", "Waizghat"
+    ],
+    "rivers_and_haors": [
+      "সোমেশ্বরী", "Someshwari", "ধনু নদী", "Dhanu river", "কংস নদী", "Kangsha", "Kongsho", "মগড়া", "Mogra",
+      "ডিংগাপোতা হাওর", "Dingapota Haor", "টাঙ্গুয়ার", "Tanguar", "হালিয়াজুরী"
+    ]
+  },
+  "categories": {
+    "recruitment": {
+      "label": {"en": "Recruitment & Jobs", "bn": "নিয়োগ ও চাকরি"},
+      "keywords": ["নিয়োগ", "নিয়োগ বিজ্ঞপ্তি", "চাকরি", "recruitment", "job circular", "vacancy", "vacancies", "নিয়োগ পরীক্ষা"]
+    },
+    "tender": {
+      "label": {"en": "Tenders", "bn": "দরপত্র ও টেন্ডার"},
+      "keywords": ["দরপত্র", "টেন্ডার", "ই-টেন্ডার", "নিলাম", "tender", "e-tender", "e-gp", "auction", "লটারী"]
+    },
+    "government-notice": {
+      "label": {"en": "Government Notices", "bn": "সরকারি নোটিশ"},
+      "keywords": ["নোটিশ", "বিজ্ঞপ্তি", "প্রজ্ঞাপন", "পরিপত্র", "notice", "circular", "notification", "কার্যবিবরণী"]
+    },
+    "education": {
+      "label": {"en": "Education", "bn": "শিক্ষা"},
+      "keywords": ["স্কুল", "কলেজ", "বিদ্যালয়", "মাদ্রাসা", "বিশ্ববিদ্যালয়", "ভর্তি", "পরীক্ষা", "শিক্ষার্থী", "বৃত্তি", "school", "college", "madrasa", "university", "admission", "student", "scholarship", "exam"]
+    },
+    "health": {
+      "label": {"en": "Health", "bn": "স্বাস্থ্য"},
+      "keywords": ["স্বাস্থ্য", "হাসপাতাল", "চিকিৎসা", "টিকা", "ডেঙ্গু", "ডাক্তার", "ক্লিনিক", "health", "hospital", "vaccin", "dengue", "doctor", "clinic", "medical"]
+    },
+    "agriculture": {
+      "label": {"en": "Agriculture", "bn": "কৃষি"},
+      "keywords": ["কৃষি", "কৃষক", "ধান", "বোরো", "আমন", "সার", "বীজ", "ফসল", "agriculture", "farmer", "paddy", "boro", "crop", "fertilizer", "harvest"]
+    },
+    "fisheries-livestock": {
+      "label": {"en": "Fisheries & Livestock", "bn": "মৎস্য ও প্রাণিসম্পদ"},
+      "keywords": ["মৎস্য", "মাছ", "জেলে", "প্রাণিসম্পদ", "গরু", "হাঁস", "ডিম", "fish", "fisheries", "livestock", "poultry", "cattle", "dairy"]
+    },
+    "tourism": {
+      "label": {"en": "Tourism & Heritage", "bn": "পর্যটন ও ঐতিহ্য"},
+      "keywords": ["পর্যটন", "পর্যটক", "ঐতিহ্য", "ভ্রমণ", "tourism", "tourist", "heritage", "sightseeing"]
+    },
+    "development-projects": {
+      "label": {"en": "Development Projects", "bn": "উন্নয়ন প্রকল্প"},
+      "keywords": ["প্রকল্প", "উন্নয়ন", "উদ্বোধন", "ভিত্তিপ্রস্তর", "project", "inaugurat", "foundation stone", "development"]
+    },
+    "infrastructure": {
+      "label": {"en": "Infrastructure", "bn": "অবকাঠামো"},
+      "keywords": ["সড়ক", "রাস্তা", "সেতু", "বিদ্যুৎ", "বাঁধ", "road", "bridge", "electricity", "embankment", "culvert"]
+    },
+    "culture": {
+      "label": {"en": "Culture & Events", "bn": "সংস্কৃতি ও অনুষ্ঠান"},
+      "keywords": ["সংস্কৃতি", "উৎসব", "মেলা", "নাটক", "গান", "পালা", "culture", "festival", "fair", "folk", "cultural"]
+    },
+    "emergency": {
+      "label": {"en": "Emergency & Public Services", "bn": "জরুরি ও জনসেবা"},
+      "keywords": ["বন্যা", "ঢল", "অগ্নিকাণ্ড", "দুর্যোগ", "সতর্কতা", "ত্রাণ", "flood", "flash flood", "fire", "disaster", "warning", "relief", "accident", "drown"]
+    },
+    "district-admin": {
+      "label": {"en": "District Administration", "bn": "জেলা প্রশাসন"},
+      "keywords": ["জেলা প্রশাসক", "ডিসি", "ইউএনও", "উপজেলা নির্বাহী", "জেলা প্রশাসন", "deputy commissioner", "district administration", "upazila nirbahi", "uno", "dc "]
+    },
+    "government-news": {
+      "label": {"en": "Government News", "bn": "সরকারি সংবাদ"},
+      "keywords": ["সরকার", "মন্ত্রণালয়", "মন্ত্রী", "government", "ministry", "minister"]
+    },
+    "local-news": {
+      "label": {"en": "Local News", "bn": "স্থানীয় সংবাদ"},
+      "keywords": []
+    }
+  }
+}

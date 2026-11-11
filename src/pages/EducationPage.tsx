@@ -5,6 +5,9 @@ import { EDUCATION_DATA } from '../data/education';
 import { UPAZILAS_DATA } from '../data/upazilas';
 import { InstitutionCard } from '../components/cards/InstitutionCard';
 import { Breadcrumb } from '../components/common/Breadcrumb';
+import { RecentUpdates } from '../components/feed/RecentUpdates';
+import { InstitutionDirectory } from '../components/education/InstitutionDirectory';
+import { FEED_UPDATES } from '../data/aggregated';
 import { EDUCATION_REGISTRIES, EDUCATION_UPAZILA_COVERAGE } from '../data/educationRegistries';
 
 export const EducationPage: React.FC = () => {
@@ -234,6 +237,10 @@ export const EducationPage: React.FC = () => {
           </p>
         </div>
       )}
+
+      <InstitutionDirectory />
+
+      <RecentUpdates items={FEED_UPDATES.education} title="Education Updates & Notices" titleBn="শিক্ষা সংক্রান্ত সাম্প্রতিক খবর ও নোটিশ" />
     </div>
   );
 };

@@ -4,6 +4,8 @@ import { useLanguage } from '../context/LanguageContext';
 import { AGRICULTURE_DATA } from '../data/agriculture';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { SectionHeader } from '../components/common/SectionHeader';
+import { RecentUpdates } from '../components/feed/RecentUpdates';
+import { FEED_UPDATES } from '../data/aggregated';
 
 export const AgriculturePage: React.FC = () => {
   const { language } = useLanguage();
@@ -134,6 +136,8 @@ export const AgriculturePage: React.FC = () => {
           ))}
         </div>
       </section>
+
+      <RecentUpdates items={FEED_UPDATES.agriculture} title="Agriculture, Fisheries & Livestock Updates" titleBn="কৃষি, মৎস্য ও প্রাণিসম্পদ সংক্রান্ত সাম্প্রতিক খবর" />
     </div>
   );
 };

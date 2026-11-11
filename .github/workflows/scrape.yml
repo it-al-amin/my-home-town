@@ -1,0 +1,68 @@
+name: Scrape Netrokona sources
+
+on:
+  schedule:
+    - cron: "30 2 * * *"   # daily 02:30 UTC. Weekly instead: "30 2 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scraper/requirements.txt
+
+      - run: pip install -r scraper/requirements.txt
+
+      - name: Python tests
+        run: python -m pytest scraper/tests -q
+
+      # Conditional-GET cache: unchanged pages come back as HTTP 304 and are not downloaded again.
+      - uses: actions/cache@v4
+        with:
+          path: scraper/storage/cache
+          key: http-cache-${{ github.run_id }}
+          restore-keys: http-cache-
+
+      # A failing source must never fail the job or touch the frontend: errors are written to the
+      # report (scraper/storage/reports/scraping-report.json) and the last good JSON stays live.
+      - name: Scrape all enabled sources
+        continue-on-error: true
+        run: python scraper/scraper.py --all
+
+      # Only APPROVED records are exported. Pending/rejected records never reach src/.
+      - name: Export approved records
+        run: python scraper/scraper.py --export-json
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Frontend build check
+        run: npm ci && npm run build
+
+      - name: Commit changes (only if any)
+        run: |
+          git config user.name "netrokona-scraper-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add src/data/aggregated scraper/storage/pending scraper/storage/approved \
+                  scraper/storage/rejected scraper/storage/state scraper/storage/reports
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore(data): scraper update $(date -u +%F)"
+            git push
+          fi

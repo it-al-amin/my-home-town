@@ -1,0 +1,112 @@
+{
+  "lastExportedAt": "2026-11-11T09:01:55+00:00",
+  "lastScrapedAt": "2026-11-11T09:01:27+00:00",
+  "publishedCount": 0,
+  "pendingCount": 12,
+  "sources": [
+    {
+      "sourceId": "zp-netrokona",
+      "sourceName": "Zila Parishad Netrokona",
+      "availability": "available",
+      "lastSuccessfulScrape": "2026-11-11T09:00:10+00:00",
+      "recordsCollected": 0,
+      "relevantRecords": 0
+    },
+    {
+      "sourceId": "bss-news",
+      "sourceName": "Bangladesh Sangbad Sangstha (BSS)",
+      "availability": "available",
+      "lastSuccessfulScrape": "2026-11-11T09:00:14+00:00",
+      "recordsCollected": 40,
+      "relevantRecords": 1
+    },
+    {
+      "sourceId": "netrokona-gov",
+      "sourceName": "Netrokona District Portal",
+      "availability": "unavailable",
+      "lastSuccessfulScrape": null,
+      "recordsCollected": 0,
+      "relevantRecords": 0
+    },
+    {
+      "sourceId": "info-netrokona",
+      "sourceName": "Netrokona District Information Office",
+      "availability": "unavailable",
+      "lastSuccessfulScrape": null,
+      "recordsCollected": 0,
+      "relevantRecords": 0
+    },
+    {
+      "sourceId": "doict-netrokona",
+      "sourceName": "DoICT Netrokona",
+      "availability": "not_run",
+      "lastSuccessfulScrape": null,
+      "recordsCollected": 0,
+      "relevantRecords": 0
+    },
+    {
+      "sourceId": "pwd-netrokona",
+      "sourceName": "PWD Netrokona",
+      "availability": "not_run",
+      "lastSuccessfulScrape": null,
+      "recordsCollected": 0,
+      "relevantRecords": 0
+    },
+    {
+      "sourceId": "bbs",
+      "sourceName": "Bangladesh Bureau of Statistics",
+      "availability": "not_run",
+      "lastSuccessfulScrape": null,
+      "recordsCollected": 0,
+      "relevantRecords": 0
+    },
+    {
+      "sourceId": "judiciary-netrokona",
+      "sourceName": "District Judiciary Netrokona",
+      "availability": "not_run",
+      "lastSuccessfulScrape": null,
+      "recordsCollected": 0,
+      "relevantRecords": 0
+    },
+    {
+      "sourceId": "dghs",
+      "sourceName": "Directorate General of Health Services",
+      "availability": "not_run",
+      "lastSuccessfulScrape": null,
+      "recordsCollected": 0,
+      "relevantRecords": 0
+    },
+    {
+      "sourceId": "dshe",
+      "sourceName": "Directorate of Secondary and Higher Education",
+      "availability": "not_run",
+      "lastSuccessfulScrape": null,
+      "recordsCollected": 0,
+      "relevantRecords": 0
+    },
+    {
+      "sourceId": "bangladesh-gov",
+      "sourceName": "National Portal of Bangladesh",
+      "availability": "not_run",
+      "lastSuccessfulScrape": null,
+      "recordsCollected": 0,
+      "relevantRecords": 0
+    },
+    {
+      "sourceId": "prothom-alo",
+      "sourceName": "Prothom Alo",
+      "availability": "not_run",
+      "lastSuccessfulScrape": null,
+      "recordsCollected": 0,
+      "relevantRecords": 0
+    },
+    {
+      "sourceId": "daily-star",
+      "sourceName": "The Daily Star",
+      "availability": "not_run",
+      "lastSuccessfulScrape": null,
+      "recordsCollected": 0,
+      "relevantRecords": 0
+    }
+  ]
+}

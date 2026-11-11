@@ -1,0 +1,199 @@
+{
+  "_comment": "Source registry. 'verified' records what was actually probed (see verified_on). Never set verify_tls=false; if a gov.bd host fails certificate verification supply its CA chain via ca_bundle instead.",
+  "user_agent": "NetrokonaPortalBot/1.0 (community info aggregator; short summaries + links only)",
+  "request_delay_seconds": 1.5,
+  "timeout_seconds": 20,
+  "max_article_fetches_per_source": 40,
+  "sources": [
+    {
+      "id": "zp-netrokona",
+      "name": "Zila Parishad Netrokona",
+      "nameBn": "জেলা পরিষদ, নেত্রকোণা",
+      "category": "government",
+      "kind": "rss",
+      "url": "https://www.zpnetrokona.gov.bd/",
+      "feed_urls": ["https://www.zpnetrokona.gov.bd/?feed=rss2"],
+      "default_language": "bn",
+      "all_content_is_local": true,
+      "enabled": true,
+      "verified": {
+        "status": "supported",
+        "verified_on": "2026-11-11",
+        "http_status": 200,
+        "notes": "WordPress site. RSS 2.0 feed works (10 newest items, categories: news, notice board, tender, notice). robots.txt returns 404 (no restrictions published). Most posts are image attachments, so summaries are often empty."
+      }
+    },
+    {
+      "id": "bss-news",
+      "name": "Bangladesh Sangbad Sangstha (BSS)",
+      "nameBn": "বাংলাদেশ সংবাদ সংস্থা (বাসস)",
+      "category": "news",
+      "kind": "listing",
+      "url": "https://www.bssnews.net/",
+      "listing_urls": [
+        "https://www.bssnews.net/district",
+        "https://www.bssnews.net/news/national",
+        "https://www.bssnews.net/news/education-news",
+        "https://www.bssnews.net/news/health-news",
+        "https://www.bssnews.net/agriculture-news"
+      ],
+      "article_link_pattern": "^https://www\\.bssnews\\.net/[a-z0-9-]+/\\d+$",
+      "default_language": "en",
+      "all_content_is_local": false,
+      "enabled": true,
+      "verified": {
+        "status": "supported",
+        "verified_on": "2026-11-11",
+        "http_status": 200,
+        "notes": "No RSS feed (/rss returns an empty page). sitemap.xml lists section pages only. Section listing pages are public; article pages expose og:title/og:description/og:image with a dateline like 'CHATTOGRAM, Nov 9, 2026 (BSS)'. robots.txt allows generic user agents (Content-Signal search=yes, ai-train=no); AI-training bots are disallowed, so we use our own UA and only store short factual summaries + link. /search returns 403 and is NOT used."
+      }
+    },
+    {
+      "id": "netrokona-gov",
+      "name": "Netrokona District Portal",
+      "nameBn": "নেত্রকোণা জেলা ওয়েব পোর্টাল",
+      "category": "government",
+      "kind": "listing",
+      "url": "https://netrokona.gov.bd/",
+      "listing_urls": ["https://netrokona.gov.bd/"],
+      "default_language": "bn",
+      "all_content_is_local": true,
+      "enabled": true,
+      "verified": {
+        "status": "tls_verification_failed",
+        "verified_on": "2026-11-11",
+        "http_status": null,
+        "notes": "Host resolves but TLS certificate cannot be verified (curl 60 / Python SSLCertVerificationError: unable to get local issuer certificate - the server likely omits its intermediate certificate). TLS verification is NOT bypassed. The scraper reports this as 'unavailable' each run and retries; it starts working automatically once the site fixes its chain, or if you set ca_bundle to a PEM containing the missing intermediate."
+      },
+      "ca_bundle": null
+    },
+    {
+      "id": "info-netrokona",
+      "name": "Netrokona District Information Office",
+      "nameBn": "জেলা তথ্য অফিস, নেত্রকোণা",
+      "category": "government",
+      "kind": "listing",
+      "url": "https://info.netrokona.gov.bd/",
+      "listing_urls": ["https://info.netrokona.gov.bd/"],
+      "default_language": "bn",
+      "all_content_is_local": true,
+      "enabled": true,
+      "verified": {
+        "status": "tls_verification_failed",
+        "verified_on": "2026-11-11",
+        "http_status": null,
+        "notes": "Same certificate-chain problem as netrokona.gov.bd. Not bypassed."
+      },
+      "ca_bundle": null
+    },
+    {
+      "id": "doict-netrokona",
+      "name": "DoICT Netrokona",
+      "category": "government",
+      "kind": "listing",
+      "url": "https://doict.netrokona.gov.bd/",
+      "listing_urls": ["https://doict.netrokona.gov.bd/"],
+      "default_language": "bn",
+      "all_content_is_local": true,
+      "enabled": false,
+      "verified": {"status": "tls_verification_failed", "verified_on": "2026-11-11", "http_status": null, "notes": "Certificate chain cannot be verified. Disabled."}
+    },
+    {
+      "id": "pwd-netrokona",
+      "name": "PWD Netrokona",
+      "category": "government",
+      "kind": "listing",
+      "url": "https://pwd.netrokona.gov.bd/",
+      "listing_urls": ["https://pwd.netrokona.gov.bd/"],
+      "default_language": "bn",
+      "all_content_is_local": true,
+      "enabled": false,
+      "verified": {"status": "tls_verification_failed", "verified_on": "2026-11-11", "http_status": null, "notes": "Certificate chain cannot be verified. Disabled."}
+    },
+    {
+      "id": "bbs",
+      "name": "Bangladesh Bureau of Statistics",
+      "category": "government",
+      "kind": "listing",
+      "url": "https://bbs.gov.bd/",
+      "listing_urls": ["https://bbs.gov.bd/"],
+      "default_language": "en",
+      "all_content_is_local": false,
+      "enabled": false,
+      "verified": {"status": "tls_verification_failed", "verified_on": "2026-11-11", "http_status": null, "notes": "Certificate chain cannot be verified. Disabled."}
+    },
+    {
+      "id": "judiciary-netrokona",
+      "name": "District Judiciary Netrokona",
+      "category": "government",
+      "kind": "listing",
+      "url": "https://netrakona.judiciary.gov.bd/",
+      "listing_urls": ["https://netrakona.judiciary.gov.bd/bn"],
+      "default_language": "bn",
+      "all_content_is_local": true,
+      "enabled": false,
+      "verified": {"status": "reachable_no_extractor", "verified_on": "2026-11-11", "http_status": 200, "notes": "Reachable (redirects to /bn) but no feed/notice listing structure was validated yet. Disabled until an extractor is verified against real markup."}
+    },
+    {
+      "id": "dghs",
+      "name": "Directorate General of Health Services",
+      "category": "government",
+      "kind": "listing",
+      "url": "https://dghs.gov.bd/",
+      "listing_urls": ["https://dghs.gov.bd/"],
+      "default_language": "en",
+      "all_content_is_local": false,
+      "enabled": false,
+      "verified": {"status": "reachable_no_extractor", "verified_on": "2026-11-11", "http_status": 200, "notes": "Reachable (HTTP 200) but national-level; no Netrokona-specific listing validated. Disabled."}
+    },
+    {
+      "id": "dshe",
+      "name": "Directorate of Secondary and Higher Education",
+      "category": "government",
+      "kind": "listing",
+      "url": "https://dshe.gov.bd/",
+      "listing_urls": ["https://dshe.gov.bd/"],
+      "default_language": "bn",
+      "all_content_is_local": false,
+      "enabled": false,
+      "verified": {"status": "reachable_no_extractor", "verified_on": "2026-11-11", "http_status": 200, "notes": "Reachable (HTTP 200) but national-level; no Netrokona-specific listing validated. Disabled."}
+    },
+    {
+      "id": "bangladesh-gov",
+      "name": "National Portal of Bangladesh",
+      "category": "government",
+      "kind": "listing",
+      "url": "https://bangladesh.gov.bd/",
+      "listing_urls": ["https://bangladesh.gov.bd/"],
+      "default_language": "bn",
+      "all_content_is_local": false,
+      "enabled": false,
+      "verified": {"status": "reachable_no_extractor", "verified_on": "2026-11-11", "http_status": 200, "notes": "Reachable (HTTP 200); national portal, not district specific. Disabled."}
+    },
+    {
+      "id": "prothom-alo",
+      "name": "Prothom Alo",
+      "category": "news",
+      "kind": "listing",
+      "url": "https://www.prothomalo.com/",
+      "listing_urls": ["https://www.prothomalo.com/"],
+      "default_language": "bn",
+      "all_content_is_local": false,
+      "enabled": false,
+      "requires_js": true,
+      "verified": {"status": "reachable_no_extractor", "verified_on": "2026-11-11", "http_status": 200, "notes": "Reachable (HTTP 200, ~4.6MB JS-heavy homepage). Content is partly paywalled/JS rendered; not scraped. Disabled."}
+    },
+    {
+      "id": "daily-star",
+      "name": "The Daily Star",
+      "category": "news",
+      "kind": "listing",
+      "url": "https://www.thedailystar.net/",
+      "listing_urls": ["https://www.thedailystar.net/"],
+      "default_language": "en",
+      "all_content_is_local": false,
+      "enabled": false,
+      "verified": {"status": "reachable_no_extractor", "verified_on": "2026-11-11", "http_status": 200, "notes": "Reachable (HTTP 200); no extractor validated yet. Disabled."}
+    }
+  ]
+}

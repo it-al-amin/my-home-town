@@ -16,6 +16,8 @@ import { PlaceCard } from '../components/cards/PlaceCard';
 import { UpazilaCard } from '../components/cards/UpazilaCard';
 import { PersonCard } from '../components/cards/PersonCard';
 import { NewsCard } from '../components/cards/NewsCard';
+import { LatestNewsSection } from '../components/feed/LatestNewsSection';
+import { GovernmentNoticeList } from '../components/feed/GovernmentNoticeList';
 import { SectionHeader } from '../components/common/SectionHeader';
 import { DistrictDashboardStrip } from '../components/home/DistrictDashboardStrip';
 import { DistrictMapShowcase } from '../components/home/DistrictMapShowcase';
@@ -202,6 +204,10 @@ export const HomePage: React.FC = () => {
 
       {/* 2. Official Administrative Dashboard Strip */}
       <DistrictDashboardStrip />
+
+      {/* Reviewed, auto-collected updates (render nothing until records are approved) */}
+      <LatestNewsSection variant="compact" />
+      <GovernmentNoticeList className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" />
 
       {/* 3. District Map Showcase (with 10 Seamless Upazilas & 86 Unions Explorer) */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

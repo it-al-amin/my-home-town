@@ -1,0 +1,108 @@
+{
+  "sources": [
+    {
+      "id": "zp-netrokona",
+      "name": "Zila Parishad Netrokona",
+      "nameBn": "জেলা পরিষদ, নেত্রকোণা",
+      "url": "https://www.zpnetrokona.gov.bd/",
+      "category": "government",
+      "status": "supported"
+    },
+    {
+      "id": "bss-news",
+      "name": "Bangladesh Sangbad Sangstha (BSS)",
+      "nameBn": "বাংলাদেশ সংবাদ সংস্থা (বাসস)",
+      "url": "https://www.bssnews.net/",
+      "category": "news",
+      "status": "supported"
+    },
+    {
+      "id": "netrokona-gov",
+      "name": "Netrokona District Portal",
+      "nameBn": "নেত্রকোণা জেলা ওয়েব পোর্টাল",
+      "url": "https://netrokona.gov.bd/",
+      "category": "government",
+      "status": "tls_verification_failed"
+    },
+    {
+      "id": "info-netrokona",
+      "name": "Netrokona District Information Office",
+      "nameBn": "জেলা তথ্য অফিস, নেত্রকোণা",
+      "url": "https://info.netrokona.gov.bd/",
+      "category": "government",
+      "status": "tls_verification_failed"
+    },
+    {
+      "id": "doict-netrokona",
+      "name": "DoICT Netrokona",
+      "nameBn": null,
+      "url": "https://doict.netrokona.gov.bd/",
+      "category": "government",
+      "status": "tls_verification_failed"
+    },
+    {
+      "id": "pwd-netrokona",
+      "name": "PWD Netrokona",
+      "nameBn": null,
+      "url": "https://pwd.netrokona.gov.bd/",
+      "category": "government",
+      "status": "tls_verification_failed"
+    },
+    {
+      "id": "bbs",
+      "name": "Bangladesh Bureau of Statistics",
+      "nameBn": null,
+      "url": "https://bbs.gov.bd/",
+      "category": "government",
+      "status": "tls_verification_failed"
+    },
+    {
+      "id": "judiciary-netrokona",
+      "name": "District Judiciary Netrokona",
+      "nameBn": null,
+      "url": "https://netrakona.judiciary.gov.bd/",
+      "category": "government",
+      "status": "reachable_no_extractor"
+    },
+    {
+      "id": "dghs",
+      "name": "Directorate General of Health Services",
+      "nameBn": null,
+      "url": "https://dghs.gov.bd/",
+      "category": "government",
+      "status": "reachable_no_extractor"
+    },
+    {
+      "id": "dshe",
+      "name": "Directorate of Secondary and Higher Education",
+      "nameBn": null,
+      "url": "https://dshe.gov.bd/",
+      "category": "government",
+      "status": "reachable_no_extractor"
+    },
+    {
+      "id": "bangladesh-gov",
+      "name": "National Portal of Bangladesh",
+      "nameBn": null,
+      "url": "https://bangladesh.gov.bd/",
+      "category": "government",
+      "status": "reachable_no_extractor"
+    },
+    {
+      "id": "prothom-alo",
+      "name": "Prothom Alo",
+      "nameBn": null,
+      "url": "https://www.prothomalo.com/",
+      "category": "news",
+      "status": "reachable_no_extractor"
+    },
+    {
+      "id": "daily-star",
+      "name": "The Daily Star",
+      "nameBn": null,
+      "url": "https://www.thedailystar.net/",
+      "category": "news",
+      "status": "reachable_no_extractor"
+    }
+  ]
+}

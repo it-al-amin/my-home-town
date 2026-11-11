@@ -5,6 +5,8 @@ import { useData } from '../context/DataContext';
 import { NewsCard } from '../components/cards/NewsCard';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { SubmitPostModal } from '../components/common/SubmitPostModal';
+import { LatestNewsSection } from '../components/feed/LatestNewsSection';
+import { GovernmentNoticeList } from '../components/feed/GovernmentNoticeList';
 
 export const NewsPage: React.FC = () => {
   const { language } = useLanguage();
@@ -92,6 +94,9 @@ export const NewsPage: React.FC = () => {
           <NewsCard key={news.id} news={news} />
         ))}
       </div>
+
+      <LatestNewsSection variant="full" />
+      <GovernmentNoticeList limit={20} />
 
       {/* Community Submit Modal */}
       <SubmitPostModal

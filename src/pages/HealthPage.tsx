@@ -5,6 +5,8 @@ import { HEALTH_DATA } from '../data/health';
 import { UPAZILAS_DATA } from '../data/upazilas';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { SourceBadge } from '../components/common/SourceBadge';
+import { RecentUpdates } from '../components/feed/RecentUpdates';
+import { FEED_UPDATES } from '../data/aggregated';
 
 export const HealthPage: React.FC = () => {
   const { language } = useLanguage();
@@ -180,6 +182,8 @@ export const HealthPage: React.FC = () => {
           );
         })}
       </div>
+
+      <RecentUpdates items={FEED_UPDATES.health} title="Health Updates & Announcements" titleBn="স্বাস্থ্য সংক্রান্ত সাম্প্রতিক খবর ও ঘোষণা" />
     </div>
   );
 };
