@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SharedIdentity.Cli/SharedIdentity.Cli.csproj" />
+    <Project Path="src/SharedIdentity.Core/SharedIdentity.Core.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SharedIdentity.Tests/SharedIdentity.Tests.csproj" />
+  </Folder>
+</Solution>

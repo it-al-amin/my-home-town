@@ -5,6 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { EMERGENCY_DATA } from '../data/emergency';
 import { UPAZILAS_DATA } from '../data/upazilas';
 import { Breadcrumb } from '../components/common/Breadcrumb';
+import { CmsContentSection } from '../components/cms/CmsContentSection';
 import { SectionHeader } from '../components/common/SectionHeader';
 import { SourceBadge } from '../components/common/SourceBadge';
 
@@ -208,6 +209,7 @@ export const EmergencyPage: React.FC = () => {
           </table>
         </div>
       </section>
+      <CmsContentSection type="EmergencyService" title="Additional emergency services" titleBn="অতিরিক্ত জরুরি সেবা" />
     </div>
   );
 };

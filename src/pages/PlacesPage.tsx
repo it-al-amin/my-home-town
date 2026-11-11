@@ -5,6 +5,7 @@ import { PLACES_DATA } from '../data/places';
 import { UPAZILAS_DATA } from '../data/upazilas';
 import { PlaceCard } from '../components/cards/PlaceCard';
 import { Breadcrumb } from '../components/common/Breadcrumb';
+import { CmsContentSection } from '../components/cms/CmsContentSection';
 import { PLACE_HISTORY } from '../data/placeHistory';
 
 export const PlacesPage: React.FC = () => {
@@ -162,6 +163,7 @@ export const PlacesPage: React.FC = () => {
           </button>
         </div>
       )}
+      <CmsContentSection type="Place" title="Places added by the community" titleBn="কমিউনিটির যুক্ত করা দর্শনীয় স্থান" />
     </div>
   );
 };

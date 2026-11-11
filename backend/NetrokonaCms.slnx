@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/NetrokonaCms.Api/NetrokonaCms.Api.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/NetrokonaCms.Tests/NetrokonaCms.Tests.csproj" />
+  </Folder>
+</Solution>

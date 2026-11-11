@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { DataProvider } from './context/DataContext';
+import { AuthProvider } from './context/AuthContext';
 import { MainLayout } from './layouts/MainLayout';
 import { ScrollToTop } from './components/common/ScrollToTop';
 
@@ -32,12 +33,22 @@ import { NewsPage } from './pages/NewsPage';
 import { SourcesPage } from './pages/SourcesPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { AdminPage } from './pages/AdminPage';
+import { LoginPage } from './pages/LoginPage';
+import { ContributePage } from './pages/ContributePage';
+import { TrackPage } from './pages/TrackPage';
+import { RequireAuth } from './admin/RequireAuth';
+import { AdminLayout, AdminDashboard } from './admin/AdminLayout';
+import { ContentAdmin } from './admin/ContentAdmin';
+import { SubmissionsAdmin } from './admin/SubmissionsAdmin';
+import { MembersAdmin } from './admin/MembersAdmin';
+import { AuditAdmin } from './admin/AuditAdmin';
 
 export function App() {
   return (
     <DataProvider>
       <ThemeProvider>
         <LanguageProvider>
+          <AuthProvider>
           <BrowserRouter>
             <ScrollToTop />
             <Routes>
@@ -66,11 +77,25 @@ export function App() {
                 <Route path="directory" element={<DirectoryPage />} />
                 <Route path="news" element={<NewsPage />} />
                 <Route path="sources" element={<SourcesPage />} />
-                <Route path="admin" element={<AdminPage />} />
+                <Route path="login" element={<LoginPage />} />
+                <Route path="contribute" element={<ContributePage />} />
+                <Route path="track" element={<TrackPage />} />
+                <Route path="track/:code" element={<TrackPage />} />
+                {/* Protected CMS: the API enforces auth + permissions; these guards are UX only. */}
+                <Route path="admin" element={<RequireAuth><AdminLayout /></RequireAuth>}>
+                  <Route index element={<AdminDashboard />} />
+                  <Route path="content" element={<RequireAuth permission="content.view"><ContentAdmin /></RequireAuth>} />
+                  <Route path="submissions" element={<RequireAuth permission="submissions.view"><SubmissionsAdmin /></RequireAuth>} />
+                  <Route path="members" element={<RequireAuth permission="members.manage"><MembersAdmin /></RequireAuth>} />
+                  <Route path="audit" element={<RequireAuth permission="audit.view"><AuditAdmin /></RequireAuth>} />
+                  {/* the previous browser-only admin tools, kept (now behind the real login) */}
+                  <Route path="legacy" element={<AdminPage />} />
+                </Route>
                 <Route path="*" element={<NotFoundPage />} />
               </Route>
             </Routes>
           </BrowserRouter>
+          </AuthProvider>
         </LanguageProvider>
       </ThemeProvider>
     </DataProvider>

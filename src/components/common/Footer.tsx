@@ -240,6 +240,12 @@ export const Footer: React.FC = () => {
             <Link to="/sources" className="hover:text-slate-300 transition-colors">
               {t('sources')}
             </Link>
+            <Link to="/contribute" className="hover:text-slate-300 transition-colors">
+              {language === 'bn' ? 'তথ্য দিন' : 'Contribute'}
+            </Link>
+            <Link to="/track" className="hover:text-slate-300 transition-colors">
+              {language === 'bn' ? 'অবস্থা দেখুন' : 'Track'}
+            </Link>
             <button
               type="button"
               onClick={scrollToTop}

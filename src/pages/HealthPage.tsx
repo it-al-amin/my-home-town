@@ -5,6 +5,7 @@ import { HEALTH_DATA } from '../data/health';
 import { UPAZILAS_DATA } from '../data/upazilas';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { SourceBadge } from '../components/common/SourceBadge';
+import { CmsContentSection } from '../components/cms/CmsContentSection';
 import { RecentUpdates } from '../components/feed/RecentUpdates';
 import { FEED_UPDATES } from '../data/aggregated';
 
@@ -183,6 +184,7 @@ export const HealthPage: React.FC = () => {
         })}
       </div>
 
+      <CmsContentSection type="HealthFacility" title="Additional health facilities" titleBn="অতিরিক্ত স্বাস্থ্যসেবা কেন্দ্র" />
       <RecentUpdates items={FEED_UPDATES.health} title="Health Updates & Announcements" titleBn="স্বাস্থ্য সংক্রান্ত সাম্প্রতিক খবর ও ঘোষণা" />
     </div>
   );

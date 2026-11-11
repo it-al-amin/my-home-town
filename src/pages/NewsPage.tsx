@@ -7,6 +7,7 @@ import { Breadcrumb } from '../components/common/Breadcrumb';
 import { SubmitPostModal } from '../components/common/SubmitPostModal';
 import { LatestNewsSection } from '../components/feed/LatestNewsSection';
 import { GovernmentNoticeList } from '../components/feed/GovernmentNoticeList';
+import { CmsContentSection } from '../components/cms/CmsContentSection';
 
 export const NewsPage: React.FC = () => {
   const { language } = useLanguage();
@@ -95,6 +96,7 @@ export const NewsPage: React.FC = () => {
         ))}
       </div>
 
+      <CmsContentSection type="News" title="News from our contributors" titleBn="কমিউনিটির সংবাদ" />
       <LatestNewsSection variant="full" />
       <GovernmentNoticeList limit={20} />
 

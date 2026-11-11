@@ -28,3 +28,17 @@ __pycache__/
 scraper/.venv/
 scraper/storage/cache/
 .pytest_cache/
+
+# backend local data, uploads and secrets
+backend/.data/
+backend/**/uploads/
+backend/**/bin/
+backend/**/obj/
+identity/**/bin/
+identity/**/obj/
+appsettings.Local.json
+*.user
+
+# Visual Studio (any folder)
+.vs/
+*.suo
