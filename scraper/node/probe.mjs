@@ -1,0 +1,11 @@
+import { overpass, AREA } from './overpass.mjs';
+import fs from 'node:fs';
+const out = process.argv[2];
+const inst = await overpass(AREA + '(nwr["amenity"~"^(school|college|university|kindergarten|madrasa)$"](area.a);nwr["education"](area.a););out center tags;');
+fs.writeFileSync(out + '/inst.json', JSON.stringify(inst));
+console.log('institutions', inst.elements.length);
+const unions = await overpass(AREA + 'rel(area.a)["boundary"="administrative"]["admin_level"~"^(6|7|8)$"];out geom;');
+fs.writeFileSync(out + '/bound.json', JSON.stringify(unions));
+const c = {};
+unions.elements.forEach(e => { const k = e.tags.admin_level; (c[k] ??= []).push(e.tags['name:en'] || e.tags.name); });
+for (const k in c) console.log(k, c[k].length, c[k].join(', '));

@@ -1,0 +1,3 @@
+const q = `SELECT ?i ?l ?bn ?coord ?loc ?locl ?web WHERE { ?i wdt:P31/wdt:P279* wd:Q2385804. ?i wdt:P131* wd:Q2376526. OPTIONAL{?i wdt:P625 ?coord} OPTIONAL{?i wdt:P131 ?loc} OPTIONAL{?i wdt:P856 ?web} ?i rdfs:label ?l FILTER(lang(?l)="en") OPTIONAL{?i rdfs:label ?bn FILTER(lang(?bn)="bn")} OPTIONAL{?loc rdfs:label ?locl FILTER(lang(?locl)="en")} }`;
+const r = await fetch('https://query.wikidata.org/sparql?format=json&query=' + encodeURIComponent(q), { headers: { 'User-Agent': 'NetrokonaPortalBot/1.0', Accept: 'application/sparql-results+json' } });
+console.log(r.status); const j = await r.json(); console.log(j.results?.bindings.length); console.log(j.results.bindings.slice(0, 5).map(b => b.l.value + ' | ' + b.locl?.value));
