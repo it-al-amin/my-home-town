@@ -52,7 +52,7 @@ export const CmsContentSection: React.FC<Props> = ({ type, title, titleBn, limit
               {cover && (
                 <figure>
                   <img src={mediaUrl(cover.url)} alt={(bn ? cover.altBn || cover.altEn : cover.altEn || cover.altBn) ?? name} loading="lazy" className="w-full h-40 object-cover" />
-                  {cover.credit && <figcaption className="px-3 py-1 text-[10px] text-slate-500 dark:text-slate-400 truncate">{bn ? 'ছবি: ' : 'Photo: '}{cover.credit}</figcaption>}
+                  {cover.credit && <figcaption className="px-3 py-1 text-[11px] text-slate-500 dark:text-slate-400 truncate">{bn ? 'ছবি: ' : 'Photo: '}{cover.credit}</figcaption>}
                 </figure>
               )}
               <div className="p-4 flex-1 flex flex-col gap-2">

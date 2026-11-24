@@ -14,12 +14,12 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-slate-950 text-slate-300 mt-auto border-t border-slate-800">
+    <footer className="mt-auto bg-gradient-to-b from-white to-emerald-50/70 dark:from-slate-950 dark:to-slate-950 text-slate-600 dark:text-slate-300 border-t border-emerald-100 dark:border-slate-800">
       {/* Top Banner Disclaimer */}
-      <div className="bg-emerald-950/80 border-b border-emerald-900/60 py-3 px-4 sm:px-6">
+      <div className="bg-emerald-50 dark:bg-emerald-950/80 border-b border-emerald-100 dark:border-emerald-900/60 py-3 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-3 text-xs sm:text-sm">
-          <div className="flex items-center gap-2 text-emerald-200">
-            <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+          <div className="flex items-center gap-2 text-emerald-900 dark:text-emerald-200">
+            <ShieldCheck className="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0" />
             <span>
               {language === 'bn'
                 ? 'এই পোর্টালের তথ্যসমূহ বিভিন্ন সরকারি ও নির্ভরযোগ্য পাবলিক রেকর্ড থেকে সংগৃহীত। জরুরি প্রয়োজনে সর্বদা সংশ্লিষ্ট কর্তৃপক্ষের সাথে যাচাই করুন।'
@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
           </div>
           <Link
             to="/sources"
-            className="text-emerald-400 hover:text-emerald-300 underline font-semibold transition-colors shrink-0"
+            className="text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 underline font-semibold transition-colors shrink-0"
           >
             {language === 'bn' ? 'তথ্যসূত্র ও পদ্ধতি পড়ুন →' : 'Sources & Methodology →'}
           </Link>
@@ -41,20 +41,20 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2 space-y-4">
             <AmarNetrokonaLogo />
 
-            <p className="text-sm text-slate-400 leading-relaxed max-w-md">
+            <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-md">
               {language === 'bn'
                 ? 'পাহাড়, নদী, হাওর আর লোকসংস্কৃতির অনন্য জনপদ নেত্রকোণা। ১০টি উপজেলার পর্যটন, শিক্ষা, স্বাস্থ্য, নাগরিক সেবা এবং শতাব্দীর ইতিহাস নিয়ে একটি মুক্ত ডিজিটাল তথ্য উদ্যোগ।'
                 : 'Netrokona is an extraordinary confluence of border hills, crystal rivers, expansive haors, and immortal folklore. A civic digital initiative documenting all 10 upazilas, public services, and cultural heritage.'}
             </p>
 
             <div className="pt-2 flex flex-wrap gap-2 text-xs">
-              <span className="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded-md text-emerald-400 font-medium">
+              <span className="px-2.5 py-1 bg-white dark:bg-slate-900 border border-emerald-100 dark:border-slate-800 rounded-md text-emerald-700 dark:text-emerald-400 font-medium">
                 {language === 'bn' ? '১০টি উপজেলা' : '10 Upazilas'}
               </span>
-              <span className="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded-md text-emerald-400 font-medium">
+              <span className="px-2.5 py-1 bg-white dark:bg-slate-900 border border-emerald-100 dark:border-slate-800 rounded-md text-emerald-700 dark:text-emerald-400 font-medium">
                 {language === 'bn' ? '৫টি সংসদীয় আসন' : '5 Parliamentary Seats'}
               </span>
-              <span className="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded-md text-emerald-400 font-medium">
+              <span className="px-2.5 py-1 bg-white dark:bg-slate-900 border border-emerald-100 dark:border-slate-800 rounded-md text-emerald-700 dark:text-emerald-400 font-medium">
                 {language === 'bn' ? '২৩.২ লক্ষ জনসংখ্যা' : '2.32M Population'}
               </span>
             </div>
@@ -62,16 +62,16 @@ export const Footer: React.FC = () => {
 
           {/* Col 2: 10 Upazilas */}
           <div className="space-y-3">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
-              <MapPin className="w-3.5 h-3.5 text-emerald-400" />
+            <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider flex items-center gap-1.5">
+              <MapPin className="w-3.5 h-3.5 text-emerald-700 dark:text-emerald-400" />
               <span>{language === 'bn' ? '১০টি উপজেলা' : '10 Upazilas'}</span>
             </h4>
-            <ul className="space-y-1.5 text-xs text-slate-400">
+            <ul className="space-y-1.5 text-xs text-slate-600 dark:text-slate-400">
               {UPAZILAS_DATA.map((upazila) => (
                 <li key={upazila.id}>
                   <Link
                     to={`/upazilas/${upazila.slug}`}
-                    className="hover:text-emerald-400 transition-colors block py-0.5"
+                    className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors block py-0.5"
                   >
                     {language === 'bn' ? upazila.nameBn : upazila.name}
                   </Link>
@@ -82,57 +82,57 @@ export const Footer: React.FC = () => {
 
           {/* Col 3: Portal Sections */}
           <div className="space-y-3">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+            <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">
               {language === 'bn' ? 'গুরুত্বপূর্ণ বিভাগ' : 'Portal Sections'}
             </h4>
-            <ul className="space-y-2 text-xs text-slate-400">
+            <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-400">
               <li>
-                <Link to="/places" className="hover:text-emerald-400 transition-colors">
+                <Link to="/places" className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
                   {t('places')}
                 </Link>
               </li>
               <li>
-                <Link to="/map" className="hover:text-emerald-400 transition-colors">
+                <Link to="/map" className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
                   {t('map')}
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-emerald-400 transition-colors">
+                <Link to="/services" className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
                   {t('services')}
                 </Link>
               </li>
               <li>
-                <Link to="/health" className="hover:text-emerald-400 transition-colors">
+                <Link to="/health" className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
                   {t('health')}
                 </Link>
               </li>
               <li>
-                <Link to="/education" className="hover:text-emerald-400 transition-colors">
+                <Link to="/education" className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
                   {t('education')}
                 </Link>
               </li>
               <li>
-                <Link to="/transport" className="hover:text-emerald-400 transition-colors">
+                <Link to="/transport" className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
                   {t('transport')}
                 </Link>
               </li>
               <li>
-                <Link to="/fisheries" className="hover:text-emerald-400 transition-colors">
+                <Link to="/fisheries" className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
                   {t('fisheries')}
                 </Link>
               </li>
               <li>
-                <Link to="/agriculture" className="hover:text-emerald-400 transition-colors">
+                <Link to="/agriculture" className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
                   {t('agriculture')}
                 </Link>
               </li>
               <li>
-                <Link to="/history" className="hover:text-emerald-400 transition-colors">
+                <Link to="/history" className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
                   {t('history')}
                 </Link>
               </li>
               <li>
-                <Link to="/politics" className="hover:text-emerald-400 transition-colors">
+                <Link to="/politics" className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
                   {t('politics')}
                 </Link>
               </li>
@@ -141,18 +141,18 @@ export const Footer: React.FC = () => {
 
           {/* Col 4: Official Government Links */}
           <div className="space-y-3">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+            <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">
               {language === 'bn' ? 'অফিসিয়াল সরকারি লিঙ্ক' : 'Official Portals'}
             </h4>
-            <ul className="space-y-2 text-xs text-slate-400">
+            <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-400">
               <li>
                 <a
                   href="https://netrokona.gov.bd"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-emerald-400 inline-flex items-center gap-1 transition-colors"
+                  className="hover:text-emerald-700 dark:hover:text-emerald-400 inline-flex items-center gap-1 transition-colors"
                 >
-                  <span>নেত্রকোণা জেলা বাতায়ন</span>
+                  <span>{language === 'bn' ? 'নেত্রকোণা জেলা বাতায়ন' : 'Netrokona District Portal'}</span>
                   <ExternalLink className="w-2.5 h-2.5 opacity-60" />
                 </a>
               </li>
@@ -161,9 +161,9 @@ export const Footer: React.FC = () => {
                   href="http://www.parliament.gov.bd"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-emerald-400 inline-flex items-center gap-1 transition-colors"
+                  className="hover:text-emerald-700 dark:hover:text-emerald-400 inline-flex items-center gap-1 transition-colors"
                 >
-                  <span>বাংলাদেশ জাতীয় সংসদ</span>
+                  <span>{language === 'bn' ? 'বাংলাদেশ জাতীয় সংসদ' : 'Parliament of Bangladesh'}</span>
                   <ExternalLink className="w-2.5 h-2.5 opacity-60" />
                 </a>
               </li>
@@ -172,9 +172,9 @@ export const Footer: React.FC = () => {
                   href="https://bangladesh.gov.bd"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-emerald-400 inline-flex items-center gap-1 transition-colors"
+                  className="hover:text-emerald-700 dark:hover:text-emerald-400 inline-flex items-center gap-1 transition-colors"
                 >
-                  <span>বাংলাদেশ জাতীয় তথ্য বাতায়ন</span>
+                  <span>{language === 'bn' ? 'বাংলাদেশ জাতীয় তথ্য বাতায়ন' : 'Bangladesh National Portal'}</span>
                   <ExternalLink className="w-2.5 h-2.5 opacity-60" />
                 </a>
               </li>
@@ -183,9 +183,9 @@ export const Footer: React.FC = () => {
                   href="https://dghs.gov.bd"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-emerald-400 inline-flex items-center gap-1 transition-colors"
+                  className="hover:text-emerald-700 dark:hover:text-emerald-400 inline-flex items-center gap-1 transition-colors"
                 >
-                  <span>স্বাস্থ্য অধিদপ্তর (DGHS)</span>
+                  <span>{language === 'bn' ? 'স্বাস্থ্য অধিদপ্তর (DGHS)' : 'Directorate General of Health Services'}</span>
                   <ExternalLink className="w-2.5 h-2.5 opacity-60" />
                 </a>
               </li>
@@ -194,9 +194,9 @@ export const Footer: React.FC = () => {
                   href="https://eticket.railway.gov.bd"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-emerald-400 inline-flex items-center gap-1 transition-colors"
+                  className="hover:text-emerald-700 dark:hover:text-emerald-400 inline-flex items-center gap-1 transition-colors"
                 >
-                  <span>বাংলাদেশ রেলওয়ে ই-টিকিট</span>
+                  <span>{language === 'bn' ? 'বাংলাদেশ রেলওয়ে ই-টিকিট' : 'Bangladesh Railway e-Ticket'}</span>
                   <ExternalLink className="w-2.5 h-2.5 opacity-60" />
                 </a>
               </li>
@@ -205,9 +205,9 @@ export const Footer: React.FC = () => {
                   href="http://ffwc.gov.bd"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-emerald-400 inline-flex items-center gap-1 transition-colors"
+                  className="hover:text-emerald-700 dark:hover:text-emerald-400 inline-flex items-center gap-1 transition-colors"
                 >
-                  <span>বন্যা পূর্বাভাস কেন্দ্র (FFWC)</span>
+                  <span>{language === 'bn' ? 'বন্যা পূর্বাভাস কেন্দ্র (FFWC)' : 'Flood Forecasting Centre (FFWC)'}</span>
                   <ExternalLink className="w-2.5 h-2.5 opacity-60" />
                 </a>
               </li>
@@ -216,7 +216,7 @@ export const Footer: React.FC = () => {
             <div className="pt-2">
               <Link
                 to="/emergency"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-red-950/80 border border-red-800 text-red-300 hover:text-white rounded-lg text-xs font-semibold transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-red-50 dark:bg-red-950/80 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-300 hover:bg-red-100 dark:hover:text-white rounded-lg text-xs font-semibold transition-colors"
               >
                 <span>🚨 {language === 'bn' ? 'জরুরি হেল্পলাইন নম্বরসমূহ' : 'Emergency Hotlines'}</span>
               </Link>
@@ -225,31 +225,31 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
+        <div className="mt-12 pt-6 border-t border-emerald-100 dark:border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
           <p className="flex items-center gap-1">
-            <span>© {new Date().getFullYear()} আমাদের নেত্রকোণা (Our Netrokona Portal).</span>
+            <span>© {new Date().getFullYear()} {language === 'bn' ? 'আমাদের নেত্রকোণা' : 'Our Netrokona'}.</span>
             <span className="hidden sm:inline">Made with</span>
             <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 inline" />
             <span className="hidden sm:inline">for the people of Netrokona.</span>
           </p>
 
           <div className="flex items-center gap-4">
-            <Link to="/about" className="hover:text-slate-300 transition-colors">
+            <Link to="/about" className="hover:text-slate-900 dark:hover:text-slate-300 transition-colors">
               {t('about')}
             </Link>
-            <Link to="/sources" className="hover:text-slate-300 transition-colors">
+            <Link to="/sources" className="hover:text-slate-900 dark:hover:text-slate-300 transition-colors">
               {t('sources')}
             </Link>
-            <Link to="/contribute" className="hover:text-slate-300 transition-colors">
+            <Link to="/contribute" className="hover:text-slate-900 dark:hover:text-slate-300 transition-colors">
               {language === 'bn' ? 'তথ্য দিন' : 'Contribute'}
             </Link>
-            <Link to="/track" className="hover:text-slate-300 transition-colors">
+            <Link to="/track" className="hover:text-slate-900 dark:hover:text-slate-300 transition-colors">
               {language === 'bn' ? 'অবস্থা দেখুন' : 'Track'}
             </Link>
             <button
               type="button"
               onClick={scrollToTop}
-              className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 font-medium transition-colors"
+              className="inline-flex items-center gap-1 text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 font-medium transition-colors"
               aria-label="Scroll to top"
             >
               <ArrowUp className="w-3.5 h-3.5" />

@@ -23,3 +23,58 @@
     font-family: var(--font-english);
   }
 }
+
+/*
+ * Soft ("dim") dark mode.
+ * Tailwind utilities read colours from these variables, so redefining the dark slate steps under .dark
+ * lifts every dark background/border site-wide from near-black to a calm blue-grey.
+ * Light mode is untouched; text colours (slate-100…400) keep their contrast on the lighter surfaces.
+ */
+.dark {
+  color-scheme: dark;
+  --color-slate-950: oklch(23.5% 0.03 258); /* page background   (was 12.9%) */
+  --color-slate-900: oklch(28% 0.032 258); /* cards, header     (was 20.8%) */
+  --color-slate-800: oklch(34% 0.034 258); /* raised surfaces   (was 27.9%) */
+  --color-slate-700: oklch(41% 0.034 258); /* borders, dividers (was 37.2%) */
+}
+
+/*
+ * Phones: card grids become swipeable rows (snap scrolling, next card peeks in) instead of a very long
+ * single-column stack, and filter chips become one scrollable line with comfortable 40px tap targets.
+ */
+@media (max-width: 767px) {
+  .nk-rail {
+    display: flex !important;
+    gap: 14px !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1rem;
+    overscroll-behavior-x: contain;
+    margin-inline: -1rem;
+    padding: 4px 1rem 14px;
+    scrollbar-width: none;
+  }
+  .nk-rail::-webkit-scrollbar { display: none; }
+  .nk-rail > * {
+    flex: 0 0 84%;
+    max-width: 340px;
+    scroll-snap-align: start;
+  }
+
+  .nk-chips {
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    margin-inline: -1rem;
+    padding-inline: 1rem;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .nk-chips::-webkit-scrollbar { display: none; }
+  .nk-chips > * { flex-shrink: 0; white-space: nowrap; }
+  .nk-chips > button { min-height: 40px; padding-inline: 14px; }
+}
+
+/* Dark map tiles are near-black; lift them to sit on the softer dark surfaces. */
+.dark .nk-dark-tiles {
+  filter: brightness(1.45) contrast(0.92) saturate(1.1);
+}

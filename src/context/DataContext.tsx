@@ -2,54 +2,13 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import type { TouristPlace, NewsNotice, SectionImagesConfig } from '../types';
 import { PLACES_DATA } from '../data/places';
 import { NEWS_DATA } from '../data/news';
+import { HERO_PHOTO } from '../data/aggregated/district';
 
-// Pre-seeded gallery images for rich initial display
-const INITIAL_PLACES_DATA: TouristPlace[] = PLACES_DATA.map((place) => {
-  if (place.id === 'birishiri-ceramic-hill') {
-    return {
-      ...place,
-      galleryImages: [
-        'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=800&q=80',
-      ],
-    };
-  }
-  if (place.id === 'someshwari-river') {
-    return {
-      ...place,
-      galleryImages: [
-        'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1437719417032-8595fd9e9dc6?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80',
-      ],
-    };
-  }
-  if (place.id === 'dingapota-haor') {
-    return {
-      ...place,
-      galleryImages: [
-        'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80',
-      ],
-    };
-  }
-  if (place.id === 'rani-khong-church') {
-    return {
-      ...place,
-      galleryImages: [
-        'https://images.unsplash.com/photo-1548625361-19597c55c707?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=800&q=80',
-      ],
-    };
-  }
-  return {
-    ...place,
-    galleryImages: place.galleryImages || [place.image],
-  };
-});
+// PLACES_DATA already carries the real photos scraped from netrokona.gov.bd / Wikimedia Commons.
+const INITIAL_PLACES_DATA: TouristPlace[] = PLACES_DATA.map((place) => ({
+  ...place,
+  galleryImages: place.galleryImages?.length ? place.galleryImages : [place.image],
+}));
 
 const INITIAL_NEWS_DATA: NewsNotice[] = NEWS_DATA.map((n) => ({
   ...n,
@@ -58,7 +17,7 @@ const INITIAL_NEWS_DATA: NewsNotice[] = NEWS_DATA.map((n) => ({
 
 // Default aesthetic section banners
 const DEFAULT_SECTION_IMAGES: SectionImagesConfig = {
-  heroBanner: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=85',
+  heroBanner: HERO_PHOTO?.url ?? 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=85',
   foodBanner: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80',
   travelBanner: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80',
   educationBanner: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80',
@@ -66,9 +25,10 @@ const DEFAULT_SECTION_IMAGES: SectionImagesConfig = {
 };
 
 const STORAGE_KEYS = {
-  PLACES: 'amar_netrokona_places_v2',
+  // v3: real photos replaced the stock placeholders; old cached copies must not shadow them.
+  PLACES: 'amar_netrokona_places_v3',
   NEWS: 'amar_netrokona_news_v2',
-  SECTIONS: 'amar_netrokona_sections_v2',
+  SECTIONS: 'amar_netrokona_sections_v3',
   ADMIN_AUTH: 'amar_netrokona_admin_auth',
 };
 

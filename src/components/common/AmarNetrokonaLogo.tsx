@@ -12,8 +12,8 @@ export const AmarNetrokonaLogo: React.FC<LogoProps> = ({ className = '', size = 
   return (
     <div className={`flex items-center gap-3 group select-none ${className}`}>
       {/* Modern Nature Emblem: Garo Hills, Rising Sun, and Someshwari / Haor Waves */}
-      <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 dark:from-slate-800 dark:to-slate-900 p-0.5 shadow-md group-hover:scale-105 transition-transform duration-300 shrink-0 border border-slate-700/60 dark:border-slate-700">
-        <div className="w-full h-full rounded-[14px] bg-[#111827] flex items-center justify-center relative overflow-hidden">
+      <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-emerald-400 to-sky-500 p-0.5 shadow-md shadow-emerald-900/10 group-hover:scale-105 transition-transform duration-300 shrink-0">
+        <div className="w-full h-full rounded-[14px] bg-gradient-to-b from-sky-50 to-emerald-50 dark:from-slate-900 dark:to-slate-800 flex items-center justify-center relative overflow-hidden">
           <svg viewBox="0 0 100 100" className="w-8 h-8 sm:w-9 sm:h-9">
             {/* Glowing Golden Sun */}
             <circle cx="50" cy="36" r="16" fill="#f59e0b" className="animate-pulse" />
@@ -39,12 +39,12 @@ export const AmarNetrokonaLogo: React.FC<LogoProps> = ({ className = '', size = 
       </div>
 
       {/* Typography: "আমার নেত্রকোণা" and "NETROKONA DISTRICT" */}
-      <div>
-        <div className="text-lg sm:text-xl font-black text-slate-900 dark:text-white tracking-tight leading-none group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+      <div className="min-w-0">
+        <div className="text-base sm:text-xl font-black text-slate-900 dark:text-white tracking-tight leading-tight whitespace-nowrap group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
           {language === 'bn' ? 'আমার নেত্রকোণা' : 'Amar Netrokona'}
         </div>
-        <p className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-widest text-emerald-700 dark:text-emerald-400 mt-0.5">
-          {language === 'bn' ? 'পাহাড়, হাওর ও ঐতিহ্যের জনপদ' : 'GAIBANDHA STYLE • NETROKONA'}
+        <p className="hidden sm:block xl:hidden 2xl:block text-[11px] font-bold tracking-wide text-emerald-700 dark:text-emerald-400 mt-0.5 whitespace-nowrap">
+          {language === 'bn' ? 'পাহাড়, হাওর ও ঐতিহ্যের জনপদ' : 'Hills, haors & heritage'}
         </p>
       </div>
     </div>

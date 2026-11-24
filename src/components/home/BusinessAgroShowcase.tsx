@@ -69,7 +69,7 @@ export const BusinessAgroShowcase: React.FC = () => {
       </div>
 
       {/* Grid of Business Pillars */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="nk-rail grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {businessPillars.map((pillar, idx) => {
           const Icon = pillar.icon;
           return (

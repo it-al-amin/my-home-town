@@ -68,8 +68,8 @@ export const FamousFoodSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="text-right shrink-0">
-                  <span className="text-xs font-bold text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-900/30 px-2 py-0.5 rounded-md border border-emerald-200 dark:border-emerald-800 block">
+                <div className="text-right min-w-0 max-w-[46%] sm:max-w-[50%]">
+                  <span className="text-xs font-bold text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-900/30 px-2 py-0.5 rounded-md border border-emerald-200 dark:border-emerald-800 block leading-snug break-words">
                     {language === 'bn' ? food.approxPriceBn : food.approxPrice}
                   </span>
                 </div>

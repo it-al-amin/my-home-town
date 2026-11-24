@@ -103,17 +103,17 @@ export const TravelGuideSection: React.FC = () => {
   const currentRoutes = activeOrigin === 'dhaka' ? routesDhaka : routesMymensingh;
 
   return (
-    <section className="bg-slate-900 text-white rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl space-y-8">
+    <section className="bg-gradient-to-br from-sky-50 via-white to-emerald-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 text-slate-900 dark:text-white rounded-3xl p-5 sm:p-10 border border-sky-100 dark:border-slate-800 shadow-xl shadow-sky-900/5 space-y-8">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-800 pb-5">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-5">
         <div>
-          <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider bg-emerald-500/20 px-3 py-1 rounded-md border border-emerald-400/30">
+          <span className="text-xs font-bold text-emerald-800 dark:text-emerald-300 uppercase tracking-wider bg-emerald-100 dark:bg-emerald-500/20 px-3 py-1 rounded-md border border-emerald-200 dark:border-emerald-400/30">
             {language === 'bn' ? 'যাতায়াত ও ভ্রমণ নির্দেশিকা' : 'How to Reach Netrokona'}
           </span>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mt-2">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-2">
             {language === 'bn' ? 'কীভাবে যাবেন: ঢাকা ও ময়মনসিংহ থেকে' : 'How to Go: Travel Guide & Routes'}
           </h2>
-          <p className="text-sm text-slate-300 mt-1 max-w-2xl leading-relaxed">
+          <p className="text-sm text-slate-600 dark:text-slate-300 mt-1 max-w-2xl leading-relaxed">
             {language === 'bn'
               ? 'সাদামাটির পাহাড়, ডিংগাপোতা হাওর ও বালিশ মিষ্টির শহরে ট্রেন, বাস ও নৌপথে সহজ যাতায়াত রুট।'
               : 'Complete route guide with train timing, bus terminals, travel duration and ticket links.'}
@@ -121,14 +121,14 @@ export const TravelGuideSection: React.FC = () => {
         </div>
 
         {/* Origin Toggle Tabs */}
-        <div className="flex items-center gap-1.5 p-1 bg-slate-800 rounded-xl border border-slate-700 shrink-0">
+        <div className="flex items-center gap-1.5 p-1 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shrink-0 self-start">
           <button
             type="button"
             onClick={() => setActiveOrigin('dhaka')}
             className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all cursor-pointer ${
               activeOrigin === 'dhaka'
                 ? 'bg-emerald-600 text-white shadow-md'
-                : 'text-slate-400 hover:text-white'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             {language === 'bn' ? 'ঢাকা থেকে রুট' : 'From Dhaka'}
@@ -139,7 +139,7 @@ export const TravelGuideSection: React.FC = () => {
             className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all cursor-pointer ${
               activeOrigin === 'mymensingh'
                 ? 'bg-emerald-600 text-white shadow-md'
-                : 'text-slate-400 hover:text-white'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             {language === 'bn' ? 'ময়মনসিংহ থেকে রুট' : 'From Mymensingh'}
@@ -148,43 +148,43 @@ export const TravelGuideSection: React.FC = () => {
       </div>
 
       {/* Routes Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="nk-rail grid grid-cols-1 lg:grid-cols-3 gap-6">
         {currentRoutes.map((route, idx) => (
           <div
             key={idx}
-            className="bg-slate-800/80 rounded-2xl border border-slate-700 p-6 flex flex-col justify-between hover:border-emerald-500/60 transition-all duration-300 shadow-xl space-y-4"
+            className="bg-white dark:bg-slate-800/80 rounded-2xl border border-slate-200 dark:border-slate-700 p-5 sm:p-6 flex flex-col justify-between hover:border-emerald-500/60 transition-all duration-300 shadow-sm hover:shadow-lg space-y-4"
           >
             <div className="space-y-4">
               {/* Destination Header */}
               <div>
-                <span className="text-[11px] font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
+                <span className="text-[11px] font-bold text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-500/20">
                   {route.highlight}
                 </span>
-                <h3 className="text-lg font-black text-white mt-2 leading-snug">
+                <h3 className="text-lg font-black text-slate-900 dark:text-white mt-2 leading-snug">
                   {route.destination}
                 </h3>
-                <p className="text-xs text-slate-400 mt-0.5">
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                   {route.subtext}
                 </p>
               </div>
 
               {/* Quick Specs Strip */}
-              <div className="grid grid-cols-2 gap-2 bg-slate-900/60 p-2.5 rounded-xl border border-slate-700/60 text-xs">
+              <div className="grid grid-cols-2 gap-2 bg-slate-50 dark:bg-slate-900/60 p-2.5 rounded-xl border border-slate-200 dark:border-slate-700/60 text-xs">
                 <div>
-                  <span className="text-slate-400 text-[10px] block">{language === 'bn' ? 'সময়কাল' : 'Duration'}</span>
-                  <strong className="text-slate-200">{route.duration}</strong>
+                  <span className="text-slate-500 dark:text-slate-400 text-[11px] block">{language === 'bn' ? 'সময়কাল' : 'Duration'}</span>
+                  <strong className="text-slate-800 dark:text-slate-200">{route.duration}</strong>
                 </div>
                 <div>
-                  <span className="text-slate-400 text-[10px] block">{language === 'bn' ? 'ভাড়া' : 'Fare'}</span>
+                  <span className="text-slate-500 dark:text-slate-400 text-[11px] block">{language === 'bn' ? 'ভাড়া' : 'Fare'}</span>
                   <strong className="text-emerald-400">{route.fare}</strong>
                 </div>
               </div>
 
               {/* Step by step navigation list */}
-              <div className="space-y-2 pt-1 text-xs text-slate-300">
+              <div className="space-y-2 pt-1 text-xs text-slate-600 dark:text-slate-300">
                 {route.steps.map((step, sIdx) => (
                   <div key={sIdx} className="flex items-start gap-2">
-                    <span className="w-5 h-5 rounded-full bg-slate-700 text-emerald-300 font-bold flex items-center justify-center shrink-0 text-[11px] mt-0.5">
+                    <span className="w-5 h-5 rounded-full bg-emerald-100 dark:bg-slate-700 text-emerald-800 dark:text-emerald-300 font-bold flex items-center justify-center shrink-0 text-[11px] mt-0.5">
                       {sIdx + 1}
                     </span>
                     <span className="leading-relaxed">{step}</span>
@@ -194,7 +194,7 @@ export const TravelGuideSection: React.FC = () => {
             </div>
 
             {/* Bottom Actions */}
-            <div className="pt-3 border-t border-slate-700/60 flex items-center justify-between gap-2">
+            <div className="pt-3 border-t border-slate-200 dark:border-slate-700/60 flex items-center justify-between gap-2">
               <a
                 href="https://eticket.railway.gov.bd"
                 target="_blank"
@@ -206,7 +206,7 @@ export const TravelGuideSection: React.FC = () => {
               </a>
               <Link
                 to="/transport"
-                className="py-2 px-3 rounded-xl bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs font-bold transition-colors"
+                className="py-2 px-3 rounded-xl bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-200 text-xs font-bold transition-colors"
               >
                 {language === 'bn' ? 'সকল রুট' : 'Details'}
               </Link>

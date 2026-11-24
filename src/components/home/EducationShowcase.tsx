@@ -37,7 +37,7 @@ export const EducationShowcase: React.FC = () => {
       </div>
 
       {/* Featured Institutions Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="nk-rail grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {featuredInstitutions.map((inst) => (
           <div
             key={inst.id}
@@ -45,7 +45,7 @@ export const EducationShowcase: React.FC = () => {
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300">
+                <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300">
                   {language === 'bn' ? inst.categoryLabel.bn : inst.categoryLabel.en}
                 </span>
                 {inst.established && (

@@ -1,0 +1,46 @@
+{
+  "_comment": "Config for scraper/node/district_sources.mjs. placeMatch: site place id -> substrings of the Bengali title on netrokona.gov.bd/pages/tourist-spot. placeSearch: Wikimedia Commons search used for places the government page has no photo for.",
+  "placeMatch": {
+    "birishiri-ceramic-hill": [
+      "বিজয়পুর"
+    ],
+    "tribal-cultural-academy": [
+      "কালচারাল একাডেমী",
+      "কালচারাল একাডেমি"
+    ],
+    "rani-khong-church": [
+      "রানীখং",
+      "রাণীখং"
+    ],
+    "roailbari-fort": [
+      "রোয়াইলবাড়ি"
+    ],
+    "shah-sultan-rumi-shrine": [
+      "শাহ সুলতান",
+      "রুমী"
+    ],
+    "rashimoni-monument": [
+      "রাশমণি",
+      "রাশিমণি"
+    ],
+    "lengura-memorial": [
+      "সাত শহীদ"
+    ]
+  },
+  "gallery": {
+    "pages": 2,
+    "maxImagesPerAlbum": 8
+  },
+  "wikipedia": {
+    "page": "নেত্রকোণা জেলা",
+    "placeSearch": {
+      "someshwari-river": "Someshwari River Durgapur",
+      "dingapota-haor": "Dingapota haor Netrokona",
+      "birishiri-ceramic-hill": "Bijoypur Birishiri",
+      "rani-khong-church": "Ranikhong mission"
+    }
+  },
+  "banglapedia": {
+    "url": "https://en.banglapedia.org/index.php/Netrokona_District"
+  }
+}

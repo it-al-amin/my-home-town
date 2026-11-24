@@ -18,12 +18,12 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = '' })
   const { language } = useLanguage();
 
   return (
-    <nav aria-label="Breadcrumb" className={`py-3 text-xs sm:text-sm text-slate-500 dark:text-slate-400 ${className}`}>
+    <nav aria-label="Breadcrumb" className={`py-1.5 sm:py-3 text-xs sm:text-sm text-slate-500 dark:text-slate-400 ${className}`}>
       <ol className="flex flex-wrap items-center gap-1.5 sm:gap-2">
         <li className="inline-flex items-center">
           <Link
             to="/"
-            className="inline-flex items-center gap-1 text-slate-500 dark:text-slate-400 hover:text-emerald-700 transition-colors"
+            className="inline-flex items-center gap-1 py-2 text-slate-500 dark:text-slate-400 hover:text-emerald-700 transition-colors"
           >
             <Home className="w-3.5 h-3.5" />
             <span>{language === 'bn' ? 'হোম' : 'Home'}</span>
@@ -44,7 +44,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = '' })
               ) : (
                 <Link
                   to={item.href}
-                  className="text-slate-500 dark:text-slate-400 hover:text-emerald-700 transition-colors line-clamp-1"
+                  className="inline-block py-2 text-slate-500 dark:text-slate-400 hover:text-emerald-700 transition-colors line-clamp-1"
                 >
                   {label}
                 </Link>

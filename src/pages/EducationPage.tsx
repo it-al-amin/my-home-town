@@ -202,7 +202,7 @@ export const EducationPage: React.FC = () => {
         </div>
 
         {/* Category Chips */}
-        <div className="flex items-center gap-1.5 flex-wrap pt-2 border-t border-slate-100 dark:border-slate-800 text-xs">
+        <div className="nk-chips flex items-center gap-1.5 flex-wrap pt-2 border-t border-slate-100 dark:border-slate-800 text-xs">
           {categories.map((c) => (
             <button
               key={c.id}

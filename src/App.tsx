@@ -14,6 +14,7 @@ import { UpazilasPage } from './pages/UpazilasPage';
 import { UpazilaDetailPage } from './pages/UpazilaDetailPage';
 import { PlacesPage } from './pages/PlacesPage';
 import { PlaceDetailPage } from './pages/PlaceDetailPage';
+import { GalleryPage } from './pages/GalleryPage';
 import { MapExplorerPage } from './pages/MapExplorerPage';
 import { EducationPage } from './pages/EducationPage';
 import { HealthPage } from './pages/HealthPage';
@@ -60,6 +61,7 @@ export function App() {
                 <Route path="places" element={<PlacesPage />} />
                 <Route path="places/:id" element={<PlaceDetailPage />} />
                 <Route path="map" element={<MapExplorerPage />} />
+                <Route path="gallery" element={<GalleryPage />} />
                 <Route path="education" element={<EducationPage />} />
                 <Route path="health" element={<HealthPage />} />
                 <Route path="services" element={<ServicesPage />} />

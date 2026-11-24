@@ -68,7 +68,7 @@ export const NewsPage: React.FC = () => {
       </div>
 
       {/* Category Filter Chips */}
-      <div className="flex items-center gap-1.5 flex-wrap bg-white dark:bg-slate-900 p-3 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs text-xs">
+      <div className="nk-chips flex items-center gap-1.5 flex-wrap bg-white dark:bg-slate-900 p-3 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs text-xs">
         <span className="text-slate-400 font-semibold px-2 flex items-center gap-1">
           <Filter className="w-3.5 h-3.5" />
           <span>{language === 'bn' ? 'ফিল্টার:' : 'Filter:'}</span>

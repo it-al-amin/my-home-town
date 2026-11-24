@@ -1,6 +1,7 @@
 import type { TouristPlace } from '../types';
+import { realPhotosForPlace } from './aggregated/district';
 
-export const PLACES_DATA: TouristPlace[] = [
+const BASE_PLACES: TouristPlace[] = [
   {
     id: 'birishiri-ceramic-hill',
     slug: 'birishiri-ceramic-hill',
@@ -302,3 +303,18 @@ export const PLACES_DATA: TouristPlace[] = [
     verified: true,
   },
 ];
+
+// Real photos replace the stock placeholders wherever the district administration (netrokona.gov.bd)
+// or Wikimedia Commons has a photo of the place. Refreshed by scraper/node/district_sources.mjs.
+export const PLACES_DATA: TouristPlace[] = BASE_PLACES.map((place) => {
+  const photos = realPhotosForPlace(place.id);
+  if (!photos.length) {
+    return { ...place, imageCredit: 'প্রতীকী ছবি · Illustrative photo (Unsplash)' };
+  }
+  return {
+    ...place,
+    image: photos[0].url,
+    imageCredit: photos[0].licence ? `${photos[0].credit} (${photos[0].licence})` : photos[0].credit,
+    galleryImages: photos.map((p) => p.url),
+  };
+});

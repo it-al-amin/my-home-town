@@ -26,7 +26,7 @@ export const PlaceCard: React.FC<PlaceCardProps> = ({ place }) => {
   return (
     <div className="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200/90 dark:border-slate-700/90 hover:border-emerald-500/50 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col h-full">
       {/* Image Container with zoom effect */}
-      <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-slate-800">
+      <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-gradient-to-br from-emerald-100 to-sky-100 dark:from-slate-800 dark:to-slate-700">
         <img
           src={imgError ? fallbackSvg : place.image}
           alt={title}
@@ -34,7 +34,7 @@ export const PlaceCard: React.FC<PlaceCardProps> = ({ place }) => {
           loading="lazy"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
 
         {/* Top Badges */}
         <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2 pointer-events-none">

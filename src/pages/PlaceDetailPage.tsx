@@ -3,8 +3,9 @@ import { useParams, Link } from 'react-router-dom';
 import { 
   MapPin, Calendar, Compass, Sparkles, AlertCircle, 
   ArrowLeft, ExternalLink, Info, CheckCircle2, Image as ImageIcon,
-  Send, X, ChevronLeft, ChevronRight, Maximize2
+  Send, X, ChevronLeft, ChevronRight, Maximize2, Landmark
 } from 'lucide-react';
+import { govSpotForPlace } from '../data/aggregated/district';
 import { useLanguage } from '../context/LanguageContext';
 import { useData } from '../context/DataContext';
 import { UPAZILAS_DATA } from '../data/upazilas';
@@ -24,8 +25,10 @@ export const PlaceDetailPage: React.FC = () => {
   const [imgError, setImgError] = useState(false);
   const [activeLightboxImg, setActiveLightboxImg] = useState<string | null>(null);
   const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
+  const [govExpanded, setGovExpanded] = useState(false);
 
   const place = places.find((p) => p.id === id || p.slug === id);
+  const govSpot = place ? govSpotForPlace(place.id) : undefined;
 
   if (!place) {
     return (
@@ -204,6 +207,60 @@ export const PlaceDetailPage: React.FC = () => {
               </p>
             </div>
           </div>
+
+          {/* Official description from the district administration (netrokona.gov.bd), refreshed daily */}
+          {govSpot && (govSpot.descriptionBn || govSpot.transportationBn) && (
+            <section className="pt-6 border-t border-slate-100 dark:border-slate-800 space-y-4" aria-labelledby="gov-spot-heading">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <h3 id="gov-spot-heading" className="text-lg font-black text-slate-900 dark:text-white flex items-center gap-2">
+                  <Landmark className="w-5 h-5 text-teal-600" />
+                  {language === 'bn' ? 'জেলা প্রশাসনের বিবরণ' : 'Official description (District Administration)'}
+                </h3>
+                <a
+                  href={govSpot.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-teal-700 dark:text-teal-400 hover:underline"
+                >
+                  netrokona.gov.bd <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+              {language === 'en' && (
+                <p className="text-xs text-slate-500 dark:text-slate-400">Published in Bengali by the Netrokona District Portal.</p>
+              )}
+              {govSpot.descriptionBn && (
+                <div>
+                  <p
+                    id="gov-spot-description"
+                    lang="bn"
+                    className={`text-sm sm:text-[15px] leading-7 text-slate-700 dark:text-slate-300 whitespace-pre-line ${govExpanded ? '' : 'line-clamp-6'}`}
+                  >
+                    {govSpot.descriptionBn}
+                  </p>
+                  {govSpot.descriptionBn.length > 600 && (
+                    <button
+                      type="button"
+                      onClick={() => setGovExpanded((v) => !v)}
+                      aria-expanded={govExpanded}
+                      aria-controls="gov-spot-description"
+                      className="mt-2 text-sm font-semibold text-teal-700 dark:text-teal-400 hover:underline"
+                    >
+                      {govExpanded ? (language === 'bn' ? 'সংক্ষিপ্ত করুন' : 'Show less') : (language === 'bn' ? 'আরও পড়ুন' : 'Read more')}
+                    </button>
+                  )}
+                </div>
+              )}
+              {govSpot.transportationBn && (
+                <div className="p-4 rounded-xl bg-teal-50/70 dark:bg-teal-950/30 border border-teal-100 dark:border-teal-900/40">
+                  <div className="text-sm font-bold text-teal-900 dark:text-teal-300 flex items-center gap-1.5 mb-1">
+                    <Compass className="w-4 h-4" />
+                    {language === 'bn' ? 'কীভাবে যাবেন' : 'How to get there'}
+                  </div>
+                  <p lang="bn" className="text-sm leading-6 text-slate-700 dark:text-slate-300 whitespace-pre-line">{govSpot.transportationBn}</p>
+                </div>
+              )}
+            </section>
+          )}
 
           {/* DYNAMIC VISITED SPOTS PHOTO GALLERY SECTION */}
           <div className="pt-6 border-t border-slate-100 dark:border-slate-800 space-y-4">

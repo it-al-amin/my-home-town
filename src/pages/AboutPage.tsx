@@ -10,9 +10,13 @@ import { UPAZILAS_DATA } from '../data/upazilas';
 import { SectionHeader } from '../components/common/SectionHeader';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { MapLink } from '../components/common/MapLink';
+import { DistrictSourcesPanel } from '../components/district/DistrictSourcesPanel';
 
 export const AboutPage: React.FC = () => {
   const { language } = useLanguage();
+  const bn = language === 'bn';
+  // Localised number: Bengali digits in Bangla mode; grouping off for years and codes.
+  const n = (v: number, group = true) => v.toLocaleString(bn ? 'bn-BD' : 'en-US', { useGrouping: group });
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
@@ -92,35 +96,35 @@ export const AboutPage: React.FC = () => {
           <div className="space-y-3 text-xs sm:text-sm">
             <div className="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800">
               <span className="text-slate-500 dark:text-slate-400">{language === 'bn' ? 'জেলা প্রতিষ্ঠা' : 'Established'}</span>
-              <strong className="text-slate-800 dark:text-slate-100">{DISTRICT_DATA.established} (১৭ জানুয়ারি)</strong>
+              <strong className="text-slate-800 dark:text-slate-100">{bn ? `${n(DISTRICT_DATA.established, false)} (১৭ জানুয়ারি)` : `17 January ${DISTRICT_DATA.established}`}</strong>
             </div>
             <div className="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800">
               <span className="text-slate-500 dark:text-slate-400">{language === 'bn' ? 'মোট আয়তন' : 'Total Area'}</span>
-              <strong className="text-slate-800 dark:text-slate-100">{DISTRICT_DATA.areaKm2} sq km</strong>
+              <strong className="text-slate-800 dark:text-slate-100">{bn ? `${n(DISTRICT_DATA.areaKm2)} বর্গ কিমি` : `${n(DISTRICT_DATA.areaKm2)} km²`}</strong>
             </div>
             <div className="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800">
               <span className="text-slate-500 dark:text-slate-400">{language === 'bn' ? 'জনসংখ্যা (২০২২)' : 'Population (2022)'}</span>
-              <strong className="text-slate-800 dark:text-slate-100">{DISTRICT_DATA.population.toLocaleString()}</strong>
+              <strong className="text-slate-800 dark:text-slate-100">{n(DISTRICT_DATA.population)}</strong>
             </div>
             <div className="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800">
               <span className="text-slate-500 dark:text-slate-400">{language === 'bn' ? 'জনঘনত্ব' : 'Density'}</span>
-              <strong className="text-slate-800 dark:text-slate-100">{DISTRICT_DATA.populationDensity} / sq km</strong>
+              <strong className="text-slate-800 dark:text-slate-100">{bn ? `${n(DISTRICT_DATA.populationDensity)} / বর্গ কিমি` : `${n(DISTRICT_DATA.populationDensity)} / km²`}</strong>
             </div>
             <div className="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800">
               <span className="text-slate-500 dark:text-slate-400">{language === 'bn' ? 'উপজেলা' : 'Upazilas'}</span>
-              <strong className="text-slate-800 dark:text-slate-100">{DISTRICT_DATA.upazilasCount}টি</strong>
+              <strong className="text-slate-800 dark:text-slate-100">{bn ? `${n(DISTRICT_DATA.upazilasCount)}টি` : n(DISTRICT_DATA.upazilasCount)}</strong>
             </div>
             <div className="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800">
               <span className="text-slate-500 dark:text-slate-400">{language === 'bn' ? 'ইউনিয়ন' : 'Unions'}</span>
-              <strong className="text-slate-800 dark:text-slate-100">{DISTRICT_DATA.unionsCount}টি</strong>
+              <strong className="text-slate-800 dark:text-slate-100">{bn ? `${n(DISTRICT_DATA.unionsCount)}টি` : n(DISTRICT_DATA.unionsCount)}</strong>
             </div>
             <div className="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800">
               <span className="text-slate-500 dark:text-slate-400">{language === 'bn' ? 'সংসদীয় আসন' : 'Parliament Seats'}</span>
-              <strong className="text-slate-800 dark:text-slate-100">{DISTRICT_DATA.parliamentSeatsCount}টি (১৫৭ - ১৬১)</strong>
+              <strong className="text-slate-800 dark:text-slate-100">{bn ? `${n(DISTRICT_DATA.parliamentSeatsCount)}টি (১৫৭ – ১৬১)` : `${DISTRICT_DATA.parliamentSeatsCount} (No. 157 – 161)`}</strong>
             </div>
             <div className="flex justify-between py-1.5">
               <span className="text-slate-500 dark:text-slate-400">{language === 'bn' ? 'পোস্ট কোড' : 'Postal Code'}</span>
-              <strong className="text-slate-800 dark:text-slate-100">{DISTRICT_DATA.postalCode}</strong>
+              <strong className="text-slate-800 dark:text-slate-100">{bn ? n(Number(DISTRICT_DATA.postalCode), false) : DISTRICT_DATA.postalCode}</strong>
             </div>
           </div>
         </div>
@@ -137,7 +141,7 @@ export const AboutPage: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
           <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-xs border border-emerald-200/80">
             <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold mx-auto mb-2 text-sm">
-              ১
+              {bn ? '১' : '1'}
             </div>
             <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base mb-1">{language === 'bn' ? 'নেত্রকোণা জেলা' : 'District Level'}</h4>
             <p className="text-xs text-slate-500 dark:text-slate-400">{language === 'bn' ? 'জেলা প্রশাসক (ডিসি) ও জেলা পরিষদ' : 'DC Office & Zila Parishad'}</p>
@@ -145,7 +149,7 @@ export const AboutPage: React.FC = () => {
 
           <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-xs border border-emerald-200/80">
             <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold mx-auto mb-2 text-sm">
-              ২
+              {bn ? '২' : '2'}
             </div>
             <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base mb-1">{language === 'bn' ? '১০টি উপজেলা' : '10 Upazilas'}</h4>
             <p className="text-xs text-slate-500 dark:text-slate-400">{language === 'bn' ? 'ইউএনও ও উপজেলা পরিষদ' : 'UNO & Upazila Parishad'}</p>
@@ -153,7 +157,7 @@ export const AboutPage: React.FC = () => {
 
           <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-xs border border-emerald-200/80">
             <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold mx-auto mb-2 text-sm">
-              ৩
+              {bn ? '৩' : '3'}
             </div>
             <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base mb-1">{language === 'bn' ? '৮৬টি ইউনিয়ন ও ৫ পৌরসভা' : '86 Unions & 5 Municipalities'}</h4>
             <p className="text-xs text-slate-500 dark:text-slate-400">{language === 'bn' ? 'ইউনিয়ন পরিষদ ও মেয়র' : 'Union Parishad & Pourashava'}</p>
@@ -161,7 +165,7 @@ export const AboutPage: React.FC = () => {
 
           <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-xs border border-emerald-200/80">
             <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold mx-auto mb-2 text-sm">
-              ৪
+              {bn ? '৪' : '4'}
             </div>
             <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base mb-1">{language === 'bn' ? '২,২৮৪টি গ্রাম' : '2,284 Villages'}</h4>
             <p className="text-xs text-slate-500 dark:text-slate-400">{language === 'bn' ? 'তৃণমূল জনপদ ও পাড়া' : 'Grassroot communities'}</p>
@@ -215,6 +219,9 @@ export const AboutPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Live district profile from netrokona.gov.bd, Bengali Wikipedia & Banglapedia */}
+      <DistrictSourcesPanel variant="full" className="!px-0" />
     </div>
   );
 };

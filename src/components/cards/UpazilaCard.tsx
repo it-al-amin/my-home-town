@@ -42,15 +42,15 @@ export const UpazilaCard: React.FC<UpazilaCardProps> = ({ upazila }) => {
         {/* Quick Stats Grid */}
         <div className="grid grid-cols-3 gap-2 py-2.5 px-3 bg-slate-50/80 dark:bg-slate-900/80 rounded-xl border border-slate-100 dark:border-slate-800 text-xs mb-3.5">
           <div>
-            <span className="text-slate-400 block text-[10px] uppercase font-bold">{language === 'bn' ? 'আয়তন' : 'Area'}</span>
+            <span className="text-slate-400 block text-[11px] uppercase font-bold">{language === 'bn' ? 'আয়তন' : 'Area'}</span>
             <strong className="text-slate-800 dark:text-slate-100 font-semibold">{area}</strong>
           </div>
           <div>
-            <span className="text-slate-400 block text-[10px] uppercase font-bold">{language === 'bn' ? 'জনসংখ্যা' : 'Population'}</span>
+            <span className="text-slate-400 block text-[11px] uppercase font-bold">{language === 'bn' ? 'জনসংখ্যা' : 'Population'}</span>
             <strong className="text-slate-800 dark:text-slate-100 font-semibold">{population}</strong>
           </div>
           <div>
-            <span className="text-slate-400 block text-[10px] uppercase font-bold">{language === 'bn' ? 'ইউনিয়ন' : 'Unions'}</span>
+            <span className="text-slate-400 block text-[11px] uppercase font-bold">{language === 'bn' ? 'ইউনিয়ন' : 'Unions'}</span>
             <strong className="text-slate-800 dark:text-slate-100 font-semibold">{unions}</strong>
           </div>
         </div>

@@ -642,7 +642,7 @@ export const AdminPage: React.FC = () => {
                               <Eye className="w-3.5 h-3.5" />
                             </button>
                           </div>
-                          <span className="absolute bottom-1 left-1 px-1.5 py-0.5 rounded-md text-[10px] font-bold bg-black/60 text-white">
+                          <span className="absolute bottom-1 left-1 px-1.5 py-0.5 rounded-md text-[11px] font-bold bg-black/60 text-white">
                             #{idx + 1}
                           </span>
                         </div>
@@ -925,7 +925,7 @@ export const AdminPage: React.FC = () => {
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
                       <span
-                        className={`px-2 py-0.5 rounded-md text-[10px] font-black uppercase ${
+                        className={`px-2 py-0.5 rounded-md text-[11px] font-black uppercase ${
                           n.status === 'pending'
                             ? 'bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300'
                             : n.status === 'rejected'
@@ -935,7 +935,7 @@ export const AdminPage: React.FC = () => {
                       >
                         {n.status === 'pending' ? 'অপেক্ষমাণ' : n.status === 'rejected' ? 'বাতিলকৃত' : 'অনুমোদিত'}
                       </span>
-                      <span className="text-[10px] text-slate-400">{n.date}</span>
+                      <span className="text-[11px] text-slate-400">{n.date}</span>
                     </div>
 
                     <h4 className="text-sm font-bold text-slate-900 dark:text-white line-clamp-2">

@@ -136,7 +136,7 @@ export const ServiceSectorsGrid: React.FC = () => {
       </div>
 
       {/* Grid of Service Sector Cards styled like bangladesh.gov.bd */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="nk-rail grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {sectors.map((sector) => {
           const Icon = sector.icon;
           return (

@@ -93,7 +93,7 @@ export const InstitutionDirectory: React.FC = () => {
                 <figure>
                   <img src={i.photo.url} alt={bn ? i.nameBn : i.name} loading="lazy" referrerPolicy="no-referrer"
                     className="w-full h-40 object-cover" />
-                  <figcaption className="px-3 py-1 text-[10px] text-slate-500 dark:text-slate-400 truncate">
+                  <figcaption className="px-3 py-1 text-[11px] text-slate-500 dark:text-slate-400 truncate">
                     {bn ? 'ছবি: ' : 'Photo: '}
                     <a href={i.photo.pageUrl ?? i.photo.url} target="_blank" rel="noopener noreferrer" className="underline">
                       {i.photo.credit}

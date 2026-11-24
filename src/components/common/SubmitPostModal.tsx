@@ -232,7 +232,7 @@ export const SubmitPostModal: React.FC<SubmitPostModalProps> = ({
                     required
                     value={authorName}
                     onChange={(e) => setAuthorName(e.target.value)}
-                    placeholder={language === 'bn' ? 'যেমন: সাইদুর রহমান' : 'Full Name'}
+                    placeholder={language === 'bn' ? 'যেমন: আল আমিন' : 'e.g. Al Amin'}
                     className="w-full px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs sm:text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-hidden"
                   />
                 </div>

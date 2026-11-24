@@ -92,7 +92,7 @@ export const DistrictAdminCard: React.FC = () => {
                     <Icon className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${official.badgeColor}`}>
+                    <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full border ${official.badgeColor}`}>
                       {language === 'bn' ? 'প্রশাসনিক শীর্ষ পদ' : 'Executive Post'}
                     </span>
                     <h4 className="text-sm font-extrabold text-slate-900 dark:text-slate-100 mt-0.5 line-clamp-1">

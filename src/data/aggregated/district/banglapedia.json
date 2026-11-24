@@ -1,0 +1,182 @@
+{
+  "fetchedAt": "2026-11-24T09:58:43.278Z",
+  "sourceUrl": "https://en.banglapedia.org/index.php/Netrokona_District",
+  "lastEdited": "14 October 2023",
+  "censusYear": 2011,
+  "areaKm2": 2794.28,
+  "latitude": [
+    "24°34'",
+    "25°12'"
+  ],
+  "longitude": [
+    "90°00'",
+    "91°07'"
+  ],
+  "population": {
+    "total": 2229642,
+    "male": 1111306,
+    "female": 1118336,
+    "urban": 247183,
+    "rural": 1982459,
+    "densityPerKm2": 798,
+    "literacyPct": 39.4
+  },
+  "administration": {
+    "upazilas": 10,
+    "municipalities": 5,
+    "unions": 86,
+    "mouzas": 1571,
+    "villages": 2282
+  },
+  "subdivisionFormed": 1882,
+  "districtFormed": 1984,
+  "mainRivers": [
+    "Dhanu",
+    "Dhalai",
+    "Ghorautra",
+    "piyain",
+    "Gunai",
+    "Someshwari"
+  ],
+  "institutions": {
+    "college": 28,
+    "secondarySchool": 236,
+    "primarySchool": 1083,
+    "madrasa": 160
+  },
+  "literacy": {
+    "averagePct": 39.4,
+    "malePct": 40.9,
+    "femalePct": 38
+  },
+  "incomeSharePct": {
+    "Agriculture": 72.43,
+    "non-agricultural labourer": 3.4,
+    "industry": 0.53,
+    "commerce": 10,
+    "transport and communication": 2.11,
+    "service": 3.92,
+    "construction": 0.91,
+    "religious service": 0.26,
+    "rent and remittance": 0.23,
+    "others": 6.21
+  },
+  "indigenousCommunities": [
+    "Garo",
+    "Hajong",
+    "Hodi",
+    "Banai"
+  ],
+  "upazilas": [
+    {
+      "name": "Atpara",
+      "areaKm2": 192.5,
+      "municipalities": 0,
+      "unions": 7,
+      "mouzas": 142,
+      "villages": 177,
+      "population": 144624,
+      "densityPerKm2": 751,
+      "literacyPct": 38.7
+    },
+    {
+      "name": "Kalmakanda",
+      "areaKm2": 376.22,
+      "municipalities": 0,
+      "unions": 8,
+      "mouzas": 179,
+      "villages": 347,
+      "population": 271912,
+      "densityPerKm2": 723,
+      "literacyPct": 36.6
+    },
+    {
+      "name": "Kendua",
+      "areaKm2": 303.59,
+      "municipalities": 1,
+      "unions": 13,
+      "mouzas": 217,
+      "villages": 289,
+      "population": 304729,
+      "densityPerKm2": 1004,
+      "literacyPct": 37.6
+    },
+    {
+      "name": "Khaliajuri",
+      "areaKm2": 297.63,
+      "municipalities": 0,
+      "unions": 6,
+      "mouzas": 68,
+      "villages": 75,
+      "population": 97450,
+      "densityPerKm2": 327,
+      "literacyPct": 30.4
+    },
+    {
+      "name": "Durgapur",
+      "areaKm2": 279.28,
+      "municipalities": 1,
+      "unions": 7,
+      "mouzas": 129,
+      "villages": 210,
+      "population": 224873,
+      "densityPerKm2": 805,
+      "literacyPct": 39.5
+    },
+    {
+      "name": "Netrokona Sadar",
+      "areaKm2": 341.71,
+      "municipalities": 1,
+      "unions": 12,
+      "mouzas": 255,
+      "villages": 332,
+      "population": 372785,
+      "densityPerKm2": 1091,
+      "literacyPct": 46
+    },
+    {
+      "name": "Purbadhala",
+      "areaKm2": 308.03,
+      "municipalities": 0,
+      "unions": 11,
+      "mouzas": 226,
+      "villages": 336,
+      "population": 310834,
+      "densityPerKm2": 1009,
+      "literacyPct": 42.8
+    },
+    {
+      "name": "Barhatta",
+      "areaKm2": 220,
+      "municipalities": 0,
+      "unions": 7,
+      "mouzas": 147,
+      "villages": 239,
+      "population": 180449,
+      "densityPerKm2": 820,
+      "literacyPct": 37.6
+    },
+    {
+      "name": "Madan",
+      "areaKm2": 233.3,
+      "municipalities": 1,
+      "unions": 8,
+      "mouzas": 93,
+      "villages": 122,
+      "population": 154479,
+      "densityPerKm2": 662,
+      "literacyPct": 30.4
+    },
+    {
+      "name": "Mohanganj",
+      "areaKm2": 241.98,
+      "municipalities": 1,
+      "unions": 7,
+      "mouzas": 115,
+      "villages": 163,
+      "population": 167507,
+      "densityPerKm2": 591,
+      "literacyPct": 42.1
+    }
+  ]
+}

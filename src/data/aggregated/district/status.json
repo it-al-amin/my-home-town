@@ -1,0 +1,29 @@
+{
+  "sources": {
+    "gov": {
+      "ok": true,
+      "file": "gov-tourist-spots.json",
+      "lastSuccess": "2026-11-24T09:57:27.400Z",
+      "lastAttempt": "2026-11-24T09:57:27.400Z"
+    },
+    "gallery": {
+      "ok": true,
+      "file": "gov-photo-gallery.json",
+      "lastSuccess": "2026-11-24T09:57:41.329Z",
+      "lastAttempt": "2026-11-24T09:57:41.329Z"
+    },
+    "wiki": {
+      "ok": true,
+      "file": "wikipedia.json",
+      "lastSuccess": "2026-11-24T09:58:33.425Z",
+      "lastAttempt": "2026-11-24T09:58:33.425Z"
+    },
+    "banglapedia": {
+      "ok": true,
+      "file": "banglapedia.json",
+      "lastSuccess": "2026-11-24T09:58:43.278Z",
+      "lastAttempt": "2026-11-24T09:58:43.278Z"
+    }
+  },
+  "updatedAt": "2026-11-24T09:58:44.521Z"
+}

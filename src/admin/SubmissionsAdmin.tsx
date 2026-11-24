@@ -141,7 +141,7 @@ const SubmissionDetail: React.FC<{ id: string; onClose: () => void }> = ({ id, o
             <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
               <h2 className="font-bold text-slate-900 dark:text-slate-100 mb-2">{bn ? 'ছবি' : 'Images'}</h2>
               <div className="grid grid-cols-3 gap-2">
-                {d.media.map((m) => <figure key={m.id}><img src={mediaUrl(m.url)} alt="" className="w-full h-24 object-cover rounded-lg" /><figcaption className="text-[10px] text-slate-500 text-center">{m.status}</figcaption></figure>)}
+                {d.media.map((m) => <figure key={m.id}><img src={mediaUrl(m.url)} alt="" className="w-full h-24 object-cover rounded-lg" /><figcaption className="text-[11px] text-slate-500 text-center">{m.status}</figcaption></figure>)}
               </div>
             </div>
           )}

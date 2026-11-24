@@ -51,6 +51,13 @@ jobs:
         with:
           node-version: 22
           cache: npm
+
+      # District profile: netrokona.gov.bd tourist spots + photo gallery, Bengali Wikipedia + Commons photos,
+      # Banglapedia facts. A failing source keeps its previous JSON (see src/data/aggregated/district/status.json).
+      - name: Scrape district profile sources
+        continue-on-error: true
+        run: node scraper/node/district_sources.mjs
+
       - name: Frontend build check
         run: npm ci && npm run build
 

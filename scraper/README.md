@@ -98,6 +98,33 @@ Record schema (TypeScript: `src/types/aggregated.ts`):
 `.github/workflows/scrape.yml` runs daily (edit the cron for weekly), runs tests, scrapes (failures tolerated), exports approved records, builds the frontend, and commits `src/data/aggregated` + `scraper/storage/{pending,approved,rejected,state,reports}` only if something changed. Enable via *Settings → Actions → General → Workflow permissions: Read and write*. Trigger manually from the Actions tab (`workflow_dispatch`).
 Review happens locally: pull, run `--review`, `--export-json`, commit, push.
 
+## District profile & real photos (`node/district_sources.mjs`)
+
+A separate Node script (no review queue: it collects reference data and photos, not news) refreshes
+`src/data/aggregated/district/*.json`. It runs daily in the same workflow.
+
+```bash
+node scraper/node/district_sources.mjs                 # all four sources
+node scraper/node/district_sources.mjs gov gallery     # only some: gov | gallery | wiki | banglapedia
+node scraper/node/build_map_geometry.mjs               # re-simplify upazila boundaries for the maps
+```
+
+| Source | What is taken | Used on the site |
+|---|---|---|
+| netrokona.gov.bd `/pages/tourist-spot` (+ detail pages) | name, location, how to get there, description, **real photos** | place cover photos & galleries, "জেলা প্রশাসনের বিবরণ" on place pages, `/gallery` |
+| netrokona.gov.bd `/pages/photo-galleries` (2 pages) | latest district-administration albums | `/gallery` |
+| bn.wikipedia.org "নেত্রকোণা জেলা" | intro text (CC BY-SA 4.0), open-licence Commons photos with author + licence | home hero photo, district panel, `/gallery` |
+| en.banglapedia.org "Netrokona District" | **facts only** (census-2011 tables, rivers, institution counts, income mix); prose is © Banglapedia | district panel (home + About) |
+
+- `config/district_sources.json` maps gov tourist-spot titles to site place ids (`placeMatch`) and holds Commons
+  searches for places with no gov photo (`placeSearch`; the file name must contain the first search word).
+- Every gov image is checked (HEAD: `image/*`, ≥ 3 KB). The portal sometimes serves broken uploads; those are dropped.
+- netrokona.gov.bd omits its Sectigo "DV R36" intermediate certificate. The script adds the public intermediate from
+  `config/certs/sectigo-dv-r36.pem` via `NODE_EXTRA_CA_CERTS` (it re-launches itself). TLS verification stays on.
+- Each source has sanity checks. A failing source keeps its previous JSON; the error goes to `district/status.json`
+  and the site shows the last successful date per source.
+- Places with no real photo keep a placeholder clearly labelled "প্রতীকী ছবি · Illustrative photo".
+
 ## Troubleshooting
 
 - `TLS verification failed` → site certificate chain problem (see Sources). Don't disable verification; use `ca_bundle`.

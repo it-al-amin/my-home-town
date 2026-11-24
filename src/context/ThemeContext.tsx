@@ -14,8 +14,8 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [theme, setThemeState] = useState<Theme>(() => {
     const saved = localStorage.getItem('amar-netrokona-theme') as Theme | null;
     if (saved === 'light' || saved === 'dark') return saved;
-    // Default to dark like amar-gaibandha screenshot, or system preference
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    // Light by default (bright, photo-led design); visitors can still switch to dark with the toggle.
+    return 'light';
   });
 
   useEffect(() => {
