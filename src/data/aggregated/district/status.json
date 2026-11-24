@@ -23,7 +23,13 @@
       "file": "banglapedia.json",
       "lastSuccess": "2026-11-24T09:58:43.278Z",
       "lastAttempt": "2026-11-24T09:58:43.278Z"
+    },
+    "profiles": {
+      "ok": true,
+      "file": "wiki-profiles.json",
+      "lastSuccess": "2026-11-24T11:25:54.552Z",
+      "lastAttempt": "2026-11-24T11:25:54.552Z"
     }
   },
-  "updatedAt": "2026-11-24T09:58:44.521Z"
+  "updatedAt": "2026-11-24T11:26:14.301Z"
 }

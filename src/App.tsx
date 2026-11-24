@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { DataProvider } from './context/DataContext';
@@ -15,6 +15,8 @@ import { UpazilaDetailPage } from './pages/UpazilaDetailPage';
 import { PlacesPage } from './pages/PlacesPage';
 import { PlaceDetailPage } from './pages/PlaceDetailPage';
 import { GalleryPage } from './pages/GalleryPage';
+import { FactsPage } from './pages/FactsPage';
+import { LivePage } from './pages/LivePage';
 import { MapExplorerPage } from './pages/MapExplorerPage';
 import { EducationPage } from './pages/EducationPage';
 import { HealthPage } from './pages/HealthPage';
@@ -62,6 +64,9 @@ export function App() {
                 <Route path="places/:id" element={<PlaceDetailPage />} />
                 <Route path="map" element={<MapExplorerPage />} />
                 <Route path="gallery" element={<GalleryPage />} />
+                <Route path="facts" element={<FactsPage />} />
+                <Route path="live" element={<LivePage />} />
+                <Route path="exam" element={<Navigate to="/facts" replace />} />
                 <Route path="education" element={<EducationPage />} />
                 <Route path="health" element={<HealthPage />} />
                 <Route path="services" element={<ServicesPage />} />

@@ -29,6 +29,8 @@ import { TravelGuideSection } from '../components/home/TravelGuideSection';
 import { EducationShowcase } from '../components/home/EducationShowcase';
 import { BusinessAgroShowcase } from '../components/home/BusinessAgroShowcase';
 import { DistrictSourcesPanel } from '../components/district/DistrictSourcesPanel';
+import { FactsHighlights } from '../components/facts/FactsHighlights';
+import { LivePanel } from '../components/live/LivePanel';
 import { HERO_PHOTO } from '../data/aggregated/district';
 
 export const HomePage: React.FC = () => {
@@ -128,7 +130,7 @@ export const HomePage: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-3 pt-1">
               <Link
                 to="/places"
-                className="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-sm font-bold shadow-lg shadow-orange-900/15 transition-colors"
+                className="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-800 via-emerald-700 to-teal-700 hover:from-emerald-900 hover:via-emerald-800 hover:to-teal-800 text-white text-sm font-bold shadow-lg shadow-emerald-900/25 ring-1 ring-inset ring-white/10 transition-all hover:-translate-y-px dark:from-emerald-600 dark:via-emerald-600 dark:to-teal-600"
               >
                 <Compass className="w-4 h-4" />
                 {language === 'bn' ? 'দর্শনীয় স্থান দেখুন' : 'Explore tourist places'}
@@ -149,7 +151,7 @@ export const HomePage: React.FC = () => {
         {HERO_PHOTO && (
           <div className="absolute right-4 sm:right-6 lg:right-8 bottom-[4.5rem] sm:bottom-24 max-w-[16rem] sm:max-w-xs rounded-2xl bg-white/75 dark:bg-slate-900/75 backdrop-blur-md border border-white/70 dark:border-slate-700 px-4 py-3 shadow-lg">
             <p className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
-              <MapPin className="w-4 h-4 text-orange-600 shrink-0" />
+              <MapPin className="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0" />
               {language === 'bn' ? 'সোমেশ্বরী নদী, দুর্গাপুর' : 'Someshwari River, Durgapur'}
             </p>
             <a
@@ -188,6 +190,14 @@ export const HomePage: React.FC = () => {
           </div>
         </nav>
       </section>
+
+      {/* Live: clock, weather, air quality, prayer times and today's dates */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Live">
+        <LivePanel />
+      </section>
+
+      {/* History & notable people: verified key facts about the district */}
+      <FactsHighlights />
 
       {/* 2. Official Administrative Dashboard Strip */}
       <DistrictDashboardStrip />

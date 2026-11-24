@@ -14,6 +14,17 @@ import govGallery from './gov-photo-gallery.json';
 import wikipedia from './wikipedia.json';
 import banglapedia from './banglapedia.json';
 import status from './status.json';
+import wikiProfiles from './wiki-profiles.json';
+
+/** Wikipedia introduction (+ openly licensed lead photo) for a person, place or topic, keyed by id. */
+export interface WikiProfile {
+  title: string;
+  url: string;
+  extract: string;
+  lastEdited?: string;
+  image?: { url: string; author: string; licence: string; pageUrl: string };
+}
+export const WIKI_PROFILES = ((wikiProfiles as unknown as { profiles?: Record<string, WikiProfile> }).profiles ?? {}) as Record<string, WikiProfile>;
 
 export const GOV_PORTAL_URL = 'https://netrokona.gov.bd';
 export const GOV_CREDIT_BN = 'নেত্রকোণা জেলা তথ্য বাতায়ন';

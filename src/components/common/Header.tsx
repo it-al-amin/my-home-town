@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { 
   Menu, X, Search, Compass, School, Wheat, 
-  ChevronDown, ExternalLink, Home, HeartPulse, 
-  MapPin, Layers, Utensils, Bed, Fish, ShoppingBag, 
-  BookOpen, Landmark
+  ChevronDown, ExternalLink, HeartPulse, 
+  MapPin, Utensils, Bed, Fish, ShoppingBag, 
+  BookOpen, Landmark, GraduationCap, Clock3
 } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import { LanguageSwitcher } from './LanguageSwitcher';
@@ -45,8 +45,27 @@ export const Header: React.FC = () => {
     }
   };
 
-  // Modern navigation groups prioritizing: Unions, Tourism, Education, Business, Agriculture, Food & Hotels
+  // Navigation groups: History first, then Unions, Tourism, Education, Business, Food & Hotels
   const navItems = [
+    {
+      id: 'history',
+      label: language === 'bn' ? 'ইতিহাস' : 'History',
+      icon: Landmark,
+      col1Title: language === 'bn' ? 'ইতিহাস ও ঐতিহ্য' : 'History & heritage',
+      col1Items: [
+        { label: language === 'bn' ? 'ইতিহাসের সময়রেখা' : 'History timeline', href: '/facts#history' },
+        { label: language === 'bn' ? 'জেলার ইতিহাস ও মুক্তিযুদ্ধ' : 'District history & 1971', href: '/history' },
+        { label: language === 'bn' ? 'এক নজরে নেত্রকোণা' : 'District at a glance', href: '/facts#glance' },
+        { label: language === 'bn' ? 'ঐতিহাসিক ও দর্শনীয় স্থান' : 'Historic places', href: '/facts#places' },
+      ],
+      col2Title: language === 'bn' ? 'গুণীজন ও সংস্কৃতি' : 'People & culture',
+      col2Items: [
+        { label: language === 'bn' ? 'কবি ও সাহিত্যিক' : 'Poets & writers', href: '/facts#writers' },
+        { label: language === 'bn' ? 'বাউল ও লোকসংগীত' : 'Baul & folk music', href: '/facts#baul' },
+        { label: language === 'bn' ? 'আন্দোলনের অগ্রনায়ক (টংক)' : 'Leaders of movements (Tonk)', href: '/facts#movement' },
+        { label: language === 'bn' ? 'মৈমনসিংহ গীতিকা ও লোকসাহিত্য' : 'Maimansingha Gitika & folk literature', href: '/facts#folk' },
+      ],
+    },
     {
       id: 'upazilas',
       label: language === 'bn' ? 'উপজেলা ও ইউনিয়ন' : 'Upazilas & Unions',
@@ -161,7 +180,7 @@ export const Header: React.FC = () => {
           <nav className="hidden xl:flex items-center gap-0.5 2xl:gap-1">
             <Link
               to="/"
-              className={`whitespace-nowrap px-2.5 2xl:px-3 py-2 rounded-xl text-sm font-bold transition-all ${
+              className={`hidden 2xl:inline-block whitespace-nowrap px-2.5 2xl:px-3 py-2 rounded-xl text-sm font-bold transition-all ${
                 location.pathname === '/'
                   ? 'text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60'
                   : 'text-slate-700 dark:text-slate-300 hover:text-emerald-700 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800'
@@ -178,7 +197,7 @@ export const Header: React.FC = () => {
                     type="button"
                     onClick={() => setActiveDropdown(isOpen ? null : item.id)}
                     onMouseEnter={() => setActiveDropdown(item.id)}
-                    className={`whitespace-nowrap flex items-center gap-1 px-2.5 2xl:px-3 py-2 rounded-xl text-sm font-bold transition-all cursor-pointer ${
+                    className={`whitespace-nowrap flex items-center gap-1 px-2 2xl:px-3 py-2 rounded-xl text-sm font-bold transition-all cursor-pointer ${
                       isOpen
                         ? 'bg-emerald-100 dark:bg-emerald-900/40 text-emerald-900 dark:text-emerald-300 shadow-2xs'
                         : 'text-slate-700 dark:text-slate-300 hover:text-emerald-700 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800'
@@ -244,7 +263,7 @@ export const Header: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setActiveDropdown(activeDropdown === 'more' ? null : 'more')}
-                className={`whitespace-nowrap flex items-center gap-1 px-2.5 2xl:px-3 py-2 rounded-xl text-sm font-bold transition-all cursor-pointer ${
+                className={`whitespace-nowrap flex items-center gap-1 px-2 2xl:px-3 py-2 rounded-xl text-sm font-bold transition-all cursor-pointer ${
                   activeDropdown === 'more'
                     ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
                     : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
@@ -259,6 +278,13 @@ export const Header: React.FC = () => {
                   className="absolute right-0 top-full pt-2 w-60 z-50 animate-in fade-in zoom-in-95 duration-150"
                 >
                   <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 p-2 space-y-1">
+                    <Link
+                      to="/facts"
+                      onClick={() => setActiveDropdown(null)}
+                      className="block px-3 py-2 text-xs font-bold text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 rounded-lg"
+                    >
+                      {language === 'bn' ? 'ইতিহাস ও গুণীজন' : 'History & notable people'}
+                    </Link>
                     <Link
                       to="/history"
                       onClick={() => setActiveDropdown(null)}
@@ -356,10 +382,10 @@ export const Header: React.FC = () => {
             {/* Quick links */}
             <div className="grid grid-cols-3 gap-2">
               {[
-                { to: '/', icon: Home, bn: 'হোম', en: 'Home' },
+                { to: '/facts', icon: GraduationCap, bn: 'ইতিহাস ও গুণীজন', en: 'History & people' },
                 { to: '/places', icon: Compass, bn: 'দর্শনীয় স্থান', en: 'Places' },
                 { to: '/map', icon: MapPin, bn: 'মানচিত্র', en: 'Map' },
-                { to: '/gallery', icon: Layers, bn: 'গ্যালারি', en: 'Gallery' },
+                { to: '/live', icon: Clock3, bn: 'নামাজ ও আবহাওয়া', en: 'Prayer & weather' },
                 { to: '/news', icon: BookOpen, bn: 'সংবাদ', en: 'News' },
                 { to: '/emergency', icon: HeartPulse, bn: 'জরুরি', en: 'Emergency' },
               ].map((q) => (

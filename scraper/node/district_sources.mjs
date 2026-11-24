@@ -45,15 +45,21 @@ async function get(url, { json = false } = {}) {
   const wait = lastRequest + DELAY_MS - Date.now();
   if (wait > 0) await sleep(wait);
   lastRequest = Date.now();
-  for (let attempt = 1; attempt <= 3; attempt++) {
+  for (let attempt = 1; attempt <= 4; attempt++) {
+    let wait = 3000 * attempt;
     try {
       const res = await fetch(url, { headers: { 'User-Agent': UA, 'Accept-Language': 'bn,en;q=0.8' }, signal: AbortSignal.timeout(30000) });
-      if (res.status === 429 || res.status >= 500) throw new Error(`HTTP ${res.status}`);
+      if (res.status === 429 || res.status >= 500) {
+        // Honour Retry-After (seconds) when rate-limited; otherwise back off 15 s, 30 s, 45 s…
+        const ra = Number(res.headers.get('retry-after'));
+        wait = res.status === 429 ? (Number.isFinite(ra) && ra > 0 ? ra * 1000 : 15000 * attempt) : wait;
+        throw new Error(`HTTP ${res.status}`);
+      }
       if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
       return json ? await res.json() : await res.text();
     } catch (e) {
-      if (attempt === 3) throw e;
-      await sleep(3000 * attempt);
+      if (attempt === 4) throw e;
+      await sleep(Math.min(wait, 120000));
     }
   }
 }
@@ -246,7 +252,12 @@ async function commonsInfo(titles) {
         width: ii.thumbwidth || ii.width,
         height: ii.thumbheight || ii.height,
         pageUrl: ii.descriptionurl,
-        author: clean(md.Artist?.value).split('\n')[0].trim().slice(0, 80) || 'Wikimedia Commons contributor',
+        // "Name (talk)" → "Name": drop the wiki user-talk link text
+        author: (() => {
+          const a = clean(md.Artist?.value).split('\n')[0].replace(/\s*\((?:talk|আলাপ)\)/gi, '').trim()
+            .replace(/^(.+?)\1$/, '$1'); // Commons sometimes repeats the text ("Unknown authorUnknown author")
+          return /^unknown author$/i.test(a) || !a ? 'অজ্ঞাত (Wikimedia Commons)' : a.slice(0, 80);
+        })(),
         licence,
         licenceUrl: md.LicenseUrl?.value,
         description: clean(md.ImageDescription?.value).slice(0, 220),
@@ -296,6 +307,44 @@ async function scrapeWikipedia() {
     photos,
     placePhotos,
   };
+}
+
+/* ------------------- 3b. Wikipedia profiles (people, places, topics) ------------------- */
+
+// For every entry in CONFIG.wikiProfiles: the article's introduction (CC BY-SA) and its lead photo
+// when that photo is on Wikimedia Commons under an open licence (fair-use images are skipped).
+async function scrapeWikiProfiles() {
+  const entries = Object.entries(CONFIG.wikiProfiles);
+  const profiles = {};
+  for (let i = 0; i < entries.length; i += 15) {
+    const batch = entries.slice(i, i + 15);
+    const q = new URLSearchParams({
+      action: 'query', format: 'json', redirects: '1', titles: batch.map(([, t]) => t).join('|'),
+      prop: 'extracts|pageimages|info', exintro: '1', explaintext: '1', exlimit: 'max',
+      piprop: 'name|thumbnail', pithumbsize: '480', pilimit: 'max', inprop: 'url',
+    });
+    const j = await get(`https://bn.wikipedia.org/w/api.php?${q}`, { json: true });
+    // requested title → final title (normalisation + redirects)
+    const resolve = (t) => {
+      let x = t;
+      for (const n of j.query.normalized ?? []) if (n.from === x) x = n.to;
+      for (const r of j.query.redirects ?? []) if (r.from === x) x = r.to;
+      return x;
+    };
+    const byTitle = Object.fromEntries(Object.values(j.query.pages).map((p) => [p.title, p]));
+    for (const [id, title] of batch) {
+      const p = byTitle[resolve(title)];
+      if (!p || 'missing' in p) continue;
+      profiles[id] = { title: p.title, url: p.fullurl, extract: clean(p.extract), lastEdited: p.touched };
+      // Only Commons-hosted, openly licensed photos.
+      if (p.pageimage && p.thumbnail?.source?.includes('/wikipedia/commons/')) {
+        const [info] = await commonsInfo([`File:${p.pageimage}`]);
+        if (info) profiles[id].image = { url: p.thumbnail.source, author: info.author, licence: info.licence, pageUrl: info.pageUrl };
+      }
+    }
+  }
+  assert(Object.keys(profiles).length >= entries.length / 2, `only ${Object.keys(profiles).length}/${entries.length} profiles`);
+  return { licence: 'CC BY-SA 4.0', profiles };
 }
 
 /* ------------------- 4. Banglapedia (facts only) ------------------- */
@@ -386,6 +435,7 @@ const JOBS = {
   gov: ['gov-tourist-spots.json', scrapeGovTouristSpots],
   gallery: ['gov-photo-gallery.json', scrapeGovGallery],
   wiki: ['wikipedia.json', scrapeWikipedia],
+  profiles: ['wiki-profiles.json', scrapeWikiProfiles],
   banglapedia: ['banglapedia.json', scrapeBanglapedia],
 };
 
