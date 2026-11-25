@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { Header } from '../components/common/Header';
 import { Footer } from '../components/common/Footer';
+import { CommentSection } from '../components/common/CommentSection';
 
 export const MainLayout: React.FC = () => {
   return (
@@ -9,6 +10,7 @@ export const MainLayout: React.FC = () => {
       <Header />
       <main className="flex-1 w-full">
         <Outlet />
+        <CommentSection />
       </main>
       <Footer />
     </div>

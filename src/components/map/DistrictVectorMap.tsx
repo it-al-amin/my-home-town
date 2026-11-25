@@ -14,11 +14,12 @@ import {
   DENSITY_COLORS,
   DENSITY_BREAKS,
   GOOGLE_MAPS_DISTRICT_URL,
+  mapTheme,
 } from './geo';
+import { toBnDigits as toBn } from '../../lib/format';
 
 const VIEW_W = 820;
 const VIEW_H = 780;
-const toBn = (n: number | string) => String(n).replace(/\d/g, (d) => '০১২৩৪৫৬৭৮৯'[+d]);
 
 interface DistrictVectorMapProps {
   selectedUpazilaId?: string;
@@ -82,30 +83,7 @@ export const DistrictVectorMap: React.FC<DistrictVectorMapProps> = ({
     URL.revokeObjectURL(url);
   };
 
-  // Theme tokens
-  const t = isDark
-    ? {
-        chip: 'bg-slate-800/80 text-slate-300 border-slate-700',
-        chipHover: 'hover:bg-slate-700',
-        muted: 'text-slate-400',
-        strong: 'text-white',
-        card: 'bg-slate-900/90 border-slate-800 text-white',
-        tile: 'bg-slate-800/60 border-slate-700/60',
-        border: '#0b1220',
-        halo: '#0b1220',
-        annot: '#94a3b8',
-      }
-    : {
-        chip: 'bg-white text-slate-700 border-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700',
-        chipHover: 'hover:bg-slate-50 dark:hover:bg-slate-700',
-        muted: 'text-slate-500 dark:text-slate-400',
-        strong: 'text-slate-900 dark:text-white',
-        card: 'bg-white border-slate-200 text-slate-900 dark:bg-slate-900 dark:border-slate-700 dark:text-slate-100',
-        tile: 'bg-slate-50 border-slate-100 dark:bg-slate-800 dark:border-slate-700',
-        border: '#ffffff',
-        halo: '#ffffff',
-        annot: '#64748b',
-      };
+  const t = mapTheme(isDark);
 
   const densityLabel = (id: string) => {
     const d = Math.round(densityOf(id)).toLocaleString(bn ? 'bn-BD' : 'en-US');

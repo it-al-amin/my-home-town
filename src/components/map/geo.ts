@@ -46,17 +46,68 @@ export const densityInk = (id: string) => (densityClass(id) >= 3 ? '#ffffff' : '
 /* SVG projection                                                      */
 /* ------------------------------------------------------------------ */
 
-const allPoints = Object.values(UPAZILA_RINGS).flat(2);
-const lngs = allPoints.map((p) => p[0]);
-const lats = allPoints.map((p) => p[1]);
-export const BOUNDS = {
-  minLng: Math.min(...lngs),
-  maxLng: Math.max(...lngs),
-  minLat: Math.min(...lats),
-  maxLat: Math.max(...lats),
-};
-// Equirectangular with cos(lat) correction - accurate enough for a 70 km wide district.
-const K = Math.cos((((BOUNDS.minLat + BOUNDS.maxLat) / 2) * Math.PI) / 180);
+export type Point = [number, number]; // [x, y] in SVG units
+type Project = (p: [number, number]) => Point;
+
+/**
+ * Equirectangular projection with cos(lat) correction that fits `rings` into a
+ * width x height box - accurate enough for a district (70 km) or an upazila.
+ */
+export function makeProjection(rings: Ring[], width: number, height: number, pad = 24): Project {
+  const pts = rings.flat();
+  const minLng = Math.min(...pts.map((p) => p[0]));
+  const maxLng = Math.max(...pts.map((p) => p[0]));
+  const minLat = Math.min(...pts.map((p) => p[1]));
+  const maxLat = Math.max(...pts.map((p) => p[1]));
+  const k = Math.cos((((minLat + maxLat) / 2) * Math.PI) / 180);
+  const spanX = (maxLng - minLng) * k;
+  const spanY = maxLat - minLat;
+  const scale = Math.min((width - pad * 2) / spanX, (height - pad * 2) / spanY);
+  const offX = (width - spanX * scale) / 2;
+  const offY = (height - spanY * scale) / 2;
+  return ([lng, lat]) => [offX + (lng - minLng) * k * scale, offY + (maxLat - lat) * scale];
+}
+
+/** Width/height ratio of `rings` once projected, to size an SVG without empty bands. */
+export function aspectOf(rings: Ring[]): number {
+  const pts = rings.flat();
+  const lats = pts.map((p) => p[1]);
+  const lngs = pts.map((p) => p[0]);
+  const k = Math.cos((((Math.min(...lats) + Math.max(...lats)) / 2) * Math.PI) / 180);
+  return ((Math.max(...lngs) - Math.min(...lngs)) * k) / (Math.max(...lats) - Math.min(...lats));
+}
+
+/** SVG path for a set of rings, plus the area-weighted centroid of the largest one. */
+export function projectRings(rings: Ring[], project: Project): { path: string; centroid: { x: number; y: number } } {
+  let path = '';
+  let best = { a: 0, x: 0, y: 0 };
+  for (const ring of rings) {
+    const pts = ring.map(project);
+    path += 'M' + pts.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join('L') + 'Z';
+    let a = 0, cx = 0, cy = 0;
+    for (let i = 0; i < pts.length - 1; i++) {
+      const [x0, y0] = pts[i];
+      const [x1, y1] = pts[i + 1];
+      const f = x0 * y1 - x1 * y0;
+      a += f; cx += (x0 + x1) * f; cy += (y0 + y1) * f;
+    }
+    if (Math.abs(a) > Math.abs(best.a)) best = { a, x: cx / (3 * a), y: cy / (3 * a) };
+  }
+  return { path, centroid: { x: best.x, y: best.y } };
+}
+
+/** Ray-casting point-in-polygon test for a [lng, lat] point. */
+export function pointInRings([x, y]: [number, number], rings: Ring[]): boolean {
+  return rings.some((r) => {
+    let inside = false;
+    for (let i = 0, j = r.length - 1; i < r.length; j = i++) {
+      const [xi, yi] = r[i];
+      const [xj, yj] = r[j];
+      if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
+    }
+    return inside;
+  });
+}
 
 export interface ProjectedUpazila {
   id: string;
@@ -65,35 +116,11 @@ export interface ProjectedUpazila {
 }
 
 export function projectDistrict(width: number, height: number, pad = 24) {
-  const spanX = (BOUNDS.maxLng - BOUNDS.minLng) * K;
-  const spanY = BOUNDS.maxLat - BOUNDS.minLat;
-  const scale = Math.min((width - pad * 2) / spanX, (height - pad * 2) / spanY);
-  const offX = (width - spanX * scale) / 2;
-  const offY = (height - spanY * scale) / 2;
-  const project = ([lng, lat]: [number, number]): [number, number] => [
-    offX + (lng - BOUNDS.minLng) * K * scale,
-    offY + (BOUNDS.maxLat - lat) * scale,
-  ];
-
-  const upazilas: ProjectedUpazila[] = Object.entries(UPAZILA_RINGS).map(([id, rings]) => {
-    let path = '';
-    // Area-weighted centroid of the largest ring (shoelace formula).
-    let best = { a: 0, x: 0, y: 0 };
-    for (const ring of rings) {
-      const pts = ring.map(project);
-      path += 'M' + pts.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join('L') + 'Z';
-      let a = 0, cx = 0, cy = 0;
-      for (let i = 0; i < pts.length - 1; i++) {
-        const [x0, y0] = pts[i];
-        const [x1, y1] = pts[i + 1];
-        const f = x0 * y1 - x1 * y0;
-        a += f; cx += (x0 + x1) * f; cy += (y0 + y1) * f;
-      }
-      if (Math.abs(a) > Math.abs(best.a)) best = { a, x: cx / (3 * a), y: cy / (3 * a) };
-    }
-    return { id, path, centroid: { x: best.x, y: best.y } };
-  });
-
+  const project = makeProjection(Object.values(UPAZILA_RINGS).flat(), width, height, pad);
+  const upazilas: ProjectedUpazila[] = Object.entries(UPAZILA_RINGS).map(([id, rings]) => ({
+    id,
+    ...projectRings(rings, project),
+  }));
   return { upazilas, project };
 }
 
@@ -138,4 +165,36 @@ export function upazilaFeatureCollection() {
       geometry: { type: 'MultiPolygon' as const, coordinates: rings.map((r) => [r]) },
     })),
   };
+}
+
+/* ------------------------------------------------------------------ */
+/* Dashboard theme tokens shared by the SVG maps                       */
+/* ------------------------------------------------------------------ */
+
+export type MapTheme = ReturnType<typeof mapTheme>;
+
+export function mapTheme(isDark: boolean) {
+  return isDark
+    ? {
+        chip: 'bg-slate-800/80 text-slate-300 border-slate-700',
+        chipHover: 'hover:bg-slate-700',
+        muted: 'text-slate-400',
+        strong: 'text-white',
+        card: 'bg-slate-900/90 border-slate-800 text-white',
+        tile: 'bg-slate-800/60 border-slate-700/60',
+        border: '#0b1220',
+        halo: '#0b1220',
+        annot: '#94a3b8',
+      }
+    : {
+        chip: 'bg-white text-slate-700 border-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700',
+        chipHover: 'hover:bg-slate-50 dark:hover:bg-slate-700',
+        muted: 'text-slate-500 dark:text-slate-400',
+        strong: 'text-slate-900 dark:text-white',
+        card: 'bg-white border-slate-200 text-slate-900 dark:bg-slate-900 dark:border-slate-700 dark:text-slate-100',
+        tile: 'bg-slate-50 border-slate-100 dark:bg-slate-800 dark:border-slate-700',
+        border: '#ffffff',
+        halo: '#ffffff',
+        annot: '#64748b',
+      };
 }

@@ -12,6 +12,7 @@ public class NetrokonaDbContext : DbContext
     public DbSet<Submission> Submissions => Set<Submission>();
     public DbSet<ReviewEvent> ReviewEvents => Set<ReviewEvent>();
     public DbSet<AuditLog> AuditLogs => Set<AuditLog>();
+    public DbSet<Comment> Comments => Set<Comment>();
 
     protected override void OnModelCreating(ModelBuilder b)
     {
@@ -95,6 +96,17 @@ public class NetrokonaDbContext : DbContext
             e.Property(x => x.EntityId).HasMaxLength(64);
             e.Property(x => x.Details).HasColumnType("longtext");
             e.Property(x => x.IpHash).HasMaxLength(64);
+        });
+        b.Entity<Comment>(e =>
+        {
+            e.ToTable("Comments");
+            e.HasIndex(x => new { x.PageKey, x.Status, x.CreatedAtUtc });
+            e.HasIndex(x => new { x.Status, x.CreatedAtUtc });
+            e.Property(x => x.PageKey).HasMaxLength(200).IsRequired();
+            e.Property(x => x.AuthorName).HasMaxLength(80).IsRequired();
+            e.Property(x => x.Body).HasMaxLength(2000).IsRequired();
+            e.Property(x => x.ClientIpHash).HasMaxLength(64);
+            e.Property(x => x.Status).HasConversion<string>().HasMaxLength(16);
         });
     }
 }

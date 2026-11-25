@@ -22,8 +22,6 @@ export const UPAZILAS_DATA: Upazila[] = [
     riversBn: ['মগড়া', 'কংস'],
     majorMarkets: ['Chhoto Bazar', 'Boro Bazar', 'Nagro Bazar', 'Madanpur Bazar'],
     majorMarketsBn: ['ছোট বাজার', 'বড় বাজার', 'নাগড়া বাজার', 'মদনপুর বাজার'],
-    unionsList: ['Amirigao', 'Balia', 'Barakapan', 'Bishiura', 'Challisha', 'Dakshin Singher Bangla', 'Kailati', 'Kalial', 'Lakshmiganj', 'Madarganj', 'Madanpur', 'Rouz'],
-    unionsListBn: ['আমিরিগাং', 'বালিয়া', 'বড়কাপন', 'বিশিউরা', 'চল্লিশা', 'দক্ষিণ সিংহের বাংলা', 'কাইলাটি', 'কালিয়াল', 'লক্ষ্মীগঞ্জ', 'মাদারগঞ্জ', 'মদনপুর', 'রৌহা'],
     emergencyContacts: {
       police: '01320-103300',
       fireService: '01712-452123',
@@ -56,8 +54,6 @@ export const UPAZILAS_DATA: Upazila[] = [
     riversBn: ['সোমেশ্বরী', 'গণেশ্বরী'],
     majorMarkets: ['Birishiri Bazar', 'Durgapur Bazar', 'Utrail Bazar', 'Shibganj Bazar'],
     majorMarketsBn: ['বিরিশিরি বাজার', 'দুর্গাপুর বাজার', 'উতরাইল বাজার', 'শিবগঞ্জ বাজার'],
-    unionsList: ['Bakaljora', 'Birishiri', 'Chandigarh', 'Durgapur', 'Gaokandolia', 'Kullagora', 'Kakairgara'],
-    unionsListBn: ['বাকলজোড়া', 'বিরিশিরি', 'চণ্ডীগড়', 'দুর্গাপুর', 'গাঁওকান্দোলিয়া', 'কুল্লাগড়া', 'কাকৈরগড়া'],
     emergencyContacts: {
       police: '01320-103325',
       fireService: '01715-998811',
@@ -90,8 +86,6 @@ export const UPAZILAS_DATA: Upazila[] = [
     riversBn: ['উব্ধাখালী', 'গণেশ্বরী', 'গুমাই'],
     majorMarkets: ['Kalmakanda Bazar', 'Lengura Bazar', 'Nazirpur Bazar', 'Pakura Bazar'],
     majorMarketsBn: ['কলমাকান্দা বাজার', 'লেংগুড়া বাজার', 'নাজিরপুর বাজার', 'পাকুড়া বাজার'],
-    unionsList: ['Barakhapan', 'Kailati', 'Kalmakanda', 'Kharnai', 'Lengura', 'Nazirpur', 'Pogla', 'Rangchhati'],
-    unionsListBn: ['বড়খাপন', 'কৈলাটি', 'কলমাকান্দা', 'খারনৈ', 'লেংগুড়া', 'নাজিরপুর', 'পোগলা', 'রংছাতি'],
     emergencyContacts: {
       police: '01320-103350',
       fireService: '01716-123456',
@@ -124,8 +118,6 @@ export const UPAZILAS_DATA: Upazila[] = [
     riversBn: ['ধনু', 'কংস'],
     majorMarkets: ['Mohanganj Station Bazar', 'Puraton Bazar', 'Baraantori Bazar'],
     majorMarketsBn: ['মোহনগঞ্জ স্টেশন বাজার', 'পুরাতন বাজার', 'বড়ান্তর বাজার'],
-    unionsList: ['Bara Teli', 'Barkashia Bishaura', 'Gaglajur', 'Maghan Siadhar', 'Samaj Sahildati', 'Sujanagore', 'Tetulia'],
-    unionsListBn: ['বড়তলী', 'বরকাশিয়া বিশাউরা', 'গাগলাজুর', 'মাঘন শিয়াধার', 'সমাজ সহিলদাত্তি', 'সুজনগর', 'তেতুলিয়া'],
     emergencyContacts: {
       police: '01320-103375',
       fireService: '01720-334455',
@@ -158,8 +150,6 @@ export const UPAZILAS_DATA: Upazila[] = [
     riversBn: ['ধনু', 'বাউলাই'],
     majorMarkets: ['Khaliajuri Bazar', 'Lipsa Bazar', 'Krishnapur Bazar'],
     majorMarketsBn: ['খালিয়াজুরী বাজার', 'লেপসা বাজার', 'কৃষ্ণপুর বাজার'],
-    unionsList: ['Chakua', 'Gajirgaon', 'Khaliajuri', 'Krishnapur', 'Mendipur', 'Nagar'],
-    unionsListBn: ['চাকুয়া', 'গাজীরগাঁও', 'খালিয়াজুরী', 'কৃষ্ণপুর', 'মেন্দিপুর', 'নগর'],
     emergencyContacts: {
       police: '01320-103400',
       fireService: '01714-556677',
@@ -192,8 +182,6 @@ export const UPAZILAS_DATA: Upazila[] = [
     riversBn: ['সুতি নদী', 'কালিয়াঝুরি'],
     majorMarkets: ['Kendua Bazar', 'Roailbari Bazar', 'Beetigaon Bazar', 'Ashujia Bazar'],
     majorMarketsBn: ['কেন্দুয়া বাজার', 'রোয়াইলবাড়ি বাজার', 'বেতিগাঁও বাজার', 'আশুজিয়া বাজার'],
-    unionsList: ['Ashujia', 'Balla', 'Bansati', 'Bekirhati', 'Dalpa', 'Garafia', 'Gondol', 'Kandiura', 'Mashka', 'Muzaffarpur', 'Paikura', 'Roailbari Amtail', 'Sandikona'],
-    unionsListBn: ['আশুজিয়া', 'বাল্লা', 'বানসাতি', 'বেকিরহাটি', 'দালপা', 'গড়াফিয়া', 'গন্ডল', 'কান্দিউরা', 'মাশকা', 'মুজাফফরপুর', 'পাইকুড়া', 'রোয়াইলবাড়ি আমতৈল', 'সান্দিকোনা'],
     emergencyContacts: {
       police: '01320-103425',
       fireService: '01718-667788',
@@ -226,8 +214,6 @@ export const UPAZILAS_DATA: Upazila[] = [
     riversBn: ['মগড়া', 'কংস'],
     majorMarkets: ['Madan Bazar', 'Jahangirpur Bazar', 'Fathepur Bazar'],
     majorMarketsBn: ['মদন বাজার', 'জাহাঙ্গীরপুর বাজার', 'ফতেহপুর বাজার'],
-    unionsList: ['Chansi', 'Fatehpur', 'Gobindashree', 'Kaitail', 'Maghan', 'Naikuri', 'Tiyashree', 'Uchitpur'],
-    unionsListBn: ['চানগাঁও', 'ফতেহপুর', 'গোবিন্দশ্রী', 'কাইতাইল', 'মাঘান', 'নায়কুড়ি', 'তিয়শ্রী', 'উচিতপুর'],
     emergencyContacts: {
       police: '01320-103450',
       fireService: '01719-778899',
@@ -260,8 +246,6 @@ export const UPAZILAS_DATA: Upazila[] = [
     riversBn: ['কংস'],
     majorMarkets: ['Barhatta Bazar', 'Gopalpur Bazar', 'Asma Bazar', 'Singadha Bazar'],
     majorMarketsBn: ['বারহাট্টা বাজার', 'গোপালপুর বাজার', 'আসমা বাজার', 'সিংহধা বাজার'],
-    unionsList: ['Asma', 'Barhatta', 'Baushi', 'Chirang', 'Raypur', 'Sahata', 'Singadha'],
-    unionsListBn: ['আসমা', 'বারহাট্টা', 'বাউসী', 'চিরাং', 'রায়পুর', 'সাহতা', 'সিংহধা'],
     emergencyContacts: {
       police: '01320-103475',
       fireService: '01721-889900',
@@ -294,8 +278,6 @@ export const UPAZILAS_DATA: Upazila[] = [
     riversBn: ['মগড়া'],
     majorMarkets: ['Atpara Bazar', 'Teligati Bazar', 'Sonasree Bazar'],
     majorMarketsBn: ['আটপাড়া বাজার', 'তেলিগাতী বাজার', 'সোনাশ্রী বাজার'],
-    unionsList: ['Baniajan', 'Dharmaray', 'Duoj', 'Luneshwar', 'Sararchar', 'Shunoi', 'Teligati'],
-    unionsListBn: ['বানিয়াজান', 'ধর্মরায়', 'দুওজ', 'লুনেশ্বর', 'সরারচর', 'শুনই', 'তেলিগাতী'],
     emergencyContacts: {
       police: '01320-103500',
       fireService: '01722-112233',
@@ -328,8 +310,6 @@ export const UPAZILAS_DATA: Upazila[] = [
     riversBn: ['কংস', 'ধলাই'],
     majorMarkets: ['Shyamganj Bazar', 'Purbadhala Bazar', 'Jaria Bazar', 'Hogla Bazar'],
     majorMarketsBn: ['শ্যামগঞ্জ বাজার', 'পূর্বধলা বাজার', 'জারিয়া বাজার', 'হোগলা বাজার'],
-    unionsList: ['Agia', 'Baghber', 'Bishkakuni', 'Dhalamulgaon', 'Ghagra', 'Gohalakanda', 'Hogla', 'Jaria', 'Narayanhar', 'Purbadhala', 'Bairati'],
-    unionsListBn: ['আগিয়া', 'বাঘবেড়', 'বিশকাকুনী', 'ধলামূলগাঁও', 'ঘাগড়া', 'গোহালাকান্দা', 'হোগলা', 'জারিয়া', 'নারায়নহর', 'পূর্বধলা', 'বৈরাটি'],
     emergencyContacts: {
       police: '01320-103525',
       fireService: '01723-445566',

@@ -7,6 +7,7 @@ import { PlaceCard } from '../components/cards/PlaceCard';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { CmsContentSection } from '../components/cms/CmsContentSection';
 import { PLACE_HISTORY } from '../data/placeHistory';
+import { FilterChips } from '../components/common/FilterChips';
 
 export const PlacesPage: React.FC = () => {
   const { language, t } = useLanguage();
@@ -112,26 +113,14 @@ export const PlacesPage: React.FC = () => {
         </div>
 
         {/* Quick Category Chips for quick click */}
-        <div className="nk-chips flex items-center gap-1.5 flex-wrap pt-1 border-t border-slate-100 dark:border-slate-800 text-xs">
-          <span className="text-slate-400 font-semibold mr-1 flex items-center gap-1">
-            <Filter className="w-3.5 h-3.5" />
-            <span>{language === 'bn' ? 'ক্যাটেগরি:' : 'Filter:'}</span>
-          </span>
-          {categories.map((c) => (
-            <button
-              key={c.id}
-              type="button"
-              onClick={() => setSelectedCategory(c.id)}
-              className={`px-3 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                selectedCategory === c.id
-                  ? 'bg-blue-600 text-white shadow-xs'
-                  : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
-              }`}
-            >
-              {c.label}
-            </button>
-          ))}
-        </div>
+        <FilterChips
+          className="pt-1 border-t border-slate-100 dark:border-slate-800"
+          options={categories}
+          value={selectedCategory}
+          onChange={setSelectedCategory}
+          activeClass="bg-blue-600 text-white shadow-xs"
+          caption={language === 'bn' ? 'ক্যাটেগরি:' : 'Filter:'}
+        />
       </div>
 
       {/* Places Grid */}

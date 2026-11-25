@@ -8,13 +8,16 @@ import { HISTORY_INTRO, HISTORY_SECTIONS, HISTORY_SOURCE_NOTE, UPAZILA_HISTORY_N
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { SectionHeader } from '../components/common/SectionHeader';
 import { SourceBadge } from '../components/common/SourceBadge';
+import { UNIONS_DATA } from '../data/unions';
+import { formatNumber } from '../lib/format';
 
 export const HistoryPage: React.FC = () => {
   const { language } = useLanguage();
   const bn = language === 'bn';
   const totalArea = UPAZILAS_DATA.reduce((a, u) => a + u.areaKm2, 0);
-  const totalUnions = UPAZILAS_DATA.reduce((a, u) => a + u.unionsList.length, 0);
-  const fmt = (n: number) => (bn ? n.toLocaleString('bn-BD') : n.toLocaleString());
+  const unionsOf = (id: string) => UNIONS_DATA[id] ?? [];
+  const totalUnions = UPAZILAS_DATA.reduce((a, u) => a + unionsOf(u.id).length, 0);
+  const fmt = (n: number) => formatNumber(n, bn);
 
   const tocItems = [
     ...HISTORY_SECTIONS.map((s) => ({ id: s.id, label: bn ? s.title.bn : s.title.en })),
@@ -173,7 +176,7 @@ export const HistoryPage: React.FC = () => {
           {UPAZILAS_DATA.map((u, i) => (
             <Link
               key={u.id}
-              to={`/history/${u.slug}`}
+              to={`/upazilas/${u.slug}#history`}
               className="group bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 hover:border-emerald-500/60 hover:shadow-lg transition-all flex flex-col gap-3"
             >
               <div className="flex items-center gap-3">
@@ -185,7 +188,7 @@ export const HistoryPage: React.FC = () => {
               <p className="text-sm text-slate-600 dark:text-slate-300 line-clamp-3">{UPAZILA_HISTORY_NOTES[u.id]?.[bn ? 'bn' : 'en']}</p>
               <div className="mt-auto flex items-center justify-between gap-2 text-xs text-slate-500 dark:text-slate-400">
                 <span>
-                  {fmt(u.areaKm2)} {bn ? 'বর্গ কিমি' : 'sq km'} · {fmt(u.unionsList.length)} {bn ? 'ইউনিয়ন' : 'unions'}
+                  {fmt(u.areaKm2)} {bn ? 'বর্গ কিমি' : 'sq km'} · {fmt(unionsOf(u.id).length)} {bn ? 'ইউনিয়ন' : 'unions'}
                 </span>
                 <span className="inline-flex items-center gap-1 font-semibold text-emerald-700 dark:text-emerald-300 shrink-0">
                   {bn ? 'ইতিহাস পড়ুন' : 'Read history'}
@@ -217,13 +220,13 @@ export const HistoryPage: React.FC = () => {
               {UPAZILAS_DATA.map((u) => (
                 <tr key={u.id} className="border-t border-slate-100 dark:border-slate-800 align-top">
                   <td className="p-3 font-semibold">
-                    <Link className="text-emerald-700 dark:text-emerald-300 hover:underline" to={`/history/${u.slug}`}>
+                    <Link className="text-emerald-700 dark:text-emerald-300 hover:underline" to={`/upazilas/${u.slug}#history`}>
                       {bn ? u.nameBn : u.name}
                     </Link>
                   </td>
                   <td className="p-3 text-right whitespace-nowrap">{fmt(u.areaKm2)}</td>
-                  <td className="p-3 text-right">{fmt(u.unionsList.length)}</td>
-                  <td className="p-3 text-slate-600 dark:text-slate-300">{(bn ? u.unionsListBn : u.unionsList).join(', ')}</td>
+                  <td className="p-3 text-right">{fmt(unionsOf(u.id).length)}</td>
+                  <td className="p-3 text-slate-600 dark:text-slate-300">{unionsOf(u.id).map((x) => (bn ? x.nameBn : x.name)).join(', ')}</td>
                 </tr>
               ))}
               <tr className="border-t-2 border-slate-200 dark:border-slate-700 font-bold bg-slate-50 dark:bg-slate-900">

@@ -125,3 +125,20 @@ public class AuditLog
     public string? Details { get; set; }
     public string? IpHash { get; set; }
 }
+
+public enum CommentStatus { Pending, Approved, Rejected }
+
+/// <summary>A visitor's comment on one page of the site. Shown publicly only after a moderator approves it.</summary>
+public class Comment
+{
+    public Guid Id { get; set; } = Guid.NewGuid();
+    /// <summary>Site path the comment belongs to, e.g. "/upazilas/kalmakanda".</summary>
+    public string PageKey { get; set; } = "";
+    public string AuthorName { get; set; } = "";
+    public string Body { get; set; } = "";
+    public CommentStatus Status { get; set; } = CommentStatus.Pending;
+    public string ClientIpHash { get; set; } = "";
+    public DateTime CreatedAtUtc { get; set; } = DateTime.UtcNow;
+    public Guid? ReviewedBy { get; set; }          // shared-identity user
+    public DateTime? ReviewedAtUtc { get; set; }
+}

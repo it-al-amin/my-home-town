@@ -1,0 +1,1751 @@
+{
+ "fetchedAt": "2026-11-25T11:49:40.950Z",
+ "census": 2011,
+ "unions": {
+  "netrokona-sadar": {
+   "Amtala": {
+    "villages": [
+     {
+      "en": "Amtala",
+      "bn": "আমতলা",
+      "place": "village",
+      "lat": 24.85434,
+      "lng": 90.79052
+     }
+    ],
+    "goCode": 13,
+    "areaAcre": 6589,
+    "male": 11381,
+    "female": 11459,
+    "literacyPct": 37.5,
+    "settlements": 23
+   },
+   "Kailati": {
+    "villages": [],
+    "goCode": 31,
+    "areaAcre": 5481,
+    "male": 11632,
+    "female": 11400,
+    "literacyPct": 44.9,
+    "settlements": 44
+   },
+   "Kaliara Gabragat": {
+    "villages": [
+     {
+      "en": "Kaliara Gabragati",
+      "bn": "Kaliara Gabragati",
+      "place": "village",
+      "lat": 24.98813,
+      "lng": 90.74604
+     }
+    ],
+    "goCode": 39,
+    "areaAcre": 9519,
+    "male": 14585,
+    "female": 14762,
+    "literacyPct": 30.2,
+    "settlements": 47
+   },
+   "Challisha": {
+    "villages": [
+     {
+      "en": "Challisha",
+      "bn": "Challisha",
+      "place": "village",
+      "lat": 24.85293,
+      "lng": 90.68318
+     },
+     {
+      "en": "চল্লিশা",
+      "bn": "চল্লিশা",
+      "place": "suburb",
+      "lat": 24.86905,
+      "lng": 90.68055
+     }
+    ],
+    "goCode": 15,
+    "areaAcre": 6582,
+    "male": 13088,
+    "female": 13076,
+    "literacyPct": 45.9,
+    "settlements": 72
+   },
+   "Thakurakona": {
+    "villages": [
+     {
+      "en": "ঠাকুরাকোণা",
+      "bn": "ঠাকুরাকোণা",
+      "place": "suburb",
+      "lat": 24.90969,
+      "lng": 90.82402
+     }
+    ],
+    "goCode": 94,
+    "areaAcre": 7549,
+    "male": 12140,
+    "female": 12204,
+    "literacyPct": 44.8,
+    "settlements": 30
+   },
+   "Dakshin Bishiura": {
+    "villages": [
+     {
+      "en": "Dakshin Bishiura",
+      "bn": "Dakshin Bishiura",
+      "place": "village",
+      "lat": 24.81806,
+      "lng": 90.69143
+     }
+    ],
+    "goCode": 23,
+    "areaAcre": 5570,
+    "male": 9799,
+    "female": 9882,
+    "literacyPct": 37.4,
+    "settlements": 62
+   },
+   "Madanpur": {
+    "villages": [
+     {
+      "en": "Madanpur",
+      "bn": "মদনপুর",
+      "place": "village",
+      "lat": 24.78333,
+      "lng": 90.74837
+     }
+    ],
+    "goCode": 54,
+    "areaAcre": 5523,
+    "male": 10073,
+    "female": 10151,
+    "literacyPct": 39.3,
+    "settlements": 39
+   },
+   "Medni": {
+    "villages": [
+     {
+      "en": "Medni",
+      "bn": "Medni",
+      "place": "village",
+      "lat": 24.92613,
+      "lng": 90.74637
+     }
+    ],
+    "goCode": 55,
+    "areaAcre": 5897,
+    "male": 12985,
+    "female": 12863,
+    "literacyPct": 37.3,
+    "settlements": 44
+   },
+   "Maugati": {
+    "villages": [
+     {
+      "en": "Maugati",
+      "bn": "Maugati",
+      "place": "village",
+      "lat": 24.94648,
+      "lng": 90.70333
+     },
+     {
+      "en": "চুঁচুঁয়া",
+      "bn": "চুঁচুঁয়া",
+      "place": "suburb",
+      "lat": 24.94058,
+      "lng": 90.71507
+     }
+    ],
+    "goCode": 63,
+    "areaAcre": 6831,
+    "male": 11251,
+    "female": 11332,
+    "literacyPct": 28.8,
+    "settlements": 59
+   },
+   "Rauha": {
+    "villages": [
+     {
+      "en": "Rauba",
+      "bn": "Rauba",
+      "place": "village",
+      "lat": 24.90022,
+      "lng": 90.66852
+     }
+    ],
+    "goCode": 79,
+    "areaAcre": 5874,
+    "male": 12393,
+    "female": 12511,
+    "literacyPct": 34.4,
+    "settlements": 74
+   },
+   "Lakshmiganj": {
+    "villages": [],
+    "goCode": 47,
+    "areaAcre": 5483,
+    "male": 8878,
+    "female": 9061,
+    "literacyPct": 41.4,
+    "settlements": 51
+   },
+   "Singhar Bangla": {
+    "villages": [],
+    "goCode": 87,
+    "areaAcre": 6278,
+    "male": 11923,
+    "female": 12020,
+    "literacyPct": 43.3,
+    "settlements": 30
+   },
+   "Netrokona Paurashava": {
+    "villages": [],
+    "settlements": 25
+   }
+  },
+  "durgapur": {
+   "Kakairgara": {
+    "villages": [
+     {
+      "en": "Kakairgara",
+      "bn": "Kakairgara",
+      "place": "village",
+      "lat": 25.0369,
+      "lng": 90.66328
+     }
+    ],
+    "goCode": 77,
+    "areaAcre": 9986,
+    "male": 19702,
+    "female": 20038,
+    "literacyPct": 37,
+    "settlements": 84
+   },
+   "Kullagora": {
+    "villages": [
+     {
+      "en": "Kullagora",
+      "bn": "Kullagora",
+      "place": "village",
+      "lat": 25.14256,
+      "lng": 90.64019
+     }
+    ],
+    "goCode": 86,
+    "areaAcre": 8788,
+    "male": 11232,
+    "female": 11305,
+    "literacyPct": 37.4,
+    "settlements": 30
+   },
+   "Gaokandia": {
+    "villages": [],
+    "goCode": 69,
+    "areaAcre": 11297,
+    "male": 15132,
+    "female": 1506,
+    "literacyPct": 30.8,
+    "settlements": 59
+   },
+   "Chandigarh": {
+    "villages": [
+     {
+      "en": "Chandigarh",
+      "bn": "Chandigarh",
+      "place": "village",
+      "lat": 25.10657,
+      "lng": 90.74756
+     },
+     {
+      "en": "SagorDighi Balur Ghat",
+      "bn": "সাগর দীঘি বালুর  ঘাট",
+      "place": "village",
+      "lat": 25.08599,
+      "lng": 90.70092
+     }
+    ],
+    "goCode": 25,
+    "areaAcre": 12029,
+    "male": 19255,
+    "female": 19770,
+    "literacyPct": 37.2,
+    "settlements": 93
+   },
+   "Durgapur": {
+    "villages": [],
+    "goCode": 51,
+    "areaAcre": 9097,
+    "male": 11666,
+    "female": 11952,
+    "literacyPct": 37.1,
+    "settlements": 2
+   },
+   "Bakaljora": {
+    "villages": [
+     {
+      "en": "Bakaljora",
+      "bn": "Bakaljora",
+      "place": "village",
+      "lat": 25.04643,
+      "lng": 90.72057
+     }
+    ],
+    "goCode": 12,
+    "areaAcre": 9076,
+    "male": 13633,
+    "female": 13955,
+    "literacyPct": 37.8,
+    "settlements": 70
+   },
+   "Birisiri": {
+    "villages": [
+     {
+      "en": "Gharit (end point)",
+      "bn": "Gharit (end point)",
+      "place": "neighbourhood",
+      "lat": 25.10627,
+      "lng": 90.67954
+     }
+    ],
+    "goCode": 17,
+    "areaAcre": 5450,
+    "male": 8773,
+    "female": 9085,
+    "literacyPct": 43.4,
+    "settlements": 59
+   },
+   "Durgapur Paurashava": {
+    "villages": [
+     {
+      "en": "Dhansirci (starting point)",
+      "bn": "Dhansirci (starting point)",
+      "place": "neighbourhood",
+      "lat": 25.10744,
+      "lng": 90.68377
+     },
+     {
+      "en": "Durgapur",
+      "bn": "দূর্গাপুর",
+      "place": "town",
+      "lat": 25.12383,
+      "lng": 90.67814
+     },
+     {
+      "en": "Shibganj",
+      "bn": "শিবগঞ্জ",
+      "place": "village",
+      "lat": 25.12103,
+      "lng": 90.66623
+     }
+    ],
+    "settlements": 28
+   }
+  },
+  "kalmakanda": {
+   "Kalmakanda": {
+    "villages": [
+     {
+      "en": "Kalmakanda",
+      "bn": "কলমাকান্দা",
+      "place": "town",
+      "lat": 25.07716,
+      "lng": 90.88826
+     }
+    ],
+    "goCode": 35,
+    "areaAcre": 15532,
+    "male": 24006,
+    "female": 23846,
+    "literacyPct": 42.8,
+    "settlements": 40
+   },
+   "Kailati": {
+    "villages": [
+     {
+      "en": "Kallati",
+      "bn": "Kallati",
+      "place": "village",
+      "lat": 25.02351,
+      "lng": 90.80112
+     },
+     {
+      "en": "সিধলী",
+      "bn": "সিধলী",
+      "place": "suburb",
+      "lat": 25.01281,
+      "lng": 90.76811
+     }
+    ],
+    "goCode": 23,
+    "areaAcre": 13199,
+    "male": 21255,
+    "female": 21052,
+    "literacyPct": 34.2,
+    "settlements": 74
+   },
+   "Kharnai": {
+    "villages": [
+     {
+      "en": "Kharnai",
+      "bn": "Kharnai",
+      "place": "village",
+      "lat": 25.12512,
+      "lng": 90.84853
+     }
+    ],
+    "goCode": 47,
+    "areaAcre": 10343,
+    "male": 13230,
+    "female": 13567,
+    "literacyPct": 35,
+    "settlements": 40
+   },
+   "Nazirpur": {
+    "villages": [
+     {
+      "en": "Nazirpur",
+      "bn": "Nazirpur",
+      "place": "village",
+      "lat": 25.07705,
+      "lng": 90.82323
+     },
+     {
+      "en": "নাজিরপুর",
+      "bn": "নাজিরপুর",
+      "place": "suburb",
+      "lat": 25.10204,
+      "lng": 90.78806
+     }
+    ],
+    "goCode": 71,
+    "areaAcre": 11293,
+    "male": 18895,
+    "female": 19335,
+    "literacyPct": 36.7,
+    "settlements": 50
+   },
+   "Pogla": {
+    "villages": [
+     {
+      "en": "Pogla",
+      "bn": "Pogla",
+      "place": "village",
+      "lat": 25.00366,
+      "lng": 90.87746
+     }
+    ],
+    "goCode": 83,
+    "areaAcre": 10918,
+    "male": 16141,
+    "female": 16442,
+    "literacyPct": 36.9,
+    "settlements": 66
+   },
+   "Bara Kharpan": {
+    "villages": [
+     {
+      "en": "Bara Kharpan",
+      "bn": "Bara Kharpan",
+      "place": "village",
+      "lat": 25.02035,
+      "lng": 90.92126
+     }
+    ],
+    "goCode": 11,
+    "areaAcre": 9131,
+    "male": 9825,
+    "female": 9993,
+    "literacyPct": 35.1,
+    "settlements": 36
+   },
+   "Rangchhati": {
+    "villages": [
+     {
+      "en": "Rangchhati",
+      "bn": "Rangchhati",
+      "place": "village",
+      "lat": 25.13426,
+      "lng": 90.91744
+     }
+    ],
+    "goCode": 95,
+    "areaAcre": 14025,
+    "male": 20217,
+    "female": 21146,
+    "literacyPct": 29.7,
+    "settlements": 59
+   },
+   "Lengura": {
+    "villages": [
+     {
+      "en": "Lengura",
+      "bn": "Lengura",
+      "place": "village",
+      "lat": 25.14442,
+      "lng": 90.78725
+     }
+    ],
+    "goCode": 59,
+    "areaAcre": 8526,
+    "male": 11327,
+    "female": 11635,
+    "literacyPct": 41.8,
+    "settlements": 36
+   }
+  },
+  "mohanganj": {
+   "Gaglajur": {
+    "villages": [
+     {
+      "en": "Gaglajore",
+      "bn": "Gaglajore",
+      "place": "village",
+      "lat": 24.80875,
+      "lng": 91.08495
+     }
+    ],
+    "goCode": 31,
+    "areaAcre": 10831,
+    "male": 9658,
+    "female": 9418,
+    "literacyPct": 34.5,
+    "settlements": 11
+   },
+   "Tentulia": {
+    "villages": [],
+    "goCode": 84,
+    "areaAcre": 9898,
+    "male": 9375,
+    "female": 9412,
+    "literacyPct": 29.2,
+    "settlements": 14
+   },
+   "Barkashia Biramp": {
+    "villages": [],
+    "goCode": 10,
+    "areaAcre": 5338,
+    "male": 9909,
+    "female": 9520,
+    "literacyPct": 42,
+    "settlements": 38
+   },
+   "Baratali Banihari": {
+    "villages": [],
+    "goCode": 21,
+    "areaAcre": 6403,
+    "male": 10134,
+    "female": 9879,
+    "literacyPct": 41.6,
+    "settlements": 25
+   },
+   "Maghan Siadhar": {
+    "villages": [
+     {
+      "en": "Maghan Shiadhar",
+      "bn": "Maghan Shiadhar",
+      "place": "village",
+      "lat": 24.83108,
+      "lng": 91.01071
+     }
+    ],
+    "goCode": 42,
+    "areaAcre": 9177,
+    "male": 10913,
+    "female": 11010,
+    "literacyPct": 39.8,
+    "settlements": 34
+   },
+   "Samaj Sahildeo": {
+    "villages": [
+     {
+      "en": "Samaj Sahildep",
+      "bn": "Samaj Sahildep",
+      "place": "village",
+      "lat": 24.80069,
+      "lng": 90.95659
+     }
+    ],
+    "goCode": 63,
+    "areaAcre": 7857,
+    "male": 11086,
+    "female": 11095,
+    "literacyPct": 33.1,
+    "settlements": 27
+   },
+   "Suair": {
+    "villages": [
+     {
+      "en": "Suair",
+      "bn": "Suair",
+      "place": "village",
+      "lat": 24.77562,
+      "lng": 90.99833
+     }
+    ],
+    "goCode": 73,
+    "areaAcre": 8571,
+    "male": 9512,
+    "female": 9393,
+    "literacyPct": 40.8,
+    "settlements": 21
+   },
+   "Mohanganj Paurashava": {
+    "villages": [],
+    "settlements": 14
+   }
+  },
+  "khaliajuri": {
+   "Krishnapur": {
+    "villages": [
+     {
+      "en": "Krishnapur",
+      "bn": "Krishnapur",
+      "place": "village",
+      "lat": 24.66829,
+      "lng": 91.21023
+     }
+    ],
+    "goCode": 54,
+    "areaAcre": 7053,
+    "male": 7391,
+    "female": 7057,
+    "literacyPct": 30.4,
+    "settlements": 10
+   },
+   "Khaliajuri": {
+    "villages": [
+     {
+      "en": "Khaliajuri",
+      "bn": "খালিয়াজুরী",
+      "place": "town",
+      "lat": 24.69126,
+      "lng": 91.14118
+     }
+    ],
+    "goCode": 40,
+    "areaAcre": 11621,
+    "male": 7755,
+    "female": 7084,
+    "literacyPct": 28.5,
+    "settlements": 10
+   },
+   "Chakua": {
+    "villages": [
+     {
+      "en": "Chakura",
+      "bn": "Chakura",
+      "place": "village",
+      "lat": 24.75546,
+      "lng": 91.12467
+     },
+     {
+      "en": "লেপসিয়া",
+      "bn": "লেপসিয়া",
+      "place": "suburb",
+      "lat": 24.76272,
+      "lng": 91.10085
+     }
+    ],
+    "goCode": 13,
+    "areaAcre": 11965,
+    "male": 6115,
+    "female": 5718,
+    "literacyPct": 23.7,
+    "settlements": 9
+   },
+   "Gazipur": {
+    "villages": [],
+    "goCode": 27,
+    "areaAcre": 18988,
+    "male": 11635,
+    "female": 11097,
+    "literacyPct": 33.2
+   },
+   "Nagar": {
+    "villages": [
+     {
+      "en": "Nagar",
+      "bn": "Nagar",
+      "place": "village",
+      "lat": 24.65326,
+      "lng": 91.15142
+     }
+    ],
+    "goCode": 81,
+    "areaAcre": 9618,
+    "male": 4697,
+    "female": 4731,
+    "literacyPct": 36.9,
+    "settlements": 11
+   },
+   "Mendipur": {
+    "villages": [],
+    "goCode": 67,
+    "areaAcre": 14301,
+    "male": 12202,
+    "female": 11968,
+    "literacyPct": 29.6,
+    "settlements": 14
+   }
+  },
+  "kendua": {
+   "Asujia": {
+    "villages": [
+     {
+      "en": "Asijia",
+      "bn": "Asijia",
+      "place": "village",
+      "lat": 24.74825,
+      "lng": 90.78156
+     },
+     {
+      "en": "রামপুর",
+      "bn": "রামপুর",
+      "place": "suburb",
+      "lat": 24.75007,
+      "lng": 90.75839
+     }
+    ],
+    "goCode": 11,
+    "areaAcre": 5669,
+    "male": 9275,
+    "female": 9414,
+    "literacyPct": 38.3,
+    "settlements": 3
+   },
+   "Kandiura": {
+    "villages": [
+     {
+      "en": "Baghmara",
+      "bn": "বাঘমারা",
+      "place": "hamlet",
+      "lat": 24.6687,
+      "lng": 90.86555
+     },
+     {
+      "en": "Brahmanjat",
+      "bn": "ব্রাহ্মণজাত",
+      "place": "village",
+      "lat": 24.66349,
+      "lng": 90.86296
+     },
+     {
+      "en": "Dakkhin Para",
+      "bn": "দক্ষিণ পাড়া",
+      "place": "hamlet",
+      "lat": 24.66286,
+      "lng": 90.86157
+     },
+     {
+      "en": "Jalalpur",
+      "bn": "জালালপুর",
+      "place": "village",
+      "lat": 24.68456,
+      "lng": 90.86397
+     },
+     {
+      "en": "Kandiura",
+      "bn": "কান্দিউরা",
+      "place": "village",
+      "lat": 24.67303,
+      "lng": 90.86244
+     },
+     {
+      "en": "MaijhPara",
+      "bn": "মাইঝপাড়",
+      "place": "hamlet",
+      "lat": 24.66459,
+      "lng": 90.86505
+     },
+     {
+      "en": "Modinabag",
+      "bn": "মদিনাবাগ",
+      "place": "suburb",
+      "lat": 24.66191,
+      "lng": 90.8504
+     },
+     {
+      "en": "Palra",
+      "bn": "পালড়া",
+      "place": "hamlet",
+      "lat": 24.66024,
+      "lng": 90.8624
+     },
+     {
+      "en": "Tukpara",
+      "bn": "তুকপাড়া",
+      "place": "hamlet",
+      "lat": 24.67327,
+      "lng": 90.84935
+     },
+     {
+      "en": "Uttar Para",
+      "bn": "উত্তর পাড়া",
+      "place": "hamlet",
+      "lat": 24.66699,
+      "lng": 90.86481
+     },
+     {
+      "en": "কান্দা",
+      "bn": "কান্দা",
+      "place": "hamlet",
+      "lat": 24.65927,
+      "lng": 90.86095
+     }
+    ],
+    "goCode": 47,
+    "areaAcre": 4281,
+    "male": 7746,
+    "female": 7919,
+    "literacyPct": 34.6,
+    "settlements": 11
+   },
+   "Garadoba": {
+    "villages": [
+     {
+      "en": "Garaduba",
+      "bn": "গড়াডোবা",
+      "place": "village",
+      "lat": 24.70606,
+      "lng": 90.73885
+     }
+    ],
+    "goCode": 33,
+    "areaAcre": 6257,
+    "male": 11697,
+    "female": 12062,
+    "literacyPct": 38.4
+   },
+   "Ganda": {
+    "villages": [],
+    "goCode": 40,
+    "areaAcre": 4325,
+    "male": 10394,
+    "female": 10804,
+    "literacyPct": 40.5
+   },
+   "Chirang": {
+    "villages": [
+     {
+      "en": "Chilimpur",
+      "bn": "ছিলিমপুর",
+      "place": "village",
+      "lat": 24.64912,
+      "lng": 90.83384
+     },
+     {
+      "en": "Chirang",
+      "bn": "চিরাং",
+      "place": "village",
+      "lat": 24.63358,
+      "lng": 90.85232
+     },
+     {
+      "en": "Dhopagati",
+      "bn": "ধোপাগাতি",
+      "place": "village",
+      "lat": 24.65659,
+      "lng": 90.8618
+     },
+     {
+      "en": "Sajiura",
+      "bn": "সাজিউড়া",
+      "place": "village",
+      "lat": 24.65569,
+      "lng": 90.87303
+     }
+    ],
+    "goCode": 20,
+    "areaAcre": 5195,
+    "male": 10742,
+    "female": 10920,
+    "literacyPct": 36.4,
+    "settlements": 43
+   },
+   "Dalpa": {
+    "villages": [
+     {
+      "en": "Dalpa",
+      "bn": "দলপা",
+      "place": "village",
+      "lat": 24.74912,
+      "lng": 90.73133
+     }
+    ],
+    "goCode": 27,
+    "areaAcre": 5459,
+    "male": 10025,
+    "female": 10316,
+    "literacyPct": 41.2,
+    "settlements": 1
+   },
+   "Noapara": {
+    "villages": [
+     {
+      "en": "Noapara",
+      "bn": "নওয়াপাড়া",
+      "place": "village",
+      "lat": 24.7044,
+      "lng": 90.84426
+     }
+    ],
+    "goCode": 74,
+    "areaAcre": 5311,
+    "male": 9340,
+    "female": 9529,
+    "literacyPct": 32.3,
+    "settlements": 15
+   },
+   "Paikura": {
+    "villages": [
+     {
+      "en": "Gati Para",
+      "bn": "Gati Para",
+      "place": "village",
+      "lat": 24.58258,
+      "lng": 90.79664
+     },
+     {
+      "en": "Kawali Kanda",
+      "bn": "কাওয়ালিকান্দা",
+      "place": "village",
+      "lat": 24.62981,
+      "lng": 90.82221
+     },
+     {
+      "en": "Paikura",
+      "bn": "পাইকুরা",
+      "place": "village",
+      "lat": 24.60274,
+      "lng": 90.82699
+     },
+     {
+      "en": "Pechandari",
+      "bn": "Pechandari",
+      "place": "village",
+      "lat": 24.57772,
+      "lng": 90.79638
+     },
+     {
+      "en": "Pechandari",
+      "bn": "Pechandari",
+      "place": "village",
+      "lat": 24.58521,
+      "lng": 90.80571
+     }
+    ],
+    "goCode": 81,
+    "areaAcre": 6251,
+    "male": 11801,
+    "female": 12233,
+    "literacyPct": 35,
+    "settlements": 30
+   },
+   "Balaishimul": {
+    "villages": [
+     {
+      "en": "Balaishimul",
+      "bn": "বলাইশিমুল",
+      "place": "village",
+      "lat": 24.73258,
+      "lng": 90.81638
+     },
+     {
+      "en": "Balijura Bazar",
+      "bn": "বালিজুড়া বাজার",
+      "place": "village",
+      "lat": 24.69788,
+      "lng": 90.79518
+     }
+    ],
+    "goCode": 13,
+    "areaAcre": 7154,
+    "male": 11371,
+    "female": 11542,
+    "literacyPct": 39.7,
+    "settlements": 17
+   },
+   "Roailbari": {
+    "villages": [
+     {
+      "en": "Amtala",
+      "bn": "আমতলা",
+      "place": "village",
+      "lat": 24.62598,
+      "lng": 90.79892
+     },
+     {
+      "en": "Rajnagar",
+      "bn": "রাজনগর",
+      "place": "village",
+      "lat": 24.62324,
+      "lng": 90.79907
+     },
+     {
+      "en": "Roailbari",
+      "bn": "রোয়াইলবাড়ী",
+      "place": "village",
+      "lat": 24.62992,
+      "lng": 90.78923
+     }
+    ],
+    "goCode": 88,
+    "areaAcre": 5911,
+    "male": 12443,
+    "female": 13026,
+    "literacyPct": 34.2,
+    "settlements": 35
+   },
+   "Mashka": {
+    "villages": [
+     {
+      "en": "Mashka",
+      "bn": "মাসকা",
+      "place": "village",
+      "lat": 24.66777,
+      "lng": 90.80732
+     },
+     {
+      "en": "Raypur",
+      "bn": "রায়পুর",
+      "place": "village",
+      "lat": 24.65496,
+      "lng": 90.80867
+     }
+    ],
+    "goCode": 61,
+    "areaAcre": 5093,
+    "male": 10545,
+    "female": 11283,
+    "literacyPct": 35.6,
+    "settlements": 22
+   },
+   "Muzaffarpur": {
+    "villages": [
+     {
+      "en": "Baniyagati",
+      "bn": "বানিয়াগাতি",
+      "place": "hamlet",
+      "lat": 24.65091,
+      "lng": 90.88408
+     },
+     {
+      "en": "Harulia",
+      "bn": "হারুলিয়া",
+      "place": "village",
+      "lat": 24.64763,
+      "lng": 90.88807
+     },
+     {
+      "en": "Mamudpur",
+      "bn": "মামুদপুর",
+      "place": "village",
+      "lat": 24.64749,
+      "lng": 90.89109
+     },
+     {
+      "en": "Muzaffarpur",
+      "bn": "মুজাফফরপুর",
+      "place": "village",
+      "lat": 24.61572,
+      "lng": 90.88698
+     }
+    ],
+    "goCode": 67,
+    "areaAcre": 6399,
+    "male": 12265,
+    "female": 12559,
+    "literacyPct": 29.3,
+    "settlements": 30
+   },
+   "Sandikona": {
+    "villages": [
+     {
+      "en": "Sahitpur",
+      "bn": "সাহিতপুর",
+      "place": "village",
+      "lat": 24.66114,
+      "lng": 90.77138
+     },
+     {
+      "en": "Sandikona",
+      "bn": "সান্দিকোনা",
+      "place": "village",
+      "lat": 24.66546,
+      "lng": 90.7587
+     }
+    ],
+    "goCode": 94,
+    "areaAcre": 5101,
+    "male": 11210,
+    "female": 11905,
+    "literacyPct": 36.7,
+    "settlements": 4
+   },
+   "Kendua Paurashava": {
+    "villages": [
+     {
+      "en": "Arambag",
+      "bn": "আরামবাগ",
+      "place": "suburb",
+      "lat": 24.66287,
+      "lng": 90.84436
+     },
+     {
+      "en": "Chandragati",
+      "bn": "চন্দ্রগাঁতি",
+      "place": "village",
+      "lat": 24.6608,
+      "lng": 90.85418
+     },
+     {
+      "en": "Digdair",
+      "bn": "দিগদাইর",
+      "place": "village",
+      "lat": 24.66423,
+      "lng": 90.8444
+     },
+     {
+      "en": "Kendua",
+      "bn": "কেন্দুয়া",
+      "place": "town",
+      "lat": 24.66172,
+      "lng": 90.84542
+     },
+     {
+      "en": "Shnatibag",
+      "bn": "শান্তিবাগ",
+      "place": "suburb",
+      "lat": 24.65911,
+      "lng": 90.84763
+     }
+    ],
+    "settlements": 10
+   }
+  },
+  "madan": {
+   "Kaitail": {
+    "villages": [
+     {
+      "en": "Kaitail",
+      "bn": "কাইটাইল",
+      "place": "village",
+      "lat": 24.71698,
+      "lng": 90.89489
+     }
+    ],
+    "goCode": 42,
+    "areaAcre": 8938,
+    "male": 10517,
+    "female": 10549,
+    "literacyPct": 32.8,
+    "settlements": 24
+   },
+   "Gobindasree": {
+    "villages": [
+     {
+      "en": "Gobindasree",
+      "bn": "গোবিন্দশ্রী",
+      "place": "village",
+      "lat": 24.71737,
+      "lng": 91.02636
+     },
+     {
+      "en": "Shanti Para",
+      "bn": "শান্তি পাড়া",
+      "place": "village",
+      "lat": 24.72006,
+      "lng": 91.03598
+     }
+    ],
+    "goCode": 21,
+    "areaAcre": 6826,
+    "male": 8964,
+    "female": 9055,
+    "literacyPct": 25.2,
+    "settlements": 7
+   },
+   "Chandgaon": {
+    "villages": [
+     {
+      "en": "Jahangirpur",
+      "bn": "জাহাঙ্গীরপুর",
+      "place": "village",
+      "lat": 24.71304,
+      "lng": 90.93861
+     }
+    ],
+    "goCode": 31,
+    "areaAcre": 2679,
+    "male": 4763,
+    "female": 4743,
+    "literacyPct": 32.6,
+    "settlements": 18
+   },
+   "Tiasree": {
+    "villages": [
+     {
+      "en": "Tiasree",
+      "bn": "তিয়শ্রী",
+      "place": "village",
+      "lat": 24.66197,
+      "lng": 90.95872
+     }
+    ],
+    "goCode": 84,
+    "areaAcre": 6858,
+    "male": 9437,
+    "female": 9424,
+    "literacyPct": 30.5,
+    "settlements": 12
+   },
+   "Nayekpur": {
+    "villages": [
+     {
+      "en": "Nayekpur",
+      "bn": "নায়েকপুর",
+      "place": "village",
+      "lat": 24.65446,
+      "lng": 90.91891
+     },
+     {
+      "en": "Tambulipara",
+      "bn": "তাম্বুলিপাড়া",
+      "place": "hamlet",
+      "lat": 24.66012,
+      "lng": 90.89844
+     }
+    ],
+    "goCode": 73,
+    "areaAcre": 6412,
+    "male": 10465,
+    "female": 10350,
+    "literacyPct": 31.6,
+    "settlements": 24
+   },
+   "Fatehpur": {
+    "villages": [
+     {
+      "en": "Fatehpur",
+      "bn": "ফতেহপুর",
+      "place": "village",
+      "lat": 24.62253,
+      "lng": 90.97701
+     }
+    ],
+    "goCode": 10,
+    "areaAcre": 8816,
+    "male": 9681,
+    "female": 9266,
+    "literacyPct": 26.1,
+    "settlements": 10
+   },
+   "Madan": {
+    "villages": [],
+    "goCode": 52,
+    "areaAcre": 6103,
+    "male": 8114,
+    "female": 8009,
+    "literacyPct": 28,
+    "settlements": 8
+   },
+   "Maghan": {
+    "villages": [
+     {
+      "en": "Maghan",
+      "bn": "Maghan",
+      "place": "village",
+      "lat": 24.66206,
+      "lng": 91.03429
+     }
+    ],
+    "goCode": 63,
+    "areaAcre": 8108,
+    "male": 6985,
+    "female": 6769,
+    "literacyPct": 23.3,
+    "settlements": 3
+   },
+   "Madan Paurashava": {
+    "villages": [
+     {
+      "en": "Madan",
+      "bn": "মদন",
+      "place": "town",
+      "lat": 24.71586,
+      "lng": 90.94748
+     }
+    ],
+    "settlements": 8
+   }
+  },
+  "barhatta": {
+   "Asma": {
+    "villages": [
+     {
+      "en": "Asma",
+      "bn": "Asma",
+      "place": "village",
+      "lat": 24.93616,
+      "lng": 90.90511
+     }
+    ],
+    "goCode": 11,
+    "areaAcre": 7353,
+    "male": 10836,
+    "female": 10719,
+    "literacyPct": 32.2,
+    "settlements": 41
+   },
+   "Chhiram": {
+    "villages": [
+     {
+      "en": "Chhiram",
+      "bn": "Chhiram",
+      "place": "village",
+      "lat": 24.95144,
+      "lng": 90.94335
+     }
+    ],
+    "goCode": 47,
+    "areaAcre": 7223,
+    "male": 9484,
+    "female": 9274,
+    "literacyPct": 30.4,
+    "settlements": 37
+   },
+   "Baushi": {
+    "villages": [
+     {
+      "en": "Bausi",
+      "bn": "Bausi",
+      "place": "village",
+      "lat": 24.93874,
+      "lng": 90.86093
+     }
+    ],
+    "goCode": 35,
+    "areaAcre": 7111,
+    "male": 12819,
+    "female": 13143,
+    "literacyPct": 37.5,
+    "settlements": 49
+   },
+   "Roypur": {
+    "villages": [
+     {
+      "en": "Roypur",
+      "bn": "Roypur",
+      "place": "village",
+      "lat": 24.97705,
+      "lng": 90.81207
+     }
+    ],
+    "goCode": 59,
+    "areaAcre": 7814,
+    "male": 12415,
+    "female": 12265,
+    "literacyPct": 38,
+    "settlements": 42
+   },
+   "Barhatta": {
+    "villages": [
+     {
+      "en": "Barhatta",
+      "bn": "বারহাট্টা",
+      "place": "town",
+      "lat": 24.89167,
+      "lng": 90.89087
+     }
+    ],
+    "goCode": 23,
+    "areaAcre": 8604,
+    "male": 16917,
+    "female": 16690,
+    "literacyPct": 47.9,
+    "settlements": 54
+   },
+   "Sahata": {
+    "villages": [
+     {
+      "en": "Sahata",
+      "bn": "Sahata",
+      "place": "village",
+      "lat": 24.8871,
+      "lng": 90.84428
+     }
+    ],
+    "goCode": 71,
+    "areaAcre": 8835,
+    "male": 14560,
+    "female": 14513,
+    "literacyPct": 34.5,
+    "settlements": 68
+   },
+   "Singdha": {
+    "villages": [
+     {
+      "en": "Mohanganj",
+      "bn": "মোহনগঞ্জ",
+      "place": "town",
+      "lat": 24.87559,
+      "lng": 90.97711
+     },
+     {
+      "en": "Singdha",
+      "bn": "Singdha",
+      "place": "village",
+      "lat": 24.89195,
+      "lng": 90.96254
+     }
+    ],
+    "goCode": 83,
+    "areaAcre": 7424,
+    "male": 13545,
+    "female": 13269,
+    "literacyPct": 36.5,
+    "settlements": 70
+   }
+  },
+  "atpara": {
+   "Teligati": {
+    "villages": [
+     {
+      "en": "তেলিগাতি",
+      "bn": "তেলিগাতি",
+      "place": "suburb",
+      "lat": 24.76178,
+      "lng": 90.86137
+     }
+    ],
+    "goCode": 83,
+    "areaAcre": 6359,
+    "male": 11819,
+    "female": 11976,
+    "literacyPct": 37.6,
+    "settlements": 50
+   },
+   "Duaz": {
+    "villages": [
+     {
+      "en": "Duaz",
+      "bn": "Duaz",
+      "place": "village",
+      "lat": 24.76726,
+      "lng": 90.89603
+     }
+    ],
+    "goCode": 23,
+    "areaAcre": 6286,
+    "male": 8202,
+    "female": 8332,
+    "literacyPct": 38.8,
+    "settlements": 40
+   },
+   "Baniajan": {
+    "villages": [
+     {
+      "en": "Baniajan",
+      "bn": "Baniajan",
+      "place": "village",
+      "lat": 24.80358,
+      "lng": 90.85784
+     }
+    ],
+    "goCode": 11,
+    "areaAcre": 6050,
+    "male": 10657,
+    "female": 10787,
+    "literacyPct": 47.6,
+    "settlements": 34
+   },
+   "Loneshwar": {
+    "villages": [
+     {
+      "en": "Loneshwar",
+      "bn": "Loneshwar",
+      "place": "village",
+      "lat": 24.81483,
+      "lng": 90.9072
+     }
+    ],
+    "goCode": 35,
+    "areaAcre": 8512,
+    "male": 10004,
+    "female": 10285,
+    "literacyPct": 38.8,
+    "settlements": 18
+   },
+   "Sarmaisa": {
+    "villages": [
+     {
+      "en": "Abhaypasha",
+      "bn": "অভয়পাশা",
+      "place": "village",
+      "lat": 24.79834,
+      "lng": 90.80566
+     },
+     {
+      "en": "Konapara",
+      "bn": "কোনাপাড়া",
+      "place": "village",
+      "lat": 24.82452,
+      "lng": 90.81383
+     },
+     {
+      "en": "Sarmaisa",
+      "bn": "Sarmaisa",
+      "place": "village",
+      "lat": 24.81149,
+      "lng": 90.80893
+     },
+     {
+      "en": "Sarmusia Village",
+      "bn": "Sarmusia Village",
+      "place": "village",
+      "lat": 24.8117,
+      "lng": 90.80892
+     }
+    ],
+    "goCode": 47,
+    "areaAcre": 7094,
+    "male": 11660,
+    "female": 11621,
+    "literacyPct": 39.9,
+    "settlements": 62
+   },
+   "Sukhari": {
+    "villages": [
+     {
+      "en": "Fachika",
+      "bn": "ফচিকা",
+      "place": "village",
+      "lat": 24.72534,
+      "lng": 90.95732
+     },
+     {
+      "en": "Shukhari",
+      "bn": "Shukhari",
+      "place": "village",
+      "lat": 24.74999,
+      "lng": 90.96699
+     }
+    ],
+    "goCode": 59,
+    "areaAcre": 7271,
+    "male": 10483,
+    "female": 10230,
+    "literacyPct": 35,
+    "settlements": 28
+   },
+   "Sonai": {
+    "villages": [
+     {
+      "en": "Atpara",
+      "bn": "আটপাড়া",
+      "place": "town",
+      "lat": 24.81072,
+      "lng": 90.86066
+     },
+     {
+      "en": "Sunai",
+      "bn": "শুনই",
+      "place": "village",
+      "lat": 24.83167,
+      "lng": 90.86987
+     }
+    ],
+    "goCode": 71,
+    "areaAcre": 5938,
+    "male": 9292,
+    "female": 9276,
+    "literacyPct": 38.6,
+    "settlements": 17
+   }
+  },
+  "purbadhala": {
+   "Agia": {
+    "villages": [
+     {
+      "en": "Agla",
+      "bn": "Agla",
+      "place": "village",
+      "lat": 24.95843,
+      "lng": 90.56985
+     }
+    ],
+    "goCode": 13,
+    "areaAcre": 6626,
+    "male": 13370,
+    "female": 14423,
+    "literacyPct": 40.2,
+    "settlements": 69
+   },
+   "Khalishaur": {
+    "villages": [
+     {
+      "en": "Khalishaur",
+      "bn": "Khalishaur",
+      "place": "village",
+      "lat": 24.90029,
+      "lng": 90.63424
+     }
+    ],
+    "goCode": 79,
+    "areaAcre": 7700,
+    "male": 13689,
+    "female": 14127,
+    "literacyPct": 42.6,
+    "settlements": 98
+   },
+   "Gohalakanda": {
+    "villages": [],
+    "goCode": 55,
+    "areaAcre": 5697,
+    "male": 15543,
+    "female": 16101,
+    "literacyPct": 48.1,
+    "settlements": 60
+   },
+   "Ghagra": {
+    "villages": [
+     {
+      "en": "Ghagra",
+      "bn": "Ghagra",
+      "place": "village",
+      "lat": 25.00648,
+      "lng": 90.58207
+     }
+    ],
+    "goCode": 39,
+    "areaAcre": 8938,
+    "male": 14848,
+    "female": 15145,
+    "literacyPct": 41.2,
+    "settlements": 56
+   },
+   "Jaria": {
+    "villages": [
+     {
+      "en": "জারিয়া-ঝাঞ্জাইল",
+      "bn": "জারিয়া-ঝাঞ্জাইল",
+      "place": "suburb",
+      "lat": 25.01016,
+      "lng": 90.64667
+     }
+    ],
+    "goCode": 71,
+    "areaAcre": 5727,
+    "male": 13939,
+    "female": 13792,
+    "literacyPct": 38.1,
+    "settlements": 42
+   },
+   "Dhala Mulgaon": {
+    "villages": [
+     {
+      "en": "Dhala Mulgaon",
+      "bn": "Dhala Mulgaon",
+      "place": "village",
+      "lat": 24.93789,
+      "lng": 90.66739
+     }
+    ],
+    "goCode": 31,
+    "areaAcre": 8762,
+    "male": 14441,
+    "female": 14625,
+    "literacyPct": 36.8,
+    "settlements": 73
+   },
+   "Narandia": {
+    "villages": [
+     {
+      "en": "Narandia",
+      "bn": "Narandia",
+      "place": "village",
+      "lat": 24.86575,
+      "lng": 90.63349
+     }
+    ],
+    "goCode": 87,
+    "areaAcre": 5553,
+    "male": 12481,
+    "female": 12563,
+    "literacyPct": 47.2,
+    "settlements": 72
+   },
+   "Purbadhala": {
+    "villages": [],
+    "goCode": 94,
+    "areaAcre": 6058,
+    "male": 15700,
+    "female": 15917,
+    "literacyPct": 47,
+    "settlements": 49
+   },
+   "Bishkakuni": {
+    "villages": [
+     {
+      "en": "Bishkakuni",
+      "bn": "Bishkakuni",
+      "place": "village",
+      "lat": 24.9144,
+      "lng": 90.56969
+     }
+    ],
+    "goCode": 23,
+    "areaAcre": 7231,
+    "male": 12766,
+    "female": 14013,
+    "literacyPct": 42.2,
+    "settlements": 60
+   },
+   "Bairati": {
+    "villages": [
+     {
+      "en": "Bairati",
+      "bn": "Bairati",
+      "place": "village",
+      "lat": 24.81761,
+      "lng": 90.63691
+     }
+    ],
+    "goCode": 15,
+    "areaAcre": 5749,
+    "male": 10859,
+    "female": 10994,
+    "literacyPct": 45.7,
+    "settlements": 69
+   },
+   "Hogla": {
+    "villages": [
+     {
+      "en": "Hogla",
+      "bn": "Hogla",
+      "place": "village",
+      "lat": 24.99239,
+      "lng": 90.53017
+     }
+    ],
+    "goCode": 63,
+    "areaAcre": 8177,
+    "male": 15526,
+    "female": 15972,
+    "literacyPct": 41.2,
+    "settlements": 61
+   },
+   "Purbadhala Paurashava": {
+    "villages": [
+     {
+      "en": "Purbadhala",
+      "bn": "পূর্বধলা",
+      "place": "town",
+      "lat": 24.93993,
+      "lng": 90.60231
+     }
+    ],
+    "settlements": 22
+   }
+  }
+ }
+}

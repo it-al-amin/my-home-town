@@ -24,8 +24,8 @@ const BASE_PLACES: TouristPlace[] = [
     nearbyPlacesBn: ['সোমেশ্বরী নদী', 'রানীখং চার্চ', 'হাজং মাতা রাশি মনি স্মৃতিসৌধ', 'ক্ষুদ্র নৃগোষ্ঠীর একাডেমি'],
     travelTips: 'Hire a battery-run autorickshaw (tomtom) or motorcycle from Durgapur town. Carry water and sun protection. Please do not litter plastic into the lake.',
     travelTipsBn: 'দুর্গাপুর বা বিরিশিরি বাজার থেকে ব্যাটারিচালিত টমটম বা মোটরসাইকেল ভাড়া করে সহজেই যাওয়া যায়। হ্রদের পানিতে প্লাস্টিক বা আবর্জনা ফেলা থেকে বিরত থাকুন।',
-    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80',
-    imageCredit: 'Wikimedia Commons / Public Tourism Domain',
+    image: '/images/places/bijoypur-sadamati.png',
+    imageCredit: 'বিজয়পুর সাদামাটি · Bijoypur white clay lake',
     featured: true,
     source: 'Bangladesh Tourism Board & Durgapur Upazila Administration',
     sourceUrl: 'http://durgapur.netrokona.gov.bd',
@@ -308,6 +308,10 @@ const BASE_PLACES: TouristPlace[] = [
 // or Wikimedia Commons has a photo of the place. Refreshed by scraper/node/district_sources.mjs.
 export const PLACES_DATA: TouristPlace[] = BASE_PLACES.map((place) => {
   const photos = realPhotosForPlace(place.id);
+  // A photo bundled in /public (starts with "/") is our own and stays the main image.
+  if (place.image.startsWith('/')) {
+    return { ...place, galleryImages: [place.image, ...photos.map((p) => p.url)] };
+  }
   if (!photos.length) {
     return { ...place, imageCredit: 'প্রতীকী ছবি · Illustrative photo (Unsplash)' };
   }

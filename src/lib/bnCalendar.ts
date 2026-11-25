@@ -1,6 +1,8 @@
 // Calendar helpers: Bangladesh (revised) Bangla calendar, seasons, Hijri date and moon phase.
 
-export const toBnDigits = (v: number | string) => String(v).replace(/\d/g, (d) => '০১২৩৪৫৬৭৮৯'[+d]);
+import { toBnDigits } from './format';
+
+export { toBnDigits };
 
 const BANGLA_MONTHS = ['বৈশাখ', 'জ্যৈষ্ঠ', 'আষাঢ়', 'শ্রাবণ', 'ভাদ্র', 'আশ্বিন', 'কার্তিক', 'অগ্রহায়ণ', 'পৌষ', 'মাঘ', 'ফাল্গুন', 'চৈত্র'];
 const BANGLA_MONTHS_EN = ['Boishakh', 'Jyoishtho', 'Asharh', 'Srabon', 'Bhadro', 'Ashwin', 'Kartik', 'Agrahayan', 'Poush', 'Magh', 'Falgun', 'Chaitra'];

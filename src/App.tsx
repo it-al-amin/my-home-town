@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useParams } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { DataProvider } from './context/DataContext';
@@ -28,7 +28,6 @@ import { PoliticsPage } from './pages/PoliticsPage';
 import { PeoplePage } from './pages/PeoplePage';
 import { CulturePage } from './pages/CulturePage';
 import { HistoryPage } from './pages/HistoryPage';
-import { UpazilaHistoryPage } from './pages/UpazilaHistoryPage';
 import { TransportPage } from './pages/TransportPage';
 import { EmergencyPage } from './pages/EmergencyPage';
 import { DirectoryPage } from './pages/DirectoryPage';
@@ -45,6 +44,13 @@ import { ContentAdmin } from './admin/ContentAdmin';
 import { SubmissionsAdmin } from './admin/SubmissionsAdmin';
 import { MembersAdmin } from './admin/MembersAdmin';
 import { AuditAdmin } from './admin/AuditAdmin';
+import { CommentsAdmin } from './admin/CommentsAdmin';
+
+/** Upazila history now lives on the upazila page; keep old /history/:slug links working. */
+const UpazilaHistoryRedirect = () => {
+  const { slug } = useParams<{ slug: string }>();
+  return <Navigate to={`/upazilas/${slug}#history`} replace />;
+};
 
 export function App() {
   return (
@@ -78,7 +84,7 @@ export function App() {
                 <Route path="people" element={<PeoplePage />} />
                 <Route path="culture" element={<CulturePage />} />
                 <Route path="history" element={<HistoryPage />} />
-                <Route path="history/:slug" element={<UpazilaHistoryPage />} />
+                <Route path="history/:slug" element={<UpazilaHistoryRedirect />} />
                 <Route path="transport" element={<TransportPage />} />
                 <Route path="emergency" element={<EmergencyPage />} />
                 <Route path="directory" element={<DirectoryPage />} />
@@ -94,6 +100,7 @@ export function App() {
                   <Route path="content" element={<RequireAuth permission="content.view"><ContentAdmin /></RequireAuth>} />
                   <Route path="submissions" element={<RequireAuth permission="submissions.view"><SubmissionsAdmin /></RequireAuth>} />
                   <Route path="members" element={<RequireAuth permission="members.manage"><MembersAdmin /></RequireAuth>} />
+                  <Route path="comments" element={<RequireAuth permission="submissions.view"><CommentsAdmin /></RequireAuth>} />
                   <Route path="audit" element={<RequireAuth permission="audit.view"><AuditAdmin /></RequireAuth>} />
                   {/* the previous browser-only admin tools, kept (now behind the real login) */}
                   <Route path="legacy" element={<AdminPage />} />

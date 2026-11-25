@@ -4,6 +4,18 @@ import { PLACES_DATA } from '../data/places';
 import { NEWS_DATA } from '../data/news';
 import { HERO_PHOTO } from '../data/aggregated/district';
 
+const NEWS_CATEGORY_LABELS: Record<NewsNotice['category'], { bn: string; en: string }> = {
+  district: { bn: 'জেলা সংবাদ', en: 'District News' },
+  tourism: { bn: 'পর্যটন ও বিনোদন', en: 'Tourism' },
+  weather: { bn: 'আবহাওয়া ও বন্যা', en: 'Weather & Flood' },
+  agriculture: { bn: 'কৃষি ও ফসল', en: 'Agriculture' },
+  fisheries: { bn: 'মৎস্য সম্পদ', en: 'Fisheries' },
+  education: { bn: 'শিক্ষা ও বিদ্যাপীঠ', en: 'Education' },
+  health: { bn: 'স্বাস্থ্য ও চিকিৎসা', en: 'Health' },
+  culture: { bn: 'সংস্কৃতি ও উৎসব', en: 'Culture' },
+  government: { bn: 'সরকারি নোটিশ', en: 'Government' },
+};
+
 // PLACES_DATA already carries the real photos scraped from netrokona.gov.bd / Wikimedia Commons.
 const INITIAL_PLACES_DATA: TouristPlace[] = PLACES_DATA.map((place) => ({
   ...place,
@@ -143,24 +155,13 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Submit community post (Pending status)
   const submitCommunityPost: DataContextType['submitCommunityPost'] = (postData) => {
     const today = new Date().toISOString().split('T')[0];
-    const categoryLabels: Record<NewsNotice['category'], { bn: string; en: string }> = {
-      district: { bn: 'জেলা সংবাদ', en: 'District News' },
-      tourism: { bn: 'পর্যটন ও বিনোদন', en: 'Tourism' },
-      weather: { bn: 'আবহাওয়া ও বন্যা', en: 'Weather & Flood' },
-      agriculture: { bn: 'কৃষি ও ফসল', en: 'Agriculture' },
-      fisheries: { bn: 'মৎস্য সম্পদ', en: 'Fisheries' },
-      education: { bn: 'শিক্ষা ও বিদ্যাপীঠ', en: 'Education' },
-      health: { bn: 'স্বাস্থ্য ও চিকিৎসা', en: 'Health' },
-      culture: { bn: 'সংস্কৃতি ও উৎসব', en: 'Culture' },
-      government: { bn: 'সরকারি নোটিশ', en: 'Government' },
-    };
 
     const newPost: NewsNotice = {
       id: `post-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
       title: postData.title || postData.titleBn,
       titleBn: postData.titleBn,
       category: postData.category,
-      categoryLabel: categoryLabels[postData.category] || { bn: 'নাগরিক সংবাদ', en: 'Community Post' },
+      categoryLabel: NEWS_CATEGORY_LABELS[postData.category] || { bn: 'নাগরিক সংবাদ', en: 'Community Post' },
       date: today,
       summary: postData.summaryBn,
       summaryBn: postData.summaryBn,
@@ -196,17 +197,6 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const createDirectNews: DataContextType['createDirectNews'] = (item) => {
     const today = new Date().toISOString().split('T')[0];
-    const categoryLabels: Record<NewsNotice['category'], { bn: string; en: string }> = {
-      district: { bn: 'জেলা সংবাদ', en: 'District News' },
-      tourism: { bn: 'পর্যটন ও বিনোদন', en: 'Tourism' },
-      weather: { bn: 'আবহাওয়া ও বন্যা', en: 'Weather & Flood' },
-      agriculture: { bn: 'কৃষি ও ফসল', en: 'Agriculture' },
-      fisheries: { bn: 'মৎস্য সম্পদ', en: 'Fisheries' },
-      education: { bn: 'শিক্ষা ও বিদ্যাপীঠ', en: 'Education' },
-      health: { bn: 'স্বাস্থ্য ও চিকিৎসা', en: 'Health' },
-      culture: { bn: 'সংস্কৃতি ও উৎসব', en: 'Culture' },
-      government: { bn: 'সরকারি নোটিশ', en: 'Government' },
-    };
 
     const cat = item.category || 'district';
     const newEntry: NewsNotice = {
@@ -214,7 +204,7 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
       title: item.title,
       titleBn: item.titleBn,
       category: cat,
-      categoryLabel: item.categoryLabel || categoryLabels[cat],
+      categoryLabel: item.categoryLabel || NEWS_CATEGORY_LABELS[cat],
       date: item.date || today,
       summary: item.summary || item.summaryBn,
       summaryBn: item.summaryBn,

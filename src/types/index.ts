@@ -39,8 +39,6 @@ export interface Upazila extends VerificationInfo {
   riversBn: string[];
   majorMarkets: string[];
   majorMarketsBn: string[];
-  unionsList: string[];
-  unionsListBn: string[];
   emergencyContacts?: {
     police?: string;
     fireService?: string;
@@ -321,16 +319,29 @@ export interface FamousFood extends VerificationInfo {
 export interface UnionInfo {
   id: string;
   name: string;
-  nameBn?: string;
-  upazilaId?: string;
+  nameBn: string;
+  upazilaId: string;
+  /** Name in the BBS boundary file (key of the settlement footprints) */
+  sourceName: string;
+  /** Union Parishad, or the upazila's municipality (paurashava) */
+  kind: 'union' | 'paurashava';
+  /** Polygon centroid */
   coordinates: Coordinates;
-  villagesCount?: number;
-  unionsCouncilOffice?: string;
-  unionsCouncilOfficeBn?: string;
-  keySpots?: string[];
-  keySpotsBn?: string[];
-  /** true when coordinates are an estimated placement, not surveyed GPS */
-  approximate?: boolean;
+  /** Official boundary, outer rings as [lng, lat] */
+  rings: [number, number][][];
+  /** Bangladesh Population Census 2011, via Banglapedia */
+  census?: {
+    goCode: number;
+    areaKm2: number;
+    population: number;
+    male: number;
+    female: number;
+    literacyPct: number;
+  };
+  /** Named villages / paras mapped in OpenStreetMap (incomplete) */
+  villages: { name: string; nameBn: string; coordinates: Coordinates }[];
+  /** LGED settlement footprints inside the union */
+  settlementCount: number;
 }
 
 

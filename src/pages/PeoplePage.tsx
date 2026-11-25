@@ -4,6 +4,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { PEOPLE_DATA } from '../data/people';
 import { PersonCard } from '../components/cards/PersonCard';
 import { Breadcrumb } from '../components/common/Breadcrumb';
+import { FilterChips } from '../components/common/FilterChips';
 
 export const PeoplePage: React.FC = () => {
   const { language } = useLanguage();
@@ -72,22 +73,13 @@ export const PeoplePage: React.FC = () => {
         </div>
 
         {/* Category Chips */}
-        <div className="nk-chips flex items-center gap-1.5 flex-wrap pt-2 border-t border-slate-100 dark:border-slate-800 text-xs">
-          {categories.map((c) => (
-            <button
-              key={c.id}
-              type="button"
-              onClick={() => setSelectedCategory(c.id)}
-              className={`px-3 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                selectedCategory === c.id
-                  ? 'bg-slate-900 text-white shadow-xs'
-                  : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
-              }`}
-            >
-              {c.label}
-            </button>
-          ))}
-        </div>
+        <FilterChips
+          className="pt-2 border-t border-slate-100 dark:border-slate-800"
+          options={categories}
+          value={selectedCategory}
+          onChange={setSelectedCategory}
+          activeClass="bg-slate-900 text-white shadow-xs"
+        />
       </div>
 
       {/* Grid */}

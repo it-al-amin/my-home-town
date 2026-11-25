@@ -11,8 +11,8 @@ import {
   DISTRICT_SOURCE_STATUS,
   formatSourceDate,
 } from '../../data/aggregated/district';
+import { toBnDigits as toBn } from '../../lib/format';
 
-const toBn = (v: number | string) => String(v).replace(/\d/g, (d) => '০১২৩৪৫৬৭৮৯'[+d]);
 const fmt = (n: number | undefined, bn: boolean) => (n == null ? '—' : n.toLocaleString(bn ? 'bn-BD' : 'en-US'));
 
 const INCOME_BN: Record<string, string> = {

@@ -8,6 +8,7 @@ import { SubmitPostModal } from '../components/common/SubmitPostModal';
 import { LatestNewsSection } from '../components/feed/LatestNewsSection';
 import { GovernmentNoticeList } from '../components/feed/GovernmentNoticeList';
 import { CmsContentSection } from '../components/cms/CmsContentSection';
+import { FilterChips } from '../components/common/FilterChips';
 
 export const NewsPage: React.FC = () => {
   const { language } = useLanguage();
@@ -68,26 +69,14 @@ export const NewsPage: React.FC = () => {
       </div>
 
       {/* Category Filter Chips */}
-      <div className="nk-chips flex items-center gap-1.5 flex-wrap bg-white dark:bg-slate-900 p-3 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs text-xs">
-        <span className="text-slate-400 font-semibold px-2 flex items-center gap-1">
-          <Filter className="w-3.5 h-3.5" />
-          <span>{language === 'bn' ? 'ফিল্টার:' : 'Filter:'}</span>
-        </span>
-        {categories.map((c) => (
-          <button
-            key={c.id}
-            type="button"
-            onClick={() => setSelectedCategory(c.id)}
-            className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-              selectedCategory === c.id
-                ? 'bg-teal-700 text-white shadow-xs'
-                : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
-            }`}
-          >
-            {c.label}
-          </button>
-        ))}
-      </div>
+      <FilterChips
+        className="bg-white dark:bg-slate-900 p-3 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs"
+        options={categories}
+        value={selectedCategory}
+        onChange={setSelectedCategory}
+        activeClass="bg-teal-700 text-white shadow-xs"
+        caption={language === 'bn' ? 'ফিল্টার:' : 'Filter:'}
+      />
 
       {/* News Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

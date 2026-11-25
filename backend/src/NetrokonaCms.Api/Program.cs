@@ -47,6 +47,7 @@ builder.Services.AddScoped<DuplicateDetector>();
 builder.Services.AddScoped<UploadService>();
 builder.Services.AddScoped<ContentService>();
 builder.Services.AddScoped<SubmissionService>();
+builder.Services.AddScoped<CommentService>();
 
 // --- rate limiting (per client IP)
 builder.Services.AddRateLimiter(o =>
@@ -62,6 +63,7 @@ builder.Services.AddRateLimiter(o =>
     Add("login", "LoginPerMinute", 5, TimeSpan.FromMinutes(1));
     Add("submit", "SubmitPerHour", 10, TimeSpan.FromHours(1));
     Add("track", "TrackPerMinute", 20, TimeSpan.FromMinutes(1));
+    Add("comment", "CommentPer10Minutes", 5, TimeSpan.FromMinutes(10));
     Add("public-read", "PublicReadPerMinute", 240, TimeSpan.FromMinutes(1));
 });
 

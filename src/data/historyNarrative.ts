@@ -136,3 +136,132 @@ export const UPAZILA_HISTORY_NOTES: Record<string, BilingualText> = {
     bn: 'দক্ষিণের সমভূমির আয়তনে বৃহত্তম উপজেলা; শ্যামগঞ্জের মতো বাজার ও ধানচাষের গ্রামগুলোর জন্য পরিচিত।',
   },
 };
+
+export interface UpazilaTimelineEntry {
+  year: string;
+  text: BilingualText;
+}
+
+export interface UpazilaHistory {
+  /** Key dates, oldest first */
+  timeline: UpazilaTimelineEntry[];
+  /** Archaeological and heritage sites */
+  heritage: BilingualText;
+}
+
+/** Facts summarised in our own words from each upazila's Banglapedia entry. */
+export const UPAZILA_HISTORY_SOURCE = {
+  label: 'Banglapedia, Asiatic Society of Bangladesh',
+  labelBn: 'বাংলাপিডিয়া, বাংলাদেশ এশিয়াটিক সোসাইটি',
+  url: 'https://en.banglapedia.org/index.php/Netrokona_District',
+};
+
+const t = (year: string, en: string, bn: string): UpazilaTimelineEntry => ({ year, text: { en, bn } });
+const UPAZILA_1983 = t('1983', 'The thana becomes an upazila.', 'থানাটি উপজেলায় উন্নীত হয়।');
+
+export const UPAZILA_HISTORY: Record<string, UpazilaHistory> = {
+  'netrokona-sadar': {
+    timeline: [
+      t('1874', 'Netrokona thana is established.', 'নেত্রকোণা থানা প্রতিষ্ঠিত হয়।'),
+      t('1939', 'Netaji Subhas Chandra Bose speaks at a public meeting in the town (15 March).', 'নেতাজি সুভাষচন্দ্র বসু শহরে এক জনসভায় বক্তব্য দেন (১৫ মার্চ)।'),
+      t('1945', 'The All India Kisan Sabha (peasant) conference meets in Netrokona, 8–10 April.', 'নেত্রকোণায় নিখিল ভারত কৃষক সম্মেলন অনুষ্ঠিত হয় (৮–১০ এপ্রিল)।'),
+      t('1971', 'Four local people are executed at Trimohani bridge in April; in December freedom fighters defeat the army at the Agricultural Farm.', 'এপ্রিলে ত্রিমোহনী ব্রিজে চারজনকে হত্যা করা হয়; ডিসেম্বরে কৃষি খামারের যুদ্ধে মুক্তিযোদ্ধারা পাকবাহিনীকে পরাজিত করেন।'),
+      UPAZILA_1983,
+    ],
+    heritage: { en: 'Shrine of Hazrat Shah Sultan Kamruddin Rumi (R) at Madanpur.', bn: 'মদনপুরে হযরত শাহ সুলতান কমরুদ্দীন রুমী (রহ.)-এর মাজার।' },
+  },
+  durgapur: {
+    timeline: [
+      t('1848', 'Garo uprising in the Susang hills.', 'সুসং পাহাড়ে গারো বিদ্রোহ।'),
+      t('1874', 'Durgapur thana is established.', 'দুর্গাপুর থানা প্রতিষ্ঠিত হয়।'),
+      t('1890s', 'Hajong revolt led by Mona Sardar against unpaid forced labour at the elephant stockades (hatikheda).', 'হাতিখেদায় বিনা মজুরির বাধ্যতামূলক শ্রমের বিরুদ্ধে মনা সর্দারের নেতৃত্বে হাজং বিদ্রোহ।'),
+      t('1942–47', 'Comrade Moni Singh leads the Tonk and Tebhaga peasant movements from this area.', 'কমরেড মণি সিংহের নেতৃত্বে এই অঞ্চল থেকে টংক ও তেভাগা আন্দোলন।'),
+      t('1971', 'After Gaokandia villagers kill two Pakistani soldiers, the army retaliates by seizing about a hundred villagers.', 'গাঁওকান্দিয়ার গ্রামবাসী দুই পাকসেনাকে হত্যা করলে প্রতিশোধ হিসেবে পাকবাহিনী প্রায় একশ গ্রামবাসীকে ধরে নিয়ে যায়।'),
+      UPAZILA_1983,
+    ],
+    heritage: { en: 'A Sultanate-era mosque at Maskandha village and the Susang royal estate.', bn: 'মাসকান্দা গ্রামে সুলতানি আমলের মসজিদ এবং সুসং রাজবাড়ি।' },
+  },
+  kalmakanda: {
+    timeline: [
+      t('1941', 'Kalmakanda thana is established.', 'কলমাকান্দা থানা প্রতিষ্ঠিত হয়।'),
+      t('1942', 'Kalmakanda Pilot High School is founded.', 'কলমাকান্দা পাইলট উচ্চ বিদ্যালয় প্রতিষ্ঠিত হয়।'),
+      t('1971', 'Seven freedom fighters fall in a battle at the Nazirpur three-road junction (26 July).', 'নাজিরপুরের তিন রাস্তার মোড়ে সম্মুখযুদ্ধে সাতজন মুক্তিযোদ্ধা শহীদ হন (২৬ জুলাই)।'),
+      UPAZILA_1983,
+    ],
+    heritage: { en: 'Tomb of Monai Shah at Battala village.', bn: 'বটতলা গ্রামে মনাই শাহের মাজার।' },
+  },
+  mohanganj: {
+    timeline: [
+      t('1920', 'Mohanganj thana is established (6 April).', 'মোহনগঞ্জ থানা প্রতিষ্ঠিত হয় (৬ এপ্রিল)।'),
+      t('1971', 'Freedom fighters take Mohanganj police station; on 8 December fighters and villagers overpower 19 razakars at Patharghata.', 'মুক্তিযোদ্ধারা মোহনগঞ্জ থানা দখল করেন; ৮ ডিসেম্বর পাথরঘাটায় মুক্তিযোদ্ধা ও জনতা ১৯ জন রাজাকারকে পরাস্ত করেন।'),
+      UPAZILA_1983,
+    ],
+    heritage: {
+      en: 'Fort remains at Betham and the Shekher Bari mosque (Hussain Shah period), and the Daulatpur temple (876 BS).',
+      bn: 'বেতামের দুর্গের ধ্বংসাবশেষ ও শেখের বাড়ি মসজিদ (হোসেন শাহি আমল), এবং দৌলতপুর মন্দির (৮৭৬ বঙ্গাব্দ)।',
+    },
+  },
+  khaliajuri: {
+    timeline: [
+      t('1906', 'Khaliajuri thana is established.', 'খালিয়াজুরী থানা প্রতিষ্ঠিত হয়।'),
+      UPAZILA_1983,
+    ],
+    heritage: {
+      en: 'Its heritage is the haor itself: villages on raised mounds, boat routes and seasonal embankments.',
+      bn: 'হাওরই এর ঐতিহ্য: উঁচু ভিটার গ্রাম, নৌপথ ও মৌসুমি বাঁধ।',
+    },
+  },
+  kendua: {
+    timeline: [
+      t('1890', 'Kendua thana is established.', 'কেন্দুয়া থানা প্রতিষ্ঠিত হয়।'),
+      t('1971', 'Freedom fighters raid Kendua police station in August and attack the Pakistani camp at Patkura bridge on 20 November.', 'আগস্টে মুক্তিযোদ্ধারা কেন্দুয়া থানায় হামলা চালান; ২০ নভেম্বর পাটকুড়া ব্রিজের পাকসেনা ক্যাম্পে আক্রমণ করেন।'),
+      UPAZILA_1983,
+    ],
+    heritage: {
+      en: 'Roailbari fort and Jalal mosque, the Kali temple and dighi at Danachapuri, and the Khoaj mosque at Jafarpur.',
+      bn: 'রোয়াইলবাড়ি দুর্গ ও জালাল মসজিদ, দানাচাপুরীর কালী মন্দির ও দিঘি, এবং জাফরপুরের খোয়াজ মসজিদ।',
+    },
+  },
+  madan: {
+    timeline: [
+      t('1917', 'Madan thana is established.', 'মদন থানা প্রতিষ্ঠিত হয়।'),
+      t('1971', 'A week of fighting, 1–8 November, ends with heavy Pakistani losses.', '১–৮ নভেম্বরের টানা যুদ্ধে পাকবাহিনী ব্যাপক ক্ষয়ক্ষতির শিকার হয়।'),
+      UPAZILA_1983,
+    ],
+    heritage: { en: 'A Mughal-era mosque in Chandgaon union and the tomb of Bura Pir.', bn: 'চানগাঁও ইউনিয়নে মুঘল আমলের মসজিদ এবং বুড়া পীরের মাজার।' },
+  },
+  barhatta: {
+    timeline: [
+      t('1905', 'Barhatta thana is established.', 'বারহাট্টা থানা প্রতিষ্ঠিত হয়।'),
+      t('1971', 'Freedom fighters blow up the Thakurakona rail bridge to stop the army; Barhatta is freed on 8 December.', 'পাকবাহিনী ঠেকাতে মুক্তিযোদ্ধারা ঠাকুরাকোনা রেলসেতু উড়িয়ে দেন; ৮ ডিসেম্বর বারহাট্টা হানাদারমুক্ত হয়।'),
+      UPAZILA_1983,
+    ],
+    heritage: {
+      en: 'Twin ponds at Amghail Pirijpur, the Deva temple at Singdha, and a Mughal-era building at Saoudpur.',
+      bn: 'আমঘাইল পীরিজপুরের জোড়া পুকুর, সিংধার দেব মন্দির এবং সাওদপুরে মুঘল আমলের ভবন।',
+    },
+  },
+  atpara: {
+    timeline: [
+      t('1926', 'Atpara thana is established.', 'আটপাড়া থানা প্রতিষ্ঠিত হয়।'),
+      t('1971', 'Freedom fighters attack Atpara thana on 19 August and seize its arms.', '১৯ আগস্ট মুক্তিযোদ্ধারা আটপাড়া থানা আক্রমণ করে অস্ত্র দখল করেন।'),
+      t('1983', 'The thana becomes an upazila (2 July).', 'থানাটি উপজেলায় উন্নীত হয় (২ জুলাই)।'),
+    ],
+    heritage: {
+      en: 'The three-domed Mughal mosque at Saramushia-Haripur and remains of the Roy zamindar house at Rameshwarpur.',
+      bn: 'স্বরমুশিয়া-হরিপুরের মুঘল আমলের তিন গম্বুজ মসজিদ এবং রামেশ্বরপুরের রায় জমিদারবাড়ির ধ্বংসাবশেষ।',
+    },
+  },
+  purbadhala: {
+    timeline: [
+      t('1792', 'Karam Shah, founder of the Pagalpanthi movement, and his son Tipu Shah settle at Latirkandha and lead peasant resistance to British rule.', 'পাগলপন্থী মতবাদের প্রবর্তক করম শাহ ও পুত্র টিপু শাহ লেটিরকান্দায় বসতি গড়ে ব্রিটিশবিরোধী কৃষক আন্দোলন পরিচালনা করেন।'),
+      t('1917', 'Purbadhala thana is established.', 'পূর্বধলা থানা প্রতিষ্ঠিত হয়।'),
+      t('1971', 'The army reaches Purbadhala on 29 April; physician Dr. Hem Bagchi is killed at his home on 1 May.', '২৯ এপ্রিল পাকবাহিনী পূর্বধলায় আসে; ১ মে চিকিৎসক ডা. হেম বাগচীকে নিজ বাড়িতে হত্যা করা হয়।'),
+      UPAZILA_1983,
+    ],
+    heritage: {
+      en: 'Mughal-era mosques at Sunaikandha and Latirkandha, an old temple at Hogla, and zamindar houses at Baghber and Narayandahar.',
+      bn: 'সুনাইকান্দা ও লেটিরকান্দার মুঘল আমলের মসজিদ, হোগলার প্রাচীন মন্দির এবং বাঘবেড় ও নারায়ণডহরের জমিদারবাড়ি।',
+    },
+  },
+};

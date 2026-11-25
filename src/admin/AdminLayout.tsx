@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-import { FileText, History, Inbox, LayoutDashboard, LogOut, Users } from 'lucide-react';
+import { FileText, History, Inbox, LayoutDashboard, LogOut, MessageSquare, Users } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
 import { api } from '../lib/api';
@@ -34,6 +34,7 @@ export const AdminLayout: React.FC = () => {
           <NavLink to="/admin" end className={link}><LayoutDashboard className="w-4 h-4" />{bn ? 'ড্যাশবোর্ড' : 'Dashboard'}</NavLink>
           {can('content.view') && <NavLink to="/admin/content" className={link}><FileText className="w-4 h-4" />{bn ? 'কনটেন্ট' : 'Content'}</NavLink>}
           {can('submissions.view') && <NavLink to="/admin/submissions" className={link}><Inbox className="w-4 h-4" />{bn ? 'জমা দেওয়া তথ্য' : 'Submissions'}</NavLink>}
+          {can('submissions.view') && <NavLink to="/admin/comments" className={link}><MessageSquare className="w-4 h-4" />{bn ? 'মন্তব্য' : 'Comments'}</NavLink>}
           {can('members.manage') && <NavLink to="/admin/members" className={link}><Users className="w-4 h-4" />{bn ? 'সদস্য ও ভূমিকা' : 'Members & roles'}</NavLink>}
           {can('audit.view') && <NavLink to="/admin/audit" className={link}><History className="w-4 h-4" />{bn ? 'অডিট লগ' : 'Audit log'}</NavLink>}
         </nav>

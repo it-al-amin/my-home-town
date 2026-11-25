@@ -15,6 +15,7 @@ import {
   formatSourceDate,
 } from '../data/aggregated/district';
 import type { CreditedPhoto } from '../types/district';
+import { toBnDigits as toBn } from '../lib/format';
 
 type TabId = 'spots' | 'albums' | 'commons';
 
@@ -27,7 +28,6 @@ interface Group {
   photos: CreditedPhoto[];
 }
 
-const toBn = (v: number | string) => String(v).replace(/\d/g, (d) => '০১২৩৪৫৬৭৮৯'[+d]);
 
 export const GalleryPage: React.FC = () => {
   const { language } = useLanguage();

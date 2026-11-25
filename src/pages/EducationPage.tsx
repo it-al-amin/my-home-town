@@ -10,6 +10,7 @@ import { InstitutionDirectory } from '../components/education/InstitutionDirecto
 import { CmsContentSection } from '../components/cms/CmsContentSection';
 import { FEED_UPDATES } from '../data/aggregated';
 import { EDUCATION_REGISTRIES, EDUCATION_UPAZILA_COVERAGE } from '../data/educationRegistries';
+import { FilterChips } from '../components/common/FilterChips';
 
 export const EducationPage: React.FC = () => {
   const { language } = useLanguage();
@@ -202,22 +203,13 @@ export const EducationPage: React.FC = () => {
         </div>
 
         {/* Category Chips */}
-        <div className="nk-chips flex items-center gap-1.5 flex-wrap pt-2 border-t border-slate-100 dark:border-slate-800 text-xs">
-          {categories.map((c) => (
-            <button
-              key={c.id}
-              type="button"
-              onClick={() => setSelectedCategory(c.id)}
-              className={`px-3 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                selectedCategory === c.id
-                  ? 'bg-amber-600 text-white shadow-xs'
-                  : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
-              }`}
-            >
-              {c.label}
-            </button>
-          ))}
-        </div>
+        <FilterChips
+          className="pt-2 border-t border-slate-100 dark:border-slate-800"
+          options={categories}
+          value={selectedCategory}
+          onChange={setSelectedCategory}
+          activeClass="bg-amber-600 text-white shadow-xs"
+        />
       </div>
 
       {/* Cards Grid */}
